@@ -2,15 +2,18 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "watch": "nodemon",
+    "dev": "nodemon",
+    "seed": "node seeds/seed.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.11.0",
-    "axios": "^1.7.6",
+    "axios": "^1.7.5",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
