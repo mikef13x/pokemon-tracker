@@ -1,5 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
+import Footer from './components/other/footer';
 
 // import {
 //   ApolloClient,
@@ -38,6 +39,7 @@ function App() {
     <>
        <Navbar />
        <Outlet />
+       <Footer/>
       
     </>
    
