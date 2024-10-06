@@ -1,4 +1,7 @@
 const router = require('express').Router();
+import pokemon from 'pokemontcgsdk'
+
+pokemon.configure({apiKey: '123abc'})
 
 router.get('/', async (req, res) => {
   try {
