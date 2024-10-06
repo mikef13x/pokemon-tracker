@@ -7,6 +7,7 @@ import HomePage from './pages/homepage';
 import SignIn from './pages/signin';
 import SignUp from './pages/register';
 import ErrorPage from './pages/errorpage'
+import CollectionPage from './pages/collection';
 
 import App from './app';
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/signin',
         element: <SignIn />
+      },
+      {
+        path: '/collection',
+        element: <CollectionPage />
       },
     
   
