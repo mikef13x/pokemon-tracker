@@ -8,6 +8,7 @@ import SignIn from './pages/signin';
 import SignUp from './pages/register';
 import ErrorPage from './pages/errorpage'
 import CollectionPage from './pages/collection';
+import SearchPage from './pages/searchresultspage';
 
 import App from './app';
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: '/collection',
         element: <CollectionPage />
       },
+      {
+        path: '/search',
+        element: <SearchPage/>
+      }
     
   
     ]

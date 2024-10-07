@@ -16,7 +16,7 @@ export default function Footer() {
                 height: '7vh',
                 
             }}>
-                © 2024. Created by Michael Freeman.
+                © 2024. Created by Michael Freeman and Daniel Gomez.
             </Box>
         </footer>
     );
