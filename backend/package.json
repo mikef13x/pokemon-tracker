@@ -21,6 +21,7 @@
     "graphql": "^16.9.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
-    "mongoose": "^8.6.0"
+    "mongoose": "^8.6.0",
+    "pokemontcgsdk": "^2.0.0"
   }
 }
