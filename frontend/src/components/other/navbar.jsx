@@ -35,6 +35,13 @@ export default function Navbar() {
                 </Typography>
               </Button>
             </Link>
+            <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color='inherit'>
+                <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                  <span className='tiny5-regular'>Search</span>
+                </Typography>
+              </Button>
+            </Link>
             {/* {AuthService.loggedIn() ? (
                <Button color='inherit'onClick={handleLogout}> 
                  <Typography sx={{marginLeft: '15px', marginRight: '15px'}}>
