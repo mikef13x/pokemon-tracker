@@ -37,9 +37,13 @@ type Pokemon {
 
 type Query {
   getPokemon(_id: ID!): Pokemon
+  getUsers: [User]
+  getUser(userId: ID!): User
 }
 
 type Mutation {
+  CreateUser(username: String!, email: String!, password: String!): Auth
+  login(username: String!, password: String!): Auth
   addPokemon(name: String!, type: String!): Pokemon
 }
 `;

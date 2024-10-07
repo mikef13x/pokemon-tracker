@@ -5,8 +5,7 @@ const collectionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  cards: [cardSchema]
-
+  cards: [{ type: Schema.Types.ObjectId, ref: 'Card' }],
 });
 
 const Collection = model('Collection', collectionSchema);
