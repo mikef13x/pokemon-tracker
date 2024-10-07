@@ -19,8 +19,10 @@ type User {
 
 type Collection {
   _id: ID!
+  collectionName: String!
   userId: ID!
   cards: [Card]
+  isMain: Boolean!
 }
 
 type Card {
@@ -39,6 +41,9 @@ type Query {
   getPokemon(_id: ID!): Pokemon
   getUsers: [User]
   getUser(userId: ID!): User
+  getCollections: [Collection]
+  getUserCollections(userId: ID!): [Collection]
+  getUserMainCollection(userId: ID!): Collection
 }
 
 type Mutation {
