@@ -8,7 +8,7 @@ const cors = require('cors');
 const axios = require('axios');
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
-
+const pokemonTcgRouter = require('./service/pokemontcg-api'); 
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
@@ -33,6 +33,8 @@ const startApolloServer = async () => {
       context: authMiddleware,
     })
   );
+
+  app.use('/pokemon-api', pokemonTcgRouter);
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
