@@ -1,16 +1,34 @@
 const typeDefs = `
-type Query {
-  getPokemon(id: ID!): Pokemon
+type Auth {
+    token: ID!
+    user: User
 }
 
-type Mutation {
-  addPokemon(name: String!, type: String!): Pokemon
+input UserInput {
+    username: String
+    email: String
+    password: String
+}
+
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    password: String!
 }
 
 type Pokemon {
   id: ID!
   name: String!
   type: String!
+}
+
+type Query {
+  getPokemon(id: ID!): Pokemon
+}
+
+type Mutation {
+  addPokemon(name: String!, type: String!): Pokemon
 }
 `;
 
