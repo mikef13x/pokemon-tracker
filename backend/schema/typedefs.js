@@ -1,3 +1,17 @@
-const typeDefs = ``
+const typeDefs = `
+type Query {
+  getPokemon(id: ID!): Pokemon
+}
 
-module.exports = typeDefs
+type Mutation {
+  addPokemon(name: String!, type: String!): Pokemon
+}
+
+type Pokemon {
+  id: ID!
+  name: String!
+  type: String!
+}
+`;
+
+module.exports = typeDefs;

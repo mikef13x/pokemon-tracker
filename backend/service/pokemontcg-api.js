@@ -1,7 +1,6 @@
 const router = require('express').Router();
 require('dotenv').config();
-import pokemon from 'pokemontcgsdk';
-
+const pokemon = require('pokemontcgsdk');
 
 pokemon.configure({apiKey: process.env.POKE_API_KEY})
 
