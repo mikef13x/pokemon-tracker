@@ -1,3 +1,5 @@
-const User = require ( "./user")
+const User = require("./user")
+const Collection = require("./collection")
+const Card = require("./card")
 
-module.exports = {User}
+module.exports = {User, Collection, Card}

@@ -11,20 +11,32 @@ input UserInput {
 }
 
 type User {
-    id: ID!
+    _id: ID!
     username: String!
     email: String!
     password: String!
 }
 
+type Collection {
+  _id: ID!
+  userId: ID!
+  cards: [Card]
+}
+
+type Card {
+  _id: ID!
+  name: String!
+  image: String!
+}
+
 type Pokemon {
-  id: ID!
+  _id: ID!
   name: String!
   type: String!
 }
 
 type Query {
-  getPokemon(id: ID!): Pokemon
+  getPokemon(_id: ID!): Pokemon
 }
 
 type Mutation {
