@@ -56,14 +56,13 @@ const resolvers = {
         throw new Error('Failed to get user main collection');
       }
     },
-
   },
   Mutation: {
-    CreateUser: async (parent, { username, email, password }) => {
+    createUser: async (parent, { username, email, password }) => {
       try {
         const newUser = await User.create({ username, email, password });
-        // const token = signToken(newUser);
-        return { user: newUser };
+        const token = signToken(newUser);
+        return { token, user: newUser };
       } catch (error) {
         console.error('Error creating user model:', error);
         throw new Error('Failed to create user model');
@@ -85,6 +84,22 @@ const resolvers = {
       }
       const token = signToken(user);
       return { token, user };
+    },
+
+    addCard: async (_, { name, image, cardId, setId }) => {
+      try {
+        const newCard = new Card({
+          name,
+          image,
+          cardId,
+          setId,
+        });
+        await newCard.save();
+        return newCard;
+      } catch (error) {
+        console.error('error adding card', error);
+        throw new Error('Failed to add card');
+      }
     },
   },
 };
