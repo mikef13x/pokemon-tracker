@@ -29,6 +29,8 @@ type Card {
   _id: ID!
   name: String!
   image: String!
+  cardId: String!
+  setId: String!
 }
 
 type Pokemon {
@@ -49,6 +51,7 @@ type Query {
 type Mutation {
   createUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
+  addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
   addPokemon(name: String!, type: String!): Pokemon
 }
 `;
