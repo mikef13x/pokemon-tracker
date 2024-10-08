@@ -62,8 +62,8 @@ const resolvers = {
     createUser: async (parent, { username, email, password }) => {
       try {
         const newUser = await User.create({ username, email, password });
-        // const token = signToken(newUser);
-        return { user: newUser };
+        const token = signToken(newUser);
+        return { token, user: newUser };
       } catch (error) {
         console.error('Error creating user model:', error);
         throw new Error('Failed to create user model');
