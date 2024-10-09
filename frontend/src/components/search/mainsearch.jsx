@@ -82,6 +82,7 @@ export default function MainSearch() {
     const [sortOrder, setSortOrder] = useState('');
     const [showModal, setShowModal] = useState(false)
     const [currentModalData, setCurrentModalData] = useState(modalData)
+    const [title, setTitle] = useState('All Pokemon Sets');
     
     const [isInitialState, setIsInitialState] = useState(true);
     
@@ -111,16 +112,21 @@ export default function MainSearch() {
     const handleModalClose  = () => {
         setShowModal(false)
         setCurrentModalData(modalData)
+        setTitle('All Pokemon Sets')
+        setIsInitialState(true);
      
     }
-    const handleButtonClick = (newData) => {
+    const handleButtonClick = (newData, newTitle) => {
         setIsInitialState(false);
         setCurrentModalData(newData);
+        setTitle('All Pokemon Sets')
+        setTitle(newTitle);
     };
     const handleBackButtonClick = () => {
         // Logic to go back to the previous state
         setIsInitialState(true);
         setCurrentModalData(modalData); // Reset to initial modal data
+        setTitle('All Pokemon Sets')
     };
     return(
         <>
@@ -160,7 +166,7 @@ export default function MainSearch() {
             </Button>
         )}
         <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px' }}>
-            All Pokemon Sets
+        {title}
         </DialogTitle>
     </Box>
             <DialogContent>
@@ -169,7 +175,7 @@ export default function MainSearch() {
                                 <Grid item xs={12} sm={6} md={3} key={item.id}>
                                     <Button
                                         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center' }}
-                                        onClick={() => item.name === 'WOTC' ? handleButtonClick(WOTCData) : item.name === 'EX Series' ? handleButtonClick(EXData) : null}
+                                        onClick={() => item.name === 'WOTC' ? handleButtonClick(WOTCData, 'WOTC Sets') : item.name === 'EX Series' ? handleButtonClick(EXData, 'EX Series Sets') : null}
                                     >
                                         <img src={item.image} alt={item.name} style={{ width: '60px', height: '60px' }} />
                                         <Typography variant="button" sx={{ flex: 1 }}>
