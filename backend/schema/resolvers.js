@@ -2,6 +2,7 @@ const { User, Card, Collection } = require('../models');
 const { GraphQLError } = require('graphql');
 
 const { signToken } = require('../utils/auth');
+const { createCollection } = require('../models/user');
 
 const resolvers = {
   Query: {
@@ -101,6 +102,22 @@ const resolvers = {
         throw new Error('Failed to add card');
       }
     },
+
+    createCollection: async (_, {userId, collectionName}) => {
+      try{ 
+        const newCollection = new Collection({
+          userId,
+          collectionName,
+        });
+
+        await newCollection.save();
+        console.log("new collection created")
+        return newCollection
+      } catch (error) {
+        console.error('error creating collectio', error);
+        throw new Error('Failed to create collection');
+      }
+    }
   },
 };
 
