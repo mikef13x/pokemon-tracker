@@ -138,6 +138,15 @@ const resolvers = {
       return deletedUser;
     },
 
+    updateUser: async (_, { userId, updateData }) => {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: userId },
+        updateData,
+        { new: true }
+      );
+      return updatedUser;
+    },
+
     addCard: async (_, { name, image, cardId, setId }) => {
       try {
         const newCard = new Card({
