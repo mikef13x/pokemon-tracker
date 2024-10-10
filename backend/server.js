@@ -5,7 +5,6 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config();
 const cors = require('cors');
-const axios = require('axios');
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
 const { ApolloServerPluginLandingPageDisabled } = require('@apollo/server/plugin/disabled');
