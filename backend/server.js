@@ -8,7 +8,7 @@ const cors = require('cors');
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
 const { ApolloServerPluginLandingPageDisabled } = require('@apollo/server/plugin/disabled');
-const pokemonTcgRouter = require('./service/pokemontcg-api'); 
+const services = require('./service/index');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -42,7 +42,7 @@ const startApolloServer = async () => {
     })
   );
 
-  app.use('/pokemon-api', pokemonTcgRouter);
+  app.use(services);
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
