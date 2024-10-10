@@ -57,6 +57,18 @@ const resolvers = {
         throw new Error('Failed to get user main collection');
       }
     },
+
+    getCards: async () => {
+      try{
+        const allCards = await Card.find();
+        return allCards;
+      } catch (error) {
+        console.error("Error fetching cards", error);
+        throw new Error('Failed to fetch cards')
+      }
+    },
+
+    
   },
   Mutation: {
     createUser: async (parent, { username, email, password }) => {

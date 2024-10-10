@@ -44,6 +44,7 @@ type Query {
   getCollections: [Collection]
   getUserCollections(userId: ID!): [Collection]
   getUserMainCollection(userId: ID!): Collection
+  getCards: [Card]
 }
 
 type Mutation {
