@@ -117,7 +117,21 @@ const resolvers = {
         console.error('error creating collectio', error);
         throw new Error('Failed to create collection');
       }
-    }
+    },
+
+    updateCollection: async (_, { collectionId, updateData }) => {
+      try {
+        const updatedCollection = await Collection.findByIdAndUpdate(
+          collectionId,
+          { $set: updateData },
+          { new: true, runValidators: true }
+        );
+        return updatedCollection;
+      } catch (error) {
+        console.error('error updating collection', error);
+        throw new Error('Failed to update collection');
+      }
+    },
   },
 };
 

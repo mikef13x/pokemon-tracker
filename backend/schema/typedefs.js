@@ -21,8 +21,13 @@ type Collection {
   _id: ID!
   collectionName: String!
   userId: ID!
-  cards: [Card]
+  cards: [ID!]
   isMain: Boolean!
+}
+
+input UpdateCollectionInput {
+  collectionName: String!
+  cards: [ID!]
 }
 
 type Card {
@@ -32,7 +37,6 @@ type Card {
   cardId: String!
   setId: String!
 }
-
 
 type Query {
   getUsers: [User]
@@ -47,6 +51,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
   createCollection(userId: ID!, collectionName: String!): Collection
+  updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
 }
 `;
 
