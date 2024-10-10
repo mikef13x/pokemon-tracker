@@ -35,6 +35,16 @@ const resolvers = {
       }
     },
 
+    getCollection: async (_, { collectionId }) => {
+      try {
+        const oneCollection = await Collection.findById(collectionId);
+        return oneCollection;
+      } catch (error) {
+        console.error('error getting collection', error);
+        throw new Error('failed to get collection')
+      }
+    },
+
     getUserCollections: async (_, { userId }) => {
       try {
         const userCollections = await Collection.find({ userId: userId });
@@ -42,6 +52,19 @@ const resolvers = {
       } catch (error) {
         console.error('error getting user collections', error);
         throw new Error('Failed to get user collections');
+      }
+    },
+
+    getUserMainCollection: async (_, { userId }) => {
+      try {
+        const userCollections = await Collection.findOne({
+          userId: userId,
+          isMain: true,
+        });
+        return userCollections;
+      } catch (error) {
+        console.error('error getting user main collection', error);
+        throw new Error('Failed to get user main collection');
       }
     },
 

@@ -42,6 +42,7 @@ type Query {
   getUsers: [User]
   getUser(userId: ID!): User
   getCollections: [Collection]
+  getCollection(collectionId: ID!): Collection
   getUserCollections(userId: ID!): [Collection]
   getUserMainCollection(userId: ID!): Collection
   getCards: [Card]
