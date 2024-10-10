@@ -8,13 +8,21 @@ const cors = require('cors');
 const axios = require('axios');
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
+const { ApolloServerPluginLandingPageDisabled } = require('@apollo/server/plugin/disabled');
 const pokemonTcgRouter = require('./service/pokemontcg-api'); 
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const plugins = [];
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(ApolloServerPluginLandingPageDisabled());
+}
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  plugins
 });
 
 const startApolloServer = async () => {
