@@ -334,11 +334,11 @@ export default function MainSearch() {
                             {currentModalData.map((item) => (
                                 <Grid item xs={12} sm={6} md={3} key={item.id}>
                                   <Button
-    sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center' }}
+    sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none' }}
     onClick={() => item.name === 'WOTC' ? handleButtonClick(WOTCData, 'WOTC Sets') : item.name === 'EX Series' ? handleButtonClick(EXData, 'EX Series Sets') : item.name === "Diamond & Pearl" ? handleButtonClick(DPData, 'Diamond & Pearl') : item.name === "POP Series" ? handleButtonClick(POPData, 'POP Series') : item.name === 'Platinum'? handleButtonClick(PlatinumData, 'Platinum') : item.name === 'HeartGold & SoulSilver' ? handleButtonClick(HGSSData, "HeartGold & SoulSilver") : item.name === "Black & White" ? handleButtonClick(BWData, "Black & White") : item.name === "XY" ? handleButtonClick(XYData, "XY") : item.name === "Sun & Moon" ? handleButtonClick(SMData,"Sun & Moon") : item.name === "Sword & Shield" ? handleButtonClick(SSData, "Sword & Shield") : item.name === "Scarlet & Violet" ? handleButtonClick(SVData, "Scarlet & Violet") : item.name === "Pokemon Promos" ? handleButtonClick(PromoData, "Pokemon Promos") : item.name === "Misc. Sets" ? handleButtonClick(OtherData, "Miscellaneous Sets") :  null}
 >
                                         <img src={item.image} alt={item.name} style={{ width: '130px', height: '60px', objectFit: 'contain' }} />
-                                        <Typography variant="button" sx={{ flex: 1, fontSize: '10px', color: 'black'}}>
+                                        <Typography variant="button" sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none'}}>
                                             {item.name}
                                         </Typography>
                                     </Button>
