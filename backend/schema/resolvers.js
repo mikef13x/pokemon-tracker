@@ -68,7 +68,15 @@ const resolvers = {
       }
     },
 
-    
+    getCard: async (_, { _id }) => {
+      try {
+        const oneCard = await Card.findById(_id);
+        return oneCard;
+      } catch (error) {
+        console.error('error getting card', error);
+        throw new Error('Failed to get card');
+      }
+    }
   },
   Mutation: {
     createUser: async (parent, { username, email, password }) => {
