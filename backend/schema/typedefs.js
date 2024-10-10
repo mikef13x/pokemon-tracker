@@ -52,6 +52,7 @@ type Query {
 type Mutation {
   createUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
+  removeUser(userId: ID!): User
   addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection

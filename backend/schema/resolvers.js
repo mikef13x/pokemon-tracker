@@ -15,7 +15,7 @@ const resolvers = {
         throw new Error('Failed to get users');
       }
     },
-    getUser: async (parent, { userId }) => {
+    getUser: async (_, { userId }) => {
       try {
         const oneUser = await User.findById(userId).select('-password');
         return oneUser;
@@ -113,7 +113,7 @@ const resolvers = {
       }
     },
 
-    login: async (parent, { username, password }) => {
+    login: async (_, { username, password }) => {
       const user = await User.findOne({ username });
       if (!user) {
         throw new GraphQLError('Invalid credentials', {
@@ -128,6 +128,14 @@ const resolvers = {
       }
       const token = signToken(user);
       return { token, user };
+    },
+
+    removeUser: async (_, { userId }) => {
+      const deletedUser = await User.findByIdAndDelete(userId);
+      if (!deletedUser) {
+        throw new Error('User not found.');
+      }
+      return deletedUser;
     },
 
     addCard: async (_, { name, image, cardId, setId }) => {
