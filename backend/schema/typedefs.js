@@ -21,8 +21,13 @@ type Collection {
   _id: ID!
   collectionName: String!
   userId: ID!
-  cards: [Card]
+  cards: [ID!]
   isMain: Boolean!
+}
+
+input UpdateCollectionInput {
+  collectionName: String!
+  cards: [ID!]
 }
 
 type Card {
@@ -33,26 +38,23 @@ type Card {
   setId: String!
 }
 
-type Pokemon {
-  _id: ID!
-  name: String!
-  type: String!
-}
-
 type Query {
-  getPokemon(_id: ID!): Pokemon
   getUsers: [User]
   getUser(userId: ID!): User
   getCollections: [Collection]
+  getCollection(collectionId: ID!): Collection
   getUserCollections(userId: ID!): [Collection]
   getUserMainCollection(userId: ID!): Collection
+  getCards: [Card]
+  getCard(_id: ID!): Card
 }
 
 type Mutation {
   createUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
   addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
-  addPokemon(name: String!, type: String!): Pokemon
+  createCollection(userId: ID!, collectionName: String!): Collection
+  updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
 }
 `;
 

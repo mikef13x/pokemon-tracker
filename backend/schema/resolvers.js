@@ -2,6 +2,7 @@ const { User, Card, Collection } = require('../models');
 const { GraphQLError } = require('graphql');
 
 const { signToken } = require('../utils/auth');
+const { createCollection } = require('../models/user');
 
 const resolvers = {
   Query: {
@@ -34,6 +35,16 @@ const resolvers = {
       }
     },
 
+    getCollection: async (_, { collectionId }) => {
+      try {
+        const oneCollection = await Collection.findById(collectionId);
+        return oneCollection;
+      } catch (error) {
+        console.error('error getting collection', error);
+        throw new Error('failed to get collection')
+      }
+    },
+
     getUserCollections: async (_, { userId }) => {
       try {
         const userCollections = await Collection.find({ userId: userId });
@@ -56,6 +67,39 @@ const resolvers = {
         throw new Error('Failed to get user main collection');
       }
     },
+
+    getUserMainCollection: async (_, { userId }) => {
+      try {
+        const userCollections = await Collection.findOne({
+          userId: userId,
+          isMain: true,
+        });
+        return userCollections;
+      } catch (error) {
+        console.error('error getting user main collection', error);
+        throw new Error('Failed to get user main collection');
+      }
+    },
+
+    getCards: async () => {
+      try{
+        const allCards = await Card.find();
+        return allCards;
+      } catch (error) {
+        console.error("Error fetching cards", error);
+        throw new Error('Failed to fetch cards')
+      }
+    },
+
+    getCard: async (_, { _id }) => {
+      try {
+        const oneCard = await Card.findById(_id);
+        return oneCard;
+      } catch (error) {
+        console.error('error getting card', error);
+        throw new Error('Failed to get card');
+      }
+    }
   },
   Mutation: {
     createUser: async (parent, { username, email, password }) => {
@@ -99,6 +143,36 @@ const resolvers = {
       } catch (error) {
         console.error('error adding card', error);
         throw new Error('Failed to add card');
+      }
+    },
+
+    createCollection: async (_, {userId, collectionName}) => {
+      try{ 
+        const newCollection = new Collection({
+          userId,
+          collectionName,
+        });
+
+        await newCollection.save();
+        console.log("new collection created")
+        return newCollection
+      } catch (error) {
+        console.error('error creating collectio', error);
+        throw new Error('Failed to create collection');
+      }
+    },
+
+    updateCollection: async (_, { collectionId, updateData }) => {
+      try {
+        const updatedCollection = await Collection.findByIdAndUpdate(
+          collectionId,
+          { $set: updateData },
+          { new: true, runValidators: true }
+        );
+        return updatedCollection;
+      } catch (error) {
+        console.error('error updating collection', error);
+        throw new Error('Failed to update collection');
       }
     },
   },
