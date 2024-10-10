@@ -68,19 +68,6 @@ const resolvers = {
       }
     },
 
-    getUserMainCollection: async (_, { userId }) => {
-      try {
-        const userCollections = await Collection.findOne({
-          userId: userId,
-          isMain: true,
-        });
-        return userCollections;
-      } catch (error) {
-        console.error('error getting user main collection', error);
-        throw new Error('Failed to get user main collection');
-      }
-    },
-
     getCards: async () => {
       try{
         const allCards = await Card.find();
@@ -102,7 +89,7 @@ const resolvers = {
     }
   },
   Mutation: {
-    createUser: async (parent, { username, email, password }) => {
+    createUser: async (_, { username, email, password }) => {
       try {
         const newUser = await User.create({ username, email, password });
         const token = signToken(newUser);
