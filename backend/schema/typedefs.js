@@ -4,17 +4,17 @@ type Auth {
     user: User
 }
 
-input UserInput {
-    username: String
-    email: String
-    password: String
-}
-
 type User {
     _id: ID!
     username: String!
     email: String!
     password: String!
+}
+
+input UpdateUserInput {
+    username: String
+    email: String
+    password: String
 }
 
 type Collection {
@@ -52,6 +52,8 @@ type Query {
 type Mutation {
   createUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
+  removeUser(userId: ID!): User
+  updateUser(userId: ID!, updateData: UpdateUserInput!): User
   addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection

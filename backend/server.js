@@ -5,16 +5,23 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 require('dotenv').config();
 const cors = require('cors');
-const axios = require('axios');
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
-const pokemonTcgRouter = require('./service/pokemontcg-api'); 
+const { ApolloServerPluginLandingPageDisabled } = require('@apollo/server/plugin/disabled');
+const services = require('./service/index');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const plugins = [];
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(ApolloServerPluginLandingPageDisabled());
+}
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  plugins
 });
 
 const startApolloServer = async () => {
@@ -35,7 +42,7 @@ const startApolloServer = async () => {
     })
   );
 
-  app.use('/pokemon-api', pokemonTcgRouter);
+  app.use(services);
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
