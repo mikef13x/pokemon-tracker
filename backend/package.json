@@ -24,7 +24,6 @@
     "jwt-decode": "^4.0.0",
     "mongoose": "^8.6.0",
     "nodemailer": "^6.9.14",
-    "pokemontcgsdk": "^2.0.0",
-    "puppeteer": "^23.5.2"
+    "pokemontcgsdk": "^2.0.0"
   }
 }
