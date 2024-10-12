@@ -3,7 +3,7 @@ const eBay = require('ebay-node-api');
 
 // Initialize eBay API instance with your App ID
 const ebay = new eBay({
-  clientID: process.env.EBAY_APP_ID, // Your eBay App ID
+  clientID: process.env.EBAY_APP_ID,
   env: process.env.EBAY_ENV, // Can be 'SANDBOX' or 'PRODUCTION'
 });
 
