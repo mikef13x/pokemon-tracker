@@ -57,6 +57,7 @@ type Mutation {
   addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
+  deleteCollection(collectionId: ID!): Collection
 }
 `;
 

@@ -179,6 +179,14 @@ const resolvers = {
         throw new Error('Failed to update collection');
       }
     },
+
+    deleteCollection: async (_, { collectionId }) => {
+      const deletedCollection = await Collection.findByIdAndDelete(collectionId);
+      if (!deletedCollection) {
+        throw new Error('Collection not found.');
+      }
+      return deletedCollection;
+    },
   },
 };
 
