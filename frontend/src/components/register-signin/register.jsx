@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Paper,
   TextField,
@@ -15,9 +15,6 @@ import Auth from '../../utils/auth';
 import { CREATE_USER } from '../../utils/mutations';
 
 const RegisterForm = () => {
-//   useEffect(() => {
-//     Auth.ensureGuestAccess();
-//   }, []);
 
   const [username, setUsername] = useState('');
   const [isUsernameValid, setIsUsernameValid] = useState(true);
