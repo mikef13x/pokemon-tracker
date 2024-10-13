@@ -1,4 +1,3 @@
-// add useEffect
 import { useState } from 'react';
 import {
   Paper,
@@ -17,9 +16,6 @@ import Auth from '../../utils/auth';
 import { LOGIN_USER } from '../../utils/mutations';
 
 const LoginForm = () => {
-  // useEffect(() => {
-  //     Auth.ensureGuestAccess();
-  // },);
 
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -65,7 +61,6 @@ const LoginForm = () => {
             <Typography variant="h5" align="center" gutterBottom>
               Login
             </Typography>
-            {/* add "onsubmit ={handlesubmit}" */}
             <form onSubmit={handleSubmit}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
