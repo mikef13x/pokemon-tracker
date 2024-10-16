@@ -10,7 +10,7 @@ const sets = JSON.parse(fs.readFileSync(setsFilePath, 'utf8'));
 const fetchSetData = async (setId) => {
     console.log(setId)
   try {
-    const response = await axios.get(`http://localhost:3001/pokemon-api/sets/${setId}`); // Update the URL to point to your backend server
+    const response = await axios.get(`http://localhost:3001/pokemon-api/sets/${setId}`);
     console.log(`Fetched data for set ID ${setId}:`, response.data);
     return response.data;
   } catch (error) {
