@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Collection = require('./collection')
+
 const userSchema = new Schema({
   username: {
     type: String,
@@ -27,6 +29,31 @@ userSchema.pre('save', async function (next) {
   }
 
   next();
+});
+
+userSchema.post('save', async function (doc, next) {
+  try {
+    await Collection.create({
+      userId: doc._id,
+      collectionName: `${doc.username}'s Main Collection`,
+      isMain: true,
+    });
+
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
+userSchema.post('findOneAndDelete', async function (doc, next) {
+  try {
+    if (doc) {
+      await Collection.deleteMany({ userId: doc._id });
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 userSchema.methods.isCorrectPassword = async function (password) {
