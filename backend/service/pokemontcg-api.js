@@ -66,7 +66,7 @@ router.get('/sets', async (req, res) => {
 router.get('/seed', async (req, res) => {
   try {
     const filePath = path.join(__dirname, '../seed/filteredSetsData.json');
-    console.log(filePath);
+    console.log(`Reading file from: ${filePath}`);
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const cards = JSON.parse(jsonData);
 
@@ -75,6 +75,12 @@ router.get('/seed', async (req, res) => {
 
     for (const card of cards) {
       try {
+        const existingCard = await Card.findOne({ cardId: card.id });
+        if (existingCard) {
+          skippedCards.push(card);
+          continue;
+        }
+
         const newCard = new Card({
           name: card.name,
           image: card.images.large,
@@ -84,12 +90,8 @@ router.get('/seed', async (req, res) => {
         await newCard.save();
         addedCards.push(newCard);
       } catch (error) {
-        if (error.code === 11000) {
-          // Duplicate key error
-          skippedCards.push(card);
-        } else {
-          throw error;
-        }
+        console.error(`Error saving cardId: ${card.id}`, error);
+        throw error;
       }
     }
 
