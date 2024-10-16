@@ -47,6 +47,8 @@ type Query {
   getUserMainCollection(userId: ID!): Collection
   getCards: [Card]
   getCard(_id: ID!): Card
+  getCardsBySet(setId: String!): [Card]
+  getCardsByName(name: String!): [Card]
 }
 
 type Mutation {
