@@ -1,6 +1,9 @@
 const router = require('express').Router();
 require('dotenv').config();
 const pokemon = require('pokemontcgsdk');
+const fs = require('fs');
+const path = require('path');
+const Card = require('../models/card')
 
 pokemon.configure({ apiKey: process.env.POKE_API_KEY });
 
@@ -57,6 +60,45 @@ router.get('/sets', async (req, res) => {
     res.json(result); 
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get('/seed', async (req, res) => {
+  try {
+    const filePath = path.join(__dirname, '../seed/filteredSetsData.json');
+    console.log(`Reading file from: ${filePath}`);
+    const jsonData = fs.readFileSync(filePath, 'utf-8');
+    const cards = JSON.parse(jsonData);
+
+    const addedCards = [];
+    const skippedCards = [];
+
+    for (const card of cards) {
+      try {
+        const existingCard = await Card.findOne({ cardId: card.id });
+        if (existingCard) {
+          skippedCards.push(card);
+          continue;
+        }
+
+        const newCard = new Card({
+          name: card.name,
+          image: card.images.large,
+          cardId: card.id,
+          setId: card.setId,
+        });
+        await newCard.save();
+        addedCards.push(newCard);
+      } catch (error) {
+        console.error(`Error saving cardId: ${card.id}`, error);
+        throw error;
+      }
+    }
+
+    res.json({ addedCards, skippedCards });
+  } catch (error) {
+    console.error('Error seeding cards from JSON', error);
+    res.status(500).json({ message: 'Failed to seed cards from JSON', error });
   }
 });
 

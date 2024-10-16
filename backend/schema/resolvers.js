@@ -41,7 +41,7 @@ const resolvers = {
         return oneCollection;
       } catch (error) {
         console.error('error getting collection', error);
-        throw new Error('failed to get collection')
+        throw new Error('failed to get collection');
       }
     },
 
@@ -69,12 +69,12 @@ const resolvers = {
     },
 
     getCards: async () => {
-      try{
+      try {
         const allCards = await Card.find();
         return allCards;
       } catch (error) {
-        console.error("Error fetching cards", error);
-        throw new Error('Failed to fetch cards')
+        console.error('Error fetching cards', error);
+        throw new Error('Failed to fetch cards');
       }
     },
 
@@ -86,7 +86,28 @@ const resolvers = {
         console.error('error getting card', error);
         throw new Error('Failed to get card');
       }
-    }
+    },
+
+    getCardsBySet: async (_, { setId }) => {
+      try {
+        const setCards = await Card.find({ setId: setId });
+        return setCards;
+      } catch (error) {
+        console.error('error getting cards by set', error);
+        throw new Error('Failed to get cards by set');
+      }
+    },
+
+    getCardsByName: async (_, { name }) => {
+      try {
+        const regex = new RegExp(name, 'i');
+        const cards = await Card.find({ name: regex });
+        return cards;
+      } catch (error) {
+        console.error('error getting cards by name', error);
+        throw new Error('Failed to get cards by name');
+      }
+    },
   },
   Mutation: {
     createUser: async (_, { username, email, password }) => {
@@ -150,16 +171,16 @@ const resolvers = {
       }
     },
 
-    createCollection: async (_, {userId, collectionName}) => {
-      try{ 
+    createCollection: async (_, { userId, collectionName }) => {
+      try {
         const newCollection = new Collection({
           userId,
           collectionName,
         });
 
         await newCollection.save();
-        console.log("new collection created")
-        return newCollection
+        console.log('new collection created');
+        return newCollection;
       } catch (error) {
         console.error('error creating collectio', error);
         throw new Error('Failed to create collection');
@@ -181,7 +202,9 @@ const resolvers = {
     },
 
     deleteCollection: async (_, { collectionId }) => {
-      const deletedCollection = await Collection.findByIdAndDelete(collectionId);
+      const deletedCollection = await Collection.findByIdAndDelete(
+        collectionId
+      );
       if (!deletedCollection) {
         throw new Error('Collection not found.');
       }
