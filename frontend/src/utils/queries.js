@@ -91,3 +91,27 @@ export const GET_CARD = gql`
     }
   }
 `;
+
+export const GET_CARDS_BY_NAME = gql`
+  query getCardsByName($name: String!) {
+    getCardsByName(name: $name) {
+      _id
+      name
+      cardId
+      image
+      setId
+    }
+  }
+`;
+
+export const GET_CARDS_BY_SET = gql`
+  query getCardsBySet($setId: String!) {
+    getCardsBySet(setId: $setId) {
+      _id
+      name
+      image
+      cardId
+      setId
+    }
+  }
+`;
