@@ -13,7 +13,7 @@ export default function Navbar() {
         position="fixed"
         sx={{
           backdropFilter: 'blur(20px)',
-          backgroundColor: 'rgba(0, 150, 255, 0.1)',
+          backgroundColor: 'rgba(55, 55, 55, 0.3)',
         }}
       >
         <Toolbar>
