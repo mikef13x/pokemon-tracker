@@ -1,4 +1,4 @@
-import { Box, Select, Grid, MenuItem, FormControl, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
+import { Box, Select, Grid, MenuItem, FormControl, TextField, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
 import SearchWrapper from "./searchwrapper";
 import Mudkip from '../../assets/mudkipgoldstar.jpg';
 import Groudon from '../../assets/groudongoldstar.jpg'
@@ -317,6 +317,36 @@ export default function MainSearch() {
             }}>
               <span className='tiny5-regular'>Search by Set</span> 
             </Button>
+           
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'row',  gap: '10px', marginLeft: '80px'}}>
+                    <TextField
+                        variant="outlined"
+                        placeholder="Search for a card..."
+                        sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white' }}
+                        inputProps={{
+                            className: 'poppins-regular', // Add the class to the input element
+                        }}
+                    />
+                    <Button
+                        sx={{
+                            width: '60px',
+                            height: '60px',
+                            borderRadius: '50%',
+                            color: 'black',
+                            background: 'linear-gradient(to bottom, red 50%, white 50%)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '2px solid black',
+                            marginLeft:"20px"
+                        }}
+                    >
+                        <span className='tiny5-regular'>Go</span>
+                    </Button>
+                </Box>
+            </Box>
+          
     <Dialog open={showModal} onClose={handleModalClose} maxWidth="md" fullWidth>
           
     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px' }}>

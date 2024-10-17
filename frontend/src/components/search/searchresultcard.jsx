@@ -16,8 +16,8 @@ export default function SearchResultCard({ title, price, image, onClick }) {
                 </Card>
                 <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '100%', padding: '0 20px' }}>
                     
-                    <Typography sx={{ fontSize: '28px' }}><span className='tiny5-regular'>{title}</span></Typography>
-                    <Typography sx={{ fontSize: '28px' }}><span className='tiny5-regular'>Market Price: </span>{price}</Typography>
+                    <Typography sx={{ fontSize: '28px' }}><span className='poppins-regular'>{title}</span></Typography>
+                    <Typography sx={{ fontSize: '28px' }}><span className='poppins-regular'>Market Price: {price} </span></Typography>
                 </Box>
             </Box>
         </ButtonBase>

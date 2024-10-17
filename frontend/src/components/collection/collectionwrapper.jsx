@@ -139,8 +139,8 @@ export default function CollectionWrapper() {
         </Dialog>
         
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box sx={{ height: '65vh', overflowY: 'auto', padding: '50px', borderTop: '2px solid white', borderBottom: '2px solid white', width: '100vw', marginTop: '200px' }}>
-                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '100px' }}>
+            <Box sx={{ height: '75vh', overflowY: 'auto', padding: '40px', borderTop: '2px solid white', borderBottom: '2px solid white', width: '100vw', marginTop: '200px', backdropFilter:"blur(20px)" }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '50px', }}>
                     {sortedData.map((item) => (
                         <Box key={item.id} sx={{ aspectRatio: '3 / 4' }}>
                             <CollectionCard title={item.title} price={formatPrice(item.price)} image={item.image} />
