@@ -409,7 +409,7 @@ export default function MainSearch() {
     </Paper>
     <Typography sx={{textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white'}}>10 results</Typography>
     <Box sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto',  padding: '0px' }}>
-    {isGridView ? <SearchWrapper sortedData={sortedData} /> : <SearchWrapper2 sortedData={sortedData} />}
+    {isGridView ? <SearchWrapper2 sortedData={sortedData} /> : <SearchWrapper sortedData={sortedData} />}
         </Box>
         </>
     )

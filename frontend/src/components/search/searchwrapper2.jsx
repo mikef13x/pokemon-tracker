@@ -8,7 +8,7 @@ export default function SearchWrapper2({ sortedData }) {
 
     return (
         <>
-            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '10px', marginTop: '20px', padding:'50px' }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', columnGap:'70px', marginTop: '-50px', padding:'90px', marginRight:'50px' }}>
                 {sortedData.map((item) => (
                     <Box key={item.id} sx={{ display: 'flex', justifyContent: 'center' }}>
                         <SearchResultCard2 title={item.title} price={formatPrice(item.price)} image={item.image} />
