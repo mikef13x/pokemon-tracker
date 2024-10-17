@@ -1,34 +1,30 @@
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import {Link} from "react-router-dom"
 
 
 export default function LetsGetStarted() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px' }}>
-            <TextField
-                variant="outlined"
-                placeholder="Search for a card..."
-                sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white' }}
-                inputProps={{
-                    className: 'tiny5-regular', // Add the class to the input element
-                }}
-            />
-            <Box sx={{ display: 'flex', gap: '10px' }}>
-                <Button
-                    sx={{
-                        width: '60px',
-                        height: '60px',
-                        borderRadius: '50%',
-                        color: 'black',
-                        background: 'linear-gradient(to bottom, red 50%, white 50%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        border: '2px solid black',
-                    }}
-                >
-                    <span className='tiny5-regular'>Go</span>
-                </Button>
-            </Box>
+           <Typography sx={{color: 'white', fontSize: '32px'}}>
+         <span className='poppins-regular'> Welcome to PokeTrack</span>
+           </Typography>
+           <Typography sx={{color: 'white', fontSize: '24px', textAlign:"center"}}>
+           <span className='poppins-regular'> Here you can monitor pokemon card price data, create your collection,
+            <br/>
+             and share your progress with others.
+             </span> </Typography>
+           <Box sx={{display: 'flex', marginTop: '50px',}}>
+            <Link to='/search'>
+            <Button variant='contained' sx={{marginRight: '50px', width: '150px', height: '40px'}} >
+                Search
+            </Button>
+            </Link>
+            <Link  to='/collection'>
+            <Button variant='contained' sx={{ width: '150px', height: '40px'}}>
+                Collection
+            </Button>
+            </Link>
+           </Box>
         </Box>
     );
 }
