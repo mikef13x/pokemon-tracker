@@ -36,6 +36,7 @@ type Card {
   image: String!
   cardId: String!
   setId: String!
+  price: Int!
 }
 
 type Query {
