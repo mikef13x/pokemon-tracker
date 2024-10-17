@@ -155,13 +155,14 @@ const resolvers = {
       return updatedUser;
     },
 
-    addCard: async (_, { name, image, cardId, setId }) => {
+    addCard: async (_, { name, image, cardId, setId, price }) => {
       try {
         const newCard = new Card({
           name,
           image,
           cardId,
           setId,
+          price
         });
         await newCard.save();
         return newCard;

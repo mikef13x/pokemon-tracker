@@ -65,7 +65,7 @@ router.get('/sets', async (req, res) => {
 
 router.get('/seed', async (req, res) => {
   try {
-    const filePath = path.join(__dirname, '../seed/filteredSetsData.json');
+    const filePath = path.join(__dirname, '../seed/filteredSetsData-price.json');
     console.log(`Reading file from: ${filePath}`);
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const cards = JSON.parse(jsonData);
@@ -86,6 +86,7 @@ router.get('/seed', async (req, res) => {
           image: card.images.large,
           cardId: card.id,
           setId: card.setId,
+          price: card.price,
         });
         await newCard.save();
         addedCards.push(newCard);

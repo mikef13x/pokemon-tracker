@@ -14,12 +14,18 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
     // Step 3: Extract required attributes from nested arrays
     const filteredData = jsonData.flatMap(nestedArray => 
-        nestedArray.map(item => ({
-            id: item.id,
-            name: item.name,
-            images: item.images,
-            setId: item.set.id
-        }))
+        nestedArray.map(item => {
+            const tcgplayer = item.tcgplayer;
+            const prices = tcgplayer ? tcgplayer.prices : null;
+            const firstMarketPrice = prices ? Object.values(prices)[0] : null;
+            return {
+                id: item.id,
+                name: item.name,
+                images: item.images,
+                setId: item.set.id,
+                price: firstMarketPrice ? firstMarketPrice.market : null,
+            };
+        })
     );
 
     // Step 4: Write the new JSON object to a new file
