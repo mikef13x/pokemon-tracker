@@ -37,7 +37,7 @@ const mockData = [
     { id: 4, title: 'Mudkip 4', price: 553, image: Gyarados },
     { id: 5, title: 'Mudkip 5', price: 7547, image: Lisia },
     { id: 6, title: 'Mudkip 6', price: 77, image: Mewtwo},
-    { id: 7, title: 'Mudkip 7', price: 37, image: Vaporeon },
+    { id: 7, title: 'Gold Star Vaporeon', price: 37, image: Vaporeon },
     { id: 8, title: 'Mudkip 8', price: 4, image: Rayquaza },
     { id: 9, title: 'Mudkip 9', price: 843, image: Mudkip },
     { id: 10, title: 'Mudkip 10', price: 679, image: Rayquaza },
