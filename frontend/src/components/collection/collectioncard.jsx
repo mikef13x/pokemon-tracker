@@ -10,7 +10,7 @@ export default function CollectionCard({ title, price, image, onClick }) {
                             component="img"
                             image={image}
                             alt={title}
-                            sx={{ height: 'auto', width: '70%', objectFit: 'contain', margin: 'auto', marginTop: '30px' }}
+                            sx={{ height: 'auto', width: '70%', objectFit: 'contain', margin: 'auto', marginTop: '30px', borderRadius:'10px' }}
                         />
                     )}
                     <CardContent sx={{ textAlign: 'center', color: 'black', padding: '8px' }}>
