@@ -3,7 +3,7 @@ import { Card, CardMedia, Typography, ButtonBase, Box } from '@mui/material';
 export default function SearchResultCard2({ title, price, image, onClick }) {
     return (
         <ButtonBase onClick={onClick} sx={{ display: 'block', textAlign: 'initial', width: '115%' }}>
-            <Box sx={{ width: '350px', height: '270px', backgroundColor: 'rgb(255,255,255,0.8)', display: 'flex', alignItems: 'center', marginBottom: '10px', padding: '10px', backdropFilter: 'blur(20px)', borderRadius:'10px' }}>
+            <Box sx={{ width: '350px', height: '270px', backgroundColor: 'rgb(255,255,255,0.8)', display: 'flex', alignItems: 'center', marginBottom: '10px', padding: '10px', backdropFilter: 'blur(20px)', borderRadius:'10px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.8)' }}>
                 <Card sx={{borderRadius:"10px", width: '200px', height: 'auto', backgroundColor: 'transparent', boxShadow: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     {image && (
                         <CardMedia
