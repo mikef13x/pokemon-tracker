@@ -10,7 +10,7 @@ export default function SearchResultCard({ title, price, image, onClick }) {
                             component="img"
                             image={image}
                             alt={title}
-                            sx={{ height: '120px', width: '100%', objectFit: 'contain' }}
+                            sx={{ height: '120px', width: '100%', objectFit: 'contain', borderRadius:'8px' }}
                         />
                     )}
                 </Card>
