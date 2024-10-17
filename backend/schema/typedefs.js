@@ -36,7 +36,7 @@ type Card {
   image: String!
   cardId: String!
   setId: String!
-  price: Int
+  price: Float
 }
 
 type Query {
