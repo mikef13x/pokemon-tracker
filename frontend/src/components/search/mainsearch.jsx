@@ -1,5 +1,6 @@
-import { Box, Select, Grid, MenuItem, FormControl, TextField, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
-import SearchWrapper from "./searchwrapper";
+import { Box, Select, Grid, MenuItem, FormControl, IconButton, TextField, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
+import SearchWrapper2 from "./searchwrapper2";
+import SearchWrapper from './searchwrapper'
 import Mudkip from '../../assets/mudkipgoldstar.jpg';
 import Groudon from '../../assets/groudongoldstar.jpg'
 import Gyarados from '../../assets/gyaradosgoldstar.jpg'
@@ -8,6 +9,8 @@ import Mewtwo from '../../assets/mewtwogoldstar.jpg'
 import Vaporeon from '../../assets/vaporeongoldstar.jpg'
 import Rayquaza from '../../assets/rayponcho.jpg'
 import { useState } from "react";
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import ViewListIcon from '@mui/icons-material/ViewList';
 
 
 const mockData = [
@@ -243,7 +246,7 @@ export default function MainSearch() {
     const [showModal, setShowModal] = useState(false)
     const [currentModalData, setCurrentModalData] = useState(modalData)
     const [title, setTitle] = useState('All Pokemon Sets');
-    
+    const [isGridView, setIsGridView] = useState(true);
     const [isInitialState, setIsInitialState] = useState(true);
     
    
@@ -288,6 +291,17 @@ export default function MainSearch() {
         setCurrentModalData(modalData); // Reset to initial modal data
         setTitle('All Pokemon Sets')
     };
+
+    const toggleView = () => {
+        setIsGridView(!isGridView);
+    };
+
+
+
+
+
+
+
     return(
         <>
         <Paper sx={{paddingTop: '80px', height: '100px', backgroundColor: 'transparent', boxShadow: 'none'}}>
@@ -319,7 +333,7 @@ export default function MainSearch() {
             </Button>
            
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
-                <Box sx={{ display: 'flex', flexDirection: 'row',  gap: '10px', marginLeft: '80px'}}>
+                <Box sx={{ display: 'flex', flexDirection: 'row',  gap: '10px', marginLeft: '220px'}}>
                     <TextField
                         variant="outlined"
                         placeholder="Search for a card..."
@@ -344,6 +358,14 @@ export default function MainSearch() {
                     >
                         <span className='tiny5-regular'>Go</span>
                     </Button>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom:"18px"}}>
+                    <IconButton onClick={() => setIsGridView(true)} sx={{ marginRight: '5px' }}>
+                        <ViewModuleIcon sx={{ fontSize: 40 }} color={isGridView ? 'primary' : 'inherit'} />
+                    </IconButton>
+                    <IconButton onClick={() => setIsGridView(false)}>
+                        <ViewListIcon sx={{ fontSize: 40 }} color={!isGridView ? 'primary' : 'inherit'} />
+                    </IconButton>
                 </Box>
             </Box>
           
@@ -387,7 +409,7 @@ export default function MainSearch() {
     </Paper>
     <Typography sx={{textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white'}}>10 results</Typography>
     <Box sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto',  padding: '0px' }}>
-        <SearchWrapper sortedData={sortedData}/>
+    {isGridView ? <SearchWrapper sortedData={sortedData} /> : <SearchWrapper2 sortedData={sortedData} />}
         </Box>
         </>
     )
