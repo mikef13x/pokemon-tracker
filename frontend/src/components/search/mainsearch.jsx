@@ -251,6 +251,7 @@ export default function MainSearch() {
     const [isGridView, setIsGridView] = useState(true);
     const [isInitialState, setIsInitialState] = useState(true);
     const [fetchedSetData, setFetchedData] = useState([]);
+    const [selectedImage, setSelectedImage] = useState(null)
 
     const [getCardsBySet, { loading, data, error }] = useLazyQuery(GET_CARDS_BY_SET, {
         onCompleted: (data) => {
@@ -264,12 +265,14 @@ export default function MainSearch() {
 
     const handleSetClick = (event) => {
         const setId = event.currentTarget.getAttribute('data-setid');
+        const setImage = event.currentTarget.getAttribute('data-image');
         if (!setId) {
             console.error('setId is null or undefined');
             return;
         }
         console.log(`Running query for setId: ${setId}`);
         getCardsBySet({ variables: { setId } });
+        setSelectedImage(setImage);
         handleModalClose();
     };
 
@@ -338,19 +341,23 @@ export default function MainSearch() {
             <MenuItem value="priceASC">Lowest Price</MenuItem>
         </Select>
     </FormControl> 
+    {selectedImage ? (
+    <Button onClick={handleModalOpen} sx={{ padding: 0, minWidth: 'auto', marginLeft: '20px', marginTop: '20px' }}>
+        <img src={selectedImage} alt="Selected Set" style={{ width: '120px', height: '55px', objectFit: 'contain'  }} />
+    </Button>
+) : (
     <Button onClick={handleModalOpen} color="primary" sx={{ 
-                backgroundColor: 'rgba(255,255,255)',
-                color: 'black', 
-                marginLeft: '20px', 
-                width: '120px', 
-                height: '55px', 
-              
-                backdropFilter: 'blur(5px)',
-                marginTop: '20px'
-            }}>
-              <span className='tiny5-regular'>Search by Set</span> 
-            </Button>
-           
+        backgroundColor: 'rgba(255,255,255)',
+        color: 'black', 
+        marginLeft: '20px', 
+        width: '120px', 
+        height: '55px', 
+        backdropFilter: 'blur(5px)',
+        marginTop: '20px'
+    }}>
+        <span className='tiny5-regular'>Search by Set</span> 
+    </Button>
+)}
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row',  gap: '10px', marginLeft: '220px'}}>
                     <TextField
@@ -441,6 +448,7 @@ export default function MainSearch() {
             }
         }}
         data-setid={item.setId}
+        data-image={item.image}
 >
                                         <img src={item.image} alt={item.name} style={{ width: '130px', height: '60px', objectFit: 'contain' }} />
                                         <Typography variant="button" sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none'}}>
