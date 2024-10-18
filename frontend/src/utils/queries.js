@@ -76,6 +76,7 @@ export const GET_CARDS = gql`
       image
       cardId
       setId
+      price
     }
   }
 `;
@@ -88,6 +89,7 @@ export const GET_CARD = gql`
       image
       cardId
       setId
+      price
     }
   }
 `;
@@ -100,6 +102,7 @@ export const GET_CARDS_BY_NAME = gql`
       cardId
       image
       setId
+      price
     }
   }
 `;
@@ -112,6 +115,7 @@ export const GET_CARDS_BY_SET = gql`
       image
       cardId
       setId
+      price
     }
   }
 `;
