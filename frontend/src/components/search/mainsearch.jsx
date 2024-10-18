@@ -1142,7 +1142,7 @@ export default function MainSearch() {
   };
 
   const handleSearchButtonClick = () => {
-    console.log(searchInput);
+    setSelectedImage(null)
     getCardsByName({ variables: { name: searchInput } });
   };
 
