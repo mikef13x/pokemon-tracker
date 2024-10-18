@@ -1,36 +1,38 @@
-import { Box, Select, Grid, MenuItem, FormControl, IconButton, TextField, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
+import { Box, Select, Grid, MenuItem, CircularProgress, FormControl, IconButton, TextField, InputLabel, Typography, Paper, Dialog,DialogActions, DialogContent, DialogTitle, Button} from '@mui/material';
 import SearchWrapper2 from "./searchwrapper2";
 import SearchWrapper from './searchwrapper'
-import Mudkip from '../../assets/mudkipgoldstar.jpg';
-import Groudon from '../../assets/groudongoldstar.jpg'
-import Gyarados from '../../assets/gyaradosgoldstar.jpg'
-import Lisia from '../../assets/lisiapokemon.jpeg'
-import Mewtwo from '../../assets/mewtwogoldstar.jpg'
-import Vaporeon from '../../assets/vaporeongoldstar.jpg'
-import Rayquaza from '../../assets/rayponcho.jpg'
-import { useState } from "react";
+// import Mudkip from '../../assets/mudkipgoldstar.jpg';
+// import Groudon from '../../assets/groudongoldstar.jpg'
+// import Gyarados from '../../assets/gyaradosgoldstar.jpg'
+// import Lisia from '../../assets/lisiapokemon.jpeg'
+// import Mewtwo from '../../assets/mewtwogoldstar.jpg'
+// import Vaporeon from '../../assets/vaporeongoldstar.jpg'
+// import Rayquaza from '../../assets/rayponcho.jpg'
+import { useState} from "react";
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
+import { useLazyQuery } from '@apollo/client'
+import {GET_CARDS_BY_SET} from '../../utils/queries'
 
 
-const mockData = [
-    { id: 1, title: 'Mudkip 1', price: 200, image: Mudkip },
-    { id: 2, title: 'Mudkip 2', price: 142, image: Rayquaza },
-    { id: 3, title: 'Mudkip 3', price: 5325, image: Groudon },
-    { id: 4, title: 'Mudkip 4', price: 553, image: Gyarados },
-    { id: 5, title: 'Mudkip 5', price: 7547, image: Lisia },
-    { id: 6, title: 'Mudkip 6', price: 77, image: Mewtwo},
-    { id: 7, title: 'Gold Star Vaporeon', price: 37, image: Vaporeon },
-    { id: 8, title: 'Mudkip 8', price: 4, image: Rayquaza },
-    { id: 9, title: 'Mudkip 9', price: 843, image: Mudkip },
-    { id: 10, title: 'Mudkip 10', price: 679, image: Rayquaza },
-    { id: 11, title: 'Mudkip 11', price: 76064, image: Groudon },
-    { id: 12, title: 'Mudkip 12', price: 4854, image: Gyarados },
-    { id: 13, title: 'Mudkip 13', price: 45833, image: Lisia },
-    { id: 14, title: 'Mudkip 14', price: 4584, image: Mewtwo },
-    { id: 15, title: 'Mudkip 15', price: 4584, image: Vaporeon },
-    { id: 16, title: 'Mudkip 16', price: 45832, image: Rayquaza },
-];
+// const mockData = [
+//     { id: 1, title: 'Mudkip 1', price: 200, image: Mudkip },
+//     { id: 2, title: 'Mudkip 2', price: 142, image: Rayquaza },
+//     { id: 3, title: 'Mudkip 3', price: 5325, image: Groudon },
+//     { id: 4, title: 'Mudkip 4', price: 553, image: Gyarados },
+//     { id: 5, title: 'Mudkip 5', price: 7547, image: Lisia },
+//     { id: 6, title: 'Mudkip 6', price: 77, image: Mewtwo},
+//     { id: 7, title: 'Gold Star Vaporeon', price: 37, image: Vaporeon },
+//     { id: 8, title: 'Mudkip 8', price: 4, image: Rayquaza },
+//     { id: 9, title: 'Mudkip 9', price: 843, image: Mudkip },
+//     { id: 10, title: 'Mudkip 10', price: 679, image: Rayquaza },
+//     { id: 11, title: 'Mudkip 11', price: 76064, image: Groudon },
+//     { id: 12, title: 'Mudkip 12', price: 4854, image: Gyarados },
+//     { id: 13, title: 'Mudkip 13', price: 45833, image: Lisia },
+//     { id: 14, title: 'Mudkip 14', price: 4584, image: Mewtwo },
+//     { id: 15, title: 'Mudkip 15', price: 4584, image: Vaporeon },
+//     { id: 16, title: 'Mudkip 16', price: 45832, image: Rayquaza },
+// ];
 
 
 const modalData = [
@@ -71,26 +73,26 @@ const WOTCData = [
     
 ];
 const EXData = [
-    { id: 1, setId: "ex1", name: 'Ruby & Sapphire', image: "https://images.pokemontcg.io/ex1/logo.png", imageName: Mewtwo },
-    { id: 2, setId: "ex2", name: 'Sandstorm', image: "https://images.pokemontcg.io/ex2/logo.png", imageName: Mewtwo },
-    { id: 3, setId: "ex3", name: 'Dragon', image: "https://images.pokemontcg.io/ex3/logo.png", imageName: Mewtwo },
-    { id: 4, setId: "ex4", name: 'Team Magma vs Team Aqua', image: "https://images.pokemontcg.io/ex4/logo.png", imageName: Mewtwo },
-    { id: 5, setId: "ex5", name: 'Hidden Legends', image: "https://images.pokemontcg.io/ex5/logo.png", imageName: Mewtwo },
-    { id: 6, setId: "ex6", name: 'FireRed & LeafGreen', image: "https://images.pokemontcg.io/ex6/logo.png", imageName: Mewtwo },
-    { id: 7, setId: "ex7", name: 'Team Rocket Returns', image: "https://images.pokemontcg.io/ex7/logo.png", imageName: Lisia },
-    { id: 8, setId: "ex8", name: 'Deoxys', image: "https://images.pokemontcg.io/ex8/logo.png", imageName: Mudkip },
-    { id: 9, setId: "ex9", name: 'Emerald', image: "https://images.pokemontcg.io/ex9/logo.png", imageName: Rayquaza },
-    { id: 10, setId: "ex10", name: 'Unseen Forces', image: "https://images.pokemontcg.io/ex10/logo.png", imageName: Vaporeon },
-    { id: 11, setId: "ex11", name: 'Delta Species', image: "https://images.pokemontcg.io/ex11/logo.png", imageName: Mewtwo },
-    { id: 12, setId: "ex12", name: 'Legend Maker', image: "https://images.pokemontcg.io/ex12/logo.png", imageName: Lisia },
-    { id: 13, setId: "ex13", name: 'Holon Phantoms', image: "https://images.pokemontcg.io/ex13/logo.png", imageName: Gyarados },
-    { id: 14, setId: "ex14", name: 'Crystal Guardians', image: "https://images.pokemontcg.io/ex14/logo.png", imageName: Groudon },
-    { id: 15, setId: "ex15", name: 'Dragon Frontiers', image: "https://images.pokemontcg.io/ex15/logo.png", imageName: Rayquaza },
-    { id: 16, setId: "ex16", name: 'Power Keepers', image: "https://images.pokemontcg.io/ex16/logo.png", imageName: Mudkip },
+    { id: 1, setId: "ex1", name: 'Ruby & Sapphire', image: "https://images.pokemontcg.io/ex1/logo.png"  },
+    { id: 2, setId: "ex2", name: 'Sandstorm', image: "https://images.pokemontcg.io/ex2/logo.png"  },
+    { id: 3, setId: "ex3", name: 'Dragon', image: "https://images.pokemontcg.io/ex3/logo.png"  },
+    { id: 4, setId: "ex4", name: 'Team Magma vs Team Aqua', image: "https://images.pokemontcg.io/ex4/logo.png"  },
+    { id: 5, setId: "ex5", name: 'Hidden Legends', image: "https://images.pokemontcg.io/ex5/logo.png" },
+    { id: 6, setId: "ex6", name: 'FireRed & LeafGreen', image: "https://images.pokemontcg.io/ex6/logo.png" },
+    { id: 7, setId: "ex7", name: 'Team Rocket Returns', image: "https://images.pokemontcg.io/ex7/logo.png" },
+    { id: 8, setId: "ex8", name: 'Deoxys', image: "https://images.pokemontcg.io/ex8/logo.png" },
+    { id: 9, setId: "ex9", name: 'Emerald', image: "https://images.pokemontcg.io/ex9/logo.png" },
+    { id: 10, setId: "ex10", name: 'Unseen Forces', image: "https://images.pokemontcg.io/ex10/logo.png"  },
+    { id: 11, setId: "ex11", name: 'Delta Species', image: "https://images.pokemontcg.io/ex11/logo.png" },
+    { id: 12, setId: "ex12", name: 'Legend Maker', image: "https://images.pokemontcg.io/ex12/logo.png"  },
+    { id: 13, setId: "ex13", name: 'Holon Phantoms', image: "https://images.pokemontcg.io/ex13/logo.png"},
+    { id: 14, setId: "ex14", name: 'Crystal Guardians', image: "https://images.pokemontcg.io/ex14/logo.png" },
+    { id: 15, setId: "ex15", name: 'Dragon Frontiers', image: "https://images.pokemontcg.io/ex15/logo.png"},
+    { id: 16, setId: "ex16", name: 'Power Keepers', image: "https://images.pokemontcg.io/ex16/logo.png"  },
 ];
 
 const DPData = [
-    { id: 1, setId: "dp1", name: 'Diamond & Pearl', image: "https://images.pokemontcg.io/dp1/logo.png" },
+    { id: 1, setId: "dp1", name: 'Diamond & Pearl Base Set', image: "https://images.pokemontcg.io/dp1/logo.png" },
     { id: 2, setId: "dp2", name: 'Mysterious Treasures', image: "https://images.pokemontcg.io/dp2/logo.png" },
     { id: 3, setId: "dp3", name: 'Secret Wonders', image: "https://images.pokemontcg.io/dp3/logo.png" },
     { id: 4, setId: "dp4", name: 'Great Encounters', image: "https://images.pokemontcg.io/dp4/logo.png" },
@@ -114,14 +116,14 @@ const POPData = [
 ];
 
 const PlatinumData = [
-    { id: 1, setId: "pl1", name: 'Platinum', image: "https://images.pokemontcg.io/pl1/logo.png" },
+    { id: 1, setId: "pl1", name: 'Platinum Base Set', image: "https://images.pokemontcg.io/pl1/logo.png" },
     { id: 2, setId: "pl2", name: 'Rising Rivals', image: "https://images.pokemontcg.io/pl2/logo.png" },
     { id: 3, setId: "pl3", name: 'Supreme Victors', image: "https://images.pokemontcg.io/pl3/logo.png"},
     { id: 4, setId: "pl4", name: 'Arceus', image: "https://images.pokemontcg.io/pl4/logo.png" },
 ];
 
 const HGSSData = [
-    { id: 1, setId: "hgss1", name: 'HeartGold & SoulSilver', image: "https://images.pokemontcg.io/hgss1/logo.png" },
+    { id: 1, setId: "hgss1", name: 'HeartGold & SoulSilver Base Set', image: "https://images.pokemontcg.io/hgss1/logo.png" },
     { id: 2, setId: "hgss2", name: 'Unleashed', image: "https://images.pokemontcg.io/hgss2/logo.png" },
     { id: 3, setId: "hgss3", name: 'Undaunted', image: "https://images.pokemontcg.io/hgss3/logo.png" },
     { id: 4, setId: "hgss4", name: 'Triumphant', image: "https://images.pokemontcg.io/hgss4/logo.png" },
@@ -129,7 +131,7 @@ const HGSSData = [
 ];
 
 const BWData = [
-    { id: 1, setId: "bw1", name: 'Black & White', image: "https://images.pokemontcg.io/bw1/logo.png" },
+    { id: 1, setId: "bw1", name: 'Black & White Base Set', image: "https://images.pokemontcg.io/bw1/logo.png" },
     { id: 2, setId: "bw2", name: 'Emerging Powers', image: "https://images.pokemontcg.io/bw2/logo.png" },
     { id: 3, setId: "bw3", name: 'Noble Victories', image: "https://images.pokemontcg.io/bw3/logo.png" },
     { id: 4, setId: "bw4", name: 'Next Destinies', image: "https://images.pokemontcg.io/bw4/logo.png" },
@@ -144,7 +146,7 @@ const BWData = [
 
 const XYData = [
     { id: 1, setId: "xy0", name: 'Kalos Starter Set', image: "https://images.pokemontcg.io/xy0/logo.png" },
-    { id: 2, setId: "xy1", name: 'XY', image: "https://images.pokemontcg.io/xy1/logo.png" },
+    { id: 2, setId: "xy1", name: 'XY Base Set', image: "https://images.pokemontcg.io/xy1/logo.png" },
     { id: 3, setId: "xy2", name: 'Flashfire', image: "https://images.pokemontcg.io/xy2/logo.png" },
     { id: 4, setId: "xy3", name: 'Furious Fists', image: "https://images.pokemontcg.io/xy3/logo.png" },
     { id: 5, setId: "xy4", name: 'Phantom Forces', image: "https://images.pokemontcg.io/xy4/logo.png" },
@@ -161,7 +163,7 @@ const XYData = [
 ];
 
 const SMData = [
-    { id: 1, setId: "sm1", name: 'Sun & Moon', image: "https://images.pokemontcg.io/sm1/logo.png" },
+    { id: 1, setId: "sm1", name: 'Sun & Moon Base Set', image: "https://images.pokemontcg.io/sm1/logo.png" },
     { id: 2, setId: "sm2", name: 'Guardians Rising', image: "https://images.pokemontcg.io/sm2/logo.png" },
     { id: 3, setId: "sm3", name: 'Burning Shadows', image: "https://images.pokemontcg.io/sm3/logo.png" },
     { id: 4, setId: "sm35", name: 'Shining Legends', image: "https://images.pokemontcg.io/sm35/logo.png" },
@@ -180,7 +182,7 @@ const SMData = [
 ];
 
 const SSData = [
-    { id: 1, setId: "swsh1", name: 'Sword & Shield', image: "https://images.pokemontcg.io/swsh1/logo.png" },
+    { id: 1, setId: "swsh1", name: 'Sword & Shield Base Set', image: "https://images.pokemontcg.io/swsh1/logo.png" },
     { id: 2, setId: "swsh2", name: 'Rebel Clash', image: "https://images.pokemontcg.io/swsh2/logo.png" },
     { id: 3, setId: "swsh3", name: 'Darkness Ablaze', image: "https://images.pokemontcg.io/swsh3/logo.png" },
     { id: 4, setId: "swsh35", name: 'Champion\'s Path', image: "https://images.pokemontcg.io/swsh35/logo.png" },
@@ -248,9 +250,31 @@ export default function MainSearch() {
     const [title, setTitle] = useState('All Pokemon Sets');
     const [isGridView, setIsGridView] = useState(true);
     const [isInitialState, setIsInitialState] = useState(true);
-    
-   
-    const sortedData = [...mockData].sort((a, b) => {
+    const [fetchedSetData, setFetchedData] = useState([]);
+
+    const [getCardsBySet, { loading, data, error }] = useLazyQuery(GET_CARDS_BY_SET, {
+        onCompleted: (data) => {
+            console.log('Query completed:', data);
+            setFetchedData(data.getCardsBySet); // Update the state with the fetched data
+        },
+        onError: (error) => {
+            console.error('Error fetching data:', error);
+        }
+    });
+
+    const handleSetClick = (event) => {
+        const setId = event.currentTarget.getAttribute('data-setid');
+        if (!setId) {
+            console.error('setId is null or undefined');
+            return;
+        }
+        console.log(`Running query for setId: ${setId}`);
+        getCardsBySet({ variables: { setId } });
+        handleModalClose();
+    };
+
+
+    const sortedData = fetchedSetData.slice().sort((a, b) => {
         if (sortOrder === 'asc') {
             return a.id - b.id;
         } else if (sortOrder === 'dsc') {
@@ -263,7 +287,6 @@ export default function MainSearch() {
             return 0;
         }
     });
-    
     const handleSortChange = (event) => {
         setSortOrder(event.target.value);
     };
@@ -292,13 +315,9 @@ export default function MainSearch() {
         setTitle('All Pokemon Sets')
     };
 
-    // const toggleView = () => {
-    //     setIsGridView(!isGridView);
-    // };
 
 
-
-
+   
 
 
 
@@ -382,12 +401,46 @@ export default function MainSearch() {
         </DialogTitle>
     </Box>
             <DialogContent>
+            {loading && <CircularProgress />}
+                {error && <Typography color="error">Error: {error.message}</Typography>}
+               
             <Grid container spacing={2}>
                             {currentModalData.map((item) => (
                                 <Grid item xs={12} sm={6} md={3} key={item.id}>
                                   <Button
     sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none' }}
-    onClick={() => item.name === 'WOTC' ? handleButtonClick(WOTCData, 'WOTC Sets') : item.name === 'EX Series' ? handleButtonClick(EXData, 'EX Series Sets') : item.name === "Diamond & Pearl" ? handleButtonClick(DPData, 'Diamond & Pearl') : item.name === "POP Series" ? handleButtonClick(POPData, 'POP Series') : item.name === 'Platinum'? handleButtonClick(PlatinumData, 'Platinum') : item.name === 'HeartGold & SoulSilver' ? handleButtonClick(HGSSData, "HeartGold & SoulSilver") : item.name === "Black & White" ? handleButtonClick(BWData, "Black & White") : item.name === "XY" ? handleButtonClick(XYData, "XY") : item.name === "Sun & Moon" ? handleButtonClick(SMData,"Sun & Moon") : item.name === "Sword & Shield" ? handleButtonClick(SSData, "Sword & Shield") : item.name === "Scarlet & Violet" ? handleButtonClick(SVData, "Scarlet & Violet") : item.name === "Pokemon Promos" ? handleButtonClick(PromoData, "Pokemon Promos") : item.name === "Misc. Sets" ? handleButtonClick(OtherData, "Miscellaneous Sets") :  null}
+    onClick={(event) => {
+            if (item.name === 'WOTC') {
+                handleButtonClick(WOTCData, 'WOTC Sets');
+            } else if (item.name === 'EX Series') {
+                handleButtonClick(EXData, 'EX Series Sets');
+            } else if (item.name === 'Diamond & Pearl') {
+                handleButtonClick(DPData, 'Diamond & Pearl');
+            } else if (item.name === 'POP Series') {
+                handleButtonClick(POPData, 'POP Series');
+            } else if (item.name === 'Platinum') {
+                handleButtonClick(PlatinumData, 'Platinum');
+            } else if (item.name === 'HeartGold & SoulSilver') {
+                handleButtonClick(HGSSData, 'HeartGold & SoulSilver');
+            } else if (item.name === 'Black & White') {
+                handleButtonClick(BWData, 'Black & White');
+            } else if (item.name === 'XY') {
+                handleButtonClick(XYData, 'XY');
+            } else if (item.name === 'Sun & Moon') {
+                handleButtonClick(SMData, 'Sun & Moon');
+            } else if (item.name === 'Sword & Shield') {
+                handleButtonClick(SSData, 'Sword & Shield');
+            } else if (item.name === 'Scarlet & Violet') {
+                handleButtonClick(SVData, 'Scarlet & Violet');
+            } else if (item.name === 'Pokemon Promos') {
+                handleButtonClick(PromoData, 'Pokemon Promos');
+            } else if (item.name === 'Misc. Sets') {
+                handleButtonClick(OtherData, 'Miscellaneous Sets');
+            } else {
+                handleSetClick(event);
+            }
+        }}
+        data-setid={item.setId}
 >
                                         <img src={item.image} alt={item.name} style={{ width: '130px', height: '60px', objectFit: 'contain' }} />
                                         <Typography variant="button" sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none'}}>
@@ -397,6 +450,7 @@ export default function MainSearch() {
                                 </Grid>
             ))}
         </Grid>
+      
             </DialogContent>
             <DialogActions sx={{justifyContent: 'center'}}>
             
@@ -407,9 +461,9 @@ export default function MainSearch() {
         </Dialog>
 
     </Paper>
-    <Typography sx={{textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white'}}>10 results</Typography>
+    <Typography sx={{textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white'}}>{sortedData.length} results</Typography>
     <Box sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto',  padding: '0px' }}>
-    {isGridView ? <SearchWrapper2 sortedData={sortedData} /> : <SearchWrapper sortedData={sortedData} />}
+    {isGridView ? <SearchWrapper2 sortedData={sortedData}  /> : <SearchWrapper sortedData={sortedData} />}
         </Box>
         </>
     )
