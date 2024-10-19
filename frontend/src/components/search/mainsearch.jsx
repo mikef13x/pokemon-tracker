@@ -1473,42 +1473,44 @@ export default function MainSearch() {
             ) : (
               <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
             )}
-           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
-           <IconButton
-                onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
-                disabled={currentPage <= 10}
-            >
-                <ArrowBack />
-                </IconButton>
-              <Pagination
-                count={Math.ceil(sortedData.length / itemsPerPage)}
-                page={currentPage}
-                onChange={handlePageChange}
-                color="primary"
-                renderItem={(item) => (
-                  <PaginationItem
-                  {...item}
-                  onClick={(event) => {
-                    if (item.type === 'first') {
-                        handlePageChange(event, Math.max(currentPage - 10, 1));
-                    } else if (item.type === 'last') {
-                        handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
-                    } else {
-                        handlePageChange(event, item.page);
-                    }
-                }}
-                />
-                
-                )}
-                
-                
-              />
-              <IconButton 
-                onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
-                disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
-            ><ArrowForward />
-            </IconButton>
-            </Box>
+
+
+{sortedData.length > 30 && (
+  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
+    <IconButton
+      onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
+      disabled={currentPage <= 10}
+    >
+      <ArrowBack />
+    </IconButton>
+    <Pagination
+      count={Math.ceil(sortedData.length / itemsPerPage)}
+      page={currentPage}
+      onChange={handlePageChange}
+      color="primary"
+      renderItem={(item) => (
+        <PaginationItem
+          {...item}
+          onClick={(event) => {
+            if (item.type === 'first') {
+              handlePageChange(event, Math.max(currentPage - 10, 1));
+            } else if (item.type === 'last') {
+              handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
+            } else {
+              handlePageChange(event, item.page);
+            }
+          }}
+        />
+      )}
+    />
+    <IconButton
+      onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
+      disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
+    >
+      <ArrowForward />
+    </IconButton>
+  </Box>
+)}
           </>
         )}
       </Box>
