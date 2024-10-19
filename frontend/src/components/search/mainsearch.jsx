@@ -15,9 +15,13 @@ import {
   DialogContent,
   DialogTitle,
   Button,
+  Pagination,
+  PaginationItem
+
 } from '@mui/material';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
+import { useNavigate } from 'react-router-dom';
 // import Mudkip from '../../assets/mudkipgoldstar.jpg';
 // import Groudon from '../../assets/groudongoldstar.jpg'
 // import Gyarados from '../../assets/gyaradosgoldstar.jpg'
@@ -30,6 +34,8 @@ import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import { useLazyQuery } from '@apollo/client';
 import { GET_CARDS_BY_SET, GET_CARDS_BY_NAME } from '../../utils/queries';
+
+import { ArrowForward, ArrowBack } from '@mui/icons-material';
 
 // const mockData = [
 //     { id: 1, title: 'Mudkip 1', price: 200, image: Mudkip },
@@ -1057,7 +1063,13 @@ export default function MainSearch() {
   const [isInitialState, setIsInitialState] = useState(true);
   const [fetchedSetData, setFetchedData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [searchInput, setSearchInput] = useState('');
+
+  const [searchValue, setSearchValue] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchInitiated, setSearchInitiated] = useState(false);
+  const navigate = useNavigate();
+
+  const itemsPerPage = 30;
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
     GET_CARDS_BY_SET,
@@ -1137,14 +1149,35 @@ export default function MainSearch() {
     setTitle('All Pokemon Sets');
   };
 
-  const handleInputChange = (event) => {
-    setSearchInput(event.target.value);
-  };
 
   const handleSearchButtonClick = () => {
-    setSelectedImage(null)
-    getCardsByName({ variables: { name: searchInput } });
+    setSearchInitiated(true)
+    setSelectedImage(null);
+    getCardsByName({ variables: { name: searchValue } }).finally(() => {
+
+    });
   };
+
+  const handleCardClick = (card) => {
+    navigate(`/market/${card.cardId}`, { state: card });
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleSearchKeyDown = (event) => {
+    if (event.key === 'Enter' && searchValue.trim().length > 0) {
+      handleSearchButtonClick();
+      console.log('keydown search initated')
+    }
+  };
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
+
+  const paginatedData = sortedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <>
@@ -1226,7 +1259,8 @@ export default function MainSearch() {
             <TextField
               variant="outlined"
               placeholder="Search for a card..."
-              onChange={handleInputChange}
+              onChange={handleSearchChange}
+              onKeyDown={handleSearchKeyDown}
               sx={{
                 marginBottom: '20px',
                 width: '40vw',
@@ -1409,7 +1443,7 @@ export default function MainSearch() {
           color: 'white',
         }}
       >
-        {sortedData.length} results
+        {searchInitiated ? `${sortedData.length} results` : 'Start a search to begin'}
       </Typography>
       <Box
         sx={{
@@ -1421,10 +1455,61 @@ export default function MainSearch() {
           padding: '0px',
         }}
       >
-        {isGridView ? (
-          <SearchWrapper2 sortedData={sortedData} />
+        {searchInitiated && sortedData.length === 0 ? (
+          <Typography
+            sx={{
+              textAlign: 'center',
+              fontSize: '24px',
+              padding: '20px',
+              color: 'white',
+            }}
+          >
+
+          </Typography>
         ) : (
-          <SearchWrapper sortedData={sortedData} />
+          <>
+            {isGridView ? (
+              <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+            ) : (
+              <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
+            )}
+           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
+           <IconButton
+                onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
+                disabled={currentPage <= 10}
+            >
+                <ArrowBack />
+                </IconButton>
+              <Pagination
+                count={Math.ceil(sortedData.length / itemsPerPage)}
+                page={currentPage}
+                onChange={handlePageChange}
+                color="primary"
+                renderItem={(item) => (
+                  <PaginationItem
+                  {...item}
+                  onClick={(event) => {
+                    if (item.type === 'first') {
+                        handlePageChange(event, Math.max(currentPage - 10, 1));
+                    } else if (item.type === 'last') {
+                        handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
+                    } else {
+                        handlePageChange(event, item.page);
+                    }
+                }}
+                />
+                
+                )}
+                
+                
+              />
+              <IconButton 
+                onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
+                disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
+            ><ArrowForward />
+            </IconButton>
+            </Box>
+          </>
         )}
       </Box>
     </>
