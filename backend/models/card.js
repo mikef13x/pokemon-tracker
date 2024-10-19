@@ -5,6 +5,8 @@ const cardSchema = new Schema({
   image: { type: String, required: true },
   cardId: { type: String, required: true, unique: true },
   setId: { type: String },
+  setName: {type: String},
+  releaseDate: {type: Date},
   price: {type: Number},
 });
 

@@ -36,6 +36,8 @@ type Card {
   image: String!
   cardId: String!
   setId: String!
+  setName: String
+  releaseDate: String
   price: Float
 }
 
@@ -57,7 +59,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, price: String): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
