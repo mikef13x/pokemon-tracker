@@ -9,11 +9,9 @@ export default function MarketPage() {
 
     return (
         <div>
-            {card ? (
+            
                 <MarketWrapper name={card.name} price={card.price} image={card.image} cardId={cardId} />
-            ) : (
-                <p>No card selected</p>
-            )}
+           
         </div>
     );
 }

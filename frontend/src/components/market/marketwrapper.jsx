@@ -1,10 +1,14 @@
 import { Box } from '@mui/material';
 import MarketCard from './marketCard';
 
+
 export default function MarketWrapper({ name, price, image, cardId }) {
 
     const getCardId = (cardId) => {
         return cardId.split('-')[1];
+    };
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
     };
 
     return (
@@ -20,7 +24,7 @@ export default function MarketWrapper({ name, price, image, cardId }) {
                     marginTop: '100px', 
                     backgroundColor: 'white' 
                 }}>
-                    <MarketCard name={name} price={price} image={image} cardId={getCardId(cardId)} />
+                    <MarketCard name={name} price={formatPrice(price)}  image={image} cardId={getCardId(cardId)} />
                 </Box>
             </Box>
         </>
