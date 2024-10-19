@@ -37,7 +37,9 @@ const resolvers = {
 
     getCollection: async (_, { collectionId }) => {
       try {
-        const oneCollection = await Collection.findById(collectionId);
+        const oneCollection = await Collection.findById(collectionId).populate(
+          'cards'
+        );
         return oneCollection;
       } catch (error) {
         console.error('error getting collection', error);
@@ -47,7 +49,9 @@ const resolvers = {
 
     getUserCollections: async (_, { userId }) => {
       try {
-        const userCollections = await Collection.find({ userId: userId });
+        const userCollections = await Collection.find({
+          userId: userId,
+        }).populate('cards');
         return userCollections;
       } catch (error) {
         console.error('error getting user collections', error);
@@ -60,7 +64,7 @@ const resolvers = {
         const userCollections = await Collection.findOne({
           userId: userId,
           isMain: true,
-        });
+        }).populate('cards');
         return userCollections;
       } catch (error) {
         console.error('error getting user main collection', error);
@@ -162,7 +166,7 @@ const resolvers = {
           image,
           cardId,
           setId,
-          price
+          price,
         });
         await newCard.save();
         return newCard;

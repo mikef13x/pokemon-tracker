@@ -21,13 +21,13 @@ type Collection {
   _id: ID!
   collectionName: String!
   userId: ID!
-  cards: [ID!]
+  cards: [Card]
   isMain: Boolean!
 }
 
 input UpdateCollectionInput {
-  collectionName: String!
-  cards: [ID!]
+  collectionName: String
+  cards: [ID]
 }
 
 type Card {
