@@ -26,7 +26,9 @@ export const GET_COLLECTIONS = gql`
       _id
       collectionName
       userId
-      cards
+      cards {
+        _id
+      }
       isMain
     }
   }
@@ -38,8 +40,15 @@ export const GET_COLLECTION = gql`
       _id
       collectionName
       userId
-      cards
       isMain
+      cards {
+        _id
+        name
+        image
+        cardId
+        setId
+        price
+      }
     }
   }
 `;
@@ -50,8 +59,15 @@ export const GET_USER_COLLECTIONS = gql`
       _id
       collectionName
       userId
-      cards
       isMain
+      cards {
+        _id
+        name
+        image
+        cardId
+        setId
+        price
+      }
     }
   }
 `;
@@ -62,8 +78,15 @@ export const GET_USER_MAIN_COLLECTION = gql`
       _id
       collectionName
       userId
-      cards
       isMain
+      cards {
+        _id
+        name
+        image
+        cardId
+        setId
+        price
+      }
     }
   }
 `;
