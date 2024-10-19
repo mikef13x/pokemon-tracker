@@ -85,7 +85,10 @@ router.get('/seed', async (req, res) => {
           name: card.name,
           image: card.images.large,
           cardId: card.id,
+          cardType: card.cardType,
           setId: card.setId,
+          setName: card.setName,
+          releaseDate: card.releaseDate,
           price: card.price,
         });
         await newCard.save();

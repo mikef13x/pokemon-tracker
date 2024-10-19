@@ -7,6 +7,7 @@ const cardSchema = new Schema({
   setId: { type: String },
   setName: {type: String},
   releaseDate: {type: Date},
+  cardType: {type: String},
   price: {type: Number},
 });
 
