@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
+import { useNavigate } from 'react-router-dom';
 // import Mudkip from '../../assets/mudkipgoldstar.jpg';
 // import Groudon from '../../assets/groudongoldstar.jpg'
 // import Gyarados from '../../assets/gyaradosgoldstar.jpg'
@@ -1058,6 +1059,7 @@ export default function MainSearch() {
   const [fetchedSetData, setFetchedData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
   const [searchInput, setSearchInput] = useState('');
+  const navigate = useNavigate();
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
     GET_CARDS_BY_SET,
@@ -1145,6 +1147,12 @@ export default function MainSearch() {
     setSelectedImage(null)
     getCardsByName({ variables: { name: searchInput } });
   };
+
+  const handleCardClick = (card) => {
+    navigate(`/market/${card.cardId}`, { state: card });
+};
+
+
 
   return (
     <>
@@ -1422,9 +1430,9 @@ export default function MainSearch() {
         }}
       >
         {isGridView ? (
-          <SearchWrapper2 sortedData={sortedData} />
+          <SearchWrapper2 sortedData={sortedData} handleCardClick={handleCardClick} />
         ) : (
-          <SearchWrapper sortedData={sortedData} />
+          <SearchWrapper sortedData={sortedData} handleCardClick={handleCardClick} />
         )}
       </Box>
     </>

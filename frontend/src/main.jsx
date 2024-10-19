@@ -7,6 +7,7 @@ import SignUp from './pages/register';
 import ErrorPage from './pages/errorpage'
 import CollectionPage from './pages/collection';
 import SearchPage from './pages/searchresultspage';
+import MarketPage from './pages/marketpage';
 
 import App from './app';
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <SearchPage/>
+      },
+      {
+        path: '/market/:cardId',
+        element: <MarketPage/>
       }
     
   
