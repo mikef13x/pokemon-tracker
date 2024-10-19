@@ -120,7 +120,7 @@ export default function MarketChart() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 boxSizing: 'border-box',
-                border: '4px solid black',
+                // border: '4px solid black',
                 marginLeft: '50px',
                 height: '80%'
             }}>
