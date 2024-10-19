@@ -46,7 +46,10 @@ export const GET_COLLECTION = gql`
         name
         image
         cardId
+        cardType
+        releaseDate
         setId
+        setName
         price
       }
     }
@@ -65,7 +68,10 @@ export const GET_USER_COLLECTIONS = gql`
         name
         image
         cardId
+        cardType
+        releaseDate
         setId
+        setName
         price
       }
     }
@@ -84,7 +90,10 @@ export const GET_USER_MAIN_COLLECTION = gql`
         name
         image
         cardId
+        cardType
+        releaseDate
         setId
+        setName
         price
       }
     }
@@ -98,7 +107,10 @@ export const GET_CARDS = gql`
       name
       image
       cardId
+      cardType
+      releaseDate
       setId
+      setName
       price
     }
   }
@@ -111,7 +123,10 @@ export const GET_CARD = gql`
       name
       image
       cardId
+      cardType
+      releaseDate
       setId
+      setName
       price
     }
   }
@@ -122,9 +137,12 @@ export const GET_CARDS_BY_NAME = gql`
     getCardsByName(name: $name) {
       _id
       name
-      cardId
       image
+      cardId
+      cardType
+      releaseDate
       setId
+      setName
       price
     }
   }
@@ -137,7 +155,10 @@ export const GET_CARDS_BY_SET = gql`
       name
       image
       cardId
+      cardType
+      releaseDate
       setId
+      setName
       price
     }
   }
