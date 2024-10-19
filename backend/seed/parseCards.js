@@ -23,6 +23,9 @@ fs.readFile(filePath, 'utf8', (err, data) => {
                 name: item.name,
                 images: item.images,
                 setId: item.set.id,
+                setName: item.set.name,
+                releaseDate: item.set.releaseDate,
+                cardType: item.supertype,
                 price: firstMarketPrice ? firstMarketPrice.market : null,
             };
         })

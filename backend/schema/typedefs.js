@@ -21,13 +21,13 @@ type Collection {
   _id: ID!
   collectionName: String!
   userId: ID!
-  cards: [ID!]
+  cards: [Card]
   isMain: Boolean!
 }
 
 input UpdateCollectionInput {
-  collectionName: String!
-  cards: [ID!]
+  collectionName: String
+  cards: [ID]
 }
 
 type Card {
@@ -35,7 +35,10 @@ type Card {
   name: String!
   image: String!
   cardId: String!
+  cardType: String!
   setId: String!
+  setName: String
+  releaseDate: String
   price: Float
 }
 
@@ -57,7 +60,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, price: String): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
