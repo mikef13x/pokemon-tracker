@@ -12,8 +12,8 @@ export default function MarketCard({ image, name, price, cardId }) {
             justifyContent: 'center',
             boxSizing: 'border-box',
             border: '4px solid black',
-            marginLeft: '50px',
-            height: '100p'
+            marginLeft: '80px',
+            height: '80%'
         }}>
 
             <Box sx={{
