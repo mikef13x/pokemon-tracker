@@ -26,7 +26,7 @@ export default function MarketWrapper({ name, price, image, cardId }) {
                     height: '75vh', 
                     width: '80vw', 
                     marginTop: '100px', 
-                    backgroundColor: 'white',
+                    backgroundColor: 'rgb(255,250,245)',
                     
                 }}>
                    

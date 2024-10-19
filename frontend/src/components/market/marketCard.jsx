@@ -28,6 +28,9 @@ export default function MarketCard({ image, name, price, cardId }) {
             justifyContent: 'center',
             boxSizing: 'border-box'
         }}>
+               <Typography variant="h6" sx={{ marginTop: '40px', textAlign: 'center', fontSize: '24px' }}>
+                <span className='poppins-regular'>{name} # {cardId}</span>
+            </Typography>
             <Box sx={{ 
                 display: 'flex', 
                 alignItems: 'center', 
@@ -36,18 +39,17 @@ export default function MarketCard({ image, name, price, cardId }) {
                 height: 'auto', 
                 flexGrow: 1 
             }}>
+                
                 <img src={image} alt={name} style={{ 
                     maxWidth: '70%', 
                     maxHeight: '100%', 
                     borderRadius: '8px', 
                     objectFit: 'contain', 
-                    marginTop: '50px' 
+                    marginTop: '10px' 
                 }} />
             </Box>
-            <Typography variant="h6" sx={{ marginTop: '40px', textAlign: 'center', fontSize: '24px' }}>
-                <span className='poppins-regular'>{name} # {cardId}</span>
-            </Typography>
-            <Typography variant="body1" sx={{ marginTop: '8px' }}>
+         
+            <Typography variant="body1" sx={{ marginTop: '50px' }}>
                 Market Price: {price}
             </Typography>
             <Typography variant="body1" sx={{ marginTop: '8px' }}>
