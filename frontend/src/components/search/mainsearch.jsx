@@ -1132,6 +1132,10 @@ const wrapperRef = useRef(null)
   });
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
+    setCurrentPage(1)
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+  }
   };
 
   const handleModalOpen = () => {
