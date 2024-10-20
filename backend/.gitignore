@@ -3,5 +3,3 @@ package-lock.json
 .env
 allSetsData.json
 sets.json
-filteredSetsData.json
-filteredSetsData-price.json

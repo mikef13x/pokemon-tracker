@@ -65,7 +65,10 @@ router.get('/sets', async (req, res) => {
 
 router.get('/seed', async (req, res) => {
   try {
-    const filePath = path.join(__dirname, '../seed/filteredSetsData-price.json');
+    await Card.collection.drop();
+    console.log('Card collection dropped');
+
+    const filePath = path.join(__dirname, '../seed/filteredSetsData.json');
     console.log(`Reading file from: ${filePath}`);
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const cards = JSON.parse(jsonData);
@@ -105,5 +108,6 @@ router.get('/seed', async (req, res) => {
     res.status(500).json({ message: 'Failed to seed cards from JSON', error });
   }
 });
+
 
 module.exports = router;
