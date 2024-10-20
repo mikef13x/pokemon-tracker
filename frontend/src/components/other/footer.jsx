@@ -5,7 +5,7 @@ export default function Footer() {
 
 
     return (
-        <footer style={{width:'100%', position: 'fixed', bottom: 0}}>
+        <footer style={{width:'100%', position: 'static', bottom: 0}}>
             <Box sx={{
                 textAlign: 'center',
                 justifyContent: 'center',

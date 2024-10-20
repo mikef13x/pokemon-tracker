@@ -3,7 +3,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useState, useRef } from 'react';
 
-export default function MarketCard({ image, name, price, cardId }) {
+export default function MarketCard({ image, name, price, cardId, setName}) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [popoverOpen, setPopoverOpen] = useState(false);
     const [popoverMessage, setPopoverMessage] = useState('');
@@ -53,7 +53,7 @@ export default function MarketCard({ image, name, price, cardId }) {
                 Market Price: {price}
             </Typography>
             <Typography variant="body1" sx={{ marginTop: '8px' }}>
-                set data here
+              Set: {setName}
             </Typography>
             <Typography variant="body1" sx={{ marginTop: '8px' }}>
                 other data here, like card data
