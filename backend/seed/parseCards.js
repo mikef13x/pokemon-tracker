@@ -32,11 +32,12 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     );
 
     // Step 4: Write the new JSON object to a new file
-    fs.writeFile('filteredSetsData.json', JSON.stringify(filteredData, null, 4), err => {
+    const outputFilePath = path.join(__dirname, 'filteredSetsData.json');
+    fs.writeFile(outputFilePath, JSON.stringify(filteredData, null, 4), err => {
         if (err) {
             console.error('Error writing file:', err);
             return;
         }
-        console.log('Filtered data written to filteredSetsData.json');
+        console.log('Filtered data written to filteredSetsData-price.json');
     });
 });
