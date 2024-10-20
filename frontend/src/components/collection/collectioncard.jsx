@@ -1,6 +1,6 @@
 import { Card, CardContent, CardMedia, Typography, ButtonBase, Paper } from '@mui/material';
 
-export default function CollectionCard({ title, price, image, onClick }) {
+export default function CollectionCard({ name, price, image, onClick }) {
     return (
         <ButtonBase onClick={onClick} sx={{ width: '100%', display: 'block', textAlign: 'initial' }}>
           
@@ -9,13 +9,13 @@ export default function CollectionCard({ title, price, image, onClick }) {
                         <CardMedia
                             component="img"
                             image={image}
-                            alt={title}
+                            alt={name}
                             sx={{ height: 'auto', width: '70%', objectFit: 'contain', margin: 'auto', marginTop: '30px', borderRadius:'10px' }}
                         />
                     )}
                     <CardContent sx={{ textAlign: 'center', color: 'black', padding: '8px' }}>
                         <Typography variant="h5" component="div">
-                            <span className='poppins-regular'>{title}</span>
+                            <span className='poppins-regular'>{name}</span>
                         </Typography>
                         <Typography variant="h6">
                             <span className='poppins-regular'>{price}</span>
