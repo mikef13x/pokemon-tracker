@@ -19,6 +19,7 @@ import {
   PaginationItem
 
 } from '@mui/material';
+import { useRef } from 'react';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
 import { useNavigate } from 'react-router-dom';
@@ -1068,7 +1069,7 @@ export default function MainSearch() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInitiated, setSearchInitiated] = useState(false);
   const navigate = useNavigate();
-
+const wrapperRef = useRef(null)
   const itemsPerPage = 30;
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
@@ -1107,7 +1108,13 @@ export default function MainSearch() {
     console.log(`Running query for setId: ${setId}`);
     getCardsBySet({ variables: { setId } });
     setSelectedImage(setImage);
+    setSearchInitiated(true)
     handleModalClose();
+    setCurrentPage(1)
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+  }
+
   };
 
   const sortedData = fetchedSetData.slice().sort((a, b) => {
@@ -1120,7 +1127,7 @@ export default function MainSearch() {
     } else if (sortOrder === 'priceASC') {
       return a.price - b.price;
     } else {
-      return 0;
+      return a.releaseDate - b.releaseDate;
     }
   });
   const handleSortChange = (event) => {
@@ -1151,12 +1158,16 @@ export default function MainSearch() {
 
 
   const handleSearchButtonClick = () => {
-    setSearchInitiated(true)
+    setCurrentPage(1);
+    setSearchInitiated(true);
     setSelectedImage(null);
+    if (wrapperRef.current) {
+        wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+    }
     getCardsByName({ variables: { name: searchValue } }).finally(() => {
-
+        // Any additional logic after the search is complete
     });
-  };
+};
 
   const handleCardClick = (card) => {
     navigate(`/market/${card.cardId}`, { state: card });
@@ -1284,6 +1295,7 @@ export default function MainSearch() {
                 marginLeft: '20px',
               }}
               onClick={handleSearchButtonClick}
+              disabled={searchValue.trim().length === 0}
             >
               <span className="tiny5-regular">Go</span>
             </Button>
@@ -1446,7 +1458,9 @@ export default function MainSearch() {
         {searchInitiated ? `${sortedData.length} results` : 'Start a search to begin'}
       </Typography>
       <Box
+      ref={wrapperRef}
         sx={{
+         
           marginTop: '0px',
           height: '70vh',
           width: '100vw',
@@ -1469,9 +1483,9 @@ export default function MainSearch() {
         ) : (
           <>
             {isGridView ? (
-              <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+              <SearchWrapper2  sortedData={paginatedData} handleCardClick={handleCardClick} />
             ) : (
-              <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
+              <SearchWrapper  sortedData={paginatedData} handleCardClick={handleCardClick} />
             )}
 
 
@@ -1486,7 +1500,12 @@ export default function MainSearch() {
     <Pagination
       count={Math.ceil(sortedData.length / itemsPerPage)}
       page={currentPage}
-      onChange={handlePageChange}
+      onChange={(event, value) => {
+        handlePageChange(event, value);
+        if (wrapperRef.current) {
+          wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+        }
+      }}
       color="primary"
       renderItem={(item) => (
         <PaginationItem
@@ -1498,6 +1517,9 @@ export default function MainSearch() {
               handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
             } else {
               handlePageChange(event, item.page);
+            }
+            if (wrapperRef.current) {
+              wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
             }
           }}
         />
