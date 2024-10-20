@@ -11,7 +11,7 @@ export default function MarketPage() {
     return (
         <div>
                
-                <MarketWrapper name={card.name} price={card.price} image={card.image} cardId={cardId} />
+                <MarketWrapper name={card.name} price={card.price} setName={card.setName} image={card.image} cardId={cardId} />
            
         </div>
     );
