@@ -64,6 +64,7 @@ export default function CollectionWrapper() {
   const [sortOrder, setSortOrder] = useState('');
   const [showSearch, setShowSearch] = useState(false);
   const [mainCollection, setMainCollection] = useState([]);
+  const [collectionName, setCollectionName] = useState('')
 
   const { loading, error, data } = useQuery(GET_USER_MAIN_COLLECTION, {
     variables: { userId: user.id },
@@ -72,6 +73,7 @@ export default function CollectionWrapper() {
   useEffect(() => {
     if (data) {
       setMainCollection(data.getUserMainCollection.cards);
+      setCollectionName(data.getUserMainCollection.collectionName)
     }
   }, [data]);
 
@@ -130,7 +132,7 @@ export default function CollectionWrapper() {
             width: '100%',
           }}
         >
-          <span className="tiny5-regular">Michael's Collection</span>
+          <span className="tiny5-regular">{collectionName}</span>
         </Typography>
       </Box>
       <Box

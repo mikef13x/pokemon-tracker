@@ -104,8 +104,28 @@ const resolvers = {
 
     getCardsByName: async (_, { name }) => {
       try {
-        const regex = new RegExp(name, 'i');
-        const cards = await Card.find({ name: regex });
+        const components = name.split(' ');
+        let namePart = '';
+        let numberPart = '';
+    
+        components.forEach(component => {
+          if (!isNaN(component)) {
+            numberPart = component;
+          } else {
+            namePart += component + ' ';
+          }
+        });
+    
+        namePart = namePart.trim();
+    
+        const nameRegex = new RegExp(namePart, 'i');
+        let searchCriteria = { name: nameRegex };
+    
+        if (numberPart) {
+          searchCriteria.cardId = new RegExp(`-${numberPart}$`, 'i');
+        }
+    
+        const cards = await Card.find(searchCriteria);
         return cards;
       } catch (error) {
         console.error('error getting cards by name', error);
