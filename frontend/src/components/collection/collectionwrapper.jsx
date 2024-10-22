@@ -58,7 +58,7 @@ const pulse = keyframes`
     transform: scaleY(1.04);
   }
 `;
-const user = Auth.getProfile().data;
+
 
 export default function CollectionWrapper() {
   const [sortOrder, setSortOrder] = useState('');
@@ -66,8 +66,11 @@ export default function CollectionWrapper() {
   const [mainCollection, setMainCollection] = useState([]);
   const [collectionName, setCollectionName] = useState('')
 
+  const user = Auth.loggedIn() ? Auth.getProfile().data : null;
+
   const { loading, error, data } = useQuery(GET_USER_MAIN_COLLECTION, {
-    variables: { userId: user.id },
+    variables: { userId: user ? user.id : '' },
+    skip: !user, // Skip the query if the user is not logged in
   });
 
   useEffect(() => {
