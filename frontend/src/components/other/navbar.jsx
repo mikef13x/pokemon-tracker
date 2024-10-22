@@ -10,6 +10,8 @@ export default function Navbar() {
 
  function handleLogoutClick() {
     localStorage.removeItem("id_token");
+  window.location.reload()
+  window.location.assign('/')
   }
 
   return (
@@ -47,8 +49,8 @@ export default function Navbar() {
                 </Typography>
               </Button>
             </Link>
-              {/* {Auth.loggedIn() ? (
-            <Button color='inherit' onClick={handleLogoutClick()}>
+              {Auth.loggedIn() ? (
+            <Button color='inherit' onClick={handleLogoutClick}>
             <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
               <span className='tiny5-regular'>Logout</span>
             </Typography>
@@ -62,7 +64,7 @@ export default function Navbar() {
                 </Button>
               </Link>
 
-              )} */}
+              )}
             
            
             {/* {AuthService.loggedIn() ? (
