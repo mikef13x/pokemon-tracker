@@ -1,4 +1,4 @@
-
+import { useLocation } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Footer from './components/other/footer';
 
@@ -34,12 +34,14 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const location = useLocation();
+  const isCollectionPage = location.pathname === '/collection';
   return (
     <ApolloProvider client={client}>
     <>
        <Navbar />
        <Outlet />
-       <Footer/>
+       {!isCollectionPage && <Footer/>}
       
     </>
    
