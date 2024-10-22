@@ -8,10 +8,10 @@ export default function Navbar() {
   //   window.location.reload()
   // }
 
- function handleLogoutClick() {
+  function handleLogoutClick() {
     localStorage.removeItem("id_token");
-  window.location.reload()
-  window.location.assign('/')
+    window.location.reload()
+    window.location.assign('/')
   }
 
   return (
@@ -42,21 +42,31 @@ export default function Navbar() {
                 </Typography>
               </Button>
             </Link>
-            <Link to="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color='inherit'>
+            {Auth.loggedIn() ? (
+              <Link to="/collection" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Collection</span>
+                  </Typography>
+                </Button>
+              </Link>) : (
+              <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Collection</span>
+                  </Typography>
+                </Button>
+              </Link>
+            )}
+
+            {Auth.loggedIn() ? (
+              <Button color='inherit' onClick={handleLogoutClick}>
                 <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
-                  <span className='tiny5-regular'>Collection</span>
+                  <span className='tiny5-regular'>Logout</span>
                 </Typography>
               </Button>
-            </Link>
-              {Auth.loggedIn() ? (
-            <Button color='inherit' onClick={handleLogoutClick}>
-            <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
-              <span className='tiny5-regular'>Logout</span>
-            </Typography>
-          </Button>
-              ) : (
-                <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+            ) : (
+              <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Button color='inherit'>
                   <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
                     <span className='tiny5-regular'>Login</span>
@@ -64,9 +74,9 @@ export default function Navbar() {
                 </Button>
               </Link>
 
-              )}
-            
-           
+            )}
+
+
             {/* {AuthService.loggedIn() ? (
                <Button color='inherit'onClick={handleLogout}> 
                  <Typography sx={{marginLeft: '15px', marginRight: '15px'}}>
