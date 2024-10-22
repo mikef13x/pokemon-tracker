@@ -13,7 +13,7 @@ export default function Footer() {
               
                 color: 'white',
                 display: 'flex',
-                height: '7vh',
+                height: '5vh',
                 
             }}>
                 © 2024. Created by Michael Freeman and Daniel Gomez.

@@ -199,19 +199,20 @@ export default function CollectionWrapper() {
         </DialogActions>
       </Dialog>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Box
-          sx={{
-            height: '75vh',
-            overflowY: 'auto',
-            padding: '40px',
-            borderTop: '2px solid white',
-            borderBottom: '2px solid white',
-            width: '100vw',
-            marginTop: '200px',
-            backdropFilter: 'blur(20px)',
-          }}
-        >
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '95vh' }}>
+        <Box sx={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
+          <Box
+            sx={{
+              flex: '1',
+              overflowY: 'auto',
+              padding: '40px',
+              borderTop: '2px solid white',
+              borderBottom: '2px solid white',
+              width: '100vw',
+              marginTop: '200px',
+              backdropFilter: 'blur(20px)',
+            }}
+          >
           <Box
             sx={{
               display: 'grid',
@@ -231,6 +232,7 @@ export default function CollectionWrapper() {
           </Box>
         </Box>
       </Box>
+    </Box>
     </Box>
   );
 }
