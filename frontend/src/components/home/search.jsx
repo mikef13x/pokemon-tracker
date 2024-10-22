@@ -1,5 +1,7 @@
+import { AirportShuttleTwoTone } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
 import {Link} from "react-router-dom"
+import Auth from '../../utils/auth'
 
 
 export default function LetsGetStarted() {
@@ -19,11 +21,19 @@ export default function LetsGetStarted() {
                 Search
             </Button>
             </Link>
-            <Link  to='/collection'>
+            {Auth.loggedIn() ? (
+                  <Link  to='/collection'>
+                  <Button variant='contained' sx={{ width: '150px', height: '40px'}}>
+                      Collection
+                  </Button>
+                  </Link>
+            ) : (
+            <Link  to='/signin'>
             <Button variant='contained' sx={{ width: '150px', height: '40px'}}>
                 Collection
             </Button>
             </Link>
+            )}
            </Box>
         </Box>
     );
