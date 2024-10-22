@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
+import Auth from '../../utils/auth'
 
 export default function Navbar() {
   // const handleLogout = () => {
   //   localStorage.removeItem('id_token')
   //   window.location.reload()
   // }
+
+ function handleLogoutClick() {
+    localStorage.removeItem("id_token");
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -42,6 +47,23 @@ export default function Navbar() {
                 </Typography>
               </Button>
             </Link>
+              {/* {Auth.loggedIn() ? (
+            <Button color='inherit' onClick={handleLogoutClick()}>
+            <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+              <span className='tiny5-regular'>Logout</span>
+            </Typography>
+          </Button>
+              ) : (
+                <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Login</span>
+                  </Typography>
+                </Button>
+              </Link>
+
+              )} */}
+            
            
             {/* {AuthService.loggedIn() ? (
                <Button color='inherit'onClick={handleLogout}> 
