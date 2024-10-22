@@ -37,9 +37,7 @@ const resolvers = {
 
     getCollection: async (_, { collectionId }) => {
       try {
-        const oneCollection = await Collection.findById(collectionId).populate(
-          'cards'
-        );
+        const oneCollection = await Collection.findById(collectionId).populate('cards');
         return oneCollection;
       } catch (error) {
         console.error('error getting collection', error);
@@ -103,28 +101,39 @@ const resolvers = {
     },
 
     getCardsByName: async (_, { name }) => {
+      const escapeRegExp = (string) => {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      };
+
+      const isValidInput = (input) => {
+        const whitelist = /^[a-zA-Z0-9\s\[\]\(\)]+$/;
+        return whitelist.test(input);
+      };
+
       try {
+        if (!isValidInput(name)) {
+          throw new Error('Invalid input');
+        }
+
         const components = name.split(' ');
-        let namePart = '';
         let numberPart = '';
-    
-        components.forEach(component => {
+        const nameParts = [];
+
+        components.forEach((component) => {
           if (!isNaN(component)) {
             numberPart = component;
           } else {
-            namePart += component + ' ';
+            nameParts.push(escapeRegExp(component));
           }
         });
-    
-        namePart = namePart.trim();
-    
-        const nameRegex = new RegExp(namePart, 'i');
+
+        const nameRegex = new RegExp(nameParts.map((part) => `(?=.*${part})`).join(''), 'i');
         let searchCriteria = { name: nameRegex };
-    
+
         if (numberPart) {
-          searchCriteria.cardId = new RegExp(`-${numberPart}$`, 'i');
+          searchCriteria.cardId = new RegExp(`-${escapeRegExp(numberPart)}$`, 'i');
         }
-    
+
         const cards = await Card.find(searchCriteria);
         return cards;
       } catch (error) {
@@ -171,11 +180,7 @@ const resolvers = {
     },
 
     updateUser: async (_, { userId, updateData }) => {
-      const updatedUser = await User.findOneAndUpdate(
-        { _id: userId },
-        updateData,
-        { new: true }
-      );
+      const updatedUser = await User.findOneAndUpdate({ _id: userId }, updateData, { new: true });
       return updatedUser;
     },
 
@@ -227,9 +232,7 @@ const resolvers = {
     },
 
     deleteCollection: async (_, { collectionId }) => {
-      const deletedCollection = await Collection.findByIdAndDelete(
-        collectionId
-      );
+      const deletedCollection = await Collection.findByIdAndDelete(collectionId);
       if (!deletedCollection) {
         throw new Error('Collection not found.');
       }
