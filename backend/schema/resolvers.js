@@ -105,20 +105,18 @@ const resolvers = {
     getCardsByName: async (_, { name }) => {
       try {
         const components = name.split(' ');
-        let namePart = '';
         let numberPart = '';
+        const nameParts = [];
     
         components.forEach(component => {
           if (!isNaN(component)) {
             numberPart = component;
           } else {
-            namePart += component + ' ';
+            nameParts.push(component);
           }
         });
     
-        namePart = namePart.trim();
-    
-        const nameRegex = new RegExp(namePart, 'i');
+        const nameRegex = new RegExp(nameParts.map(part => `(?=.*${part})`).join(''), 'i');
         let searchCriteria = { name: nameRegex };
     
         if (numberPart) {
