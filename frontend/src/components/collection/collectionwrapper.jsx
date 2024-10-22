@@ -72,7 +72,6 @@ export default function CollectionWrapper() {
     variables: { userId: user ? user.id : '' },
     skip: !user, // Skip the query if the user is not logged in
   });
-
   useEffect(() => {
     if (data) {
       setMainCollection(data.getUserMainCollection.cards);
