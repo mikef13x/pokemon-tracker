@@ -102,8 +102,23 @@ const resolvers = {
       }
     },
 
+   
+    
     getCardsByName: async (_, { name }) => {
+      const escapeRegExp = (string) => {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); 
+      };
+      
+      const isValidInput = (input) => {
+        const whitelist = /^[a-zA-Z0-9\s\[\]\(\)]+$/;
+        return whitelist.test(input);
+      };
+      
       try {
+        if (!isValidInput(name)) {
+          throw new Error('Invalid input');
+        }
+    
         const components = name.split(' ');
         let numberPart = '';
         const nameParts = [];
@@ -112,7 +127,7 @@ const resolvers = {
           if (!isNaN(component)) {
             numberPart = component;
           } else {
-            nameParts.push(component);
+            nameParts.push(escapeRegExp(component));
           }
         });
     
@@ -120,7 +135,7 @@ const resolvers = {
         let searchCriteria = { name: nameRegex };
     
         if (numberPart) {
-          searchCriteria.cardId = new RegExp(`-${numberPart}$`, 'i');
+          searchCriteria.cardId = new RegExp(`-${escapeRegExp(numberPart)}$`, 'i');
         }
     
         const cards = await Card.find(searchCriteria);
@@ -130,6 +145,39 @@ const resolvers = {
         throw new Error('Failed to get cards by name');
       }
     },
+
+    // getCardsByName: async (_, { name }) => {
+    //   try {
+    //     const escapeRegExp = (string) => {
+    //       return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    //     };
+    
+    //     const components = name.split(' ');
+    //     let numberPart = '';
+    //     const nameParts = [];
+    
+    //     components.forEach(component => {
+    //       if (!isNaN(component)) {
+    //         numberPart = component;
+    //       } else {
+    //         nameParts.push(escapeRegExp(component));
+    //       }
+    //     });
+    
+    //     const nameRegex = new RegExp(nameParts.map(part => `(?=.*${part})`).join(''), 'i');
+    //     let searchCriteria = { name: nameRegex };
+    
+    //     if (numberPart) {
+    //       searchCriteria.cardId = new RegExp(`-${escapeRegExp(numberPart)}$`, 'i');
+    //     }
+    
+    //     const cards = await Card.find(searchCriteria);
+    //     return cards;
+    //   } catch (error) {
+    //     console.error('error getting cards by name', error);
+    //     throw new Error('Failed to get cards by name');
+    //   }
+    // },
   },
   Mutation: {
     createUser: async (_, { username, email, password }) => {
