@@ -19,10 +19,10 @@ import {
   PaginationItem
 
 } from '@mui/material';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 // import Mudkip from '../../assets/mudkipgoldstar.jpg';
 // import Groudon from '../../assets/groudongoldstar.jpg'
 // import Gyarados from '../../assets/gyaradosgoldstar.jpg'
@@ -49,13 +49,42 @@ export default function MainSearch() {
   const [isInitialState, setIsInitialState] = useState(true);
   const [fetchedSetData, setFetchedData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-
+  const location = useLocation();
   const [searchValue, setSearchValue] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInitiated, setSearchInitiated] = useState(false);
+
   const navigate = useNavigate();
   const wrapperRef = useRef(null)
   const itemsPerPage = 30;
+
+
+  const handleCardClick = (card) => {
+    navigate(`/market/${card.cardId}`, {
+      state: {
+        from: location.pathname,
+        searchValue,
+        currentPage,
+        sortOrder,
+        isGridView,
+        fetchedSetData,
+        selectedImage,
+      },
+    });
+  };
+
+  useEffect(() => {
+    if (location.state) {
+        setSearchValue(location.state.searchValue || '');
+        setCurrentPage(location.state.currentPage || 1);
+        setSortOrder(location.state.sortOrder || '');
+        setIsGridView(location.state.isGridView || true);
+        setFetchedData(location.state.fetchedSetData || []);
+        setSelectedImage(location.state.selectedImage || null);
+        setSearchInitiated(true);
+    }
+}, [location.state]);
+
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
     GET_CARDS_BY_SET,
@@ -158,9 +187,7 @@ export default function MainSearch() {
     });
   };
 
-  const handleCardClick = (card) => {
-    navigate(`/market/${card.cardId}`, { state: card });
-  };
+ 
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
