@@ -223,7 +223,8 @@ const resolvers = {
           collectionId,
           { $set: updateData },
           { new: true, runValidators: true }
-        );
+        ).populate('cards'); 
+    
         return updatedCollection;
       } catch (error) {
         console.error('error updating collection', error);

@@ -76,15 +76,22 @@ export const CREATE_COLLECTION = gql`
 `;
 
 export const UPDATE_COLLECTION = gql`
-  mutation updateCollection(
-    $collectionId: ID!
-    $updateData: UpdateCollectionInput!
-  ) {
+  mutation updateCollection($collectionId: ID!, $updateData: UpdateCollectionInput!) {
     updateCollection(collectionId: $collectionId, updateData: $updateData) {
       _id
       collectionName
       userId
-      cards
+      cards {
+        _id
+        name
+        image
+        cardId
+        cardType
+        setId
+        setName
+        releaseDate
+        price
+      }
       isMain
     }
   }
