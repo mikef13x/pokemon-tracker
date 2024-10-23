@@ -1,13 +1,32 @@
 import { Box, Typography, IconButton, Popover } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useMutation, useQuery } from '@apollo/client';
+import { UPDATE_COLLECTION } from '../../utils/mutations'
+import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
+import Auth from '../../utils/auth';
 
-export default function MarketCard({ image, name, price, cardId, setName}) {
+export default function MarketCard({ id, image, name, price, cardId, setName}) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [popoverOpen, setPopoverOpen] = useState(false);
     const [popoverMessage, setPopoverMessage] = useState('');
+    const [collection, setCollection] = useState([])
+    const user = Auth.loggedIn() ? Auth.getProfile().data : null;
+
+    const { loading, error, data } = useQuery(GET_USER_MAIN_COLLECTION, {
+      variables: { userId: user ? user.id : '' },
+      skip: !user,
+    });
+
+    useEffect(() => {
+        if (data) {
+          setCollection(data.getUserMainCollection.cards);
+        }
+      }, [data]);
+
     const heartButtonRef = useRef(null);
+
 
     const handleFavoriteClick = () => {
         setIsFavorite(!isFavorite);
