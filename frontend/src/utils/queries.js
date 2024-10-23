@@ -117,16 +117,16 @@ export const GET_CARDS = gql`
 `;
 
 export const GET_CARD = gql`
-  query getCard($id: ID!) {
-    getCard(_id: $id) {
+  query getCard($cardId: String!) {
+    getCard(cardId: $cardId) {
       _id
       name
       image
       cardId
       cardType
-      releaseDate
       setId
       setName
+      releaseDate
       price
     }
   }

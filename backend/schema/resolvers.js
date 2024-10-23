@@ -80,9 +80,9 @@ const resolvers = {
       }
     },
 
-    getCard: async (_, { _id }) => {
+    getCard: async (_, { cardId }) => {
       try {
-        const oneCard = await Card.findById(_id);
+        const oneCard = await Card.findOne({ cardId: cardId });
         return oneCard;
       } catch (error) {
         console.error('error getting card', error);
