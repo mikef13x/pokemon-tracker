@@ -20,10 +20,12 @@ import {
   FormControlLabel,
   FormGroup,
   FormLabel,
-  Checkbox
+  Checkbox,
+
   
 
 } from '@mui/material';
+import FilterListIcon from '@mui/icons-material/FilterList';
 import { useRef, useEffect } from 'react';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
@@ -321,17 +323,19 @@ export default function MainSearch() {
                 sx={{ fontSize: 40 }}
                 color={!isGridView ? 'primary' : 'inherit'}
               />
-            </IconButton>     
+            </IconButton>    
+            <IconButton
+    onClick={handleFilterOpen}
+    color="primary"
+    sx={{
+      backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
+      backdropFilter: 'blur(5px)',
+    }}
+  >
+    <FilterListIcon sx={{ fontSize: 40 }} />
+  </IconButton>
           </Box>
-          <Button
-            onClick={handleFilterOpen}
-            color="primary"
-            sx={{
-              backgroundColor: 'rgba(255,255,255)', color: 'black', marginLeft: '20px', width: '120px', height: '55px',
-              backdropFilter: 'blur(5px)', marginTop: '20px',
-            }}>
-            <span className="tiny5-regular">Filter</span>
-          </Button>
+    
         </Box>
 
         <Dialog
@@ -482,12 +486,19 @@ export default function MainSearch() {
     </FormControl> */}
   </DialogContent> 
   <DialogActions sx={{ justifyContent: 'center' }}>
+  <Button
+      sx={{ textAlign: 'center' }}
+      onClick={handleFilterClose}
+      color="primary"
+    >
+      Apply
+    </Button>
     <Button
       sx={{ textAlign: 'center' }}
       onClick={handleFilterClose}
       color="primary"
     >
-      Close
+      Cancel
     </Button>
   </DialogActions>
 </Dialog>
