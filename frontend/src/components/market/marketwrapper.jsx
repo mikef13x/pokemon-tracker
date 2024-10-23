@@ -3,7 +3,7 @@ import MarketCard from './marketCard';
 import MarketChart from './marketChart';
 
 
-export default function MarketWrapper({ name, price, image, cardId, setName}) {
+export default function MarketWrapper({ id, name, price, image, cardId, setName}) {
 
     const getCardId = (cardId) => {
         return cardId.split('-')[1];
@@ -30,7 +30,7 @@ export default function MarketWrapper({ name, price, image, cardId, setName}) {
                     
                 }}>
                    
-                    <MarketCard name={name} price={formatPrice(price)} setName={setName}  image={image} cardId={getCardId(cardId)} />
+                    <MarketCard id={id} name={name} price={formatPrice(price)} setName={setName}  image={image} cardId={getCardId(cardId)} />
                     <MarketChart/>
                 </Box>
                
