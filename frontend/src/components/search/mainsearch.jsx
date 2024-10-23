@@ -16,13 +16,18 @@ import {
   DialogTitle,
   Button,
   Pagination,
-  PaginationItem
+  PaginationItem,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Checkbox
+  
 
 } from '@mui/material';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 // import Mudkip from '../../assets/mudkipgoldstar.jpg';
 // import Groudon from '../../assets/groudongoldstar.jpg'
 // import Gyarados from '../../assets/gyaradosgoldstar.jpg'
@@ -43,19 +48,63 @@ import { ArrowForward, ArrowBack } from '@mui/icons-material';
 export default function MainSearch() {
   const [sortOrder, setSortOrder] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [showFilter, setShowFilter] = useState(false)
   const [currentModalData, setCurrentModalData] = useState(modalData);
   const [title, setTitle] = useState('All Pokemon Sets');
   const [isGridView, setIsGridView] = useState(true);
   const [isInitialState, setIsInitialState] = useState(true);
   const [fetchedSetData, setFetchedData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-
+  const location = useLocation();
   const [searchValue, setSearchValue] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInitiated, setSearchInitiated] = useState(false);
+
   const navigate = useNavigate();
   const wrapperRef = useRef(null)
   const itemsPerPage = 30;
+  const [selectedSets, setSelectedSets] = useState([]);
+  const [selectedYears, setSelectedYears] = useState([]);
+  const [selectedPrices, setSelectedPrices] = useState([]);
+  
+  const handleSetsChange = (event) => {
+    setSelectedSets(event.target.value);
+  };
+  
+  const handleYearsChange = (event) => {
+    setSelectedYears(event.target.value);
+  };
+  
+  const handlePricesChange = (event) => {
+    setSelectedPrices(event.target.value);
+  };
+
+  const handleCardClick = (card) => {
+    navigate(`/market/${card.cardId}`, {
+      state: {
+        from: location.pathname,
+        searchValue,
+        currentPage,
+        sortOrder,
+        isGridView,
+        fetchedSetData,
+        selectedImage,
+      },
+    });
+  };
+
+  useEffect(() => {
+    if (location.state) {
+        setSearchValue(location.state.searchValue || '');
+        setCurrentPage(location.state.currentPage || 1);
+        setSortOrder(location.state.sortOrder || '');
+        setIsGridView(location.state.isGridView || true);
+        setFetchedData(location.state.fetchedSetData || []);
+        setSelectedImage(location.state.selectedImage || null);
+        setSearchInitiated(true);
+    }
+}, [location.state]);
+
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
     GET_CARDS_BY_SET,
@@ -126,6 +175,14 @@ export default function MainSearch() {
   const handleModalOpen = () => {
     setShowModal(true);
   };
+
+  const handleFilterOpen = () => {
+    setShowFilter(true)
+  }
+
+  const handleFilterClose = () => {
+    setShowFilter(false);
+  };
   const handleModalClose = () => {
     setShowModal(false);
     setCurrentModalData(modalData);
@@ -153,14 +210,18 @@ export default function MainSearch() {
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-    getCardsByName({ variables: { name: searchValue } }).finally(() => {
+    getCardsByName({
+       variables:{
+       name: searchValue ,
+      setName: selectedSets,
+       },
+    
+    }).finally(() => {
       // Any additional logic after the search is complete
     });
   };
 
-  const handleCardClick = (card) => {
-    navigate(`/market/${card.cardId}`, { state: card });
-  };
+ 
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
@@ -218,6 +279,7 @@ export default function MainSearch() {
             <span className="tiny5-regular">Search by Set</span>
           </Button>
         )}
+         
         <Box
           sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '220px', }}  >
@@ -238,6 +300,13 @@ export default function MainSearch() {
               <span className="tiny5-regular">Go</span>
             </Button>
           </Box>
+
+
+
+
+
+
+          
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
             <IconButton
               onClick={() => setIsGridView(true)}
@@ -252,8 +321,17 @@ export default function MainSearch() {
                 sx={{ fontSize: 40 }}
                 color={!isGridView ? 'primary' : 'inherit'}
               />
-            </IconButton>
+            </IconButton>     
           </Box>
+          <Button
+            onClick={handleFilterOpen}
+            color="primary"
+            sx={{
+              backgroundColor: 'rgba(255,255,255)', color: 'black', marginLeft: '20px', width: '120px', height: '55px',
+              backdropFilter: 'blur(5px)', marginTop: '20px',
+            }}>
+            <span className="tiny5-regular">Filter</span>
+          </Button>
         </Box>
 
         <Dialog
@@ -340,6 +418,81 @@ export default function MainSearch() {
             </Button>
           </DialogActions>
         </Dialog>
+
+
+    
+
+        <Dialog
+  open={showFilter}
+  onClose={handleFilterClose}
+  maxWidth="md"
+
+>
+  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0 24px', marginTop: '20px', }} >
+    <DialogTitle>Filter Options</DialogTitle>
+  </Box>
+  <DialogContent sx={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+    <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
+      <InputLabel id="sets-select-label">Sets</InputLabel>
+      <Select
+        labelId="sets-select-label"
+        id="sets-select"
+        multiple
+        value={selectedSets}
+        onChange={handleSetsChange}
+        renderValue={(selected) => selected.join(', ')}
+      >
+        <MenuItem value="Base">Base Set</MenuItem>
+        <MenuItem value="Jungle">Jungle</MenuItem>
+        <MenuItem value="Fossil">Fossil</MenuItem>
+        {/* Add more sets as needed */}
+      </Select>
+    </FormControl>
+    {/* <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
+      <InputLabel id="years-select-label">Years</InputLabel>
+      <Select
+        labelId="years-select-label"
+        id="years-select"
+        multiple
+        value={selectedYears}
+        onChange={handleYearsChange}
+        renderValue={(selected) => selected.join(', ')}
+      >
+        <MenuItem value="2020">2020</MenuItem>
+        <MenuItem value="2021">2021</MenuItem>
+        <MenuItem value="2022">2022</MenuItem>
+        {/* Add more years as needed */}
+      {/* </Select>
+    </FormControl>
+    <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
+      <InputLabel id="prices-select-label">Prices</InputLabel>
+      <Select
+        labelId="prices-select-label"
+        id="prices-select"
+        multiple
+        value={selectedPrices}
+        onChange={handlePricesChange}
+        renderValue={(selected) => selected.join(', ')}
+      >
+        <MenuItem value="Low">Low</MenuItem>
+        <MenuItem value="Medium">Medium</MenuItem>
+        <MenuItem value="High">High</MenuItem>
+        {/* Add more price ranges as needed */}
+      {/* </Select>
+    </FormControl> */}
+  </DialogContent> 
+  <DialogActions sx={{ justifyContent: 'center' }}>
+    <Button
+      sx={{ textAlign: 'center' }}
+      onClick={handleFilterClose}
+      color="primary"
+    >
+      Close
+    </Button>
+  </DialogActions>
+</Dialog>
+
+
       </Paper>
       <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
         {searchInitiated ? `${sortedData.length} results` : 'Start a search to begin'}
