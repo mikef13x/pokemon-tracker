@@ -223,6 +223,7 @@ export default function CollectionWrapper() {
             {sortedData.map((item) => (
               <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
                 <CollectionCard
+                  cardId={item.cardId}
                   name={item.name}
                   price={formatPrice(item.price)}
                   image={item.image}
