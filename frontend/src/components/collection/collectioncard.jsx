@@ -6,7 +6,7 @@ export default function CollectionCard({ name, price, image, cardId }) {
     const navigate = useNavigate();
 
     const handleCardClick = () => {
-        console.log(cardId)
+        //need to save state for navigating back from marketpage
         navigate(`/market/${cardId}`)
     };
 
