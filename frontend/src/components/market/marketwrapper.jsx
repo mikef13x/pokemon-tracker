@@ -4,6 +4,7 @@ import MarketChart from './marketChart';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
+
 export default function MarketWrapper({ id, name, price, image, cardId, setName}) {
         const navigate = useNavigate()
         const location = useLocation()
@@ -17,6 +18,7 @@ export default function MarketWrapper({ id, name, price, image, cardId, setName}
     };
 
     const handleBackClick = () => {
+     
         if (location.state && location.state.from) {
           navigate(location.state.from, {
             state: {

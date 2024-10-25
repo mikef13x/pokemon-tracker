@@ -36,6 +36,7 @@ const client = new ApolloClient({
 function App() {
   const location = useLocation();
   const isCollectionPage = location.pathname === '/collection';
+  
   return (
     <ApolloProvider client={client}>
     <>

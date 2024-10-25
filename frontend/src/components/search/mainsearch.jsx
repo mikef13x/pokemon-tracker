@@ -46,6 +46,8 @@ import { GET_CARDS_BY_SET, GET_CARDS_BY_NAME } from '../../utils/queries';
 import { modalData, WOTCData, EXData, DPData, POPData, PlatinumData, HGSSData, BWData, XYData, SMData, SSData, SVData, PromoData, OtherData } from '../../assets/set-data/set-data';
 import { keyframes } from "@emotion/react";
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
+import { containerInfo, itemInfo } from '../../utils/framerMotion';
+import {motion} from 'framer-motion'
 
 
 export default function MainSearch() {
@@ -70,6 +72,9 @@ export default function MainSearch() {
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [animateSearch, setAnimateSearch] = useState(false);
+
+  const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
+  
 
 
 
@@ -143,6 +148,8 @@ export default function MainSearch() {
     const setImage = event.currentTarget.getAttribute('data-image');
     setAnimateSearch(true)
     handleModalClose();
+    setAnimationKey(Date.now());
+    setFetchedData([]);
     setTimeout(() => {
 
    
@@ -160,7 +167,7 @@ export default function MainSearch() {
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-     }, 700)
+     }, 400)
   };
 
   const sortedData = fetchedSetData.slice().sort((a, b) => {
@@ -210,9 +217,11 @@ export default function MainSearch() {
   };
   const handleBackButtonClick = () => {
     // Logic to go back to the previous state
+  
     setIsInitialState(true);
     setCurrentModalData(modalData); // Reset to initial modal data
     setTitle('All Pokemon Sets');
+   
   };
 
 
@@ -220,6 +229,8 @@ export default function MainSearch() {
     setCurrentPage(1);
     setSelectedImage(null);
     setAnimateSearch(true);
+    setAnimationKey(Date.now());
+    setFetchedData([]);
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
@@ -233,7 +244,7 @@ export default function MainSearch() {
       }).finally(() => {
         // Any additional logic after the search is complete
       });
-    }, 700); // 2 seconds delay
+    }, 400); // 2 seconds delay
   };
 
 
@@ -246,6 +257,8 @@ export default function MainSearch() {
       setCurrentPage(1);
       setSelectedImage(null);
        setAnimateSearch(true);
+       setAnimationKey(Date.now());
+       setFetchedData([]);
       if (wrapperRef.current) {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
@@ -259,13 +272,14 @@ export default function MainSearch() {
         }).finally(() => {
           // Any additional logic after the search is complete
         });
-      }, 700); // 2 seconds delay
+      }, 400); // 2 seconds delay
     }
   };
 
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
+    setAnimationKey(Date.now());
   };
   const pulse = keyframes`
   0%, 100% {
@@ -294,6 +308,9 @@ const slideUp = keyframes`
   }
 `;
   const paginatedData = sortedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+
+  
 
   return (
     <>
@@ -564,12 +581,19 @@ const slideUp = keyframes`
             sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
             {sortedData.length === 0 ? (
               <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '20px' }} >
-                We could not find anything, please try again
+                {/* We could not find anything, please try again */}
               </Typography>
             ) : (
               <>
                 {isGridView ? (
+                   <motion.div
+                  key={animationKey}
+                   variants={containerInfo}
+                   initial="hidden"
+                   animate="visible"
+                 >
                   <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+                  </motion.div>
                 ) : (
                   <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
                 )}
