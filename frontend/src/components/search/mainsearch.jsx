@@ -69,6 +69,9 @@ export default function MainSearch() {
   const [selectedSets, setSelectedSets] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
+  const [animateSearch, setAnimateSearch] = useState(false);
+
+
 
   const handleSetsChange = (event) => {
     setSelectedSets(event.target.value);
@@ -138,20 +141,26 @@ export default function MainSearch() {
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
     const setImage = event.currentTarget.getAttribute('data-image');
+    setAnimateSearch(true)
+    handleModalClose();
+    setTimeout(() => {
+
+   
     if (!setId) {
       console.error('setId is null or undefined');
       return;
     }
     console.log(`Running query for setId: ${setId}`);
     getCardsBySet({ variables: { setId } });
+   
     setSelectedImage(setImage);
     setSearchInitiated(true)
-    handleModalClose();
+    
     setCurrentPage(1)
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-
+     }, 700)
   };
 
   const sortedData = fetchedSetData.slice().sort((a, b) => {
@@ -209,22 +218,23 @@ export default function MainSearch() {
 
   const handleSearchButtonClick = () => {
     setCurrentPage(1);
-    setSearchInitiated(true);
     setSelectedImage(null);
+    setAnimateSearch(true);
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-    getCardsByName({
-      variables: {
-        name: searchValue,
-        setName: selectedSets,
-      },
-
-    }).finally(() => {
-      // Any additional logic after the search is complete
-    });
+    setTimeout(() => {
+      setSearchInitiated(true);
+      getCardsByName({
+        variables: {
+          name: searchValue,
+          setName: selectedSets,
+        },
+      }).finally(() => {
+        // Any additional logic after the search is complete
+      });
+    }, 700); // 2 seconds delay
   };
-
 
 
   const handleSearchChange = (event) => {
@@ -232,11 +242,27 @@ export default function MainSearch() {
   };
 
   const handleSearchKeyDown = (event) => {
-    if (event.key === 'Enter' && searchValue.trim().length > 0) {
-      handleSearchButtonClick();
-      console.log('keydown search initated')
+    if (event.key === 'Enter') {
+      setCurrentPage(1);
+      setSelectedImage(null);
+       setAnimateSearch(true);
+      if (wrapperRef.current) {
+        wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+      }
+      setTimeout(() => {
+        setSearchInitiated(true);
+        getCardsByName({
+          variables: {
+            name: searchValue,
+            setName: selectedSets,
+          },
+        }).finally(() => {
+          // Any additional logic after the search is complete
+        });
+      }, 700); // 2 seconds delay
     }
   };
+
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -250,6 +276,23 @@ export default function MainSearch() {
   }
 `;
 
+//   const slideUp = keyframes`
+//   from {
+//     transform: translateY(0vh);
+//   }
+//   to {
+//     transform: translateY(-31.7vh);
+//   }
+// `;
+
+const slideUp = keyframes`
+  from {
+    transform: translateY(35vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+`;
   const paginatedData = sortedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
@@ -292,61 +335,121 @@ export default function MainSearch() {
           </Button>
         )}
 
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
-          <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '220px', }}  >
-            <TextField
-              variant="outlined"
-              placeholder="Search for a card..."
-              onChange={handleSearchChange}
-              onKeyDown={handleSearchKeyDown}
-              sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
-              inputProps={{
-                className: 'poppins-regular', // Add the class to the input element
-              }}
-            />
-            <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px', }}
-              onClick={handleSearchButtonClick}
-              disabled={searchValue.trim().length === 0}
-            >
-              <span className="tiny5-regular">Go</span>
-            </Button>
-          </Box>
 
 
+        {searchInitiated ? (
+          <>
+            <Box
+              sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
+
+<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+                <TextField
+                  variant="outlined"
+                  placeholder="Search for a card..."
+                  onChange={handleSearchChange}
+                  onKeyDown={handleSearchKeyDown}
+                  sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
+                  inputProps={{
+                    className: 'poppins-regular', // Add the class to the input element
+                  }}
+                />
+                <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '10px', }}
+                  onClick={handleSearchButtonClick}
+                  disabled={searchValue.trim().length === 0}
+                >
+                  <span className="tiny5-regular">Go</span>
+                </Button>
+              </Box>
 
 
+              <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
+                <IconButton
+                  onClick={() => setIsGridView(true)}
+                  sx={{ marginRight: '5px' }}    >
+                  <ViewModuleIcon
+                    sx={{ fontSize: 40 }}
+                    color={isGridView ? 'primary' : 'inherit'}
+                  />
+                </IconButton>
+                <IconButton onClick={() => setIsGridView(false)}>
+                  <ViewListIcon
+                    sx={{ fontSize: 40 }}
+                    color={!isGridView ? 'primary' : 'inherit'}
+                  />
+                </IconButton>
+                <IconButton
+                  onClick={handleFilterOpen}
+                  color="primary"
+                  sx={{
+                    backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
+                    backdropFilter: 'blur(5px)',
+                  }}
+                >
+                  <FilterListIcon sx={{ fontSize: 40 }} />
+                </IconButton>
+              </Box>
 
+            </Box>
+          </>
+        ) : (
 
+          <>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
 
-          <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
-            <IconButton
-              onClick={() => setIsGridView(true)}
-              sx={{ marginRight: '5px' }}    >
-              <ViewModuleIcon
-                sx={{ fontSize: 40 }}
-                color={isGridView ? 'primary' : 'inherit'}
+<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+              <TextField
+                variant="outlined"
+                placeholder="Search for a card..."
+                onChange={handleSearchChange}
+                onKeyDown={handleSearchKeyDown}
+                sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
+                inputProps={{
+                  className: 'poppins-regular', // Add the class to the input element
+                }}
               />
-            </IconButton>
-            <IconButton onClick={() => setIsGridView(false)}>
-              <ViewListIcon
-                sx={{ fontSize: 40 }}
-                color={!isGridView ? 'primary' : 'inherit'}
-              />
-            </IconButton>
-            <IconButton
-              onClick={handleFilterOpen}
-              color="primary"
-              sx={{
-                backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
-                backdropFilter: 'blur(5px)',
-              }}
-            >
-              <FilterListIcon sx={{ fontSize: 40 }} />
-            </IconButton>
-          </Box>
+              <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '10px', }}
+                onClick={handleSearchButtonClick}
+                disabled={searchValue.trim().length === 0}
+              >
+                <span className="tiny5-regular">Go</span>
+              </Button>
+          
 
-        </Box>
+
+            <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
+              <IconButton
+                onClick={() => setIsGridView(true)}
+                sx={{ marginRight: '5px' }}    >
+                <ViewModuleIcon
+                   sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
+                  color={isGridView ? 'primary' : 'inherit'}
+                />
+              </IconButton>
+              <IconButton onClick={() => setIsGridView(false)}>
+                <ViewListIcon
+                  sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
+                  color={!isGridView ? 'primary' : 'inherit'}
+                />
+              </IconButton>
+              <IconButton
+                onClick={handleFilterOpen}
+                color="primary"
+                sx={{
+                  backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
+                  backdropFilter: 'blur(5px)',
+                }}
+              >
+                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} />
+              </IconButton>
+            </Box>
+            </Box>
+          </Box>
+        </>
+        )}
+
+
+
 
         <Dialog
           open={showModal}
@@ -451,89 +554,92 @@ export default function MainSearch() {
 
 
       </Paper>
-        {searchInitiated ? (
-          <>
-            <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
-              {`${sortedData.length} results`}
-            </Typography>
-            <Box
-              ref={wrapperRef}
-              sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
-              {sortedData.length === 0 ? (
-                <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '250px' }} >
-                  We could not find anything, please try again
-                </Typography>
-              ) : (
-                <>
-                  {isGridView ? (
-                    <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
-                  ) : (
-                    <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
-                  )}
+      {searchInitiated ? (
+        <>
+          <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
+            {`${sortedData.length} results`}
+          </Typography>
+          <Box
+            ref={wrapperRef}
+            sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
+            {sortedData.length === 0 ? (
+              <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '20px' }} >
+                We could not find anything, please try again
+              </Typography>
+            ) : (
+              <>
+                {isGridView ? (
+                  <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+                ) : (
+                  <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
+                )}
 
-                  {sortedData.length > 30 && (
-                    <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '-40px' }}>
-                      <Box sx={{ minWidth: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
-                        <IconButton
-                          onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
-                          disabled={currentPage <= 10}
-                        >
-                          <ArrowBack />
-                        </IconButton>
-                        <Pagination
-                          count={Math.ceil(sortedData.length / itemsPerPage)}
-                          page={currentPage}
-                          onChange={(event, value) => {
-                            handlePageChange(event, value);
-                            if (wrapperRef.current) {
-                              wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                            }
-                          }}
-                          color="primary"
-                          renderItem={(item) => (
-                            <PaginationItem
-                              {...item}
-                              onClick={(event) => {
-                                if (item.type === 'first') {
-                                  handlePageChange(event, Math.max(currentPage - 10, 1));
-                                } else if (item.type === 'last') {
-                                  handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
-                                } else {
-                                  handlePageChange(event, item.page);
-                                }
-                                if (wrapperRef.current) {
-                                  wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                                }
-                              }}
-                            />
-                          )}
-                        />
-                        <IconButton
-                          onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
-                          disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
-                        >
-                          <ArrowForward />
-                        </IconButton>
-                      </Box>
+                {sortedData.length > 30 && (
+                  <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '-40px' }}>
+                    <Box sx={{ minWidth: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
+                      <IconButton
+                        onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
+                        disabled={currentPage <= 10}
+                      >
+                        <ArrowBack />
+                      </IconButton>
+                      <Pagination
+                        count={Math.ceil(sortedData.length / itemsPerPage)}
+                        page={currentPage}
+                        onChange={(event, value) => {
+                          handlePageChange(event, value);
+                          if (wrapperRef.current) {
+                            wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                          }
+                        }}
+                        color="primary"
+                        renderItem={(item) => (
+                          <PaginationItem
+                            {...item}
+                            onClick={(event) => {
+                              if (item.type === 'first') {
+                                handlePageChange(event, Math.max(currentPage - 10, 1));
+                              } else if (item.type === 'last') {
+                                handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
+                              } else {
+                                handlePageChange(event, item.page);
+                              }
+                              if (wrapperRef.current) {
+                                wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                              }
+                            }}
+                          />
+                        )}
+                      />
+                      <IconButton
+                        onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
+                        disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
+                      >
+                        <ArrowForward />
+                      </IconButton>
                     </Box>
-                  )}
-                </>
-              )}
-            </Box>
-          </>
-        ) : (
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh', width: '100%' }}>
-            <Typography sx={{  
+                  </Box>
+                )}
+              </>
+            )}
+          </Box>
+        </>
+      ) : (
+        <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', height: '70vh', width: '100%', marginTop: '-200px' }}>
+          <Typography sx={{
             fontSize: '80px',
             color: 'white',
             textShadow: '-2px 0 0 black, 0 2px 0 black, -2px 2px 0 black',
             textAlign: 'center',
             animation: `${pulse} 0.7s steps(2, end) infinite`,
-            transformOrigin: 'bottom'
-             }}>
-             <span className='tiny5-regular'>Start a search to begin...</span> 
-            </Typography>
-          </Box>
-        )}
-        </>
-  )}
+            transformOrigin: 'bottom',
+            display: animateSearch ? 'none' : ''
+          }}>
+            <span className='tiny5-regular'>Start a search to begin...</span>
+          </Typography>
+
+        </Box>
+      )}
+    </>
+  )
+}
