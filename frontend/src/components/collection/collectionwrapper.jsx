@@ -20,33 +20,6 @@ import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import Auth from '../../utils/auth';
 
-// import Mudkip from '../../assets/mudkipgoldstar.jpg';
-// import Groudon from '../../assets/groudongoldstar.jpg';
-// import Gyarados from '../../assets/gyaradosgoldstar.jpg';
-// import Lisia from '../../assets/lisiapokemon.jpeg';
-// import Mewtwo from '../../assets/mewtwogoldstar.jpg';
-// import Vaporeon from '../../assets/vaporeongoldstar.jpg';
-// import Rayquaza from '../../assets/rayponcho.jpg';
-
-
-// const mockData = [
-//     { id: 1, name: 'Mudkip 1', price: 200, image: Mudkip },
-//     { id: 2, name: 'Mudkip 2', price: 142, image: Rayquaza },
-//     { id: 3, name: 'Mudkip 3', price: 5325, image: Groudon },
-//     { id: 4, name: 'Mudkip 4', price: 553, image: Gyarados },
-//     { id: 5, name: 'Mudkip 5', price: 7547, image: Lisia },
-//     { id: 6, name: 'Mudkip 6', price: 77, image: Mewtwo},
-//     { id: 7, name: 'Gold Star Vaporeon', price: 37, image: Vaporeon },
-//     { id: 8, name: 'Mudkip 8', price: 4, image: Rayquaza },
-//     { id: 9, name: 'Mudkip 9', price: 843, image: Mudkip },
-//     { id: 10, name: 'Mudkip 10', price: 679, image: Rayquaza },
-//     { id: 11, name: 'Mudkip 11', price: 76064, image: Groudon },
-//     { id: 12, name: 'Mudkip 12', price: 4854, image: Gyarados },
-//     { id: 13, name: 'Mudkip 13', price: 45833, image: Lisia },
-//     { id: 14, name: 'Mudkip 14', price: 4584, image: Mewtwo },
-//     { id: 15, name: 'Mudkip 15', price: 4584, image: Vaporeon },
-//     { id: 16, name: 'Mudkip 16', price: 45832, image: Rayquaza },
-// ];
 
 import { keyframes } from '@emotion/react';
 
