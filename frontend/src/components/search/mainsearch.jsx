@@ -22,7 +22,7 @@ import {
   FormLabel,
   Checkbox,
 
-  
+
 
 } from '@mui/material';
 import FilterModal from './searchfilter';
@@ -69,15 +69,15 @@ export default function MainSearch() {
   const [selectedSets, setSelectedSets] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
-  
+
   const handleSetsChange = (event) => {
     setSelectedSets(event.target.value);
   };
-  
+
   const handleYearsChange = (event) => {
     setSelectedYears(event.target.value);
   };
-  
+
   const handlePricesChange = (event) => {
     setSelectedPrices(event.target.value);
   };
@@ -98,15 +98,15 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state) {
-        setSearchValue(location.state.searchValue || '');
-        setCurrentPage(location.state.currentPage || 1);
-        setSortOrder(location.state.sortOrder || '');
-        setIsGridView(location.state.isGridView || true);
-        setFetchedData(location.state.fetchedSetData || []);
-        setSelectedImage(location.state.selectedImage || null);
-        setSearchInitiated(true);
+      setSearchValue(location.state.searchValue || '');
+      setCurrentPage(location.state.currentPage || 1);
+      setSortOrder(location.state.sortOrder || '');
+      setIsGridView(location.state.isGridView || true);
+      setFetchedData(location.state.fetchedSetData || []);
+      setSelectedImage(location.state.selectedImage || null);
+      setSearchInitiated(true);
     }
-}, [location.state]);
+  }, [location.state]);
 
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
@@ -215,17 +215,17 @@ export default function MainSearch() {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
     getCardsByName({
-       variables:{
-       name: searchValue ,
-      setName: selectedSets,
-       },
-    
+      variables: {
+        name: searchValue,
+        setName: selectedSets,
+      },
+
     }).finally(() => {
       // Any additional logic after the search is complete
     });
   };
 
- 
+
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
@@ -283,7 +283,7 @@ export default function MainSearch() {
             <span className="tiny5-regular">Search by Set</span>
           </Button>
         )}
-         
+
         <Box
           sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '220px', }}  >
@@ -310,7 +310,7 @@ export default function MainSearch() {
 
 
 
-          
+
           <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
             <IconButton
               onClick={() => setIsGridView(true)}
@@ -325,19 +325,19 @@ export default function MainSearch() {
                 sx={{ fontSize: 40 }}
                 color={!isGridView ? 'primary' : 'inherit'}
               />
-            </IconButton>    
+            </IconButton>
             <IconButton
-    onClick={handleFilterOpen}
-    color="primary"
-    sx={{
-      backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
-      backdropFilter: 'blur(5px)',
-    }}
-  >
-    <FilterListIcon sx={{ fontSize: 40 }} />
-  </IconButton>
+              onClick={handleFilterOpen}
+              color="primary"
+              sx={{
+                backgroundColor: 'rgba(255,255,255, 0)', color: 'black', marginLeft: '20px', width: '55px', height: '55px',
+                backdropFilter: 'blur(5px)',
+              }}
+            >
+              <FilterListIcon sx={{ fontSize: 40 }} />
+            </IconButton>
           </Box>
-    
+
         </Box>
 
         <Dialog
@@ -426,20 +426,20 @@ export default function MainSearch() {
         </Dialog>
 
 
-    
 
-       
-<FilterModal
-  open={showFilter}
-  onClose={handleFilterClose}
-  selectedSets={selectedSets}
-  handleSetsChange={handleSetsChange}
-  selectedYears={selectedYears}
-  handleYearsChange={handleYearsChange}
-  selectedPrices={selectedPrices}
-  handlePricesChange={handlePricesChange}
-  handleFilterClose={handleFilterClose}
-/>
+
+
+        <FilterModal
+          open={showFilter}
+          onClose={handleFilterClose}
+          selectedSets={selectedSets}
+          handleSetsChange={handleSetsChange}
+          selectedYears={selectedYears}
+          handleYearsChange={handleYearsChange}
+          selectedPrices={selectedPrices}
+          handlePricesChange={handlePricesChange}
+          handleFilterClose={handleFilterClose}
+        />
 
 
       </Paper>
@@ -463,52 +463,57 @@ export default function MainSearch() {
 
 
             {sortedData.length > 30 && (
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
-                <IconButton
-                  onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
-                  disabled={currentPage <= 10}
-                >
-                  <ArrowBack />
-                </IconButton>
-                <Pagination
-                  count={Math.ceil(sortedData.length / itemsPerPage)}
-                  page={currentPage}
-                  onChange={(event, value) => {
-                    handlePageChange(event, value);
-                    if (wrapperRef.current) {
-                      wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                    }
-                  }}
-                  color="primary"
-                  renderItem={(item) => (
-                    <PaginationItem
-                      {...item}
-                      onClick={(event) => {
-                        if (item.type === 'first') {
-                          handlePageChange(event, Math.max(currentPage - 10, 1));
-                        } else if (item.type === 'last') {
-                          handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
-                        } else {
-                          handlePageChange(event, item.page);
-                        }
-                        if (wrapperRef.current) {
-                          wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                        }
-                      }}
-                    />
-                  )}
-                />
-                <IconButton
-                  onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
-                  disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
-                >
-                  <ArrowForward />
-                </IconButton>
+            
+                <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '-40px'}}>
+                <Box sx={{ minWidth: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
+                  <IconButton
+                    onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
+                    disabled={currentPage <= 10}
+                  >
+                    <ArrowBack />
+                  </IconButton>
+                  <Pagination
+                    count={Math.ceil(sortedData.length / itemsPerPage)}
+                    page={currentPage}
+                    onChange={(event, value) => {
+                      handlePageChange(event, value);
+                      if (wrapperRef.current) {
+                        wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                      }
+                    }}
+                    color="primary"
+                    renderItem={(item) => (
+                      <PaginationItem
+                        {...item}
+                        onClick={(event) => {
+                          if (item.type === 'first') {
+                            handlePageChange(event, Math.max(currentPage - 10, 1));
+                          } else if (item.type === 'last') {
+                            handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
+                          } else {
+                            handlePageChange(event, item.page);
+                          }
+                          if (wrapperRef.current) {
+                            wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                          }
+                        }}
+                      />
+                    )}
+                  />
+                  <IconButton
+                    onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
+                    disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
+                  >
+                    <ArrowForward />
+                  </IconButton>
+                </Box>
               </Box>
-            )}
-          </>
+       
         )}
-      </Box>
+
+      </>
+        )}
+    </Box >
     </>
   );
 }
