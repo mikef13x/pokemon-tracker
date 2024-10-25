@@ -4,7 +4,7 @@ html, body {
     display: flex;
     flex-direction: column;
     background: fixed;
-    background-image: url('../src/assets/pokemonhomescreen.jpg');
+    background-image: url('../src/assets/backgroundtest.jpeg');
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
