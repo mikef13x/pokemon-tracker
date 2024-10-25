@@ -460,7 +460,7 @@ export default function MainSearch() {
               ref={wrapperRef}
               sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
               {sortedData.length === 0 ? (
-                <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '200px' }} >
+                <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '250px' }} >
                   We could not find anything, please try again
                 </Typography>
               ) : (
