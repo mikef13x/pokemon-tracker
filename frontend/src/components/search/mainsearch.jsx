@@ -44,7 +44,7 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import { useLazyQuery } from '@apollo/client';
 import { GET_CARDS_BY_SET, GET_CARDS_BY_NAME } from '../../utils/queries';
 import { modalData, WOTCData, EXData, DPData, POPData, PlatinumData, HGSSData, BWData, XYData, SMData, SSData, SVData, PromoData, OtherData } from '../../assets/set-data/set-data';
-
+import { keyframes } from "@emotion/react";
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
 
 
@@ -241,6 +241,14 @@ export default function MainSearch() {
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
   };
+  const pulse = keyframes`
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.04);
+  }
+`;
 
   const paginatedData = sortedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -443,77 +451,89 @@ export default function MainSearch() {
 
 
       </Paper>
-      <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
-        {searchInitiated ? `${sortedData.length} results` : 'Start a search to begin'}
-      </Typography>
-      <Box
-        ref={wrapperRef}
-        sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
-        {searchInitiated && sortedData.length === 0 ? (
-          <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
-
-          </Typography>
-        ) : (
+        {searchInitiated ? (
           <>
-            {isGridView ? (
-              <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
-            ) : (
-              <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
-            )}
+            <Typography sx={{ textAlign: 'center', fontSize: '24px', padding: '20px', color: 'white', }} >
+              {`${sortedData.length} results`}
+            </Typography>
+            <Box
+              ref={wrapperRef}
+              sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
+              {sortedData.length === 0 ? (
+                <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '250px' }} >
+                  We could not find anything, please try again
+                </Typography>
+              ) : (
+                <>
+                  {isGridView ? (
+                    <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+                  ) : (
+                    <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />
+                  )}
 
-
-            {sortedData.length > 30 && (
-            
-                <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '-40px'}}>
-                <Box sx={{ minWidth: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
-                  <IconButton
-                    onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
-                    disabled={currentPage <= 10}
-                  >
-                    <ArrowBack />
-                  </IconButton>
-                  <Pagination
-                    count={Math.ceil(sortedData.length / itemsPerPage)}
-                    page={currentPage}
-                    onChange={(event, value) => {
-                      handlePageChange(event, value);
-                      if (wrapperRef.current) {
-                        wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                      }
-                    }}
-                    color="primary"
-                    renderItem={(item) => (
-                      <PaginationItem
-                        {...item}
-                        onClick={(event) => {
-                          if (item.type === 'first') {
-                            handlePageChange(event, Math.max(currentPage - 10, 1));
-                          } else if (item.type === 'last') {
-                            handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
-                          } else {
-                            handlePageChange(event, item.page);
-                          }
-                          if (wrapperRef.current) {
-                            wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
-                          }
-                        }}
-                      />
-                    )}
-                  />
-                  <IconButton
-                    onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
-                    disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
-                  >
-                    <ArrowForward />
-                  </IconButton>
-                </Box>
-              </Box>
-       
+                  {sortedData.length > 30 && (
+                    <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '-40px' }}>
+                      <Box sx={{ minWidth: '25%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '8px' }}>
+                        <IconButton
+                          onClick={(event) => handlePageChange(event, Math.max(currentPage - 10, 1))}
+                          disabled={currentPage <= 10}
+                        >
+                          <ArrowBack />
+                        </IconButton>
+                        <Pagination
+                          count={Math.ceil(sortedData.length / itemsPerPage)}
+                          page={currentPage}
+                          onChange={(event, value) => {
+                            handlePageChange(event, value);
+                            if (wrapperRef.current) {
+                              wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                            }
+                          }}
+                          color="primary"
+                          renderItem={(item) => (
+                            <PaginationItem
+                              {...item}
+                              onClick={(event) => {
+                                if (item.type === 'first') {
+                                  handlePageChange(event, Math.max(currentPage - 10, 1));
+                                } else if (item.type === 'last') {
+                                  handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)));
+                                } else {
+                                  handlePageChange(event, item.page);
+                                }
+                                if (wrapperRef.current) {
+                                  wrapperRef.current.scrollTo({ top: 0, behavior: 'auto' }); // Scroll the wrapper element to the top
+                                }
+                              }}
+                            />
+                          )}
+                        />
+                        <IconButton
+                          onClick={(event) => handlePageChange(event, Math.min(currentPage + 10, Math.ceil(sortedData.length / itemsPerPage)))}
+                          disabled={currentPage >= Math.ceil(sortedData.length / itemsPerPage) - 10}
+                        >
+                          <ArrowForward />
+                        </IconButton>
+                      </Box>
+                    </Box>
+                  )}
+                </>
+              )}
+            </Box>
+          </>
+        ) : (
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh', width: '100%' }}>
+            <Typography sx={{  
+            fontSize: '80px',
+            color: 'white',
+            textShadow: '-2px 0 0 black, 0 2px 0 black, -2px 2px 0 black',
+            textAlign: 'center',
+            animation: `${pulse} 0.7s steps(2, end) infinite`,
+            transformOrigin: 'bottom'
+             }}>
+             <span className='tiny5-regular'>Start a search to begin...</span> 
+            </Typography>
+          </Box>
         )}
-
-      </>
-        )}
-    </Box >
-    </>
-  );
-}
+        </>
+  )}
