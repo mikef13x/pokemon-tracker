@@ -353,7 +353,7 @@ const slideUp = keyframes`
                     className: 'poppins-regular', // Add the class to the input element
                   }}
                 />
-                <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '10px', }}
+                <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px', }}
                   onClick={handleSearchButtonClick}
                   disabled={searchValue.trim().length === 0}
                 >
@@ -397,7 +397,7 @@ const slideUp = keyframes`
           <Box
             sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
 
-<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
               <TextField
                 variant="outlined"
                 placeholder="Search for a card..."
@@ -408,7 +408,7 @@ const slideUp = keyframes`
                   className: 'poppins-regular', // Add the class to the input element
                 }}
               />
-              <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '10px', }}
+              <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px' }}
                 onClick={handleSearchButtonClick}
                 disabled={searchValue.trim().length === 0}
               >
