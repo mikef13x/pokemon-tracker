@@ -187,6 +187,8 @@ export default function MainSearch() {
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
     setCurrentPage(1)
+    setAnimationKey(Date.now());
+    
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
@@ -438,19 +440,22 @@ const slideUp = keyframes`
             <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
               <IconButton
                 onClick={() => setIsGridView(true)}
-                sx={{ marginRight: '5px' }}    >
+                sx={{ marginRight: '5px' }}   disabled={true}  >
+                 
                 <ViewModuleIcon
                    sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
                   color={isGridView ? 'primary' : 'inherit'}
                 />
               </IconButton>
-              <IconButton onClick={() => setIsGridView(false)}>
+              <IconButton onClick={() => setIsGridView(false)}  disabled={true}>
                 <ViewListIcon
                   sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
                   color={!isGridView ? 'primary' : 'inherit'}
+                  disabled={true}
                 />
               </IconButton>
               <IconButton
+               disabled={true}
                 onClick={handleFilterOpen}
                 color="primary"
                 sx={{
@@ -458,7 +463,7 @@ const slideUp = keyframes`
                   backdropFilter: 'blur(5px)',
                 }}
               >
-                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} />
+                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }}  disabled={true}/>
               </IconButton>
             </Box>
             </Box>
