@@ -375,7 +375,7 @@ const slideUp = keyframes`
                   onClick={handleSearchButtonClick}
                   disabled={searchValue.trim().length === 0}
                 >
-                  <span className="tiny5-regular">Go</span>
+                  <span className="tiny5-regular">No</span>
                 </Button>
               </Box>
 
