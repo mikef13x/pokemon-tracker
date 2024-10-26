@@ -748,10 +748,10 @@ export const SSData = [
     image: 'https://images.pokemontcg.io/cel25/logo.png',
   },
   {
-    id:11,
+    id: 27,
     setId: 'cel25c',
     name: 'Celebrations Classic Collection',
-    image: 'https://images.pokemontcg.io/cel25c/logo.png'
+    image: 'https://images.pokemontcg.io/cel25c/logo.png',
   },
   {
     id: 11,
@@ -766,10 +766,22 @@ export const SSData = [
     image: 'https://images.pokemontcg.io/swsh9/logo.png',
   },
   {
+    id: 22,
+    setId: 'swsh9tg',
+    name: 'Brilliant Stars Trainer Gallery',
+    image: 'https://images.pokemontcg.io/swsh9tg/logo.png',
+  },
+  {
     id: 13,
     setId: 'swsh10',
     name: 'Astral Radiance',
     image: 'https://images.pokemontcg.io/swsh10/logo.png',
+  },
+  {
+    id: 24,
+    setId: 'swsh10tg',
+    name: 'Astral Radiance Trainer Gallery',
+    image: 'https://images.pokemontcg.io/swsh10tg/logo.png',
   },
   {
     id: 14,
@@ -784,16 +796,58 @@ export const SSData = [
     image: 'https://images.pokemontcg.io/swsh11/logo.png',
   },
   {
+    id: 23,
+    setId: 'swsh11tg',
+    name: 'Lost Origin Trainer Gallery',
+    image: 'https://images.pokemontcg.io/swsh11tg/logo.png',
+  },
+  {
     id: 16,
     setId: 'swsh12',
     name: 'Silver Tempest',
     image: 'https://images.pokemontcg.io/swsh12/logo.png',
   },
   {
+    id: 25,
+    setId: 'swsh12tg',
+    name: 'Silver Tempest Trainer Gallery',
+    image: 'https://images.pokemontcg.io/swsh12tg/logo.png',
+  },
+  {
     id: 17,
     setId: 'swsh12pt5',
     name: 'Crown Zenith',
     image: 'https://images.pokemontcg.io/swsh12pt5/logo.png',
+  },
+  {
+    id: 26,
+    setId: 'swsh12pt5gg',
+    name: 'Crown Zenith Galarian Gallery',
+    image: 'https://images.pokemontcg.io/swsh12pt5gg/logo.png',
+  },
+  {
+    id: 18,
+    setId: 'tk1a',
+    name: 'EX Trainer Kit Latias',
+    image: 'https://images.pokemontcg.io/tk1a/logo.png',
+  },
+  {
+    id: 19,
+    setId: 'tk1b',
+    name: 'EX Trainer Kit Latios',
+    image: 'https://images.pokemontcg.io/tk1b/logo.png',
+  },
+  {
+    id: 20,
+    setId: 'tk2a',
+    name: 'EX Trainer Kit 2 Plusle',
+    image: 'https://images.pokemontcg.io/tk2a/logo.png',
+  },
+  {
+    id: 21,
+    setId: 'tk2b',
+    name: 'EX Trainer Kit 2 Minun',
+    image: 'https://images.pokemontcg.io/tk2b/logo.png',
   },
 ];
 
