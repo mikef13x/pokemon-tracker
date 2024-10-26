@@ -748,6 +748,12 @@ export const SSData = [
     image: 'https://images.pokemontcg.io/cel25/logo.png',
   },
   {
+    id:11,
+    setId: 'cel25c',
+    name: 'Celebrations Classic Collection',
+    image: 'https://images.pokemontcg.io/cel25c/logo.png'
+  },
+  {
     id: 11,
     setId: 'swsh8',
     name: 'Fusion Strike',
