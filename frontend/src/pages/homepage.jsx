@@ -7,11 +7,15 @@ import InfoBox3 from "../components/home/thirdInfo"
 export default function HomePage() {
     return(
         <>
+        <div style={{height:'85vh'}}>
         <Title/>
         <LetsGetStarted/>
+        </div>
+        
         <InfoBox1/>
         <InfoBox2/>
         <InfoBox3/>
+       
         </>
     )
 }
