@@ -87,7 +87,7 @@ export default function MarketCard({ id, image, name, price, cardId, setName }) 
       <Typography variant="body1" sx={{ marginTop: '20px' }}>
         Market Price: {price}
       </Typography>
-      <Typography variant="body1" sx={{ marginTop: '8px' }}>
+      <Typography variant="body1" sx={{ marginTop: '8px', textAlign: 'center' }}>
         Set: {setName}
       </Typography>
       <Typography variant="body1" sx={{ marginTop: '8px' }}>
