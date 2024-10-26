@@ -113,6 +113,7 @@ export default function MainSearch() {
       setFetchedData(location.state.fetchedSetData || []);
       setSelectedImage(location.state.selectedImage || null);
       setSearchInitiated(true);
+      setAnimateSearch(true)
     }
   }, [location.state]);
 
