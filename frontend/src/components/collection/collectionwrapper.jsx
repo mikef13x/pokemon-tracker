@@ -45,9 +45,9 @@ export default function CollectionWrapper() {
 
   const sortedData = [...mainCollection].sort((a, b) => {
     if (sortOrder === 'asc') {
-      return a.id - b.id;
+      return a.releaseDate - b.releaseDate;
     } else if (sortOrder === 'dsc') {
-      return b.id - a.id;
+      return b.releaseDate- a.releaseDate;
     } else if (sortOrder === 'priceDSC') {
       return b.price - a.price;
     } else if (sortOrder === 'priceASC') {
