@@ -3,6 +3,7 @@ import LetsGetStarted from "../components/home/search"
 import InfoBox1 from "../components/home/firstInfo"
 import InfoBox2 from "../components/home/secondInfo"
 import InfoBox3 from "../components/home/thirdInfo"
+import InfoBox4 from "../components/home/fourthinfo"
 
 export default function HomePage() {
     return(
@@ -13,9 +14,12 @@ export default function HomePage() {
         </div>
         
         <InfoBox1/>
+      
         <InfoBox2/>
+       
         <InfoBox3/>
        
+        <InfoBox4/>
         </>
     )
 }

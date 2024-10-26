@@ -35,7 +35,7 @@ export default function LetsGetStarted() {
             </Link>
             )}
            </Box>
-           <Typography sx={{color:'white', marginTop:'125px', animation: 'fadeInOut 2s infinite'}}>
+           <Typography sx={{color:'white', marginTop:'100px', animation: 'fadeInOut 2s infinite'}}>
            <span className='poppins-regular'>Scroll down for more info</span>
            </Typography>
         </Box>
