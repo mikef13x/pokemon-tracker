@@ -25,7 +25,7 @@ export default function CollectionCard({ name, price, image, cardId }) {
                     )}
                     <CardContent sx={{ textAlign: 'center', color: 'black', padding: '8px' }}>
                         <Typography variant="h5" component="div">
-                            <span className='poppins-regular'>{name}</span>
+                            <span className='poppins-regular'>{name} #{cardId.split('-')[1]}</span>
                         </Typography>
                         <Typography variant="h6">
                             <span className='poppins-regular'>{price}</span>

@@ -1,26 +1,12 @@
 import { useState, useEffect } from 'react';
-import {
-  Box,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  IconButton,
-  TextField,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Typography,
-} from '@mui/material';
+import { Box, Select, MenuItem, FormControl, InputLabel, IconButton, TextField, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CollectionCard from './collectioncard'; // Import the CollectionCard component
 import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import Auth from '../../utils/auth';
-
-
+import { motion } from 'framer-motion';
+import { containerInfo, itemInfo } from '../../utils/framerMotion';
 import { keyframes } from '@emotion/react';
 
 const pulse = keyframes`
@@ -32,12 +18,12 @@ const pulse = keyframes`
   }
 `;
 
-
 export default function CollectionWrapper() {
   const [sortOrder, setSortOrder] = useState('');
   const [showSearch, setShowSearch] = useState(false);
   const [mainCollection, setMainCollection] = useState([]);
-  const [collectionName, setCollectionName] = useState('')
+  const [collectionName, setCollectionName] = useState('');
+  const [animationKey, setAnimationKey] = useState(0); // State for animation key
 
   const user = Auth.loggedIn() ? Auth.getProfile().data : null;
 
@@ -45,10 +31,12 @@ export default function CollectionWrapper() {
     variables: { userId: user ? user.id : '' },
     skip: !user, // Skip the query if the user is not logged in
   });
+
   useEffect(() => {
     if (data) {
       setMainCollection(data.getUserMainCollection.cards);
-      setCollectionName(data.getUserMainCollection.collectionName)
+      setCollectionName(data.getUserMainCollection.collectionName);
+      setAnimationKey((prevKey) => prevKey + 1); // Update the animation key
     }
   }, [data]);
 
@@ -57,9 +45,9 @@ export default function CollectionWrapper() {
 
   const sortedData = [...mainCollection].sort((a, b) => {
     if (sortOrder === 'asc') {
-      return a.id - b.id;
+      return a.releaseDate - b.releaseDate;
     } else if (sortOrder === 'dsc') {
-      return b.id - a.id;
+      return b.releaseDate- a.releaseDate;
     } else if (sortOrder === 'priceDSC') {
       return b.price - a.price;
     } else if (sortOrder === 'priceASC') {
@@ -94,8 +82,7 @@ export default function CollectionWrapper() {
           zIndex: '1000',
           marginTop: '90px',
           left: 0,
-        }}
-      >
+        }}>
         <Typography
           sx={{
             fontSize: '55px',
@@ -105,8 +92,7 @@ export default function CollectionWrapper() {
             animation: `${pulse} 0.7s steps(2, end) infinite`,
             transformOrigin: 'bottom',
             width: '100%',
-          }}
-        >
+          }}>
           <span className="tiny5-regular">{collectionName}</span>
         </Typography>
       </Box>
@@ -119,16 +105,10 @@ export default function CollectionWrapper() {
           marginTop: '100px',
           zIndex: '1100',
           position: 'fixed',
-        }}
-      >
+        }}>
         <FormControl sx={{ minWidth: 120, backgroundColor: 'white' }}>
           <InputLabel id="sort-label">Sort</InputLabel>
-          <Select
-            labelId="sort-label"
-            value={sortOrder}
-            onChange={handleSortChange}
-            label="Sort"
-          >
+          <Select labelId="sort-label" value={sortOrder} onChange={handleSortChange} label="Sort">
             <MenuItem value="asc">Oldest</MenuItem>
             <MenuItem value="dsc">Newest</MenuItem>
             <MenuItem value="priceDSC">Highest Price</MenuItem>
@@ -146,27 +126,17 @@ export default function CollectionWrapper() {
             height: '40px',
             borderRadius: '50%',
             backdropFilter: 'blur(5px)',
-          }}
-        >
+          }}>
           <AddIcon />
         </IconButton>
       </Box>
-      <Dialog
-        open={showSearch}
-        onClose={toggleSearchBar}
-        maxWidth="md"
-        fullWidth
-      >
+      <Dialog open={showSearch} onClose={toggleSearchBar} maxWidth="md" fullWidth>
         <DialogTitle>Search</DialogTitle>
         <DialogContent>
           <TextField label="Search" variant="outlined" fullWidth />
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center' }}>
-          <Button
-            sx={{ textAlign: 'center' }}
-            onClick={toggleSearchBar}
-            color="primary"
-          >
+          <Button sx={{ textAlign: 'center' }} onClick={toggleSearchBar} color="primary">
             Close
           </Button>
         </DialogActions>
@@ -184,29 +154,30 @@ export default function CollectionWrapper() {
               width: '100vw',
               marginTop: '200px',
               backdropFilter: 'blur(20px)',
-            }}
-          >
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-              gap: '50px',
-            }}
-          >
-            {sortedData.map((item) => (
-              <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
-                <CollectionCard
-                  cardId={item.cardId}
-                  name={item.name}
-                  price={formatPrice(item.price)}
-                  image={item.image}
-                />
+            }}>
+            <motion.div
+              key={animationKey} // Use the animation key
+              variants={containerInfo}
+              initial="hidden"
+              animate="visible">
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                  gap: '50px',
+                }}>
+                {sortedData.map((item) => (
+                  <motion.div key={`${item.cardId}-${item.price}-${item.name}`} variants={itemInfo}>
+                    <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
+                      <CollectionCard cardId={item.cardId} name={item.name} price={formatPrice(item.price)} image={item.image} />
+                    </Box>
+                  </motion.div>
+                ))}
               </Box>
-            ))}
+            </motion.div>
           </Box>
         </Box>
       </Box>
-    </Box>
     </Box>
   );
 }
