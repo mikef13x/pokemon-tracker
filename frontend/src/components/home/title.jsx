@@ -23,7 +23,7 @@ export default function Title() {
             transformOrigin: 'bottom',
             '@media (max-width: 1300px)': {
                 fontSize: '80px', // Adjust the font size for smaller screens
-                marginTop: '100px', // Adjust the margin for smaller screens
+                marginTop: '300px', // Adjust the margin for smaller screens
             },
             '@media (max-width: 600px)': {
               fontSize: '50px', // Adjust the font size for smaller screens
