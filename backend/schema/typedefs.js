@@ -58,7 +58,7 @@ type Query {
   getUserMainCollection(userId: ID!): Collection
   getCards: [Card]
   getCard(cardId: String!): Card
-  getCardsBySet(setId: String!): [Card]
+  getCardsBySet(setId: String!, filters: CardFiltersInput): [Card]
   getCardsByName(name: String!, filters: CardFiltersInput): [Card]
 }
 
