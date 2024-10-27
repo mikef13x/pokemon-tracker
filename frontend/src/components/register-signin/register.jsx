@@ -85,7 +85,7 @@ const RegisterForm = () => {
       style={{ minHeight: '80vh', display: 'flex' }}
     >
       <Grid item xs={10} sm={6} md={4}>
-        <Paper elevation={3} style={{ padding: '20px', marginBottom: '50px' }}>
+        <Paper elevation={3} style={{ padding: '20px', marginTop:'100px', marginBottom:'40px' }}>
           <Typography variant="h5" align="center" gutterBottom>
             Register
           </Typography>
