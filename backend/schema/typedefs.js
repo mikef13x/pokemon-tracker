@@ -42,6 +42,13 @@ type Card {
   price: Float
 }
 
+input CardFiltersInput {
+  setId: [ID]
+  setName: [String]
+  releaseDate: String
+  cardType: [String]
+}
+
 type Query {
   getUsers: [User]
   getUser(userId: ID!): User
@@ -52,7 +59,7 @@ type Query {
   getCards: [Card]
   getCard(cardId: String!): Card
   getCardsBySet(setId: String!): [Card]
-  getCardsByName(name: String!): [Card]
+  getCardsByName(name: String!, filters: CardFiltersInput): [Card]
 }
 
 type Mutation {

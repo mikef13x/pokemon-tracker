@@ -133,16 +133,16 @@ export const GET_CARD = gql`
 `;
 
 export const GET_CARDS_BY_NAME = gql`
-  query getCardsByName($name: String!) {
-    getCardsByName(name: $name) {
+  query getCardsByName($name: String!, $filters: CardFiltersInput) {
+    getCardsByName(name: $name, filters: $filters) {
       _id
       name
       image
       cardId
       cardType
-      releaseDate
       setId
       setName
+      releaseDate
       price
     }
   }
