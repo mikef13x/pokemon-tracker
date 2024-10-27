@@ -31,13 +31,6 @@ import { useRef, useEffect } from 'react';
 import SearchWrapper2 from './searchwrapper2';
 import SearchWrapper from './searchwrapper';
 import { useNavigate, useLocation } from 'react-router-dom';
-// import Mudkip from '../../assets/mudkipgoldstar.jpg';
-// import Groudon from '../../assets/groudongoldstar.jpg'
-// import Gyarados from '../../assets/gyaradosgoldstar.jpg'
-// import Lisia from '../../assets/lisiapokemon.jpeg'
-// import Mewtwo from '../../assets/mewtwogoldstar.jpg'
-// import Vaporeon from '../../assets/vaporeongoldstar.jpg'
-// import Rayquaza from '../../assets/rayponcho.jpg'
 import { useState } from 'react';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
@@ -69,6 +62,7 @@ export default function MainSearch() {
   const wrapperRef = useRef(null)
   const itemsPerPage = 30;
   const [selectedSets, setSelectedSets] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [animateSearch, setAnimateSearch] = useState(false);
@@ -76,10 +70,12 @@ export default function MainSearch() {
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
   
 
-
-
   const handleSetsChange = (event) => {
     setSelectedSets(event.target.value);
+  };
+
+  const handleTypesChange = (event) => {
+    setSelectedTypes(event.target.value);
   };
 
   const handleYearsChange = (event) => {
@@ -568,6 +564,8 @@ const slideUp = keyframes`
           onClose={handleFilterClose}
           selectedSets={selectedSets}
           handleSetsChange={handleSetsChange}
+          selectedTypes= {selectedTypes}
+          handleTypesChange={handleTypesChange}
           selectedYears={selectedYears}
           handleYearsChange={handleYearsChange}
           selectedPrices={selectedPrices}
