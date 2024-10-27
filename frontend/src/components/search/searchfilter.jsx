@@ -1,6 +1,6 @@
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
 import { useState } from 'react';
-export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedTypes, handleTypesChange }) {
+export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange }) {
   return (
     <>
       <Dialog open={open} onClose={onClose} maxWidth="md">
@@ -19,7 +19,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
           </FormControl>
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
             <InputLabel id="type-select-label">Card Type</InputLabel>
-            <Select labelId="type-select-label" id="type-select" multiple value={selectedTypes} onChange={handleTypesChange} renderValue={(selected) => selected.join(', ')}>
+            <Select labelId="type-select-label" id="type-select" multiple value={selectedCardTypes} onChange={handleCardTypesChange} renderValue={(selected) => selected.join(', ')}>
               <MenuItem value="Pokémon">Pokémon</MenuItem>
               <MenuItem value="Trainer">Trainer</MenuItem>
               <MenuItem value="Energy">Energy</MenuItem>

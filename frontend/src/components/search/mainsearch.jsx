@@ -62,7 +62,7 @@ export default function MainSearch() {
   const wrapperRef = useRef(null)
   const itemsPerPage = 30;
   const [selectedSets, setSelectedSets] = useState([]);
-  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedCardTypes, setSelectedCardTypes] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [animateSearch, setAnimateSearch] = useState(false);
@@ -74,8 +74,8 @@ export default function MainSearch() {
     setSelectedSets(event.target.value);
   };
 
-  const handleTypesChange = (event) => {
-    setSelectedTypes(event.target.value);
+  const handleCardTypesChange = (event) => {
+    setSelectedCardTypes(event.target.value);
   };
 
   const handleYearsChange = (event) => {
@@ -198,6 +198,7 @@ export default function MainSearch() {
     setShowFilter(true)
   }
   const handleFilterClose = () => {
+    handleSearchButtonClick();
     setShowFilter(false);
   };
 
@@ -234,11 +235,18 @@ export default function MainSearch() {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
     setTimeout(() => {
+      const filters = {};
+      if (selectedSets && selectedSets.length > 0) {
+        filters.setId = selectedSets;
+      }
+      if (selectedCardTypes && selectedCardTypes.length > 0) {
+        filters.cardType = selectedCardTypes;
+      }
       setSearchInitiated(true);
       getCardsByName({
         variables: {
           name: searchValue,
-          setName: selectedSets,
+          filters: filters       
         },
       }).finally(() => {
         // Any additional logic after the search is complete
@@ -255,9 +263,9 @@ export default function MainSearch() {
     if (event.key === 'Enter') {
       setCurrentPage(1);
       setSelectedImage(null);
-       setAnimateSearch(true);
-       setAnimationKey(Date.now());
-       setFetchedData([]);
+      setAnimateSearch(true);
+      setAnimationKey(Date.now());
+      setFetchedData([]);
       if (wrapperRef.current) {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
@@ -267,6 +275,7 @@ export default function MainSearch() {
           variables: {
             name: searchValue,
             setName: selectedSets,
+            cardType: selectedCardTypes, // Add cardType to the query variables
           },
         }).finally(() => {
           // Any additional logic after the search is complete
@@ -373,7 +382,7 @@ const slideUp = keyframes`
                   onClick={handleSearchButtonClick}
                   disabled={searchValue.trim().length === 0}
                 >
-                  <span className="tiny5-regular">No</span>
+                  <span className="tiny5-regular">Go</span>
                 </Button>
               </Box>
 
@@ -564,8 +573,8 @@ const slideUp = keyframes`
           onClose={handleFilterClose}
           selectedSets={selectedSets}
           handleSetsChange={handleSetsChange}
-          selectedTypes= {selectedTypes}
-          handleTypesChange={handleTypesChange}
+          selectedCardTypes= {selectedCardTypes}
+          handleCardTypesChange={handleCardTypesChange}
           selectedYears={selectedYears}
           handleYearsChange={handleYearsChange}
           selectedPrices={selectedPrices}

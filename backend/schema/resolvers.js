@@ -100,25 +100,25 @@ const resolvers = {
       }
     },
 
-    getCardsByName: async (_, { name }) => {
+    getCardsByName: async (_, { name, filters }) => {
       const escapeRegExp = (string) => {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       };
-
+    
       const isValidInput = (input) => {
         const whitelist = /^[a-zA-Z0-9\s\[\]\(\)]+$/;
         return whitelist.test(input);
       };
-
+    
       try {
         if (!isValidInput(name)) {
           throw new Error('Invalid input');
         }
-
+    
         const components = name.split(' ');
         let numberPart = '';
         const nameParts = [];
-
+    
         components.forEach((component) => {
           if (!isNaN(component)) {
             numberPart = component;
@@ -126,14 +126,36 @@ const resolvers = {
             nameParts.push(escapeRegExp(component));
           }
         });
-
+    
         const nameRegex = new RegExp(nameParts.map((part) => `(?=.*${part})`).join(''), 'i');
         let searchCriteria = { name: nameRegex };
-
+    
         if (numberPart) {
           searchCriteria.cardId = new RegExp(`-${escapeRegExp(numberPart)}$`, 'i');
         }
-
+    
+        // Apply additional filters if provided
+        if (filters) {
+          if (filters.setId && Array.isArray(filters.setId)) {
+            searchCriteria.setId = { $in: filters.setId };
+          } else if (filters.setId) {
+            searchCriteria.setId = filters.setId;
+          }
+          if (filters.setName && Array.isArray(filters.setName)) {
+            searchCriteria.setName = { $in: filters.setName.map((name) => new RegExp(escapeRegExp(name), 'i')) };
+          } else if (filters.setName) {
+            searchCriteria.setName = new RegExp(escapeRegExp(filters.setName), 'i');
+          }
+          if (filters.releaseDate) {
+            searchCriteria.releaseDate = filters.releaseDate;
+          }
+          if (filters.cardType && Array.isArray(filters.cardType)) {
+            searchCriteria.cardType = { $in: filters.cardType };
+          } else if (filters.cardType) {
+            searchCriteria.cardType = filters.cardType;
+          }
+        }
+    
         const cards = await Card.find(searchCriteria);
         return cards;
       } catch (error) {
