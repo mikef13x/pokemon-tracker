@@ -427,7 +427,7 @@ const slideUp = keyframes`
                 />
                 <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px', }}
                   onClick={handleSearchButtonClick}
-                  disabled={searchValue.trim().length === 0}
+                  // disabled={searchValue.trim().length === 0}
                 >
                   <span className="tiny5-regular">Go</span>
                 </Button>
@@ -515,7 +515,7 @@ const slideUp = keyframes`
                   backdropFilter: 'blur(5px)',
                 }}
               >
-                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }}  disabled={true}/>
+                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,1)' }}  />
               </IconButton>
             </Box>
             </Box>
