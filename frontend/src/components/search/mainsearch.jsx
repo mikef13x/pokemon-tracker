@@ -150,28 +150,25 @@ export default function MainSearch() {
     setAnimationKey(Date.now());
     setFetchedData([]);
     setIsSetModalSearch(true);
-    setTimeout(() => {
-
-   
-    if (!setId) {
-      console.error('setId is null or undefined');
-      return;
-    }
-    const filters = {};
-
-    if (selectedCardTypes && selectedCardTypes.length > 0) {
-      filters.cardType = selectedCardTypes;
-    }
-    setSearchInitiated(true);
-    getCardsBySet({variables: {setId: setId, filters:filters}})
-   
+    setCurrentPage(1);
     setSelectedImage(setImage);
     setSearchInitiated(true)
-    
-    setCurrentPage(1)
+
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
+    setTimeout(() => {
+      if (!setId) {
+        console.error('setId is null or undefined');
+        return;
+      }
+      const filters = {};
+
+      if (selectedCardTypes && selectedCardTypes.length > 0) {
+        filters.cardType = selectedCardTypes;
+      }
+      setSearchInitiated(true);
+      getCardsBySet({variables: {setId: setId, filters:filters}})
      }, 400)
   };
 
@@ -210,10 +207,11 @@ export default function MainSearch() {
   };
 
   const handleFilterApply = () => {
+    setCurrentPage(1)
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+    }
     if (isSetModalSearch) {
-      if (wrapperRef.current) {
-        wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
-      }
       setTimeout(() => {
         const filters = {};
         if (selectedCardTypes && selectedCardTypes.length > 0) {
