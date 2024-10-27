@@ -1,5 +1,7 @@
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
 import { useState } from 'react';
+import setIds from '../../assets/set-data/setIds.json'; // Import the JSON data
+
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange }) {
   return (
     <>
@@ -11,10 +13,11 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
             <InputLabel id="sets-select-label">Sets</InputLabel>
             <Select labelId="sets-select-label" id="sets-select" multiple value={selectedSets} onChange={handleSetsChange} renderValue={(selected) => selected.join(', ')}>
-              <MenuItem value="Base">Base Set</MenuItem>
-              <MenuItem value="Jungle">Jungle</MenuItem>
-              <MenuItem value="Fossil">Fossil</MenuItem>
-              {/* Add more sets as needed */}
+              {Object.entries(setIds).map(([key, value]) => (
+                <MenuItem key={key} value={key}>
+                  {value}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
@@ -23,7 +26,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
               <MenuItem value="Pokémon">Pokémon</MenuItem>
               <MenuItem value="Trainer">Trainer</MenuItem>
               <MenuItem value="Energy">Energy</MenuItem>
-              {/* Add more sets as needed */}
+              {/* Add more card types as needed */}
             </Select>
           </FormControl>
           {/* <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
