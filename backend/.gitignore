@@ -2,4 +2,6 @@ node_modules
 package-lock.json
 .env
 allSetsData.json
+jpnAllSetsData.json
+jpnSets.json
 sets.json
