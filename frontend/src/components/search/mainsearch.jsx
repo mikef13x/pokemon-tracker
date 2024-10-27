@@ -57,6 +57,7 @@ export default function MainSearch() {
   const [searchValue, setSearchValue] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInitiated, setSearchInitiated] = useState(false);
+  const [currentSetModal, setCurrentSetModal] = useState('')
 
   const navigate = useNavigate();
   const wrapperRef = useRef(null)
@@ -66,6 +67,7 @@ export default function MainSearch() {
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [filtersCleared, setFiltersCleared] = useState(false);
+  const [isSetModalSearch, setIsSetModalSearch] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
 
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
@@ -144,10 +146,12 @@ export default function MainSearch() {
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
     const setImage = event.currentTarget.getAttribute('data-image');
+    setCurrentSetModal(setId)
     setAnimateSearch(true)
     handleModalClose();
     setAnimationKey(Date.now());
     setFetchedData([]);
+    setIsSetModalSearch(true);
     setTimeout(() => {
 
    
@@ -203,7 +207,25 @@ export default function MainSearch() {
   };
 
   const handleFilterApply = () => {
-    handleSearchButtonClick();
+    if (isSetModalSearch) {
+      if (wrapperRef.current) {
+        wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
+      }
+      setTimeout(() => {
+        console.log("set modal", currentSetModal)
+        const filters = {};
+        if (selectedSets && selectedSets.length > 0) {
+          filters.setId = selectedSets;
+        }
+        if (selectedCardTypes && selectedCardTypes.length > 0) {
+          filters.cardType = selectedCardTypes;
+        }
+        setSearchInitiated(true);
+        getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
+      }, 400);
+    } else {
+      handleSearchButtonClick();
+    }
     setShowFilter(false);
   };
 
@@ -218,7 +240,7 @@ export default function MainSearch() {
       handleFilterApply();
       setFiltersCleared(false);
     }
-  }, [selectedSets, selectedCardTypes, filtersCleared, handleFilterApply]);
+  }, [selectedSets, selectedCardTypes, filtersCleared]);
   
 
   const handleModalClose = () => {
@@ -249,6 +271,7 @@ export default function MainSearch() {
     setAnimateSearch(true);
     setAnimationKey(Date.now());
     setFetchedData([]);
+    setIsSetModalSearch(false);
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
@@ -284,6 +307,7 @@ export default function MainSearch() {
       setAnimateSearch(true);
       setAnimationKey(Date.now());
       setFetchedData([]);
+      setIsSetModalSearch(false);
       if (wrapperRef.current) {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
@@ -600,6 +624,7 @@ const slideUp = keyframes`
           handleFilterClose={handleFilterClose}
           handleFilterApply={handleFilterApply}
           handleClearFilters={handleClearFilters}
+          isSetModalSearch={isSetModalSearch}
         />
 
 
