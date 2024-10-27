@@ -482,7 +482,7 @@ const slideUp = keyframes`
               />
               <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px' }}
                 onClick={handleSearchButtonClick}
-                disabled={searchValue.trim().length === 0}
+                // disabled={searchValue.trim().length === 0}
               >
                 <span className="tiny5-regular">Go</span>
               </Button>
@@ -490,6 +490,17 @@ const slideUp = keyframes`
 
 
             <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
+            <IconButton
+              //  disabled={true}
+                onClick={handleFilterOpen}
+                color="primary"
+                sx={{
+                  backgroundColor: 'rgba(255,255,255, 0)', color: 'white', marginLeft: '20px', width: '55px', height: '55px',
+                  backdropFilter: 'blur(5px)',
+                }}
+              >
+                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,1)' }}  />
+              </IconButton>
               <IconButton
                 onClick={() => setIsGridView(true)}
                 sx={{ marginRight: '5px' }}   disabled={true}  >
@@ -506,17 +517,7 @@ const slideUp = keyframes`
                   disabled={true}
                 />
               </IconButton>
-              <IconButton
-              //  disabled={true}
-                onClick={handleFilterOpen}
-                color="primary"
-                sx={{
-                  backgroundColor: 'rgba(255,255,255, 0)', color: 'white', marginLeft: '20px', width: '55px', height: '55px',
-                  backdropFilter: 'blur(5px)',
-                }}
-              >
-                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,1)' }}  />
-              </IconButton>
+            
             </Box>
             </Box>
           </Box>
