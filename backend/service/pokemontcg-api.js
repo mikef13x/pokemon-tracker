@@ -68,10 +68,10 @@ router.get('/seed', async (req, res) => {
     await Card.collection.drop();
     console.log('Card collection dropped');
 
-    const filePath = path.join(__dirname, '../seed/filteredSetsData.json');
+    let filePath = path.join(__dirname, '../seed/filteredSetsData.json');
     console.log(`Reading file from: ${filePath}`);
-    const jsonData = fs.readFileSync(filePath, 'utf-8');
-    const cards = JSON.parse(jsonData);
+    let jsonData = fs.readFileSync(filePath, 'utf-8');
+    let cards = JSON.parse(jsonData);
 
     const addedCards = [];
     const skippedCards = [];
@@ -92,6 +92,37 @@ router.get('/seed', async (req, res) => {
           setId: card.setId,
           setName: card.setName,
           releaseDate: card.releaseDate,
+          price: card.price,
+        });
+        await newCard.save();
+        addedCards.push(newCard);
+      } catch (error) {
+        console.error(`Error saving cardId: ${card.id}`, error);
+        throw error;
+      }
+    }
+// Japanese card set
+    filePath = path.join(__dirname, '../seed/jpnFilteredSetsData.json');
+    console.log(`Reading file from: ${filePath}`);
+    jsonData = fs.readFileSync(filePath, 'utf-8');
+    cards = JSON.parse(jsonData);
+
+    for (const card of cards) {
+      try {
+        const existingCard = await Card.findOne({ cardId: card.id });
+        if (existingCard) {
+          skippedCards.push(card);
+          continue;
+        }
+
+        const newCard = new Card({
+          name: card.name,
+          image: card.images,
+          cardId: card.id,
+          cardType: card.cardType || null,
+          setId: card.setId || "jpn",
+          setName: card.setName,
+          releaseDate: card.releaseDate || null,
           price: card.price,
         });
         await newCard.save();

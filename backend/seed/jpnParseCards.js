@@ -20,10 +20,9 @@ fs.readFile(filePath, 'utf8', (err, data) => {
                 id: item.id,
                 name: item.name,
                 images: item.imageUrl,
-                // setId: item.setData.id,
+                setId: "jpn",
                 setName: item.setData.name,
-                // releaseDate: item.set.releaseDate,
-                // update card type
+                releaseDate: "1999/01/09",
                 cardType: "card",
                 price: null,
             };
