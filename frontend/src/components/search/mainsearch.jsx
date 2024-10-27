@@ -121,7 +121,6 @@ export default function MainSearch() {
     GET_CARDS_BY_SET,
     {
       onCompleted: (data) => {
-        console.log('Query completed:', data);
         setFetchedData(data.getCardsBySet); // Update the state with the fetched data
       },
       onError: (error) => {
@@ -135,7 +134,6 @@ export default function MainSearch() {
     { loading: loadingName, data: dataName, error: errorName },
   ] = useLazyQuery(GET_CARDS_BY_NAME, {
     onCompleted: (data) => {
-      console.log('Query completed:', data);
       setFetchedData(data.getCardsByName); // Update the state with the fetched data
     },
     onError: (error) => {
@@ -159,8 +157,15 @@ export default function MainSearch() {
       console.error('setId is null or undefined');
       return;
     }
-    console.log(`Running query for setId: ${setId}`);
-    getCardsBySet({ variables: { setId } });
+    const filters = {};
+    if (selectedSets && selectedSets.length > 0) {
+      filters.setId = selectedSets;
+    }
+    if (selectedCardTypes && selectedCardTypes.length > 0) {
+      filters.cardType = selectedCardTypes;
+    }
+    setSearchInitiated(true);
+    getCardsBySet({variables: {setId: setId, filters:filters}})
    
     setSelectedImage(setImage);
     setSearchInitiated(true)
@@ -212,7 +217,6 @@ export default function MainSearch() {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
       setTimeout(() => {
-        console.log("set modal", currentSetModal)
         const filters = {};
         if (selectedSets && selectedSets.length > 0) {
           filters.setId = selectedSets;
@@ -311,13 +315,21 @@ export default function MainSearch() {
       if (wrapperRef.current) {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
+      
       setTimeout(() => {
+        setSearchInitiated(true);
+        const filters = {};
+        if (selectedSets && selectedSets.length > 0) {
+          filters.setId = selectedSets;
+        }
+        if (selectedCardTypes && selectedCardTypes.length > 0) {
+          filters.cardType = selectedCardTypes;
+        }
         setSearchInitiated(true);
         getCardsByName({
           variables: {
             name: searchValue,
-            setName: selectedSets,
-            cardType: selectedCardTypes, // Add cardType to the query variables
+            filters: filters       
           },
         }).finally(() => {
           // Any additional logic after the search is complete
