@@ -34,7 +34,7 @@ const fetchAllSetsData = async () => {
     console.log(`Fetching data for set ID: ${set.id}`);
     const setData = await fetchSetData(set.id);
     if (setData) {
-      allSetsData.push(setData);
+      allSetsData.push(setData.data);
     }
     // Pause for 5 seconds before the next request
     await delay(3000);

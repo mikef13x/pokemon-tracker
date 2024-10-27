@@ -4,4 +4,5 @@ package-lock.json
 allSetsData.json
 jpnAllSetsData.json
 jpnSets.json
+jpnFilteredSetsData.json
 sets.json
