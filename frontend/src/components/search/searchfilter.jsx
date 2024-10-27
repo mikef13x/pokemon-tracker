@@ -2,7 +2,7 @@ import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Selec
 import { useState } from 'react';
 import setIds from '../../assets/set-data/setIds.json'; // Import the JSON data
 
-export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange }) {
+export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters }) {  
   return (
     <>
       <Dialog open={open} onClose={onClose} maxWidth="md">
@@ -63,8 +63,11 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
     </FormControl> */}
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center' }}>
-          <Button sx={{ textAlign: 'center' }} onClick={handleFilterClose} color="primary">
+          <Button sx={{ textAlign: 'center' }} onClick={handleFilterApply} color="primary">
             Apply
+          </Button>
+          <Button sx={{ textAlign: 'center' }} onClick={handleClearFilters} color="primary">
+            Clear Filters
           </Button>
           <Button sx={{ textAlign: 'center' }} onClick={handleFilterClose} color="primary">
             Cancel

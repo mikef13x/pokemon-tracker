@@ -65,6 +65,7 @@ export default function MainSearch() {
   const [selectedCardTypes, setSelectedCardTypes] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
+  const [filtersCleared, setFiltersCleared] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
 
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
@@ -198,10 +199,27 @@ export default function MainSearch() {
     setShowFilter(true)
   }
   const handleFilterClose = () => {
+    setShowFilter(false);
+  };
+
+  const handleFilterApply = () => {
     handleSearchButtonClick();
     setShowFilter(false);
   };
 
+  const handleClearFilters = () => {
+    setSelectedSets([]);
+    setSelectedCardTypes([]);
+    setFiltersCleared(true);
+  };
+
+  useEffect(() => {
+    if (filtersCleared) {
+      handleFilterApply();
+      setFiltersCleared(false);
+    }
+  }, [selectedSets, selectedCardTypes, filtersCleared, handleFilterApply]);
+  
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -580,6 +598,8 @@ const slideUp = keyframes`
           selectedPrices={selectedPrices}
           handlePricesChange={handlePricesChange}
           handleFilterClose={handleFilterClose}
+          handleFilterApply={handleFilterApply}
+          handleClearFilters={handleClearFilters}
         />
 
 
