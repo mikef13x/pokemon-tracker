@@ -90,9 +90,32 @@ const resolvers = {
       }
     },
 
-    getCardsBySet: async (_, { setId }) => {
+    getCardsBySet: async (_, { setId, filters }) => {
       try {
-        const setCards = await Card.find({ setId: setId });
+        let searchCriteria = { setId: setId};
+
+        if (filters) {
+          if (filters.setId && Array.isArray(filters.setId)) {
+            searchCriteria.setId = { $in: filters.setId };
+          } else if (filters.setId) {
+            searchCriteria.setId = filters.setId;
+          }
+          if (filters.setName && Array.isArray(filters.setName)) {
+            searchCriteria.setName = { $in: filters.setName.map((name) => new RegExp(escapeRegExp(name), 'i')) };
+          } else if (filters.setName) {
+            searchCriteria.setName = new RegExp(escapeRegExp(filters.setName), 'i');
+          }
+          if (filters.releaseDate) {
+            searchCriteria.releaseDate = filters.releaseDate;
+          }
+          if (filters.cardType && Array.isArray(filters.cardType)) {
+            searchCriteria.cardType = { $in: filters.cardType };
+          } else if (filters.cardType) {
+            searchCriteria.cardType = filters.cardType;
+          }
+        }
+
+        const setCards = await Card.find(searchCriteria);
         return setCards;
       } catch (error) {
         console.error('error getting cards by set', error);

@@ -149,8 +149,8 @@ export const GET_CARDS_BY_NAME = gql`
 `;
 
 export const GET_CARDS_BY_SET = gql`
-  query getCardsBySet($setId: String!) {
-    getCardsBySet(setId: $setId) {
+  query getCardsBySet($setId: String!, $filters: CardFiltersInput) {
+    getCardsBySet(setId: $setId, filters: $filters) {
       _id
       name
       image
