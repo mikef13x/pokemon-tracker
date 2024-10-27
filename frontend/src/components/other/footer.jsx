@@ -18,23 +18,8 @@ export default function Footer() {
                 padding: '20px 0',
                 boxSizing: 'border-box'
             }}>
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                      <Box component="img" src={Logo} alt="logo" sx={{
-                        maxWidth: '200px',
-                        maxHeight: '100%',
-                        paddingTop: '80px',
-                        '@media (max-width: 1100px)': {
-                            maxWidth: '150px', // Adjust the maxWidth for smaller screens
-                            paddingTop: '80px' // Adjust the padding for smaller screens
-                        },
-                        '@media (max-width: 600px)': {
-                            maxWidth: '100px', // Adjust the maxWidth for smaller screens
-                            paddingTop: '80px' // Adjust the padding for smaller screens
-                        },
-                       
-                    }} />
-                </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '10px', marginTop: '10px' }}>
+              
+                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '10px', marginTop: '50px' }}>
                     <Button target="_blank" color="inherit">
                         Contact
                     </Button>
