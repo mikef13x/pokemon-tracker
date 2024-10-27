@@ -9,6 +9,7 @@ const cardSchema = new Schema({
   releaseDate: {type: Date},
   cardType: {type: String},
   price: {type: Number},
+  
 });
 
 const Card = model('Card', cardSchema);
