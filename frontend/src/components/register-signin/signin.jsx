@@ -54,7 +54,7 @@ const LoginForm = () => {
               padding: '20px',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '200px',
+             
             }}
           >
             {' '}
