@@ -158,9 +158,7 @@ export default function MainSearch() {
       return;
     }
     const filters = {};
-    if (selectedSets && selectedSets.length > 0) {
-      filters.setId = selectedSets;
-    }
+
     if (selectedCardTypes && selectedCardTypes.length > 0) {
       filters.cardType = selectedCardTypes;
     }
@@ -218,9 +216,6 @@ export default function MainSearch() {
       }
       setTimeout(() => {
         const filters = {};
-        if (selectedSets && selectedSets.length > 0) {
-          filters.setId = selectedSets;
-        }
         if (selectedCardTypes && selectedCardTypes.length > 0) {
           filters.cardType = selectedCardTypes;
         }
