@@ -26,6 +26,9 @@ fs.readFile(filePath, 'utf8', (err, data) => {
                 setName: item.set.name,
                 releaseDate: item.set.releaseDate,
                 cardType: item.supertype,
+                pokemonType: item.types ? item.types[0] : null,
+                subType: item.subtypes ? item.subtypes[0] : null,
+                artist: item.artist,
                 price: firstMarketPrice ? firstMarketPrice.market : null,
             };
         })
