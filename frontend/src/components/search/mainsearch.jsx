@@ -66,6 +66,9 @@ export default function MainSearch() {
   const [selectedCardTypes, setSelectedCardTypes] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
+  const [selectedArtist, setSelectedArtist] = useState([]);
+  const [selectedSubtype, setSelectedSubtype] = useState([]);
+  const [selectedPokemonType, setSelectedPokemonType] = useState([]);
   const [filtersCleared, setFiltersCleared] = useState(false);
   const [isSetModalSearch, setIsSetModalSearch] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
@@ -87,6 +90,18 @@ export default function MainSearch() {
 
   const handlePricesChange = (event) => {
     setSelectedPrices(event.target.value);
+  };
+
+  const handleArtistChange = (event) => {
+    setSelectedArtist(event.target.value);
+  };
+
+  const handleSubtypeChange = (event) => {
+    setSelectedSubtype(event.target.value);
+  };
+
+  const handlePokemonTypeChange = (event) => {
+    setSelectedPokemonType(event.target.value);
   };
 
   const handleCardClick = (card) => {
@@ -167,6 +182,9 @@ export default function MainSearch() {
       if (selectedCardTypes && selectedCardTypes.length > 0) {
         filters.cardType = selectedCardTypes;
       }
+      if (selectedPokemonType && selectedPokemonType.length > 0) {
+        filters.pokemonType = selectedPokemonType;
+      }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
      }, 400)
@@ -217,6 +235,9 @@ export default function MainSearch() {
         if (selectedCardTypes && selectedCardTypes.length > 0) {
           filters.cardType = selectedCardTypes;
         }
+        if (selectedPokemonType && selectedPokemonType.length > 0) {
+          filters.pokemonType = selectedPokemonType;
+        }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
       }, 400);
@@ -229,6 +250,9 @@ export default function MainSearch() {
   const handleClearFilters = () => {
     setSelectedSets([]);
     setSelectedCardTypes([]);
+    setSelectedArtist([]);
+    setSelectedPokemonType([]);
+    setSelectedSubtype([]);
     setFiltersCleared(true);
   };
 
@@ -237,7 +261,7 @@ export default function MainSearch() {
       handleFilterApply();
       setFiltersCleared(false);
     }
-  }, [selectedSets, selectedCardTypes, filtersCleared]);
+  }, [filtersCleared]);
   
 
   const handleModalClose = () => {
@@ -280,6 +304,9 @@ export default function MainSearch() {
       if (selectedCardTypes && selectedCardTypes.length > 0) {
         filters.cardType = selectedCardTypes;
       }
+      if (selectedPokemonType && selectedPokemonType.length > 0) {
+        filters.pokemonType = selectedPokemonType;
+      }
       setSearchInitiated(true);
       getCardsByName({
         variables: {
@@ -317,6 +344,9 @@ export default function MainSearch() {
         }
         if (selectedCardTypes && selectedCardTypes.length > 0) {
           filters.cardType = selectedCardTypes;
+        }
+        if (selectedPokemonType && selectedPokemonType.length > 0) {
+          filters.pokemonType = selectedPokemonType;
         }
         setSearchInitiated(true);
         getCardsByName({
@@ -626,11 +656,16 @@ const slideUp = keyframes`
           selectedYears={selectedYears}
           handleYearsChange={handleYearsChange}
           selectedPrices={selectedPrices}
+          selectedPokemonType={selectedPokemonType}
+          selectedSubtype= {selectedSubtype}
+          selectedArtist={selectedArtist}
           handlePricesChange={handlePricesChange}
+          handleArtistChange={handleArtistChange}
+          handleSubtypeChange={handleSubtypeChange}
+          handlePokemonTypeChange={handlePokemonTypeChange}
           handleFilterClose={handleFilterClose}
           handleFilterApply={handleFilterApply}
           handleClearFilters={handleClearFilters}
-          isSetModalSearch={isSetModalSearch}
         />
 
 

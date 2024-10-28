@@ -1,8 +1,10 @@
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
-import { useState } from 'react';
 import setIds from '../../assets/set-data/setIds.json'; // Import the JSON data
 
-export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters }) {  
+export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleArtistChange, handleSubtypeChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedArtist }) {
+
+  const pokemonTypesArr = ["Grass", "Fire", "Water", "Lightning", "Fighting", "Psychic", "Colorless", "Darkness", "Metal", "Dragon", "Fairy"];
+  
   return (
     <>
       <Dialog open={open} onClose={onClose} maxWidth="md">
@@ -26,41 +28,20 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
               <MenuItem value="Pokémon">Pokémon</MenuItem>
               <MenuItem value="Trainer">Trainer</MenuItem>
               <MenuItem value="Energy">Energy</MenuItem>
-              {/* Add more card types as needed */}
             </Select>
           </FormControl>
-          {/* <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
-      <InputLabel id="years-select-label">Years</InputLabel>
-      <Select
-        labelId="years-select-label"
-        id="years-select"
-        multiple
-        value={selectedYears}
-        onChange={handleYearsChange}
-        renderValue={(selected) => selected.join(', ')}
-      >
-        <MenuItem value="2020">2020</MenuItem>
-        <MenuItem value="2021">2021</MenuItem>
-        <MenuItem value="2022">2022</MenuItem>
-        {/* Add more years as needed */}
-          {/* </Select>
-    </FormControl>
-    <FormControl  variant="standard" sx={{ marginBottom: '20px', width:'20vw' }}>
-      <InputLabel id="prices-select-label">Prices</InputLabel>
-      <Select
-        labelId="prices-select-label"
-        id="prices-select"
-        multiple
-        value={selectedPrices}
-        onChange={handlePricesChange}
-        renderValue={(selected) => selected.join(', ')}
-      >
-        <MenuItem value="Low">Low</MenuItem>
-        <MenuItem value="Medium">Medium</MenuItem>
-        <MenuItem value="High">High</MenuItem>
-        {/* Add more price ranges as needed */}
-          {/* </Select>
-    </FormControl> */}
+
+          <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
+            <InputLabel id="pokemon-type-select-label">Pokémon Type</InputLabel>
+            <Select labelId="pokemon-type-select-label" id="pokemon-type-select" multiple value={selectedPokemonType} onChange={handlePokemonTypeChange} renderValue={(selected) => selected.join(', ')}>
+              {pokemonTypesArr.map((type) => (
+                <MenuItem key={type} value={type}>
+                  {type}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+         
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center' }}>
           <Button sx={{ textAlign: 'center' }} onClick={handleFilterApply} color="primary">
