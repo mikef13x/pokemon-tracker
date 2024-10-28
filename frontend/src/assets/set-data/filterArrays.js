@@ -343,3 +343,50 @@ export const artists = [
   "Yukihiro Tada",
   "Yuriko Akase"
 ]
+
+export const subtypes = [
+  "Basic",
+  "Stage 1",
+  "Stage 2",
+  "Special",
+  "Rocket's Secret Machine",
+  "Baby",
+  "Stadium",
+  "Goldenrod Game Corner",
+  "Pokémon Tool",
+  "Supporter",
+  "Technical Machine",
+  "Item",
+  "Level-Up",
+  "LEGEND",
+  "Restored",
+  "MEGA",
+  "BREAK",
+  "Pokémon Tool F",
+  "VMAX",
+  "V-UNION",
+  "VSTAR",
+  "Rapid Strike",
+  "Single Strike",
+  "Fusion Strike"
+];
+
+export const cardTypes = [
+  'Pokémon', 
+  'Trainer', 
+  'Energy'
+];
+
+export const pokemonTypes = [
+  'Grass', 
+  'Fire', 
+  'Water', 
+  'Lightning', 
+  'Fighting', 
+  'Psychic', 
+  'Colorless', 
+  'Darkness', 
+  'Metal', 
+  'Dragon', 
+  'Fairy'
+];

@@ -1,11 +1,9 @@
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
-import setIds from '../../assets/set-data/setIds.json'; 
-import {artists} from '../../assets/set-data/artists'
+import setIds from '../../assets/set-data/setIds.json';
+import { artists, cardTypes, pokemonTypes } from '../../assets/set-data/filterArrays';
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleArtistChange, handleSubtypeChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedArtist }) {
 
-  const pokemonTypesArr = ["Grass", "Fire", "Water", "Lightning", "Fighting", "Psychic", "Colorless", "Darkness", "Metal", "Dragon", "Fairy"];
-  
   return (
     <>
       <Dialog open={open} onClose={onClose} maxWidth="md">
@@ -26,16 +24,18 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
             <InputLabel id="type-select-label">Card Type</InputLabel>
             <Select labelId="type-select-label" id="type-select" multiple value={selectedCardTypes} onChange={handleCardTypesChange} renderValue={(selected) => selected.join(', ')}>
-              <MenuItem value="Pokémon">Pokémon</MenuItem>
-              <MenuItem value="Trainer">Trainer</MenuItem>
-              <MenuItem value="Energy">Energy</MenuItem>
+              {cardTypes.map((type) => (
+                <MenuItem key={type} value={type}>
+                  {type}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
 
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
             <InputLabel id="pokemon-type-select-label">Pokémon Type</InputLabel>
             <Select labelId="pokemon-type-select-label" id="pokemon-type-select" multiple value={selectedPokemonType} onChange={handlePokemonTypeChange} renderValue={(selected) => selected.join(', ')}>
-              {pokemonTypesArr.map((type) => (
+              {pokemonTypes.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
                 </MenuItem>
@@ -53,7 +53,6 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
               ))}
             </Select>
           </FormControl>
-         
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center' }}>
           <Button sx={{ textAlign: 'center' }} onClick={handleFilterApply} color="primary">
