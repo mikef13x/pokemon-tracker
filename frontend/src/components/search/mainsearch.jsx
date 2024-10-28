@@ -17,13 +17,6 @@ import {
   Button,
   Pagination,
   PaginationItem,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Checkbox,
-
-
-
 } from '@mui/material';
 import FilterModal from './searchfilter';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -41,6 +34,7 @@ import { keyframes } from "@emotion/react";
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
 import { containerInfo, itemInfo } from '../../utils/framerMotion';
 import {motion} from 'framer-motion'
+import { select } from 'framer-motion/client';
 
 
 export default function MainSearch() {
@@ -69,40 +63,23 @@ export default function MainSearch() {
   const [selectedArtist, setSelectedArtist] = useState([]);
   const [selectedSubtype, setSelectedSubtype] = useState([]);
   const [selectedPokemonType, setSelectedPokemonType] = useState([]);
+  const [applyFilters, setApplyFilters] = useState(false);
   const [filtersCleared, setFiltersCleared] = useState(false);
+
   const [isSetModalSearch, setIsSetModalSearch] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
 
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
   
 
-  const handleSetsChange = (event) => {
-    setSelectedSets(event.target.value);
+  const handleSetsChange = (newSets) => {
+    console.log('handleSetsChange called with:', newSets);
+    setSelectedSets(newSets);
   };
 
-  const handleCardTypesChange = (event) => {
-    setSelectedCardTypes(event.target.value);
-  };
-
-  const handleYearsChange = (event) => {
-    setSelectedYears(event.target.value);
-  };
-
-  const handlePricesChange = (event) => {
-    setSelectedPrices(event.target.value);
-  };
-
-  const handleArtistChange = (event) => {
-    setSelectedArtist(event.target.value);
-  };
-
-  const handleSubtypeChange = (event) => {
-    setSelectedSubtype(event.target.value);
-  };
-
-  const handlePokemonTypeChange = (event) => {
-    setSelectedPokemonType(event.target.value);
-  };
+  const handleCardTypesChange = (newCardTypes) => setSelectedCardTypes(newCardTypes);
+  const handlePokemonTypeChange = (newPokemonType) => setSelectedPokemonType(newPokemonType);
+  const handleArtistChange = (newArtist) => setSelectedArtist(newArtist);
 
   const handleCardClick = (card) => {
     navigate(`/market/${card.cardId}`, {
@@ -185,6 +162,9 @@ export default function MainSearch() {
       if (selectedPokemonType && selectedPokemonType.length > 0) {
         filters.pokemonType = selectedPokemonType;
       }
+      if (selectedArtist && selectedArtist.length > 0) {
+        filters.artist = selectedArtist;
+      }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
      }, 400)
@@ -238,6 +218,9 @@ export default function MainSearch() {
         if (selectedPokemonType && selectedPokemonType.length > 0) {
           filters.pokemonType = selectedPokemonType;
         }
+        if (selectedArtist && selectedArtist.length > 0) {
+          filters.artist = selectedArtist;
+        }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
       }, 400);
@@ -245,6 +228,19 @@ export default function MainSearch() {
       handleSearchButtonClick();
     }
     setShowFilter(false);
+  };
+
+  useEffect(() => {
+    if (applyFilters) {
+      console.log('Filters applied');
+      setApplyFilters(false);
+      handleFilterApply();
+      handleFilterClose();
+    }
+  }, [applyFilters]);
+
+  const handleApplyClick = () => {
+    setApplyFilters(true);
   };
 
   const handleClearFilters = () => {
@@ -307,6 +303,9 @@ export default function MainSearch() {
       if (selectedPokemonType && selectedPokemonType.length > 0) {
         filters.pokemonType = selectedPokemonType;
       }
+      if (selectedArtist && selectedArtist.length > 0) {
+        filters.artist = selectedArtist;
+      }
       setSearchInitiated(true);
       getCardsByName({
         variables: {
@@ -347,6 +346,9 @@ export default function MainSearch() {
         }
         if (selectedPokemonType && selectedPokemonType.length > 0) {
           filters.pokemonType = selectedPokemonType;
+        }
+        if (selectedArtist && selectedArtist.length > 0) {
+          filters.artist = selectedArtist;
         }
         setSearchInitiated(true);
         getCardsByName({
@@ -642,32 +644,23 @@ const slideUp = keyframes`
           </DialogActions>
         </Dialog>
 
-
-
-
-
         <FilterModal
-          open={showFilter}
-          onClose={handleFilterClose}
-          selectedSets={selectedSets}
-          handleSetsChange={handleSetsChange}
-          selectedCardTypes= {selectedCardTypes}
-          handleCardTypesChange={handleCardTypesChange}
-          selectedYears={selectedYears}
-          handleYearsChange={handleYearsChange}
-          selectedPrices={selectedPrices}
-          selectedPokemonType={selectedPokemonType}
-          selectedSubtype= {selectedSubtype}
-          selectedArtist={selectedArtist}
-          handlePricesChange={handlePricesChange}
-          handleArtistChange={handleArtistChange}
-          handleSubtypeChange={handleSubtypeChange}
-          handlePokemonTypeChange={handlePokemonTypeChange}
-          handleFilterClose={handleFilterClose}
-          handleFilterApply={handleFilterApply}
-          handleClearFilters={handleClearFilters}
-        />
-
+        open={showFilter}
+        onClose={handleFilterClose}
+        selectedSets={selectedSets}
+        handleSetsChange={handleSetsChange}
+        handleFilterClose={handleFilterClose}
+        handleApplyClick={handleApplyClick}
+        selectedCardTypes={selectedCardTypes}
+        handleCardTypesChange={handleCardTypesChange}
+        handleClearFilters={handleClearFilters}
+        handleArtistChange={handleArtistChange}
+        handleSubtypeChange={() => {}}
+        handlePokemonTypeChange={handlePokemonTypeChange}
+        selectedPokemonType={selectedPokemonType}
+        selectedSubtype={[]}
+        selectedArtist={selectedArtist}
+      />
 
       </Paper>
       {searchInitiated ? (

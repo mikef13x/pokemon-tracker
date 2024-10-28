@@ -118,6 +118,11 @@ const resolvers = {
           } else if (filters.pokemonType) {
             searchCriteria.pokemonType = filters.pokemonType;
           }
+          if (filters.artist && Array.isArray(filters.artist)) {
+            searchCriteria.artist = { $in: filters.artist };
+          } else if (filters.artist) {
+            searchCriteria.artist = filters.artist;
+          }
         }
 
         const setCards = await Card.find(searchCriteria);
@@ -169,7 +174,6 @@ const resolvers = {
           } else if (filters.setId) {
             searchCriteria.setId = filters.setId;
           }
-          
           if (filters.setName && Array.isArray(filters.setName)) {
             searchCriteria.setName = { $in: filters.setName.map((name) => new RegExp(escapeRegExp(name), 'i')) };
           } else if (filters.setName) {
@@ -188,8 +192,12 @@ const resolvers = {
           } else if (filters.pokemonType) {
             searchCriteria.pokemonType = filters.pokemonType;
           }
+          if (filters.artist && Array.isArray(filters.artist)) {
+            searchCriteria.artist = { $in: filters.artist };
+          } else if (filters.artist) {
+            searchCriteria.artist = filters.artist;
+          }
         }
-        console.log(searchCriteria)
     
         const cards = await Card.find(searchCriteria);
         return cards;
