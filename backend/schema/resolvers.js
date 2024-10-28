@@ -189,7 +189,6 @@ const resolvers = {
             searchCriteria.pokemonType = filters.pokemonType;
           }
         }
-        console.log(searchCriteria)
     
         const cards = await Card.find(searchCriteria);
         return cards;
