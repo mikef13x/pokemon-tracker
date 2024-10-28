@@ -17,13 +17,6 @@ import {
   Button,
   Pagination,
   PaginationItem,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Checkbox,
-
-
-
 } from '@mui/material';
 import FilterModal from './searchfilter';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -41,6 +34,7 @@ import { keyframes } from "@emotion/react";
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
 import { containerInfo, itemInfo } from '../../utils/framerMotion';
 import {motion} from 'framer-motion'
+import { select } from 'framer-motion/client';
 
 
 export default function MainSearch() {
@@ -185,6 +179,9 @@ export default function MainSearch() {
       if (selectedPokemonType && selectedPokemonType.length > 0) {
         filters.pokemonType = selectedPokemonType;
       }
+      if (selectedArtist && selectedArtist.length > 0) {
+        filters.selectedArtist = selectedArtist;
+      }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
      }, 400)
@@ -237,6 +234,9 @@ export default function MainSearch() {
         }
         if (selectedPokemonType && selectedPokemonType.length > 0) {
           filters.pokemonType = selectedPokemonType;
+        }
+        if (selectedArtist && selectedArtist.length > 0) {
+          filters.selectedArtist = selectedArtist;
         }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
@@ -307,6 +307,9 @@ export default function MainSearch() {
       if (selectedPokemonType && selectedPokemonType.length > 0) {
         filters.pokemonType = selectedPokemonType;
       }
+      if (selectedArtist && selectedArtist.length > 0) {
+        filters.selectedArtist = selectedArtist;
+      }
       setSearchInitiated(true);
       getCardsByName({
         variables: {
@@ -347,6 +350,9 @@ export default function MainSearch() {
         }
         if (selectedPokemonType && selectedPokemonType.length > 0) {
           filters.pokemonType = selectedPokemonType;
+        }
+        if (selectedArtist && selectedArtist.length > 0) {
+          filters.selectedArtist = selectedArtist;
         }
         setSearchInitiated(true);
         getCardsByName({
