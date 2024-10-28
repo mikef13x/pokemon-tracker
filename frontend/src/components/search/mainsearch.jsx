@@ -54,7 +54,7 @@ export default function MainSearch() {
   const [fetchedSetData, setFetchedData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
   const location = useLocation();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState(' ');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInitiated, setSearchInitiated] = useState(false);
   const [currentSetModal, setCurrentSetModal] = useState('')
