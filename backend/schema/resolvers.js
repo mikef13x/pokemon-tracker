@@ -113,6 +113,11 @@ const resolvers = {
           } else if (filters.cardType) {
             searchCriteria.cardType = filters.cardType;
           }
+          if (filters.pokemonType && Array.isArray(filters.pokemonType)) {
+            searchCriteria.pokemonType = { $in: filters.pokemonType };
+          } else if (filters.pokemonType) {
+            searchCriteria.pokemonType = filters.pokemonType;
+          }
         }
 
         const setCards = await Card.find(searchCriteria);
@@ -164,6 +169,7 @@ const resolvers = {
           } else if (filters.setId) {
             searchCriteria.setId = filters.setId;
           }
+          
           if (filters.setName && Array.isArray(filters.setName)) {
             searchCriteria.setName = { $in: filters.setName.map((name) => new RegExp(escapeRegExp(name), 'i')) };
           } else if (filters.setName) {
@@ -177,7 +183,13 @@ const resolvers = {
           } else if (filters.cardType) {
             searchCriteria.cardType = filters.cardType;
           }
+          if (filters.pokemonType && Array.isArray(filters.pokemonType)) {
+            searchCriteria.pokemonType = { $in: filters.pokemonType };
+          } else if (filters.pokemonType) {
+            searchCriteria.pokemonType = filters.pokemonType;
+          }
         }
+        console.log(searchCriteria)
     
         const cards = await Card.find(searchCriteria);
         return cards;

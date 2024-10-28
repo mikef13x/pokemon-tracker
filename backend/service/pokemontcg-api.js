@@ -89,10 +89,14 @@ router.get('/seed', async (req, res) => {
           image: card.images.large,
           cardId: card.id,
           cardType: card.cardType,
+          pokemonType: card.pokemonType,
+          subType: card.subType,
+          artist: card.artist,
           setId: card.setId,
           setName: card.setName,
           releaseDate: card.releaseDate,
           price: card.price,
+
         });
         await newCard.save();
         addedCards.push(newCard);
