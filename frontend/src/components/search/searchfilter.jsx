@@ -1,5 +1,6 @@
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
-import setIds from '../../assets/set-data/setIds.json'; // Import the JSON data
+import setIds from '../../assets/set-data/setIds.json'; 
+import {artists} from '../../assets/set-data/artists'
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleArtistChange, handleSubtypeChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedArtist }) {
 
@@ -37,6 +38,17 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
               {pokemonTypesArr.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
+            <InputLabel id="artist-select-label">Artist</InputLabel>
+            <Select labelId="artist-select-label" id="artist-select" multiple value={selectedPokemonType} onChange={handlePokemonTypeChange} renderValue={(selected) => selected.join(', ')}>
+              {artists.map((artist) => (
+                <MenuItem key={artist} value={artist}>
+                  {artist}
                 </MenuItem>
               ))}
             </Select>
