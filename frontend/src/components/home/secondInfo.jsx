@@ -8,14 +8,14 @@ export default function InfoBox2() {
                 width: '96vw',
                 height: '500px',
                 textAlign: 'center',
-                backgroundColor: 'rgb(200, 200, 200)',
+                backgroundColor: 'rgb(130, 174, 203)',
                 '@media (max-width: 1200px)': {
                     height: 'auto',
                     padding: '20px'
                 }
             }}>
                 <Box sx={{
-                    backgroundColor: 'rgb(200, 200, 200)',
+                    backgroundColor: 'rgb(130, 174, 203)',
                     display: 'flex',
                     justifyContent: 'space-around',
                     flexDirection: 'row',
