@@ -45,7 +45,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
 
           <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
             <InputLabel id="artist-select-label">Artist</InputLabel>
-            <Select labelId="artist-select-label" id="artist-select" multiple value={selectedPokemonType} onChange={handlePokemonTypeChange} renderValue={(selected) => selected.join(', ')}>
+            <Select labelId="artist-select-label" id="artist-select" multiple value={selectedArtist} onChange={handleArtistChange} renderValue={(selected) => selected.join(', ')}>
               {artists.map((artist) => (
                 <MenuItem key={artist} value={artist}>
                   {artist}
