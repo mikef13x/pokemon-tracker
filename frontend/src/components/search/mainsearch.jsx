@@ -180,7 +180,7 @@ export default function MainSearch() {
         filters.pokemonType = selectedPokemonType;
       }
       if (selectedArtist && selectedArtist.length > 0) {
-        filters.selectedArtist = selectedArtist;
+        filters.artist = selectedArtist;
       }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
@@ -236,7 +236,7 @@ export default function MainSearch() {
           filters.pokemonType = selectedPokemonType;
         }
         if (selectedArtist && selectedArtist.length > 0) {
-          filters.selectedArtist = selectedArtist;
+          filters.artist = selectedArtist;
         }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
@@ -308,7 +308,7 @@ export default function MainSearch() {
         filters.pokemonType = selectedPokemonType;
       }
       if (selectedArtist && selectedArtist.length > 0) {
-        filters.selectedArtist = selectedArtist;
+        filters.artist = selectedArtist;
       }
       setSearchInitiated(true);
       getCardsByName({
@@ -352,7 +352,7 @@ export default function MainSearch() {
           filters.pokemonType = selectedPokemonType;
         }
         if (selectedArtist && selectedArtist.length > 0) {
-          filters.selectedArtist = selectedArtist;
+          filters.artist = selectedArtist;
         }
         setSearchInitiated(true);
         getCardsByName({
