@@ -2,7 +2,7 @@ import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Selec
 import { useState } from 'react';
 import setIds from '../../assets/set-data/setIds.json'; // Import the JSON data
 
-export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters, isSetModalSearch }) {  
+export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, handleFilterApply, selectedCardTypes, handleCardTypesChange, handleClearFilters }) {  
   return (
     <>
       <Dialog open={open} onClose={onClose} maxWidth="md">
