@@ -58,8 +58,8 @@ export default function MainSearch() {
   const itemsPerPage = 30;
   const [selectedSets, setSelectedSets] = useState([]);
   const [selectedCardTypes, setSelectedCardTypes] = useState([]);
-  const [selectedYears, setSelectedYears] = useState([]);
-  const [selectedPrices, setSelectedPrices] = useState([]);
+  // const [selectedYears, setSelectedYears] = useState([]);
+  // const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedArtist, setSelectedArtist] = useState([]);
   const [selectedSubtype, setSelectedSubtype] = useState([]);
   const [selectedRarity, setSelectedRarity] = useState([]);
@@ -75,8 +75,8 @@ export default function MainSearch() {
   const handleCardTypesChange = (newCardTypes) => setSelectedCardTypes(newCardTypes);
   const handlePokemonTypeChange = (newPokemonType) => setSelectedPokemonType(newPokemonType);
   const handleArtistChange = (newArtist) => setSelectedArtist(newArtist);
-  const handleRarityChange = (newRarity) => setSelectedArtist(newRarity);
-  const handleSubtypeChange = (newSubtype) => setSelectedArtist(newSubtype);
+  const handleRarityChange = (newRarity) => setSelectedRarity(newRarity);
+  const handleSubtypeChange = (newSubtype) => setSelectedSubtype(newSubtype);
 
   const handleCardClick = (card) => {
     navigate(`/market/${card.cardId}`, {
@@ -241,7 +241,6 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (applyFilters) {
-      console.log('Filters applied');
       setApplyFilters(false);
       handleFilterApply();
       handleFilterClose();
@@ -679,8 +678,8 @@ const slideUp = keyframes`
         handleRarityChange={handleRarityChange}
         handlePokemonTypeChange={handlePokemonTypeChange}
         selectedPokemonType={selectedPokemonType}
-        selectedSubtype={[]}
-        selectedRarity={[]}
+        selectedSubtype={selectedSubtype}
+        selectedRarity={selectedRarity}
         selectedArtist={selectedArtist}
       />
 
