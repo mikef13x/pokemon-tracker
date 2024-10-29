@@ -9,10 +9,10 @@ const cardSchema = new Schema({
   releaseDate: {type: Date},
   cardType: {type: String},
   pokemonType: {type: String},
-  subType: {type: String},
+  subType: [{type: String}],
   artist: {type: String},
   price: {type: Number},
-
+  rarity: {type: String}
 });
 
 const Card = model('Card', cardSchema);
