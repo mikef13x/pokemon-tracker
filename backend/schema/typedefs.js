@@ -36,7 +36,7 @@ type Card {
   image: String!
   cardId: String!
   cardType: String!
-  pokemonType: String
+  pokemonType: [String]
   subType: [String]
   artist: String
   setId: String!
