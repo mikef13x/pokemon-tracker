@@ -50,6 +50,10 @@ export const GET_COLLECTION = gql`
         releaseDate
         setId
         setName
+        pokemonType
+        subType
+        rarity
+        artist
         price
       }
     }
@@ -72,6 +76,10 @@ export const GET_USER_COLLECTIONS = gql`
         releaseDate
         setId
         setName
+        pokemonType
+        subType
+        rarity
+        artist
         price
       }
     }
@@ -94,6 +102,10 @@ export const GET_USER_MAIN_COLLECTION = gql`
         releaseDate
         setId
         setName
+        pokemonType
+        subType
+        rarity
+        artist
         price
       }
     }
@@ -111,6 +123,10 @@ export const GET_CARDS = gql`
       releaseDate
       setId
       setName
+      pokemonType
+      subType
+      rarity
+      artist
       price
     }
   }
@@ -124,9 +140,13 @@ export const GET_CARD = gql`
       image
       cardId
       cardType
+      releaseDate
       setId
       setName
-      releaseDate
+      pokemonType
+      subType
+      rarity
+      artist
       price
     }
   }
@@ -140,9 +160,13 @@ export const GET_CARDS_BY_NAME = gql`
       image
       cardId
       cardType
+      releaseDate
       setId
       setName
-      releaseDate
+      pokemonType
+      subType
+      rarity
+      artist
       price
     }
   }
@@ -159,6 +183,10 @@ export const GET_CARDS_BY_SET = gql`
       releaseDate
       setId
       setName
+      pokemonType
+      subType
+      rarity
+      artist
       price
     }
   }
