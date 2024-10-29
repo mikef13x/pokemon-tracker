@@ -7,7 +7,7 @@ import { UPDATE_COLLECTION } from '../../utils/mutations';
 import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import Auth from '../../utils/auth';
 
-export default function MarketCard({ id, image, name, price, cardId, setName }) {
+export default function MarketCard({ id, image, name, price, cardId, setName, artist }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [popoverMessage, setPopoverMessage] = useState('');
@@ -91,7 +91,7 @@ export default function MarketCard({ id, image, name, price, cardId, setName }) 
         Set: {setName}
       </Typography>
       <Typography variant="body1" sx={{ marginTop: '8px' }}>
-        other data here, like card data
+       Artist: {artist}
       </Typography>
       {user && (
         <>
