@@ -58,28 +58,25 @@ export default function MainSearch() {
   const itemsPerPage = 30;
   const [selectedSets, setSelectedSets] = useState([]);
   const [selectedCardTypes, setSelectedCardTypes] = useState([]);
-  const [selectedYears, setSelectedYears] = useState([]);
-  const [selectedPrices, setSelectedPrices] = useState([]);
+  // const [selectedYears, setSelectedYears] = useState([]);
+  // const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedArtist, setSelectedArtist] = useState([]);
   const [selectedSubtype, setSelectedSubtype] = useState([]);
+  const [selectedRarity, setSelectedRarity] = useState([]);
   const [selectedPokemonType, setSelectedPokemonType] = useState([]);
   const [applyFilters, setApplyFilters] = useState(false);
   const [filtersCleared, setFiltersCleared] = useState(false);
 
   const [isSetModalSearch, setIsSetModalSearch] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
-
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
   
-
-  const handleSetsChange = (newSets) => {
-    console.log('handleSetsChange called with:', newSets);
-    setSelectedSets(newSets);
-  };
-
+  const handleSetsChange = (newSets) => setSelectedSets(newSets);
   const handleCardTypesChange = (newCardTypes) => setSelectedCardTypes(newCardTypes);
   const handlePokemonTypeChange = (newPokemonType) => setSelectedPokemonType(newPokemonType);
   const handleArtistChange = (newArtist) => setSelectedArtist(newArtist);
+  const handleRarityChange = (newRarity) => setSelectedRarity(newRarity);
+  const handleSubtypeChange = (newSubtype) => setSelectedSubtype(newSubtype);
 
   const handleCardClick = (card) => {
     navigate(`/market/${card.cardId}`, {
@@ -165,6 +162,12 @@ export default function MainSearch() {
       if (selectedArtist && selectedArtist.length > 0) {
         filters.artist = selectedArtist;
       }
+      if (selectedRarity && selectedRarity.length > 0) {
+        filters.rarity = selectedRarity;
+      }
+      if (selectedSubtype && selectedSubtype.length > 0) {
+        filters.subType = selectedSubtype;
+      }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
      }, 400)
@@ -221,6 +224,12 @@ export default function MainSearch() {
         if (selectedArtist && selectedArtist.length > 0) {
           filters.artist = selectedArtist;
         }
+        if (selectedRarity && selectedRarity.length > 0) {
+          filters.rarity = selectedRarity;
+        }
+        if (selectedSubtype && selectedSubtype.length > 0) {
+          filters.subType = selectedSubtype;
+        }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
       }, 400);
@@ -232,7 +241,6 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (applyFilters) {
-      console.log('Filters applied');
       setApplyFilters(false);
       handleFilterApply();
       handleFilterClose();
@@ -249,6 +257,7 @@ export default function MainSearch() {
     setSelectedArtist([]);
     setSelectedPokemonType([]);
     setSelectedSubtype([]);
+    setSelectedRarity([])
     setFiltersCleared(true);
   };
 
@@ -274,11 +283,9 @@ export default function MainSearch() {
   };
   const handleBackButtonClick = () => {
     // Logic to go back to the previous state
-  
     setIsInitialState(true);
     setCurrentModalData(modalData); // Reset to initial modal data
     setTitle('All Pokemon Sets');
-   
   };
 
 
@@ -305,6 +312,12 @@ export default function MainSearch() {
       }
       if (selectedArtist && selectedArtist.length > 0) {
         filters.artist = selectedArtist;
+      }
+      if (selectedRarity && selectedRarity.length > 0) {
+        filters.rarity = selectedRarity;
+      }
+      if (selectedSubtype && selectedSubtype.length > 0) {
+        filters.subType = selectedSubtype;
       }
       setSearchInitiated(true);
       getCardsByName({
@@ -349,6 +362,12 @@ export default function MainSearch() {
         }
         if (selectedArtist && selectedArtist.length > 0) {
           filters.artist = selectedArtist;
+        }
+        if (selectedRarity && selectedRarity.length > 0) {
+          filters.rarity = selectedRarity;
+        }
+        if (selectedSubtype && selectedSubtype.length > 0) {
+          filters.subType = selectedSubtype;
         }
         setSearchInitiated(true);
         getCardsByName({
@@ -655,10 +674,12 @@ const slideUp = keyframes`
         handleCardTypesChange={handleCardTypesChange}
         handleClearFilters={handleClearFilters}
         handleArtistChange={handleArtistChange}
-        handleSubtypeChange={() => {}}
+        handleSubtypeChange={handleSubtypeChange}
+        handleRarityChange={handleRarityChange}
         handlePokemonTypeChange={handlePokemonTypeChange}
         selectedPokemonType={selectedPokemonType}
-        selectedSubtype={[]}
+        selectedSubtype={selectedSubtype}
+        selectedRarity={selectedRarity}
         selectedArtist={selectedArtist}
       />
 

@@ -36,23 +36,25 @@ type Card {
   image: String!
   cardId: String!
   cardType: String!
-  pokemonType: String
-  subType: String
+  pokemonType: [String]
+  subType: [String]
   artist: String
   setId: String!
   setName: String
   releaseDate: String
   price: Float
+  rarity: String
 }
 
 input CardFiltersInput {
   setId: [ID]
   setName: [String]
-  releaseDate: String
+  releaseDate: [String]
   cardType: [String]
   pokemonType: [String]
   subType: [String]
   artist: [String]
+  rarity: [String]
 }
 
 type Query {
@@ -73,7 +75,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: String, subType: String, artist: String, price: String): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: String, subType: String, artist: String, price: String, rarity: String): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection

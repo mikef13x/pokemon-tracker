@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
 import setIds from '../../assets/set-data/setIds.json';
-import { artists, cardTypes, pokemonTypes } from '../../assets/set-data/filterArrays';
+import { artists, cardTypes, pokemonTypes, subtypes, rarities } from '../../assets/set-data/filterArrays';
 
-export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedArtist }) {
+export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handleRarityChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedRarity, selectedArtist }) {
   const [tempSelectedSets, setTempSelectedSets] = useState(selectedSets);
   const [tempSelectedCardTypes, setTempSelectedCardTypes] = useState(selectedCardTypes);
   const [tempSelectedPokemonType, setTempSelectedPokemonType] = useState(selectedPokemonType);
   const [tempSelectedArtist, setTempSelectedArtist] = useState(selectedArtist);
+  const [tempSelectedSubtype, setTempSelectedSubtype] = useState(selectedSubtype);
+  const [tempSelectedRarity, setTempSelectedRarity] = useState(selectedRarity);
 
   useEffect(() => {
     if (open) {
@@ -15,16 +17,18 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
       setTempSelectedCardTypes(selectedCardTypes);
       setTempSelectedPokemonType(selectedPokemonType);
       setTempSelectedArtist(selectedArtist);
+      setTempSelectedRarity(selectedRarity);
+      setTempSelectedSubtype(selectedSubtype);
     }
-  }, [open, selectedSets, selectedCardTypes, selectedPokemonType, selectedArtist]);
+  }, [open, selectedSets, selectedCardTypes, selectedPokemonType, selectedArtist, selectedRarity, selectedSubtype]);
 
   const handleApply = () => {
-    console.log('handleApply called');
-    console.log('tempSelectedSets:', tempSelectedSets);
     handleSetsChange(tempSelectedSets);
     handleCardTypesChange(tempSelectedCardTypes);
     handlePokemonTypeChange(tempSelectedPokemonType);
     handleArtistChange(tempSelectedArtist);
+    handleRarityChange(tempSelectedRarity);
+    handleSubtypeChange(tempSelectedSubtype);
     handleApplyClick();
   };
 
@@ -54,6 +58,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             ))}
           </Select>
         </FormControl>
+        
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="type-select-label">Card Type</InputLabel>
           <Select
@@ -71,6 +76,25 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             ))}
           </Select>
         </FormControl>
+
+        <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
+          <InputLabel id="subtype-select-label">Subtype</InputLabel>
+          <Select
+            labelId="subtype-select-label"
+            id="subtype-select"
+            multiple
+            value={tempSelectedSubtype}
+            onChange={(e) => setTempSelectedSubtype(e.target.value)}
+            renderValue={(selected) => selected.join(', ')}
+          >
+            {subtypes.map((subtype) => (
+              <MenuItem key={subtype} value={subtype}>
+                {subtype}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="pokemon-type-select-label">Pokémon Type</InputLabel>
           <Select
@@ -88,6 +112,25 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             ))}
           </Select>
         </FormControl>
+
+        <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
+          <InputLabel id="rarity-select-label">Rarity</InputLabel>
+          <Select
+            labelId="rarity-select-label"
+            id="rarity-select"
+            multiple
+            value={tempSelectedRarity}
+            onChange={(e) => setTempSelectedRarity(e.target.value)}
+            renderValue={(selected) => selected.join(', ')}
+          >
+            {rarities.map((rarity) => (
+              <MenuItem key={rarity} value={rarity}>
+                {rarity}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="artist-select-label">Artist</InputLabel>
           <Select
@@ -105,6 +148,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             ))}
           </Select>
         </FormControl>
+
       </DialogContent>
       <DialogActions sx={{ justifyContent: 'center' }}>
         <Button sx={{ textAlign: 'center' }} onClick={handleApply} color="primary">

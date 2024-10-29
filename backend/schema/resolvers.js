@@ -123,6 +123,16 @@ const resolvers = {
           } else if (filters.artist) {
             searchCriteria.artist = filters.artist;
           }
+          if (filters.rarity && Array.isArray(filters.rarity)) {
+            searchCriteria.rarity = { $in: filters.rarity };
+          } else if (filters.rarity) {
+            searchCriteria.rarity = filters.rarity;
+          }
+          if (filters.subType && Array.isArray(filters.subType)) {
+            searchCriteria.subType = { $in: filters.subType };
+          } else if (filters.subType) {
+            searchCriteria.subType = filters.subType;
+          }
         }
 
         const setCards = await Card.find(searchCriteria);
@@ -196,6 +206,16 @@ const resolvers = {
             searchCriteria.artist = { $in: filters.artist };
           } else if (filters.artist) {
             searchCriteria.artist = filters.artist;
+          }
+          if (filters.rarity && Array.isArray(filters.rarity)) {
+            searchCriteria.rarity = { $in: filters.rarity };
+          } else if (filters.rarity) {
+            searchCriteria.rarity = filters.rarity;
+          }
+          if (filters.subType && Array.isArray(filters.subType)) {
+            searchCriteria.subType = { $in: filters.subType };
+          } else if (filters.subType) {
+            searchCriteria.subType = filters.subType;
           }
         }
     
