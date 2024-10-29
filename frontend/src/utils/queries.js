@@ -128,6 +128,7 @@ export const GET_CARD = gql`
       setName
       releaseDate
       price
+      artist
     }
   }
 `;
