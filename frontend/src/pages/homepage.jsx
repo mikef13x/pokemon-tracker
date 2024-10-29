@@ -13,13 +13,13 @@ export default function HomePage() {
         <LetsGetStarted/>
         </div>
         
-        <InfoBox1/>
+       <div id='infoBox1'><InfoBox1/></div> 
       
         <InfoBox2/>
        
         <InfoBox3/>
        
-        <InfoBox4/>
+        <div id='infoBox4'> <InfoBox4/></div>
         </>
     )
 }

@@ -30,7 +30,7 @@ export default function Title() {
               marginTop: '100px', // Adjust the margin for smaller screens
           }
         }}>
-            <span className="tiny5-regular">POKETRACKER</span>
+            <span className="tiny5-regular">POKÉTRACKER</span>
         </Typography>
     );
 }

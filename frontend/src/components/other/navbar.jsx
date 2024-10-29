@@ -13,7 +13,18 @@ export default function Navbar() {
     window.location.reload()
     window.location.assign('/')
   }
-
+  const scrollToInfoBox1 = () => {
+    const element = document.getElementById('infoBox1');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+const scrollToHome = () => {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+};
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -25,10 +36,10 @@ export default function Navbar() {
       >
         <Toolbar>
           <Typography sx={{ marginRight: '70px' }} variant="h6" component="div">
-            <span className='tiny5-regular'>PokeTrack</span>
+            <span className='tiny5-regular'>PokéTracker</span>
           </Typography>
           <Box sx={{ display: 'flex', flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="/" onClick={scrollToHome} style={{ textDecoration: 'none', color: 'inherit' }}>
               <Button color='inherit'>
                 <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
                   <span className='tiny5-regular'>Home</span>
@@ -76,7 +87,15 @@ export default function Navbar() {
 
             )}
 
-
+          
+<Link to="/#infoBox1" onClick={scrollToInfoBox1} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color='inherit' href=''>
+                <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                  <span className='tiny5-regular'>About</span>
+                </Typography>
+              </Button>
+              </Link>
+           
             {/* {AuthService.loggedIn() ? (
                <Button color='inherit'onClick={handleLogout}> 
                  <Typography sx={{marginLeft: '15px', marginRight: '15px'}}>
