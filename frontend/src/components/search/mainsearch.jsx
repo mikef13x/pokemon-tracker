@@ -94,7 +94,7 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state) {
-      setSearchValue(location.state.searchValue || '');
+      setSearchValue(location.state.searchValue || ' ');
       setCurrentPage(location.state.currentPage || 1);
       setSortOrder(location.state.sortOrder || '');
       setIsGridView(location.state.isGridView || true);
@@ -333,7 +333,11 @@ export default function MainSearch() {
 
 
   const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
+    if (event.target.value){
+      setSearchValue(event.target.value);
+    } else if (!event.target.value){
+      setSearchValue(' ')
+    }
   };
 
   const handleSearchKeyDown = (event) => {
