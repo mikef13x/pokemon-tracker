@@ -95,6 +95,7 @@ router.get('/seed', async (req, res) => {
           setId: card.setId,
           setName: card.setName,
           releaseDate: card.releaseDate,
+          rarity: card.rarity,
           price: card.price,
 
         });
