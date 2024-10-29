@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
-import setIds from '../../assets/set-data/setIds.json';
 import { artists, cardTypes, pokemonTypes, subtypes, rarities, setNames } from '../../assets/set-data/filterArrays';
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handleRarityChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedRarity, selectedArtist }) {
