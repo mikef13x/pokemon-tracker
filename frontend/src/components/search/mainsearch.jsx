@@ -166,7 +166,7 @@ export default function MainSearch() {
         filters.rarity = selectedRarity;
       }
       if (selectedSubtype && selectedSubtype.length > 0) {
-        filters.subtype = selectedSubtype;
+        filters.subType = selectedSubtype;
       }
       setSearchInitiated(true);
       getCardsBySet({variables: {setId: setId, filters:filters}})
@@ -228,7 +228,7 @@ export default function MainSearch() {
           filters.rarity = selectedRarity;
         }
         if (selectedSubtype && selectedSubtype.length > 0) {
-          filters.subtype = selectedSubtype;
+          filters.subType = selectedSubtype;
         }
         setSearchInitiated(true);
         getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
@@ -258,6 +258,7 @@ export default function MainSearch() {
     setSelectedArtist([]);
     setSelectedPokemonType([]);
     setSelectedSubtype([]);
+    setSelectedRarity([])
     setFiltersCleared(true);
   };
 
@@ -317,7 +318,7 @@ export default function MainSearch() {
         filters.rarity = selectedRarity;
       }
       if (selectedSubtype && selectedSubtype.length > 0) {
-        filters.subtype = selectedSubtype;
+        filters.subType = selectedSubtype;
       }
       setSearchInitiated(true);
       getCardsByName({
@@ -367,7 +368,7 @@ export default function MainSearch() {
           filters.rarity = selectedRarity;
         }
         if (selectedSubtype && selectedSubtype.length > 0) {
-          filters.subtype = selectedSubtype;
+          filters.subType = selectedSubtype;
         }
         setSearchInitiated(true);
         getCardsByName({
