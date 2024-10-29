@@ -18,10 +18,11 @@ fs.readFile(filePath, 'utf8', (err, data) => {
         return;
     }
 
-    // Step 3: Iterate through each array and then through each object to extract the `artist`, `subtypes`, and `rarity` keys
+    // Step 3: Iterate through each array and then through each object to extract the `artist`, `subtypes`, `rarity`, and `name` keys
     const artists = new Set();
     const subtypes = new Set();
     const rarities = new Set();
+    const setNames = new Set();
 
     jsonData.forEach(array => {
         array.forEach(item => {
@@ -34,6 +35,9 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             if (item.rarity) {
                 rarities.add(item.rarity);
             }
+            if (item.set && item.set.name) {
+                setNames.add(item.set.name);
+            }
         });
     });
 
@@ -41,12 +45,14 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     const sortedArtists = [...artists].sort();
     const sortedSubtypes = [...subtypes].sort();
     const sortedRarities = [...rarities].sort();
+    const sortedSetNames = [...setNames].sort();
 
     // Step 5: Write the sorted arrays to a new file
     const outputData = {
         artists: sortedArtists,
         subtypes: sortedSubtypes,
-        rarities: sortedRarities
+        rarities: sortedRarities,
+        setNames: sortedSetNames
     };
 
     fs.writeFile('artists_subtypes_rarities.json', JSON.stringify(outputData, null, 2), 'utf8', writeErr => {
@@ -54,6 +60,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             console.error('Error writing the file:', writeErr);
             return;
         }
-        console.log('Artists, subtypes, and rarities have been saved to artists_subtypes_rarities.json');
+        console.log('Artists, subtypes, rarities, and set names have been saved to artists_subtypes_rarities.json');
     });
 });

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
 import setIds from '../../assets/set-data/setIds.json';
-import { artists, cardTypes, pokemonTypes, subtypes, rarities } from '../../assets/set-data/filterArrays';
+import { artists, cardTypes, pokemonTypes, subtypes, rarities, setNames } from '../../assets/set-data/filterArrays';
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handleRarityChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedRarity, selectedArtist }) {
   const [tempSelectedSets, setTempSelectedSets] = useState(selectedSets);
@@ -51,14 +51,19 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             }}
             renderValue={(selected) => selected.join(', ')}
           >
-            {Object.entries(setIds).map(([key, value]) => (
+             {setNames.map((name) => (
+              <MenuItem key={name} value={name}>
+                {name}
+              </MenuItem>
+            ))}
+            {/* {Object.entries(setIds).map(([key, value]) => (
               <MenuItem key={key} value={key}>
                 {value}
               </MenuItem>
-            ))}
+            ))} */}
           </Select>
         </FormControl>
-        
+
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="type-select-label">Card Type</InputLabel>
           <Select
