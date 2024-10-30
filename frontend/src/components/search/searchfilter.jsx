@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Select, MenuItem, DialogActions, Button } from '@mui/material';
-import { artists, cardTypes, pokemonTypes, subtypes, rarities, setNames } from '../../assets/set-data/filterArrays';
+import { artists, cardTypes, pokemonTypes, subtypes, rarities, setNames, setNamesObj } from '../../assets/set-data/filterArrays';
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handleRarityChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedRarity, selectedArtist }) {
   const [tempSelectedSets, setTempSelectedSets] = useState(selectedSets);
@@ -30,6 +30,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
     handleSubtypeChange(tempSelectedSubtype);
     handleApplyClick();
   };
+
   const MenuProps = {
     PaperProps: {
       style: {
@@ -53,35 +54,20 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             multiple
             value={tempSelectedSets}
             onChange={(e) => {
-              console.log('Select onChange called with:', e.target.value);
               setTempSelectedSets(e.target.value);
             }}
-            renderValue={(selected) => selected.join(', ')}
-            MenuProps={MenuProps}
-          >
-             {setNames.map((name) => (
-              <MenuItem key={name} value={name}>
-                {name}
-              </MenuItem>
-            ))}
-            {/* {Object.entries(setIds).map(([key, value]) => (
+            renderValue={(selected) => selected.map((key) => setNamesObj[key]).join(', ')} MenuProps={MenuProps}>
+            {Object.entries(setNamesObj).map(([key, value]) => (
               <MenuItem key={key} value={key}>
                 {value}
               </MenuItem>
-            ))} */}
+            ))}
           </Select>
         </FormControl>
 
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="type-select-label">Card Type</InputLabel>
-          <Select
-            labelId="type-select-label"
-            id="type-select"
-            multiple
-            value={tempSelectedCardTypes}
-            onChange={(e) => setTempSelectedCardTypes(e.target.value)}
-            renderValue={(selected) => selected.join(', ')}
-          >
+          <Select labelId="type-select-label" id="type-select" multiple value={tempSelectedCardTypes} onChange={(e) => setTempSelectedCardTypes(e.target.value)} renderValue={(selected) => selected.join(', ')}>
             {cardTypes.map((type) => (
               <MenuItem key={type} value={type}>
                 {type}
@@ -92,15 +78,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
 
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="subtype-select-label">Subtype</InputLabel>
-          <Select
-            labelId="subtype-select-label"
-            id="subtype-select"
-            multiple
-            value={tempSelectedSubtype}
-            onChange={(e) => setTempSelectedSubtype(e.target.value)}
-            renderValue={(selected) => selected.join(', ')}
-            MenuProps={MenuProps}
-          >
+          <Select labelId="subtype-select-label" id="subtype-select" multiple value={tempSelectedSubtype} onChange={(e) => setTempSelectedSubtype(e.target.value)} renderValue={(selected) => selected.join(', ')}  MenuProps={MenuProps}>
             {subtypes.map((subtype) => (
               <MenuItem key={subtype} value={subtype}>
                 {subtype}
@@ -111,15 +89,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
 
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="pokemon-type-select-label">Pokémon Type</InputLabel>
-          <Select
-            labelId="pokemon-type-select-label"
-            id="pokemon-type-select"
-            multiple
-            value={tempSelectedPokemonType}
-            onChange={(e) => setTempSelectedPokemonType(e.target.value)}
-            renderValue={(selected) => selected.join(', ')}
-            MenuProps={MenuProps}
-          >
+          <Select labelId="pokemon-type-select-label" id="pokemon-type-select" multiple value={tempSelectedPokemonType} onChange={(e) => setTempSelectedPokemonType(e.target.value)} renderValue={(selected) => selected.join(', ')} MenuProps={MenuProps}>
             {pokemonTypes.map((type) => (
               <MenuItem key={type} value={type}>
                 {type}
@@ -130,15 +100,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
 
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="rarity-select-label">Rarity</InputLabel>
-          <Select
-            labelId="rarity-select-label"
-            id="rarity-select"
-            multiple
-            value={tempSelectedRarity}
-            onChange={(e) => setTempSelectedRarity(e.target.value)}
-            renderValue={(selected) => selected.join(', ')}
-            MenuProps={MenuProps}
-          >
+          <Select labelId="rarity-select-label" id="rarity-select" multiple value={tempSelectedRarity} onChange={(e) => setTempSelectedRarity(e.target.value)} renderValue={(selected) => selected.join(', ')} MenuProps={MenuProps}>
             {rarities.map((rarity) => (
               <MenuItem key={rarity} value={rarity}>
                 {rarity}
@@ -149,15 +111,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
 
         <FormControl variant="standard" sx={{ marginBottom: '20px', width: '20vw' }}>
           <InputLabel id="artist-select-label">Artist</InputLabel>
-          <Select
-            labelId="artist-select-label"
-            id="artist-select"
-            multiple
-            value={tempSelectedArtist}
-            onChange={(e) => setTempSelectedArtist(e.target.value)}
-            renderValue={(selected) => selected.join(', ')}
-            MenuProps={MenuProps}
-          >
+          <Select labelId="artist-select-label" id="artist-select" multiple value={tempSelectedArtist} onChange={(e) => setTempSelectedArtist(e.target.value)} renderValue={(selected) => selected.join(', ')} MenuProps={MenuProps}>
             {artists.map((artist) => (
               <MenuItem key={artist} value={artist}>
                 {artist}
@@ -165,7 +119,6 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             ))}
           </Select>
         </FormControl>
-
       </DialogContent>
       <DialogActions sx={{ justifyContent: 'center' }}>
         <Button sx={{ textAlign: 'center' }} onClick={handleApply} color="primary">

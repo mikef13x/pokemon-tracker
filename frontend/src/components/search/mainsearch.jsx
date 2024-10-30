@@ -88,6 +88,12 @@ export default function MainSearch() {
         isGridView,
         fetchedSetData,
         selectedImage,
+        selectedSets,
+        selectedCardTypes,
+        selectedArtist,
+        selectedSubtype,
+        selectedRarity,
+        selectedPokemonType,
       },
     });
   };
@@ -100,6 +106,12 @@ export default function MainSearch() {
       setIsGridView(location.state.isGridView || true);
       setFetchedData(location.state.fetchedSetData || []);
       setSelectedImage(location.state.selectedImage || null);
+      setSelectedSets(location.state.selectedSets || []);
+      setSelectedCardTypes(location.state.selectedCardTypes || []);
+      setSelectedArtist(location.state.selectedArtist || '');
+      setSelectedSubtype(location.state.selectedSubtype || '');
+      setSelectedRarity(location.state.selectedRarity || '');
+      setSelectedPokemonType(location.state.selectedPokemonType || '');
       setSearchInitiated(true);
       setAnimateSearch(true)
     }
@@ -302,7 +314,7 @@ export default function MainSearch() {
     setTimeout(() => {
       const filters = {};
       if (selectedSets && selectedSets.length > 0) {
-        filters.setName = selectedSets;
+        filters.setId = selectedSets;
       }
       if (selectedCardTypes && selectedCardTypes.length > 0) {
         filters.cardType = selectedCardTypes;
@@ -356,7 +368,7 @@ export default function MainSearch() {
         setSearchInitiated(true);
         const filters = {};
         if (selectedSets && selectedSets.length > 0) {
-          filters.setName = selectedSets;
+          filters.setId = selectedSets;
         }
         if (selectedCardTypes && selectedCardTypes.length > 0) {
           filters.cardType = selectedCardTypes;
