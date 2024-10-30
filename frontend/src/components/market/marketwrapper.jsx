@@ -28,6 +28,12 @@ export default function MarketWrapper({ id, name, price, image, cardId, setName,
               isGridView: location.state.isGridView,
               fetchedSetData: location.state.fetchedSetData,
               selectedImage: location.state.selectedImage,
+              selectedSets: location.state.selectedSets,
+              selectedCardTypes: location.state.selectedCardTypes,
+              selectedArtist: location.state.selectedArtist,
+              selectedSubtype: location.state.selectedSubtype,
+              selectedRarity: location.state.selectedRarity,
+              selectedPokemonType: location.state.selectedPokemonType
              
             },
           });
