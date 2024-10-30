@@ -29,3 +29,11 @@ html, body {
     100% {opacity: .9;}
   }
   
+  .info-box {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.info-box.visible {
+    transform: translateX(0);
+}

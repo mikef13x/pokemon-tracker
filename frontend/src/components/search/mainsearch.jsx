@@ -780,7 +780,7 @@ const slideUp = keyframes`
       ) : (
         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', height: '70vh', width: '100%', marginTop: '-200px' }}>
           <Typography sx={{
-            fontSize: '80px',
+            fontSize: '50px',
             color: 'white',
             textShadow: '-2px 0 0 black, 0 2px 0 black, -2px 2px 0 black',
             textAlign: 'center',
