@@ -314,7 +314,7 @@ export default function MainSearch() {
     setTimeout(() => {
       const filters = {};
       if (selectedSets && selectedSets.length > 0) {
-        filters.setName = selectedSets;
+        filters.setId = selectedSets;
       }
       if (selectedCardTypes && selectedCardTypes.length > 0) {
         filters.cardType = selectedCardTypes;
@@ -368,7 +368,7 @@ export default function MainSearch() {
         setSearchInitiated(true);
         const filters = {};
         if (selectedSets && selectedSets.length > 0) {
-          filters.setName = selectedSets;
+          filters.setId = selectedSets;
         }
         if (selectedCardTypes && selectedCardTypes.length > 0) {
           filters.cardType = selectedCardTypes;
