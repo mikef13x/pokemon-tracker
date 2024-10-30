@@ -30,6 +30,14 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
     handleSubtypeChange(tempSelectedSubtype);
     handleApplyClick();
   };
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: 350,
+        overflow: 'auto',
+      },
+    },
+  };
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md">
@@ -49,6 +57,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
               setTempSelectedSets(e.target.value);
             }}
             renderValue={(selected) => selected.join(', ')}
+            MenuProps={MenuProps}
           >
              {setNames.map((name) => (
               <MenuItem key={name} value={name}>
@@ -90,6 +99,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             value={tempSelectedSubtype}
             onChange={(e) => setTempSelectedSubtype(e.target.value)}
             renderValue={(selected) => selected.join(', ')}
+            MenuProps={MenuProps}
           >
             {subtypes.map((subtype) => (
               <MenuItem key={subtype} value={subtype}>
@@ -108,6 +118,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             value={tempSelectedPokemonType}
             onChange={(e) => setTempSelectedPokemonType(e.target.value)}
             renderValue={(selected) => selected.join(', ')}
+            MenuProps={MenuProps}
           >
             {pokemonTypes.map((type) => (
               <MenuItem key={type} value={type}>
@@ -126,6 +137,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             value={tempSelectedRarity}
             onChange={(e) => setTempSelectedRarity(e.target.value)}
             renderValue={(selected) => selected.join(', ')}
+            MenuProps={MenuProps}
           >
             {rarities.map((rarity) => (
               <MenuItem key={rarity} value={rarity}>
@@ -144,6 +156,7 @@ export default function FilterModal({ open, onClose, selectedSets, handleSetsCha
             value={tempSelectedArtist}
             onChange={(e) => setTempSelectedArtist(e.target.value)}
             renderValue={(selected) => selected.join(', ')}
+            MenuProps={MenuProps}
           >
             {artists.map((artist) => (
               <MenuItem key={artist} value={artist}>
