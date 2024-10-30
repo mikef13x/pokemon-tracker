@@ -22,7 +22,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     const artists = new Set();
     const subtypes = new Set();
     const rarities = new Set();
-    const setNames = new Set();
+    const setNames = {};
 
     jsonData.forEach(array => {
         array.forEach(item => {
@@ -35,8 +35,8 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             if (item.rarity) {
                 rarities.add(item.rarity);
             }
-            if (item.set && item.set.name) {
-                setNames.add(item.set.name);
+            if (item.set && item.set.id && item.set.name) {
+                setNames[item.set.id] = item.set.name;
             }
         });
     });
@@ -45,7 +45,10 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     const sortedArtists = [...artists].sort();
     const sortedSubtypes = [...subtypes].sort();
     const sortedRarities = [...rarities].sort();
-    const sortedSetNames = [...setNames].sort();
+    const sortedSetNames = Object.keys(setNames).sort().reduce((acc, key) => {
+        acc[key] = setNames[key];
+        return acc;
+    }, {});
 
     // Step 5: Write the sorted arrays to a new file
     const outputData = {
