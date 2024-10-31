@@ -8,7 +8,7 @@ import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { useNavigate } from 'react-router-dom';
 
-export default function MarketCard({ id, image, name, price, cardId, setName, artist }) {
+export default function MarketCard({ id, image, name, price, cardId, setName, artist, setId }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [popoverMessage, setPopoverMessage] = useState('');
@@ -41,6 +41,13 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
       state: { artist },
     });
   };
+
+  const handleSearchBySet = (setId) => {
+    navigate('/search', {
+      state: { setId},
+    });
+  };
+  
   
   console.log(collection);
 
@@ -96,15 +103,16 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
       <Typography variant="body1" sx={{ marginTop: '20px' }}>
         Market Price: {price}
       </Typography>
-      <Typography variant="body1" sx={{ marginTop: '8px', textAlign: 'center' }}>
-        Set: {setName}
+      <Typography onClick={() => handleSearchBySet(setId)} variant="body1" sx={{ marginTop: '8px',
+        cursor:'pointer'
+       }}>
+        Set: <span style={{ color: 'blue' }}>{setName}</span>
       </Typography>
-      <Typography variant="body1" sx={{ marginTop: '8px' }}>
-       Artist: {artist}
+      <Typography onClick={() => handleSearchByArtist(artist)} variant="body1" sx={{ marginTop: '8px',
+        cursor:'pointer'
+       }}>
+        Artist: <span style={{ color: 'blue' }}>{artist}</span>
       </Typography>
-      <button onClick={() => handleSearchByArtist(artist)}>
-      {artist}
-    </button>
       {user && (
         <>
           <IconButton ref={heartButtonRef} onClick={handleFavoriteClick} sx={{ marginTop: '8px' }}>

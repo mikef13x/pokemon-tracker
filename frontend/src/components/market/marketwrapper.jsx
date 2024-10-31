@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
-export default function MarketWrapper({ id, name, price, image, cardId, setName, artist}) {
+export default function MarketWrapper({ id, name, price, image, cardId, setName, artist, setId}) {
         const navigate = useNavigate()
         const location = useLocation()
 
@@ -66,7 +66,7 @@ export default function MarketWrapper({ id, name, price, image, cardId, setName,
                         Back
                     </Button>
                     
-                    <MarketCard id={id} name={name} price={formatPrice(price)} setName={setName}  image={image} artist={artist} cardId={getCardId(cardId)} />
+                    <MarketCard id={id} name={name} price={formatPrice(price)} setName={setName} setId={setId} image={image} artist={artist} cardId={getCardId(cardId)} />
                    
                     <MarketChart/>
                 </Box>
