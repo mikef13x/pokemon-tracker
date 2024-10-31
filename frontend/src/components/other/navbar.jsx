@@ -1,12 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 import Auth from '../../utils/auth'
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   // const handleLogout = () => {
   //   localStorage.removeItem('id_token')
   //   window.location.reload()
   // }
+  const [scrollToInfo, setScrollToInfo] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
   function handleLogoutClick() {
     localStorage.removeItem("id_token");
@@ -14,11 +20,26 @@ export default function Navbar() {
     window.location.assign('/')
   }
   const scrollToInfoBox1 = () => {
-    const element = document.getElementById('infoBox1');
-    if (element) {
+    if (location.pathname !== '/') {
+      setScrollToInfo(true);
+      navigate('/');
+    } else {
+      const element = document.getElementById('infoBox1');
+      if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-};
+  };
+
+  useEffect(() => {
+    if (scrollToInfo && location.pathname === '/') {
+      const element = document.getElementById('infoBox1');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setScrollToInfo(false);
+    }
+  }, [location.pathname, scrollToInfo]);
 const scrollToHome = () => {
   window.scrollTo({
       top: 0,
