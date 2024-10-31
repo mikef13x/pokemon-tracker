@@ -618,17 +618,17 @@ const slideUp = keyframes`
           fullWidth
       
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px', backgroundColor:'rgb(40,40,40)' }} >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px', }} >
             {!isInitialState && (
               <Button onClick={handleBackButtonClick} color="primary">
                 Back
               </Button>
             )}
-            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', color:'white' }} >
+            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px' }} >
               {title}
             </DialogTitle>
           </Box>
-          <DialogContent sx={{backgroundColor:'rgb(40,40,40)', color: 'white'}}>
+          <DialogContent>
             {loading && <CircularProgress />}
             {error && (
               <Typography color="error">Error: {error.message}</Typography>
@@ -678,7 +678,7 @@ const slideUp = keyframes`
                       style={{ width: '130px', height: '60px', objectFit: 'contain', }} />
                     <Typography
                       variant="button"
-                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', color: 'white' }} >
+                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none' }} >
                       {item.name}
                     </Typography>
                   </Button>
@@ -686,7 +686,7 @@ const slideUp = keyframes`
               ))}
             </Grid>
           </DialogContent>
-          <DialogActions sx={{ justifyContent: 'center', backgroundColor:'rgb(30,30, 30)' }}>
+          <DialogActions sx={{ justifyContent: 'center' }}>
             <Button
               sx={{ textAlign: 'center' }}
               onClick={handleModalClose}
