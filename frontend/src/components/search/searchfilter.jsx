@@ -3,21 +3,21 @@ import { Dialog, Box, DialogTitle, DialogContent, FormControl, InputLabel, Selec
 import { artists, cardTypes, pokemonTypes, subtypes, rarities, setNames, setNamesObj } from '../../assets/set-data/filterArrays';
 
 export default function FilterModal({ open, onClose, selectedSets, handleSetsChange, handleFilterClose, selectedCardTypes, handleCardTypesChange, handleClearFilters, handleApplyClick, handleArtistChange, handleSubtypeChange, handleRarityChange, handlePokemonTypeChange, selectedPokemonType, selectedSubtype, selectedRarity, selectedArtist }) {
-  const [tempSelectedSets, setTempSelectedSets] = useState(selectedSets);
-  const [tempSelectedCardTypes, setTempSelectedCardTypes] = useState(selectedCardTypes);
-  const [tempSelectedPokemonType, setTempSelectedPokemonType] = useState(selectedPokemonType);
-  const [tempSelectedArtist, setTempSelectedArtist] = useState(selectedArtist);
-  const [tempSelectedSubtype, setTempSelectedSubtype] = useState(selectedSubtype);
-  const [tempSelectedRarity, setTempSelectedRarity] = useState(selectedRarity);
+  const [tempSelectedSets, setTempSelectedSets] = useState(selectedSets || []);
+  const [tempSelectedCardTypes, setTempSelectedCardTypes] = useState(selectedCardTypes || []);
+  const [tempSelectedPokemonType, setTempSelectedPokemonType] = useState(selectedPokemonType || []);
+  const [tempSelectedArtist, setTempSelectedArtist] = useState(selectedArtist || []);
+  const [tempSelectedSubtype, setTempSelectedSubtype] = useState(selectedSubtype || []);
+  const [tempSelectedRarity, setTempSelectedRarity] = useState(selectedRarity || []);
 
   useEffect(() => {
     if (open) {
-      setTempSelectedSets(selectedSets);
-      setTempSelectedCardTypes(selectedCardTypes);
-      setTempSelectedPokemonType(selectedPokemonType);
-      setTempSelectedArtist(selectedArtist);
-      setTempSelectedRarity(selectedRarity);
-      setTempSelectedSubtype(selectedSubtype);
+      setTempSelectedSets(selectedSets || []);
+      setTempSelectedCardTypes(selectedCardTypes || []);
+      setTempSelectedPokemonType(selectedPokemonType || []);
+      setTempSelectedArtist(selectedArtist || []);
+      setTempSelectedRarity(selectedRarity || []);
+      setTempSelectedSubtype(selectedSubtype || []);
     }
   }, [open, selectedSets, selectedCardTypes, selectedPokemonType, selectedArtist, selectedRarity, selectedSubtype]);
 

@@ -6,6 +6,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { UPDATE_COLLECTION } from '../../utils/mutations';
 import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import Auth from '../../utils/auth';
+import { useNavigate } from 'react-router-dom';
 
 export default function MarketCard({ id, image, name, price, cardId, setName, artist }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -14,6 +15,8 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
   const [collection, setCollection] = useState([]);
   const [collectionId, setCollectionId] = useState('');
   const user = Auth.loggedIn() ? Auth.getProfile().data : null;
+
+  const navigate = useNavigate();
   
   const [updateCollection] = useMutation(UPDATE_COLLECTION);
 
@@ -32,6 +35,12 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
       }
     }
   }, [data, id]);
+
+  const handleSearchByArtist = (artist) => {
+    navigate('/search', {
+      state: { artist },
+    });
+  };
   
   console.log(collection);
 
@@ -93,6 +102,9 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
       <Typography variant="body1" sx={{ marginTop: '8px' }}>
        Artist: {artist}
       </Typography>
+      <button onClick={() => handleSearchByArtist(artist)}>
+      {artist}
+    </button>
       {user && (
         <>
           <IconButton ref={heartButtonRef} onClick={handleFavoriteClick} sx={{ marginTop: '8px' }}>

@@ -108,14 +108,15 @@ export default function MainSearch() {
       setSelectedImage(location.state.selectedImage || null);
       setSelectedSets(location.state.selectedSets || []);
       setSelectedCardTypes(location.state.selectedCardTypes || []);
-      setSelectedArtist(location.state.selectedArtist || '');
-      setSelectedSubtype(location.state.selectedSubtype || '');
-      setSelectedRarity(location.state.selectedRarity || '');
-      setSelectedPokemonType(location.state.selectedPokemonType || '');
+      setSelectedArtist(location.state.selectedArtist || []);
+      setSelectedSubtype(location.state.selectedSubtype || []);
+      setSelectedRarity(location.state.selectedRarity || []);
+      setSelectedPokemonType(location.state.selectedPokemonType || []);
       setSearchInitiated(true);
       setAnimateSearch(true)
     }
   }, [location.state]);
+
 
 
   const [getCardsBySet, { loading, data, error }] = useLazyQuery(
@@ -141,6 +142,15 @@ export default function MainSearch() {
       console.error('Error fetching data:', error);
     },
   });
+
+  useEffect(() => {
+    if (location.state && location.state.artist) {
+      console.log("artist", typeof location.state.artist)
+      setSelectedArtist([location.state.artist]);
+      getCardsByName({ variables: { name: searchValue, filters: {artist: location.state.artist } }});
+    }
+  }, [location.state, getCardsByName]);
+
 
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
