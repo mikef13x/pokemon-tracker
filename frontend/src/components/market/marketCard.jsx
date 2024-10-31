@@ -48,8 +48,6 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
     });
   };
   
-  
-  console.log(collection);
 
   const heartButtonRef = useRef(null);
 
@@ -60,7 +58,7 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
 
     setIsFavorite(!isFavorite);
     setCollection(updatedCollection);
-    console.log("updated", updatedCollection);
+
 
     try {
       await updateCollection({

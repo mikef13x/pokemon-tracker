@@ -146,7 +146,6 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state && location.state.artist) {
-      console.log("artist", typeof location.state.artist)
       setSelectedArtist([location.state.artist]);
       getCardsByName({ variables: { name: searchValue, filters: {artist: location.state.artist } }});
     }
@@ -154,7 +153,6 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state && location.state.setId) {
-      console.log("setId",  location.state.setId)
       setSelectedSets([location.state.setId]);
       getCardsByName({ variables: { name: searchValue, filters: {setId: location.state.setId } }});
     }
