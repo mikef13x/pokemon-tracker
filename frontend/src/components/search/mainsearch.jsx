@@ -17,6 +17,7 @@ import {
   Button,
   Pagination,
   PaginationItem,
+  Divider
 } from '@mui/material';
 import FilterModal from './searchfilter';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -611,24 +612,26 @@ const slideUp = keyframes`
 
 
 
-        <Dialog
+<Dialog
           open={showModal}
           onClose={handleModalClose}
           maxWidth="md"
           fullWidth
+          
       
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px', }} >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', backgroundColor:'rgb(40,40,40)' }} >
             {!isInitialState && (
               <Button onClick={handleBackButtonClick} color="primary">
                 Back
               </Button>
             )}
-            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px' }} >
+            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', color:'white' }} >
               {title}
             </DialogTitle>
           </Box>
-          <DialogContent>
+          <Divider sx={{ backgroundColor: 'white', height: '0px', width: '100%' }} />
+          <DialogContent sx={{backgroundColor:'rgb(40,40,40)', color: 'white'}}>
             {loading && <CircularProgress />}
             {error && (
               <Typography color="error">Error: {error.message}</Typography>
@@ -678,7 +681,7 @@ const slideUp = keyframes`
                       style={{ width: '130px', height: '60px', objectFit: 'contain', }} />
                     <Typography
                       variant="button"
-                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none' }} >
+                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', color: 'white' }} >
                       {item.name}
                     </Typography>
                   </Button>
@@ -686,7 +689,8 @@ const slideUp = keyframes`
               ))}
             </Grid>
           </DialogContent>
-          <DialogActions sx={{ justifyContent: 'center' }}>
+          <Divider sx={{ backgroundColor: 'white', height: '0px', width: '100%' }} />
+          <DialogActions sx={{ justifyContent: 'center', backgroundColor:'rgb(40,40,40)' }}>
             <Button
               sx={{ textAlign: 'center' }}
               onClick={handleModalClose}
