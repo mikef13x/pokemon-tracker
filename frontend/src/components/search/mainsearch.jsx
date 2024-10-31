@@ -151,6 +151,13 @@ export default function MainSearch() {
     }
   }, [location.state, getCardsByName]);
 
+  useEffect(() => {
+    if (location.state && location.state.setId) {
+      console.log("setId",  location.state.setId)
+      setSelectedSets([location.state.setId]);
+      getCardsByName({ variables: { name: searchValue, filters: {setId: location.state.setId } }});
+    }
+  }, [location.state, getCardsByName]);
 
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
