@@ -616,18 +616,19 @@ const slideUp = keyframes`
           onClose={handleModalClose}
           maxWidth="md"
           fullWidth
+      
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px', }} >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginTop: '20px', backgroundColor:'rgb(40,40,40)' }} >
             {!isInitialState && (
               <Button onClick={handleBackButtonClick} color="primary">
                 Back
               </Button>
             )}
-            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', }} >
+            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', color:'white' }} >
               {title}
             </DialogTitle>
           </Box>
-          <DialogContent>
+          <DialogContent sx={{backgroundColor:'rgb(40,40,40)', color: 'white'}}>
             {loading && <CircularProgress />}
             {error && (
               <Typography color="error">Error: {error.message}</Typography>
@@ -636,7 +637,7 @@ const slideUp = keyframes`
             <Grid container spacing={2}>
               {currentModalData.map((item) => (
                 <Grid item xs={12} sm={6} md={3} key={item.id}>
-                  <Button sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none', }}
+                  <Button sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none', color:'white' }}
                     onClick={(event) => {
                       if (item.name === 'WOTC') {
                         handleButtonClick(WOTCData, 'WOTC Sets');
@@ -677,7 +678,7 @@ const slideUp = keyframes`
                       style={{ width: '130px', height: '60px', objectFit: 'contain', }} />
                     <Typography
                       variant="button"
-                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', }} >
+                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', color: 'white' }} >
                       {item.name}
                     </Typography>
                   </Button>
@@ -685,7 +686,7 @@ const slideUp = keyframes`
               ))}
             </Grid>
           </DialogContent>
-          <DialogActions sx={{ justifyContent: 'center' }}>
+          <DialogActions sx={{ justifyContent: 'center', backgroundColor:'rgb(30,30, 30)' }}>
             <Button
               sx={{ textAlign: 'center' }}
               onClick={handleModalClose}
