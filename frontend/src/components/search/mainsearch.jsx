@@ -158,6 +158,7 @@ export default function MainSearch() {
     }
   }, [location.state, getCardsByName]);
 
+
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
     const setImage = event.currentTarget.getAttribute('data-image');
@@ -167,6 +168,7 @@ export default function MainSearch() {
     setAnimationKey(Date.now());
     setFetchedData([]);
     setIsSetModalSearch(true);
+    setSelectedSets([setId]);
     setCurrentPage(1);
     setSelectedImage(setImage);
     setSearchInitiated(true)
@@ -240,7 +242,7 @@ export default function MainSearch() {
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-    if (isSetModalSearch) {
+    if (isSetModalSearch && selectedSets.length <= 1) {
       setTimeout(() => {
         const filters = {};
         if (selectedCardTypes && selectedCardTypes.length > 0) {
