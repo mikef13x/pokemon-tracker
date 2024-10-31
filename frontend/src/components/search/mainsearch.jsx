@@ -146,7 +146,6 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state && location.state.artist) {
-      console.log("artist", typeof location.state.artist)
       setSelectedArtist([location.state.artist]);
       getCardsByName({ variables: { name: searchValue, filters: {artist: location.state.artist } }});
     }
@@ -154,11 +153,11 @@ export default function MainSearch() {
 
   useEffect(() => {
     if (location.state && location.state.setId) {
-      console.log("setId",  location.state.setId)
       setSelectedSets([location.state.setId]);
       getCardsByName({ variables: { name: searchValue, filters: {setId: location.state.setId } }});
     }
   }, [location.state, getCardsByName]);
+
 
   const handleSetClick = (event) => {
     const setId = event.currentTarget.getAttribute('data-setid');
@@ -169,6 +168,7 @@ export default function MainSearch() {
     setAnimationKey(Date.now());
     setFetchedData([]);
     setIsSetModalSearch(true);
+    setSelectedSets([setId]);
     setCurrentPage(1);
     setSelectedImage(setImage);
     setSearchInitiated(true)
@@ -242,7 +242,7 @@ export default function MainSearch() {
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
-    if (isSetModalSearch) {
+    if (isSetModalSearch && selectedSets.length <= 1) {
       setTimeout(() => {
         const filters = {};
         if (selectedCardTypes && selectedCardTypes.length > 0) {
@@ -681,7 +681,7 @@ const slideUp = keyframes`
                       style={{ width: '130px', height: '60px', objectFit: 'contain', }} />
                     <Typography
                       variant="button"
-                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', color: 'white' }} >
+                      sx={{ flex: 1, fontSize: '10px', textTransform: 'none', color: 'white' }} >
                       {item.name}
                     </Typography>
                   </Button>
