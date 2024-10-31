@@ -681,7 +681,7 @@ const slideUp = keyframes`
                       style={{ width: '130px', height: '60px', objectFit: 'contain', }} />
                     <Typography
                       variant="button"
-                      sx={{ flex: 1, fontSize: '10px', color: 'black', textTransform: 'none', color: 'white' }} >
+                      sx={{ flex: 1, fontSize: '10px', textTransform: 'none', color: 'white' }} >
                       {item.name}
                     </Typography>
                   </Button>
