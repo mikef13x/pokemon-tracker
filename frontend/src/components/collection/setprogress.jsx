@@ -61,7 +61,6 @@ export default function SetProgress() {
 
   return (
     <Box>
-      <Typography variant="h4" sx={{textAlign: 'center', color: 'white'}}>Set Progress</Typography>
       {showInitialSets ? (
          <Grid container spacing={2}>
          {modalData.map((set) => (

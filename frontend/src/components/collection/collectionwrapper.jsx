@@ -98,7 +98,7 @@ export default function CollectionWrapper() {
             transformOrigin: 'bottom',
             width: '100%',
           }}>
-          <span className="tiny5-regular">{collectionName}</span>
+          <span className="tiny5-regular">{showNewComponent ? 'Collection Progress' : collectionName }</span>
         </Typography>
       </Box>
       <Box
@@ -127,7 +127,7 @@ export default function CollectionWrapper() {
             backgroundColor: 'rgba(255,255,255)', color: 'black', marginLeft: '20px', width: '120px', height: '55px',
             backdropFilter: 'blur(5px)',
           }}>
-          <span className="tiny5-regular">{showNewComponent ? 'View Collection' : 'Set Progress'}</span>
+          <span className="tiny5-regular">{showNewComponent ? 'View Collection' : 'Collection Progress'}</span>
           
         </Button>
       </Box>
