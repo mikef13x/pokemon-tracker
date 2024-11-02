@@ -62,23 +62,23 @@ export default function SetProgress() {
   return (
     <Box>
       {showInitialSets ? (
-         <Grid container spacing={2}>
-         {modalData.map((set) => (
-           <Grid item xs={12} sm={6} md={4} lg={3} key={set.id}>
-             <Card sx={{ backgroundColor: 'white', padding: '20px', margin: '5px' }}>
-               <CardActionArea onClick={() => handleSetClick(set.name)}>
-                 <CardMedia
-                   component="img"
-                   height="50"
-                   image={set.image}
-                   alt={set.name}
-                   sx={{ objectFit: 'contain', backgroundColor: 'transparent' }}
-                 />
-               </CardActionArea>
-             </Card>
-           </Grid>
-         ))}
-       </Grid>
+        <Grid container spacing={2}>
+          {modalData.map((set) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={set.id}>
+              <Card sx={{ backgroundColor: 'white', padding: '20px' }}>
+                <CardActionArea onClick={() => handleSetClick(set.name)}>
+                  <CardMedia
+                    component="img"
+                    height="75"
+                    image={set.image}
+                    alt={set.name}
+                    sx={{ objectFit: 'contain', backgroundColor: 'transparent' }}
+                  />
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       ) : (
         <Box>
           <Button onClick={handleBackClick} variant="contained" color="primary" sx={{ marginBottom: '20px' }}>
@@ -87,7 +87,7 @@ export default function SetProgress() {
           <Grid container spacing={2}>
             {selectedSet.map((item) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-                <Card sx={{ backgroundColor: 'white', paddingY: '20px', paddingX: '5px', width: isMobile ? '100%' : '25rem'}}>
+                <Card sx={{ backgroundColor: 'white', paddingY: '20px', paddingX: '5px', margin: 'auto', width: isMobile ? '100%' : '90%' }}>
                   <CardMedia
                     component="img"
                     height="100"
@@ -96,14 +96,14 @@ export default function SetProgress() {
                     sx={{ objectFit: 'contain', backgroundColor: 'transparent' }}
                   />
                   <Box sx={{ padding: '10px' }}>
-                    <Typography sx={{textAlign: "center"}}>{item.name}</Typography>
+                    <Typography sx={{ textAlign: "center" }}>{item.name}</Typography>
                     <Box sx={{ position: 'relative', display: 'inline-flex', width: '100%', marginTop: "20px" }}>
-                      <LinearProgress variant="determinate" value={(90 / 100) * 100} sx={{ width: '100%', height:'30px', borderRadius:"25px" }} />
+                      <LinearProgress variant="determinate" value={(90 / 100) * 100} sx={{ width: '100%', height: '30px', borderRadius: "25px" }} />
                       <Typography
                         variant="body2"
                         color="white"
                         sx={{
-                            fontSize: '.8rem',
+                          fontSize: '.8rem',
                           position: 'absolute',
                           left: '50%',
                           top: '50%',
