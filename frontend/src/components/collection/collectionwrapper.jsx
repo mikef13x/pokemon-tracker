@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, Select, MenuItem, FormControl, InputLabel, IconButton, TextField, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import { Box, Select, MenuItem, FormControl, InputLabel, Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions, Typography } from '@mui/material';
 import CollectionCard from './collectioncard'; // Import the CollectionCard component
 import { GET_USER_MAIN_COLLECTION } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
@@ -8,6 +7,7 @@ import Auth from '../../utils/auth';
 import { motion } from 'framer-motion';
 import { containerInfo, itemInfo } from '../../utils/framerMotion';
 import { keyframes } from '@emotion/react';
+import SetProgress from './setprogress';
 
 const pulse = keyframes`
   0%, 100% {
@@ -24,6 +24,7 @@ export default function CollectionWrapper() {
   const [mainCollection, setMainCollection] = useState([]);
   const [collectionName, setCollectionName] = useState('');
   const [animationKey, setAnimationKey] = useState(0); // State for animation key
+  const [showNewComponent, setShowNewComponent] = useState(false); // State to show new component
 
   const user = Auth.loggedIn() ? Auth.getProfile().data : null;
 
@@ -47,7 +48,7 @@ export default function CollectionWrapper() {
     if (sortOrder === 'asc') {
       return a.releaseDate - b.releaseDate;
     } else if (sortOrder === 'dsc') {
-      return b.releaseDate- a.releaseDate;
+      return b.releaseDate - a.releaseDate;
     } else if (sortOrder === 'priceDSC') {
       return b.price - a.price;
     } else if (sortOrder === 'priceASC') {
@@ -72,6 +73,10 @@ export default function CollectionWrapper() {
     setShowSearch((prev) => !prev);
   };
 
+  const handleToggleComponentClick = () => {
+    setShowNewComponent((prev) => !prev);
+  };
+
   return (
     <Box sx={{}}>
       <Box
@@ -93,7 +98,7 @@ export default function CollectionWrapper() {
             transformOrigin: 'bottom',
             width: '100%',
           }}>
-          <span className="tiny5-regular">{collectionName}</span>
+          <span className="tiny5-regular">{showNewComponent ? 'Collection Progress' : collectionName }</span>
         </Typography>
       </Box>
       <Box
@@ -115,20 +120,16 @@ export default function CollectionWrapper() {
             <MenuItem value="priceASC">Lowest Price</MenuItem>
           </Select>
         </FormControl>
-        <IconButton
-          onClick={toggleSearchBar}
+        <Button
+          onClick={handleToggleComponentClick}
           color="primary"
           sx={{
-            backgroundColor: 'rgba(0, 0, 0)',
-            color: 'white',
-            marginLeft: '20px',
-            width: '40px',
-            height: '40px',
-            borderRadius: '50%',
+            backgroundColor: 'rgba(255,255,255)', color: 'black', marginLeft: '20px', width: '120px', height: '55px',
             backdropFilter: 'blur(5px)',
           }}>
-          <AddIcon />
-        </IconButton>
+          <span className="tiny5-regular">{showNewComponent ? 'View Collection' : 'Collection Progress'}</span>
+          
+        </Button>
       </Box>
       <Dialog open={showSearch} onClose={toggleSearchBar} maxWidth="md" fullWidth>
         <DialogTitle>Search</DialogTitle>
@@ -155,26 +156,30 @@ export default function CollectionWrapper() {
               marginTop: '200px',
               backdropFilter: 'blur(20px)',
             }}>
-            <motion.div
-              key={animationKey} // Use the animation key
-              variants={containerInfo}
-              initial="hidden"
-              animate="visible">
-              <Box
-                sx={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-                  gap: '50px',
-                }}>
-                {sortedData.map((item) => (
-                  <motion.div key={`${item.cardId}-${item.price}-${item.name}`} variants={itemInfo}>
-                    <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
-                      <CollectionCard cardId={item.cardId} name={item.name} price={formatPrice(item.price)} image={item.image} />
-                    </Box>
-                  </motion.div>
-                ))}
-              </Box>
-            </motion.div>
+            {showNewComponent ? (
+              <SetProgress />
+            ) : (
+              <motion.div
+                key={animationKey} // Use the animation key
+                variants={containerInfo}
+                initial="hidden"
+                animate="visible">
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                    gap: '50px',
+                  }}>
+                  {sortedData.map((item) => (
+                    <motion.div key={`${item.cardId}-${item.price}-${item.name}`} variants={itemInfo}>
+                      <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
+                        <CollectionCard cardId={item.cardId} name={item.name} price={formatPrice(item.price)} image={item.image} />
+                      </Box>
+                    </motion.div>
+                  ))}
+                </Box>
+              </motion.div>
+            )}
           </Box>
         </Box>
       </Box>

@@ -63,49 +63,49 @@ router.get('/sets', async (req, res) => {
   }
 });
 
-router.get('/seed', async (req, res) => {
-  try {
-    await Card.collection.drop();
-    console.log('Card collection dropped');
+// router.get('/seed', async (req, res) => {
+//   try {
+//     await Card.collection.drop();
+//     console.log('Card collection dropped');
 
-    let filePath = path.join(__dirname, '../seed/filteredSetsData.json');
-    console.log(`Reading file from: ${filePath}`);
-    let jsonData = fs.readFileSync(filePath, 'utf-8');
-    let cards = JSON.parse(jsonData);
+//     let filePath = path.join(__dirname, '../seed/filteredSetsData.json');
+//     console.log(`Reading file from: ${filePath}`);
+//     let jsonData = fs.readFileSync(filePath, 'utf-8');
+//     let cards = JSON.parse(jsonData);
 
-    const addedCards = [];
-    const skippedCards = [];
+//     const addedCards = [];
+//     const skippedCards = [];
 
-    for (const card of cards) {
-      try {
-        const existingCard = await Card.findOne({ cardId: card.id });
-        if (existingCard) {
-          skippedCards.push(card);
-          continue;
-        }
+//     for (const card of cards) {
+//       try {
+//         const existingCard = await Card.findOne({ cardId: card.id });
+//         if (existingCard) {
+//           skippedCards.push(card);
+//           continue;
+//         }
 
-        const newCard = new Card({
-          name: card.name,
-          image: card.images.large,
-          cardId: card.id,
-          cardType: card.cardType,
-          pokemonType: card.pokemonType,
-          subType: card.subType,
-          artist: card.artist,
-          setId: card.setId,
-          setName: card.setName,
-          releaseDate: card.releaseDate,
-          rarity: card.rarity,
-          price: card.price,
+//         const newCard = new Card({
+//           name: card.name,
+//           image: card.images.large,
+//           cardId: card.id,
+//           cardType: card.cardType,
+//           pokemonType: card.pokemonType,
+//           subType: card.subType,
+//           artist: card.artist,
+//           setId: card.setId,
+//           setName: card.setName,
+//           releaseDate: card.releaseDate,
+//           rarity: card.rarity,
+//           price: card.price,
 
-        });
-        await newCard.save();
-        addedCards.push(newCard);
-      } catch (error) {
-        console.error(`Error saving cardId: ${card.id}`, error);
-        throw error;
-      }
-    }
+//         });
+//         await newCard.save();
+//         addedCards.push(newCard);
+//       } catch (error) {
+//         console.error(`Error saving cardId: ${card.id}`, error);
+//         throw error;
+//       }
+//     }
 // Japanese card set
     // filePath = path.join(__dirname, '../seed/jpnFilteredSetsData.json');
     // console.log(`Reading file from: ${filePath}`);
@@ -138,12 +138,12 @@ router.get('/seed', async (req, res) => {
     //   }
     // }
 
-    res.json({ addedCards, skippedCards });
-  } catch (error) {
-    console.error('Error seeding cards from JSON', error);
-    res.status(500).json({ message: 'Failed to seed cards from JSON', error });
-  }
-});
+//     res.json({ addedCards, skippedCards });
+//   } catch (error) {
+//     console.error('Error seeding cards from JSON', error);
+//     res.status(500).json({ message: 'Failed to seed cards from JSON', error });
+//   }
+// });
 
 
 module.exports = router;
