@@ -98,7 +98,7 @@ export default function SetProgress() {
                   <Box sx={{ padding: '10px' }}>
                     <Typography sx={{ textAlign: "center" }}>{item.name}</Typography>
                     <Box sx={{ position: 'relative', display: 'inline-flex', width: '100%', marginTop: "20px" }}>
-                      <LinearProgress variant="determinate" value={(90 / 100) * 100} sx={{ width: '100%', height: '30px', borderRadius: "25px" }} />
+                      <LinearProgress variant="determinate" value={(0 / item.total) * 100} sx={{ width: '100%', height: '30px', borderRadius: "25px" }} />
                       <Typography
                         variant="body2"
                         color="white"
@@ -110,7 +110,7 @@ export default function SetProgress() {
                           transform: 'translate(-50%, -50%)',
                         }}
                       >
-                        {90} / {100}
+                        {0} / {item.total}
                       </Typography>
                     </Box>
                   </Box>
