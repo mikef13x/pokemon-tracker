@@ -810,7 +810,7 @@ const slideUp = keyframes`
             transformOrigin: 'bottom',
             display: animateSearch ? 'none' : ''
           }}>
-            <span className='tiny5-regular'>Start a search to begin...</span>
+            <span className='poppins-regular'>Start a search to begin...</span>
           </Typography>
 
         </Box>
