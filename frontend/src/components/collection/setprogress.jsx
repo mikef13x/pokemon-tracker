@@ -1,11 +1,12 @@
+import React, { useState } from 'react';
 import { Typography, Box, Grid, Card, CardMedia, CardActionArea, Button, LinearProgress, useMediaQuery } from '@mui/material';
 import { modalData, WOTCData, EXData, DPData, POPData, PlatinumData, HGSSData, BWData, XYData, SMData, SSData, SVData, PromoData, OtherData } from '../../assets/set-data/set-data';
-import { useState } from 'react';
-
+import SetDetails from './setdetails';
 
 export default function SetProgress({ mainCollection }) {
   const [selectedSet, setSelectedSet] = useState(null);
   const [showInitialSets, setShowInitialSets] = useState(true);
+  const [selectedExpansion, setSelectedExpansion] = useState(null);
 
   console.log(mainCollection);
 
@@ -61,6 +62,15 @@ export default function SetProgress({ mainCollection }) {
   const handleBackClick = () => {
     setShowInitialSets(true);
     setSelectedSet(null);
+    setSelectedExpansion(null);
+  };
+
+  const handleSetBackClick = () => {
+    setSelectedExpansion(null);
+  };
+
+  const handleExpansionClick = (card) => {
+    setSelectedExpansion(card);
   };
 
   const getCardCount = (setId) => {
@@ -81,6 +91,8 @@ export default function SetProgress({ mainCollection }) {
             </Grid>
           ))}
         </Grid>
+      ) : selectedExpansion ? (
+        <SetDetails set={selectedExpansion} handleSetBackClick={handleSetBackClick} mainCollection={mainCollection}/>
       ) : (
         <Box>
           <Button onClick={handleBackClick} variant="contained" color="primary" sx={{ marginBottom: '20px' }}>
@@ -93,25 +105,27 @@ export default function SetProgress({ mainCollection }) {
               return (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
                   <Card sx={{ backgroundColor: 'white', paddingY: '20px', paddingX: '5px', margin: 'auto', width: isMobile ? '100%' : '90%' }}>
-                    <CardMedia component="img" height="100" image={item.image} alt={item.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
-                    <Box sx={{ padding: '10px' }}>
-                      <Typography sx={{ textAlign: 'center' }}>{item.name}</Typography>
-                      <Box sx={{ position: 'relative', display: 'inline-flex', width: '100%', marginTop: '20px' }}>
-                        <LinearProgress variant="determinate" value={percentage} sx={{ width: '100%', height: '30px', borderRadius: '25px' }} />
-                        <Typography
-                          variant="body2"
-                          color="white"
-                          sx={{
-                            fontSize: '.8rem',
-                            position: 'absolute',
-                            left: '50%',
-                            top: '50%',
-                            transform: 'translate(-50%, -50%)',
-                          }}>
-                          {percentage.toFixed()}%
-                        </Typography>
+                    <CardActionArea onClick={() => handleExpansionClick(item)}>
+                      <CardMedia component="img" height="100" image={item.image} alt={item.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
+                      <Box sx={{ padding: '10px' }}>
+                        <Typography sx={{ textAlign: 'center' }}>{item.name}</Typography>
+                        <Box sx={{ position: 'relative', display: 'inline-flex', width: '100%', marginTop: '20px' }}>
+                          <LinearProgress variant="determinate" value={percentage} sx={{ width: '100%', height: '30px', borderRadius: '25px' }} />
+                          <Typography
+                            variant="body2"
+                            color="white"
+                            sx={{
+                              fontSize: '.8rem',
+                              position: 'absolute',
+                              left: '50%',
+                              top: '50%',
+                              transform: 'translate(-50%, -50%)',
+                            }}>
+                            {percentage.toFixed()}%
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
+                    </CardActionArea>
                   </Card>
                 </Grid>
               );
