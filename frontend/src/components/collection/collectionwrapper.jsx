@@ -157,7 +157,7 @@ export default function CollectionWrapper() {
               backdropFilter: 'blur(20px)',
             }}>
             {showNewComponent ? (
-              <SetProgress />
+              <SetProgress mainCollection={mainCollection}/>
             ) : (
               <motion.div
                 key={animationKey} // Use the animation key
