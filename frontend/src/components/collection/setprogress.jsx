@@ -65,7 +65,7 @@ export default function SetProgress() {
         <Grid container spacing={2}>
           {modalData.map((set) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={set.id}>
-              <Card sx={{ backgroundColor: 'white', padding: '20px' }}>
+              <Card sx={{ backgroundColor: 'white', padding: '40px' }}>
                 <CardActionArea onClick={() => handleSetClick(set.name)}>
                   <CardMedia
                     component="img"
