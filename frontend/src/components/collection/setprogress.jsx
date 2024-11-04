@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { Typography, Box, Grid, Card, CardMedia, CardActionArea, Button, LinearProgress, useMediaQuery } from '@mui/material';
 import { modalData, WOTCData, EXData, DPData, POPData, PlatinumData, HGSSData, BWData, XYData, SMData, SSData, SVData, PromoData, OtherData } from '../../assets/set-data/set-data';
 import SetDetails from './setdetails';
+import { keyframes } from '@mui/system';
 
-export default function SetProgress({ mainCollection }) {
+
+
+export default function SetProgress({ mainCollection, handleViewSet, setIsViewingSet }) {
   const [selectedSet, setSelectedSet] = useState(null);
   const [showInitialSets, setShowInitialSets] = useState(true);
   const [selectedExpansion, setSelectedExpansion] = useState(null);
 
+  
   console.log(mainCollection);
 
   const isMobile = useMediaQuery('(max-width:600px)');
@@ -67,15 +71,26 @@ export default function SetProgress({ mainCollection }) {
 
   const handleSetBackClick = () => {
     setSelectedExpansion(null);
+   setIsViewingSet(false)
   };
 
-  const handleExpansionClick = (card) => {
-    setSelectedExpansion(card);
+  const handleExpansionClick = (set) => {
+    setSelectedExpansion(set);
+    handleViewSet(set.image)
   };
 
   const getCardCount = (setId) => {
     return mainCollection.filter(card => card.setId === setId).length;
   };
+  
+  const stripeAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+`;
 
   return (
     <Box>
@@ -83,7 +98,7 @@ export default function SetProgress({ mainCollection }) {
         <Grid container spacing={2}>
           {modalData.map((set) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={set.id}>
-              <Card sx={{ backgroundColor: 'white', padding: '40px' }}>
+              <Card sx={{ backgroundColor: 'rgb(255,255,255,0.1)', padding: '40px' }}>
                 <CardActionArea onClick={() => handleSetClick(set.name)}>
                   <CardMedia component="img" height="75" image={set.image} alt={set.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
                 </CardActionArea>
@@ -104,16 +119,21 @@ export default function SetProgress({ mainCollection }) {
               const percentage = (cardCount / item.total) * 100;
               return (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-                  <Card sx={{ backgroundColor: 'white', paddingY: '20px', paddingX: '5px', margin: 'auto', width: isMobile ? '100%' : '90%' }}>
+                  <Card sx={{ backgroundColor:'rgb(255,255,255,0.1)', paddingY: '20px', paddingX: '5px', margin: 'auto', width: isMobile ? '100%' : '90%' }}>
                     <CardActionArea onClick={() => handleExpansionClick(item)}>
-                      <CardMedia component="img" height="100" image={item.image} alt={item.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
+                      <CardMedia component="img" height="50" image={item.image} alt={item.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
                       <Box sx={{ padding: '10px' }}>
-                        <Typography sx={{ textAlign: 'center' }}>{item.name}</Typography>
+                        <Typography sx={{ textAlign: 'center', color:'white' }}>{item.name}</Typography>
                         <Box sx={{ position: 'relative', display: 'inline-flex', width: '100%', marginTop: '20px' }}>
-                          <LinearProgress variant="determinate" value={percentage} sx={{ width: '100%', height: '30px', borderRadius: '25px' }} />
+                          <LinearProgress variant="determinate" value={percentage} sx={{ width: '100%', height: '30px', backgroundColor:'white', borderRadius: '25px', '& .MuiLinearProgress-bar': {
+                            backgroundColor: 'rgb(100,255,100)', // Change the progress bar color to green
+                            backgroundImage: 'linear-gradient(45deg, rgba(100,255,100,0.5) 25%, transparent 25%, transparent 100%, rgba(100,255,100,0.5) 50%, rgba(100,255,100,0.5) 75%, transparent 75%, transparent)',
+                            backgroundSize: '1rem 1rem',
+                            animation: `${stripeAnimation} 1s linear infinite`,
+                          }, }} />
                           <Typography
                             variant="body2"
-                            color="white"
+                            color="black"
                             sx={{
                               fontSize: '.8rem',
                               position: 'absolute',

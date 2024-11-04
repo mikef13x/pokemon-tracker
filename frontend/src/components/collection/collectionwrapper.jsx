@@ -24,7 +24,9 @@ export default function CollectionWrapper() {
   const [mainCollection, setMainCollection] = useState([]);
   const [collectionName, setCollectionName] = useState('');
   const [animationKey, setAnimationKey] = useState(0); // State for animation key
-  const [showNewComponent, setShowNewComponent] = useState(false); // State to show new component
+  const [showNewComponent, setShowNewComponent] = useState(false);
+  const [isViewingSet, setIsViewingSet] = useState(false); // Add this state
+  const [currentSetImage, setCurrentSetImage] = useState(''); // State to show new component
 
   const user = Auth.loggedIn() ? Auth.getProfile().data : null;
 
@@ -78,16 +80,21 @@ export default function CollectionWrapper() {
   const handleToggleComponentClick = () => {
     setShowNewComponent((prev) => !prev);
   };
+  const handleViewSet = (setImage) => {
+    setIsViewingSet(true);
+    setCurrentSetImage(setImage);
+  };
 
   return (
     <Box sx={{}}>
       <Box
         sx={{
           width: '100%',
-          position: 'fixed',
+          // position: 'fixed',
           top: '0',
           zIndex: '1000',
-          marginTop: '90px',
+          marginTop: '100px',
+          marginBottom:'-170px',
           left: 0,
         }}>
         <Typography
@@ -100,7 +107,11 @@ export default function CollectionWrapper() {
             transformOrigin: 'bottom',
             width: '100%',
           }}>
-          <span className="tiny5-regular">{showNewComponent ? 'Collection Progress' : collectionName }</span>
+            {isViewingSet ? (
+              <img src={currentSetImage} alt="Set" style={{ width: 'auto', height: 'auto', maxWidth:'400px', maxHeight:'200px' }} />
+            ) : (
+              <span className="tiny5-regular">{showNewComponent ? 'View Collection' : 'Collection Progress'}</span>
+            )}
         </Typography>
       </Box>
       <Box
@@ -108,10 +119,10 @@ export default function CollectionWrapper() {
           marginLeft: '100px',
           display: 'flex',
           alignItems: 'center',
-          marginBottom: '20px',
+          marginBottom: '-170px',
           marginTop: '100px',
           zIndex: '1100',
-          position: 'fixed',
+          // position: 'fixed',
         }}>
         <FormControl sx={{ minWidth: 120, backgroundColor: 'white' }}>
           <InputLabel id="sort-label">Sort</InputLabel>
@@ -145,7 +156,7 @@ export default function CollectionWrapper() {
         </DialogActions>
       </Dialog>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '95vh' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column'}}>
         <Box sx={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
           <Box
             sx={{
@@ -154,12 +165,13 @@ export default function CollectionWrapper() {
               padding: '40px',
               borderTop: '2px solid white',
               borderBottom: '2px solid white',
-              width: '100vw',
+            
+              height:'75vh',
               marginTop: '200px',
               backdropFilter: 'blur(20px)',
             }}>
             {showNewComponent ? (
-              <SetProgress mainCollection={mainCollection}/>
+              <SetProgress mainCollection={mainCollection} handleViewSet={handleViewSet} setIsViewingSet={setIsViewingSet}/>
             ) : (
               <motion.div
                 key={animationKey} // Use the animation key

@@ -40,17 +40,17 @@ export default function SetDetails({ set, handleSetBackClick, mainCollection }) 
 
   return (
     <Box>
-      <Button onClick={handleSetBackClick} variant="contained" color="primary" sx={{ marginBottom: '20px' }}>
+      <Button onClick={handleSetBackClick} variant="contained" color="primary" sx={{  }}>
         Back
       </Button>
-      <Card sx={{ backgroundColor: 'white', padding: '20px', margin: 'auto', width: '90%' }}>
-        <CardMedia component="img" height="200" image={set.image} alt={set.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} />
+      {/* <Card sx={{ backgroundColor: 'transparent', padding: '20px', margin: 'auto', width: '90%' }}> */}
+        {/* <CardMedia component="img" height="80"  alt={set.name} sx={{ objectFit: 'contain', backgroundColor: 'transparent' }} /> */}
         <Box sx={{ padding: '10px' }}>
-          <Typography sx={{ textAlign: 'center' }}>{set.name}</Typography>
-          <Typography sx={{ textAlign: 'center' }}>Set: {set.setId}</Typography>
-          <Typography sx={{ textAlign: 'center' }}>Total Cards: {set.total}</Typography>
+          <Typography sx={{ textAlign: 'center', color:'white', fontSize:'24px', marginTop:'-60px' }}><span className='poppins-regular'>{set.name}</span></Typography>
+          {/* <Typography sx={{ textAlign: 'center', color:'white' }}>Set: {set.setId}</Typography> */}
+          <Typography sx={{ textAlign: 'center', color:'white', fontSize:'24px' }}><span className='poppins-regular'>Total Cards: {set.total}</span></Typography>
         </Box>
-      </Card>
+      {/* </Card> */}
       <Grid container spacing={2} sx={{  display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
                     gap: '50px', padding:'60px'}}>
