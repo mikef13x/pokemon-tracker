@@ -43,7 +43,7 @@ export default function CollectionWrapper() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-
+  
   const sortedData = [...mainCollection].sort((a, b) => {
     if (sortOrder === 'asc') {
       return a.releaseDate - b.releaseDate;
@@ -57,6 +57,8 @@ export default function CollectionWrapper() {
       return 0;
     }
   });
+
+ 
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
@@ -168,7 +170,7 @@ export default function CollectionWrapper() {
                   sx={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-                    gap: '50px',
+                    gap: '50px', padding:'60px'
                   }}>
                   {sortedData.map((item) => (
                     <motion.div key={`${item.cardId}-${item.price}-${item.name}`} variants={itemInfo}>
