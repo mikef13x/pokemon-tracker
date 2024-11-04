@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Card, CardMedia, Button, Grid } from '@mui/material';
+import { Box, Typography, Card, CardMedia, Button, Grid, CardContent, ButtonBase} from '@mui/material';
 import { useQuery } from '@apollo/client';
 import { GET_CARDS_BY_SET } from '../../utils/queries';
 
@@ -51,29 +51,36 @@ export default function SetDetails({ set, handleSetBackClick, mainCollection }) 
           <Typography sx={{ textAlign: 'center' }}>Total Cards: {set.total}</Typography>
         </Box>
       </Card>
-      <Grid container spacing={2} sx={{ marginTop: '20px' }}>
+      <Grid container spacing={2} sx={{  display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+                    gap: '50px', padding:'60px'}}>
         {data && data.getCardsBySet && data.getCardsBySet.map((card) => {
           const inCollection = isCardInCollection(card.cardId);
           console.log(`Card ID: ${card.id}, In Collection: ${inCollection}`);
           return (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={card.id}>
-              <Card sx={{ backgroundColor: 'white', padding: '20px', margin: 'auto', width: '90%' }}>
+            <>
+            <ButtonBase  sx={{  display: 'block', textAlign: 'initial', padding:"10px" }}>
+            <Grid item  key={card.id}>
+              <Card sx={{ borderRadius: '10px', width: '280px', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',  background: 'linear-gradient(to bottom right, rgb(200,200,200), rgb(255,255,255))' }}>
                 <CardMedia
+                 
                   component="img"
-                  height="200"
+                  // height="200"
                   image={card.image}
                   alt={card.name}
-                  sx={{
-                    objectFit: 'contain',
-                    backgroundColor: 'transparent',
-                    filter: inCollection ? 'none' : 'grayscale(100%)',
-                  }}
+                  sx={{ height: 'auto', width: '70%', objectFit: 'contain', margin: 'auto', marginTop: '30px', borderRadius:'10px',filter: inCollection ? 'none' : 'grayscale(100%)' }}
                 />
-                <Box sx={{ padding: '10px' }}>
-                  <Typography sx={{ textAlign: 'center' }}>{card.name}</Typography>
-                </Box>
+                <CardContent sx={{ textAlign: 'center', color: 'black', padding: '8px' }}>
+                        <Typography variant="h5" component="div">
+                            <span className='poppins-regular'>{card.name} #{card.cardId.split('-')[1]}</span>
+                        </Typography>
+                       
+                    </CardContent>
+               
               </Card>
             </Grid>
+            </ButtonBase>
+            </>
           );
         })}
       </Grid>

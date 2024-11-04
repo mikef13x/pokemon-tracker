@@ -92,7 +92,7 @@ export default function SetProgress({ mainCollection }) {
           ))}
         </Grid>
       ) : selectedExpansion ? (
-        <SetDetails set={selectedExpansion} handleSetBackClick={handleSetBackClick} mainCollection={mainCollection}/>
+        <SetDetails set={selectedExpansion} handleSetBackClick={handleSetBackClick} mainCollection={mainCollection} />
       ) : (
         <Box>
           <Button onClick={handleBackClick} variant="contained" color="primary" sx={{ marginBottom: '20px' }}>
