@@ -37,7 +37,7 @@ export default function InfoBox3() {
                             fontSize: '20px'
                         }
                     }}>
-                        <h2 className="poppins-regular">Other info</h2>
+                        <h2 className="poppins-regular">Search Info</h2>
                         <span className="poppins-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec auctor ex. Donec efficitur libero ac pulvinar interdum. Cras sodales feugiat ligula, at elementum libero congue vel. Nam non neque orci. Pellentesque habitant morbe lectus vulputate luctus.</span>
                     </Typography>
                     <Box component="img" src={firstimage} alt="extra info" sx={{
@@ -48,7 +48,7 @@ export default function InfoBox3() {
                         }
                     }} />
                 </Box>
-                
+
             </Box>
         </Box>
     );
