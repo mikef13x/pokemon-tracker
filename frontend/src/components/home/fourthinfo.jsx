@@ -44,7 +44,7 @@ export default function InfoBox4() {
                             fontSize: '20px'
                         }
                     }}>
-                        <h2 className="poppins-regular">Extra Info</h2>
+                        <h2 className="poppins-regular">Market Info</h2>
                         <span className="poppins-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec auctor ex. Donec efficitur libero ac pulvinar interdum. Cras sodales feugiat ligula, at elementum libero congue vel. Nam non neque orci. Pellentesque habitant morbe lectus vulputate luctus.</span>
                     </Typography>
                 </Box>
