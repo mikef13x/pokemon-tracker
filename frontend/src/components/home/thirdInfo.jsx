@@ -38,7 +38,7 @@ export default function InfoBox3() {
                         }
                     }}>
                         <h2 className="poppins-regular">Search Info</h2>
-                        <span className="poppins-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec auctor ex. Donec efficitur libero ac pulvinar interdum. Cras sodales feugiat ligula, at elementum libero congue vel. Nam non neque orci. Pellentesque habitant morbe lectus vulputate luctus.</span>
+                        <span className="poppins-regular">With our search feature you will be able to find any Pokemon card! We have integrated many features including search by set, sorting options, and many filter options. There are many ways to discover new cards! You can find all cards from a particular artist you like, or find all fire type cards. </span>
                     </Typography>
                     <Box component="img" src={firstimage} alt="extra info" sx={{
                         maxWidth: '100%',
