@@ -45,7 +45,7 @@ export default function InfoBox4() {
                         }
                     }}>
                         <h2 className="poppins-regular">Market Info</h2>
-                        <span className="poppins-regular">Our market page is very useful for gathering price information. Users will be able to look at current pricing and past pricing, compare prices of different graded cards and raw cards. The page will feature a chart of data including 1 year, 6 months, 3 months, and 2 week charts, providing comprehensive insights into market trends.
+                        <span className="poppins-regular">Our market page is very useful for gathering price information. Users will be able to look at current pricing and past pricing, compare prices of different grades and conditions. The page will feature a chart of data including 1 year, 6 months, 3 months, and 2 week charts, providing comprehensive insights into market trends.
                         </span>
                     </Typography>
                 </Box>
