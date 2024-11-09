@@ -45,7 +45,8 @@ export default function InfoBox4() {
                         }
                     }}>
                         <h2 className="poppins-regular">Market Info</h2>
-                        <span className="poppins-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec auctor ex. Donec efficitur libero ac pulvinar interdum. Cras sodales feugiat ligula, at elementum libero congue vel. Nam non neque orci. Pellentesque habitant morbe lectus vulputate luctus.</span>
+                        <span className="poppins-regular">Our market page is very useful for gathering price information. Users will be able to look at current pricing and past pricing, compare prices of different graded cards and raw cards. The page will feature a chart of data including 1 year, 6 months, 3 months, and 2 week charts, providing comprehensive insights into market trends.
+                        </span>
                     </Typography>
                 </Box>
             </Box>
