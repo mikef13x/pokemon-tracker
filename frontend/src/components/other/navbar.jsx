@@ -40,12 +40,12 @@ export default function Navbar() {
       setScrollToInfo(false);
     }
   }, [location.pathname, scrollToInfo]);
-const scrollToHome = () => {
-  window.scrollTo({
+  const scrollToHome = () => {
+    window.scrollTo({
       top: 0,
       behavior: 'smooth'
-  });
-};
+    });
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -67,6 +67,14 @@ const scrollToHome = () => {
                 </Typography>
               </Button>
             </Link>
+            <Link to="/#infoBox1" onClick={scrollToInfoBox1} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Button color='inherit' href=''>
+                <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                  <span className='tiny5-regular'>About</span>
+                </Typography>
+              </Button>
+            </Link>
+
             <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Button color='inherit'>
                 <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
@@ -91,32 +99,60 @@ const scrollToHome = () => {
               </Link>
             )}
 
+
             {Auth.loggedIn() ? (
-              <Button color='inherit' onClick={handleLogoutClick}>
-                <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
-                  <span className='tiny5-regular'>Logout</span>
-                </Typography>
-              </Button>
-            ) : (
+              <Link to="/404" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>My Shop</span>
+                  </Typography>
+                </Button>
+              </Link>) : (
               <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Button color='inherit'>
                   <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
-                    <span className='tiny5-regular'>Login</span>
+                    <span className='tiny5-regular'>My Shop</span>
                   </Typography>
                 </Button>
               </Link>
-
+            )}
+            {Auth.loggedIn() ? (
+              <Link to="/404" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Discover</span>
+                  </Typography>
+                </Button>
+              </Link>) : (
+              <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button color='inherit'>
+                  <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Discover</span>
+                  </Typography>
+                </Button>
+              </Link>
             )}
 
-          
-<Link to="/#infoBox1" onClick={scrollToInfoBox1} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Button color='inherit' href=''>
-                <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
-                  <span className='tiny5-regular'>About</span>
-                </Typography>
-              </Button>
-              </Link>
-           
+
+            <Box sx={{ display: 'flex', ml: 'auto' }}>
+              {Auth.loggedIn() ? (
+                <Button color='inherit' onClick={handleLogoutClick}>
+                  <Typography sx={{ right: '0px', marginLeft: '15px', marginRight: '15px' }}>
+                    <span className='tiny5-regular'>Logout</span>
+                  </Typography>
+                </Button>
+              ) : (
+                <Link to="/signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Button color='inherit'>
+                    <Typography sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                      <span className='tiny5-regular'>Login</span>
+                    </Typography>
+                  </Button>
+                </Link>
+              )}
+            </Box>
+
+
             {/* {AuthService.loggedIn() ? (
                <Button color='inherit'onClick={handleLogout}> 
                  <Typography sx={{marginLeft: '15px', marginRight: '15px'}}>
