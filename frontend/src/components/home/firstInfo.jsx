@@ -48,7 +48,7 @@ export default function InfoBox1() {
                         }
                     }} />
                 </Box>
-                
+
             </Box>
         </Box>
     );
