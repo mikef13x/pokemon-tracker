@@ -17,14 +17,18 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     const filteredData = jsonData.flatMap(nestedArray => 
         nestedArray.map(item => {
             return {
-                id: item.id,
+                id: item.setData.name + "-" + item.printedNumber,
                 name: item.name,
-                images: item.imageUrl,
-                setId: "jpn",
+                images: item.image_url,
+                setId: item.setData.name,
                 setName: item.setData.name,
-                releaseDate: "1999/01/09",
-                cardType: "card",
-                price: null,
+                releaseDate: item.setData.year,
+                cardType: item.supertype,
+                pokemonType: item.types ? item.types : null,
+                subType: item.subtypes ? item.subtypes : null,
+                artist: item.artist,
+                rarity: item.rarity,
+                price: item.prices[0] ? item.prices[0].priceAmount /100 : null,
             };
         })
     );

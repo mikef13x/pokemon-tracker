@@ -50,8 +50,44 @@ async function seedDatabase() {
       }
     }
 
-    console.log(`Added ${addedCards.length} cards`);
-    console.log(`Skipped ${skippedCards.length} cards`);
+    // Additional logic for jpnFilteredSetsData.json
+    // filePath = path.join(__dirname, '../seed/jpnFilteredSetsData.json');
+    // console.log(`Reading file from: ${filePath}`);
+    // jsonData = fs.readFileSync(filePath, 'utf-8');
+    // cards = JSON.parse(jsonData);
+
+    // for (const card of cards) {
+    //   try {
+    //     const existingCard = await Card.findOne({ cardId: card.id });
+    //     if (existingCard) {
+    //       skippedCards.push(card);
+    //       continue;
+    //     }
+
+    //     const newCard = new Card({
+    //       name: card.name,
+    //       image: card.images,
+    //       cardId: card.id,
+    //       cardType: card.cardType,
+    //       pokemonType: card.pokemonType,
+    //       subType: card.subType,
+    //       artist: card.artist,
+    //       setId: card.setId,
+    //       setName: card.setName,
+    //       releaseDate: card.releaseDate,
+    //       rarity: card.rarity,
+    //       price: card.price,
+    //     });
+    //     await newCard.save();
+    //     addedCards.push(newCard);
+    //   } catch (error) {
+    //     console.error(`Error saving cardId: ${card.id}`, error);
+    //     throw error;
+    //   }
+    // }
+
+    // console.log(`Added ${addedCards.length} cards`);
+    // console.log(`Skipped ${skippedCards.length} cards`);
 
     mongoose.connection.close();
   } catch (error) {
