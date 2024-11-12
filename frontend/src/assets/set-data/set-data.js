@@ -1047,6 +1047,13 @@ export const SVData = [
     "name": "Stellar Crown",
     "image": "https://images.pokemontcg.io/sv7/logo.png",
     "total": 175
+  },
+  {
+    "id": 11,
+    "setId": "sv8",
+    "name": "Surging Sparks",
+    "image": "https://images.pokemontcg.io/sv8/logo.png",
+    "total": 252
   }
 ];
 
