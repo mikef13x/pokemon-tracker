@@ -593,6 +593,7 @@ export const rarities = [
     "dp7": "Stormfront",
     "sm1": "Sun & Moon",
     "pl3": "Supreme Victors",
+    "sv8": "Surging Sparks",
     "swsh1": "Sword & Shield",
     "swshp": "SWSH Black Star Promos",
     "ex4": "Team Magma vs Team Aqua",
@@ -608,7 +609,7 @@ export const rarities = [
     "swsh4": "Vivid Voltage",
     "basep": "Wizards Black Star Promos",
     "xy1": "XY",
-    "xyp": "XY Black Star Promos"
+    "xyp": "XY Black Star Promos",
   }
 
   export const setNames = [
@@ -760,6 +761,7 @@ export const rarities = [
     "Stormfront",
     "Sun & Moon",
     "Supreme Victors",
+    "Surging Sparks",
     "Sword & Shield",
     "Team Magma vs Team Aqua",
     "Team Rocket",
