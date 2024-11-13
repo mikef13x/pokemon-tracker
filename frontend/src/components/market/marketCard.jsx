@@ -17,7 +17,7 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
   const user = Auth.loggedIn() ? Auth.getProfile().data : null;
 
   const navigate = useNavigate();
-  
+
   const [updateCollection] = useMutation(UPDATE_COLLECTION);
 
   const { loading, error, data } = useQuery(GET_USER_MAIN_COLLECTION, {
@@ -44,10 +44,10 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
 
   const handleSearchBySet = (setId) => {
     navigate('/search', {
-      state: { setId},
+      state: { setId },
     });
   };
-  
+
 
   const heartButtonRef = useRef(null);
 
@@ -78,9 +78,9 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
 
   return (
     <Box
-      sx={{width: '25%', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box',}}>
+      sx={{ width: '25%', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box', }}>
       <Box
-        sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 'auto', flexGrow: 1,}}>
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 'auto', flexGrow: 1, }}>
         <img
           src={image}
           alt={name}
@@ -101,14 +101,16 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
       <Typography variant="body1" sx={{ marginTop: '20px' }}>
         Market Price: {price}
       </Typography>
-      <Typography onClick={() => handleSearchBySet(setId)} variant="body1" sx={{ marginTop: '8px',
-        cursor:'pointer'
-       }}>
+      <Typography onClick={() => handleSearchBySet(setId)} variant="body1" sx={{
+        marginTop: '8px',
+        cursor: 'pointer'
+      }}>
         Set: <span style={{ color: 'blue' }}>{setName}</span>
       </Typography>
-      <Typography onClick={() => handleSearchByArtist(artist)} variant="body1" sx={{ marginTop: '8px',
-        cursor:'pointer'
-       }}>
+      <Typography onClick={() => handleSearchByArtist(artist)} variant="body1" sx={{
+        marginTop: '8px',
+        cursor: 'pointer'
+      }}>
         Artist: <span style={{ color: 'blue' }}>{artist}</span>
       </Typography>
       {user && (
