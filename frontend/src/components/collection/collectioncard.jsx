@@ -31,6 +31,7 @@ export default function CollectionCard({ name, price, image, cardId }) {
                 <CardContent style={{ textAlign: 'center', color: 'black', padding: '8px' }}>
                     <Typography variant="h5" component="div" style={{ height: '48px', width: '250px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' }}>
                         <span className='poppins-regular' style={{ display: 'inline-block', maxWidth: 'calc(100% - 50px)', overflow: 'hidden', textOverflow: 'ellipsis', verticalAlign: 'bottom' }}>{name}</span>
+                        &nbsp;
                         <span className='poppins-regular' style={{ display: 'inline-block', verticalAlign: 'bottom' }}>{id}</span>
                     </Typography>
                     <Typography variant="h6">
