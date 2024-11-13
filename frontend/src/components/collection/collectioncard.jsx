@@ -13,6 +13,9 @@ export default function CollectionCard({ name, price, image, cardId }) {
         })
     };
 
+
+    const id = `#${cardId.split('-')[1]}`;
+
     return (
         <ButtonBase onClick={handleCardClick} style={{ width: '100%', display: 'block', textAlign: 'initial' }}>
 
@@ -27,7 +30,8 @@ export default function CollectionCard({ name, price, image, cardId }) {
                 )}
                 <CardContent style={{ textAlign: 'center', color: 'black', padding: '8px' }}>
                     <Typography variant="h5" component="div" style={{ height: '48px', width: '250px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' }}>
-                        <span className='poppins-regular'>{name} #{cardId.split('-')[1]}</span>
+                        <span className='poppins-regular' style={{ display: 'inline-block', maxWidth: 'calc(100% - 50px)', overflow: 'hidden', textOverflow: 'ellipsis', verticalAlign: 'bottom' }}>{name}</span>
+                        <span className='poppins-regular' style={{ display: 'inline-block', verticalAlign: 'bottom' }}>{id}</span>
                     </Typography>
                     <Typography variant="h6">
                         <span className='poppins-regular'>{price}</span>
