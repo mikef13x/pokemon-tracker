@@ -37,7 +37,7 @@ export default function InfoBox1() {
                             fontSize: '20px'
                         }
                     }}>
-                        <h2 className="poppins-regular">Price info</h2>
+                        <h2 className="poppins-regular">Prices</h2>
                         <span className="poppins-regular"> Our site provides comprehensive data on Pokémon cards, whether they are raw or graded. Users can explore card values across different timelines, compare prices, and view the current market price. This allows collectors and enthusiasts to make informed decisions based on historical and real-time data.</span>
                     </Typography>
                     <Box component="img" src={firstimage} alt="extra info" sx={{

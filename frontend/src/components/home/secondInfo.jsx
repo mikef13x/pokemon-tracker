@@ -44,7 +44,7 @@ export default function InfoBox2() {
                             fontSize: '20px'
                         }
                     }}>
-                        <h2 className="poppins-regular">Collection Info</h2>
+                        <h2 className="poppins-regular">Collection</h2>
                         <span className="poppins-regular">Our site allows you to track your collection of Pokémon cards, whether they are raw or graded. This feature is incredibly useful for keeping an organized record of what you have, helping you manage your collection efficiently. Additionally, you can share your collection with others, making it easy to showcase your prized cards to friends and fellow collectors.</span>
                     </Typography>
                 </Box>
