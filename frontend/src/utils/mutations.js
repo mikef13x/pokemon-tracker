@@ -47,12 +47,7 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_CARD = gql`
-  mutation addCard(
-    $name: String!
-    $image: String!
-    $cardId: String!
-    $setId: String!
-  ) {
+  mutation addCard($name: String!, $image: String!, $cardId: String!, $setId: String!) {
     addCard(name: $name, image: $image, cardId: $cardId, setId: $setId) {
       _id
       name
@@ -78,6 +73,28 @@ export const CREATE_COLLECTION = gql`
 export const UPDATE_COLLECTION = gql`
   mutation updateCollection($collectionId: ID!, $updateData: UpdateCollectionInput!) {
     updateCollection(collectionId: $collectionId, updateData: $updateData) {
+      _id
+      collectionName
+      userId
+      cards {
+        _id
+        name
+        image
+        cardId
+        cardType
+        setId
+        setName
+        releaseDate
+        price
+      }
+      isMain
+    }
+  }
+`;
+
+export const ADD_SET_TO_COLLECTION = gql`
+  mutation Mutation($collectionId: ID!, $setId: ID!) {
+    addSetToCollection(collectionId: $collectionId, setId: $setId) {
       _id
       collectionName
       userId
