@@ -36,8 +36,8 @@ const fetchAllSetsData = async () => {
     if (setData) {
       allSetsData.push(setData);
     }
-    // Pause for 5 seconds before the next request
-    await delay(5000);
+    // Pause for 2.5 seconds before the next request
+    await delay(2500);
   }
 
   // Save all sets data to a single JSON file
