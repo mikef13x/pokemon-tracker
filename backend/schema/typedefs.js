@@ -79,6 +79,7 @@ type Mutation {
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
+  addSetToCollection(collectionId: ID!, setId: ID!): Collection
 }
 `;
 

@@ -3,6 +3,7 @@ const { GraphQLError } = require('graphql');
 
 const { signToken } = require('../utils/auth');
 const { createCollection } = require('../models/user');
+const { where } = require('../models/collection');
 
 const resolvers = {
   Query: {
@@ -313,6 +314,30 @@ const resolvers = {
         return updatedCollection;
       } catch (error) {
         console.error('error updating collection', error);
+        throw new Error('Failed to update collection');
+      }
+    },
+
+    addSetToCollection: async (_, { collectionId, setId }) => {
+      try {
+    
+        const setData = await Card.find({ setId: setId });
+    
+        if (!setData || setData.length === 0) {
+          throw new Error('No cards found for the given setId');
+        }
+    
+        const updatedCollection = await Collection.findByIdAndUpdate(
+          collectionId,
+          { $addToSet: { cards: { $each: setData.map(card => card._id) } } },
+          { new: true, runValidators: true }
+        ).populate('cards');
+    
+        console.log("Updated Collection:", updatedCollection);
+    
+        return updatedCollection;
+      } catch (error) {
+        console.error('Error updating collection', error);
         throw new Error('Failed to update collection');
       }
     },
