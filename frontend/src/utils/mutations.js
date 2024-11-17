@@ -85,7 +85,14 @@ export const UPDATE_COLLECTION = gql`
         setId
         setName
         releaseDate
-        price
+        prices {
+          psa7
+          psa8
+          psa9
+          psa95
+          psa10
+          raw
+        }
       }
       isMain
     }
@@ -107,7 +114,14 @@ export const ADD_SET_TO_COLLECTION = gql`
         setId
         setName
         releaseDate
-        price
+        prices {
+          psa7
+          psa8
+          psa9
+          psa95
+          psa10
+          raw
+        }
       }
       isMain
     }
