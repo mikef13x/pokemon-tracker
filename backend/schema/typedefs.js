@@ -30,6 +30,15 @@ input UpdateCollectionInput {
   cards: [ID]
 }
 
+type Price {
+  psa7: Float
+  psa8: Float
+  psa9: Float
+  psa95: Float
+  psa10: Float
+  raw: Float
+}
+
 type Card {
   _id: ID!
   name: String!
@@ -42,7 +51,7 @@ type Card {
   setId: String!
   setName: String
   releaseDate: String
-  price: Float
+  prices: Price
   rarity: String
 }
 
@@ -75,11 +84,20 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: String, subType: String, artist: String, price: String, rarity: String): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: [String], subType: [String], artist: String, prices: [PriceInput], rarity: String): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
   addSetToCollection(collectionId: ID!, setId: ID!): Collection
+}
+
+input PriceInput {
+  psa7: Float
+  psa8: Float
+  psa9: Float
+  psa95: Float
+  psa10: Float
+  raw: Float
 }
 `;
 

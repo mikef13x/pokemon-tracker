@@ -1,12 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const priceSchema = new Schema({
-  psa7: { type: String },
-  psa8: { type: String },
-  psa9: { type: String },
-  psa95: { type: String },
-  psa10: { type: String },
-  raw: { type: String },
+  psa7: { type: Number },
+  psa8: { type: Number },
+  psa9: { type: Number },
+  psa95: { type: Number },
+  psa10: { type: Number },
+  raw: { type: Number },
 })
 
 const cardSchema = new Schema({
@@ -20,7 +20,7 @@ const cardSchema = new Schema({
   pokemonType: [{type: String}],
   subType: [{type: String}],
   artist: {type: String},
-  prices: [priceSchema],
+  prices: priceSchema,
   rarity: {type: String}
 });
 
