@@ -35,7 +35,7 @@ async function seedDatabase() {
         const priceData = priceGuideData.find(price => price.name === card.name && price.setId === card.id);
        
         if (priceData) {
-          console.log(`Found price data for card: ${card.name} (${card.id})`);
+          // console.log(`Found price data for card: ${card.name} (${card.id})`);
         } else {
           console.log(`No price data found for card: ${card.name} (${card.id})`);
         }
