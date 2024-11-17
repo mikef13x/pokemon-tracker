@@ -209,9 +209,9 @@ export default function MainSearch() {
     } else if (sortOrder === 'dsc') {
       return b.releaseDate - a.releaseDate;
     } else if (sortOrder === 'priceDSC') {
-      return b.price - a.price;
+      return b.prices.raw - a.prices.raw;
     } else if (sortOrder === 'priceASC') {
-      return a.price - b.price;
+      return a.prices.raw - b.prices.raw;
     } else {
       return a.releaseDate - b.releaseDate;
     }
