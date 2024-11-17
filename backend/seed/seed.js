@@ -1,11 +1,28 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
 async function seedDatabase() {
   try {
+    // Run fetchPrices.js script
+    await new Promise((resolve, reject) => {
+      exec('node fetchPrices.js', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error executing fetchPrices.js: ${error}`);
+          reject(error);
+        } else {
+          console.log(`fetchPrices.js output: ${stdout}`);
+          if (stderr) {
+            console.error(`fetchPrices.js stderr: ${stderr}`);
+          }
+          resolve();
+        }
+      });
+    });
+
     await mongoose.connect(dbUri);
 
     await Card.collection.drop();
