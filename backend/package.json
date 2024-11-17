@@ -7,7 +7,8 @@
     "start": "node server.js",
     "watch": "nodemon",
     "dev": "nodemon",
-    "seed": "node seed/seed.js"
+    "seed": "npm run fetch-prices && node seed/seed.js",
+    "fetch-prices": "node seed/price-data/fetchPrices.js"
   },
   "author": "",
   "license": "ISC",
