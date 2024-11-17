@@ -26,7 +26,7 @@ export default function MarketCard({ id, image, name, price, cardId, setName, ar
   });
 
   useEffect(() => {
-    if (data) {
+    if (data && data.getUserMainCollection) {
       const userCollection = data.getUserMainCollection.cards.map(card => card._id);
       setCollection(userCollection);
       setCollectionId(data.getUserMainCollection._id);

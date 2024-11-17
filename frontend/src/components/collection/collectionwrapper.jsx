@@ -36,7 +36,7 @@ export default function CollectionWrapper() {
   });
 
   useEffect(() => {
-    if (data) {
+    if (data && data.getUserMainCollection) {
       setMainCollection(data.getUserMainCollection.cards);
       setCollectionName(data.getUserMainCollection.collectionName);
       setAnimationKey((prevKey) => prevKey + 1); // Update the animation key
