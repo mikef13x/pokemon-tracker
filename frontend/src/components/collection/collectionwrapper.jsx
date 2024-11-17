@@ -187,7 +187,7 @@ export default function CollectionWrapper() {
                   {sortedData.map((item) => (
                     <motion.div key={`${item.cardId}-${item.price}-${item.name}`} variants={itemInfo}>
                       <Box key={item.cardId} sx={{ aspectRatio: '3 / 4' }}>
-                        <CollectionCard cardId={item.cardId} name={item.name} price={formatPrice(item.price)} image={item.image} />
+                        <CollectionCard cardId={item.cardId} name={item.name} price={formatPrice(item.prices.raw)} image={item.image} />
                       </Box>
                     </motion.div>
                   ))}
