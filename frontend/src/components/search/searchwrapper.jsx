@@ -14,7 +14,7 @@ export default function SearchWrapper({ sortedData, handleCardClick }) {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1px', marginTop: '20px', alignItems: 'center'}}>
                 {sortedData.map((item) => (
                     <Box key={item.id} sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <SearchResultCard name={item.name} setName={item.setName} price={formatPrice(item.price)} image={item.image} cardId={getCardId(item.cardId)} onClick={() => handleCardClick(item)} />
+                        <SearchResultCard name={item.name} setName={item.setName} price={formatPrice(item.prices.raw)} image={item.image} cardId={getCardId(item.cardId)} onClick={() => handleCardClick(item)} />
                     </Box>
                 ))}
             </Box>

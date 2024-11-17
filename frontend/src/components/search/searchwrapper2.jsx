@@ -25,7 +25,7 @@ export default function SearchWrapper2({ sortedData, handleCardClick }) {
                             <SearchResultCard2
                                 name={item.name}
                                 setName={item.setName}
-                                price={formatPrice(item.price)}
+                                price={formatPrice(item.prices.raw)}
                                 image={item.image}
                                 cardId={getCardId(item.cardId)}
                                 onClick={() => handleCardClick(item)}

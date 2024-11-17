@@ -66,7 +66,7 @@ export default function MarketWrapper({ id, name, price, image, cardId, setName,
             Back
           </Button>
 
-          <MarketCard id={id} name={name} price={formatPrice(price)} setName={setName} setId={setId} image={image} artist={artist} cardId={getCardId(cardId)} />
+          <MarketCard id={id} name={name} price={formatPrice(price?.raw)} setName={setName} setId={setId} image={image} artist={artist} cardId={getCardId(cardId)} />
 
           <MarketChart />
         </Box>

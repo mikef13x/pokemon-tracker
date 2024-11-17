@@ -54,7 +54,14 @@ export const GET_COLLECTION = gql`
         subType
         rarity
         artist
-        price
+        prices {
+          psa7
+          psa8
+          psa9
+          psa95
+          psa10
+          raw
+        }
       }
     }
   }
@@ -80,7 +87,14 @@ export const GET_USER_COLLECTIONS = gql`
         subType
         rarity
         artist
-        price
+        prices {
+          psa7
+          psa8
+          psa9
+          psa95
+          psa10
+          raw
+        }
       }
     }
   }
@@ -106,7 +120,14 @@ export const GET_USER_MAIN_COLLECTION = gql`
         subType
         rarity
         artist
-        price
+        prices {
+          psa7
+          psa8
+          psa9
+          psa95
+          psa10
+          raw
+        }
       }
     }
   }
@@ -127,7 +148,14 @@ export const GET_CARDS = gql`
       subType
       rarity
       artist
-      price
+      prices {
+        psa7
+        psa8
+        psa9
+        psa95
+        psa10
+        raw
+      }
     }
   }
 `;
@@ -147,8 +175,14 @@ export const GET_CARD = gql`
       subType
       rarity
       artist
-      price
-      artist
+      prices {
+        psa7
+        psa8
+        psa9
+        psa95
+        psa10
+        raw
+      }
     }
   }
 `;
@@ -168,7 +202,14 @@ export const GET_CARDS_BY_NAME = gql`
       subType
       rarity
       artist
-      price
+      prices {
+        psa7
+        psa8
+        psa9
+        psa95
+        psa10
+        raw
+      }
     }
   }
 `;
@@ -188,7 +229,14 @@ export const GET_CARDS_BY_SET = gql`
       subType
       rarity
       artist
-      price
+      prices {
+        psa7
+        psa8
+        psa9
+        psa95
+        psa10
+        raw
+      }
     }
   }
 `;

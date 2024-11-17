@@ -1,4 +1,3 @@
-// FILE: seed.js
 const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +16,10 @@ async function seedDatabase() {
     let jsonData = fs.readFileSync(filePath, 'utf-8');
     let cards = JSON.parse(jsonData);
 
+    // Load price-guide.json
+    const priceGuidePath = path.join(__dirname, '/price-data/price-guide.json');
+    const priceGuideData = JSON.parse(fs.readFileSync(priceGuidePath, 'utf-8'));
+
     const addedCards = [];
     const skippedCards = [];
 
@@ -27,6 +30,21 @@ async function seedDatabase() {
           skippedCards.push(card);
           continue;
         }
+
+        // Find matching price data
+        const priceData = priceGuideData.find(price => price.name === card.name && price.setId === card.id);
+       
+        if (priceData) {
+          console.log(`Found price data for card: ${card.name} (${card.id})`);
+        } else {
+          console.log(`No price data found for card: ${card.name} (${card.id})`);
+        }
+
+        const parsePrice = (price) => {
+          if (!price || typeof price !== 'string') return null;
+          const parsed = parseFloat(price.replace('$', '').replace(',', ''));
+          return isNaN(parsed) ? null : parsed;
+        };
 
         const newCard = new Card({
           name: card.name,
@@ -40,7 +58,14 @@ async function seedDatabase() {
           setName: card.setName,
           releaseDate: card.releaseDate,
           rarity: card.rarity,
-          price: card.price,
+          prices: priceData ? {
+            psa7: parsePrice(priceData['cib-price']),
+            psa8: parsePrice(priceData['new-price']),
+            psa9: parsePrice(priceData['graded-price']),
+            psa95: parsePrice(priceData['box-only-price']),
+            psa10: parsePrice(priceData['manual-only-price']),
+            raw: parsePrice(priceData['loose-price']),
+          } : {},
         });
         await newCard.save();
         addedCards.push(newCard);
@@ -50,44 +75,8 @@ async function seedDatabase() {
       }
     }
 
-    // Additional logic for jpnFilteredSetsData.json
-    // filePath = path.join(__dirname, '../seed/jpnFilteredSetsData.json');
-    // console.log(`Reading file from: ${filePath}`);
-    // jsonData = fs.readFileSync(filePath, 'utf-8');
-    // cards = JSON.parse(jsonData);
-
-    // for (const card of cards) {
-    //   try {
-    //     const existingCard = await Card.findOne({ cardId: card.id });
-    //     if (existingCard) {
-    //       skippedCards.push(card);
-    //       continue;
-    //     }
-
-    //     const newCard = new Card({
-    //       name: card.name,
-    //       image: card.images,
-    //       cardId: card.id,
-    //       cardType: card.cardType,
-    //       pokemonType: card.pokemonType,
-    //       subType: card.subType,
-    //       artist: card.artist,
-    //       setId: card.setId,
-    //       setName: card.setName,
-    //       releaseDate: card.releaseDate,
-    //       rarity: card.rarity,
-    //       price: card.price,
-    //     });
-    //     await newCard.save();
-    //     addedCards.push(newCard);
-    //   } catch (error) {
-    //     console.error(`Error saving cardId: ${card.id}`, error);
-    //     throw error;
-    //   }
-    // }
-
-    // console.log(`Added ${addedCards.length} cards`);
-    // console.log(`Skipped ${skippedCards.length} cards`);
+    console.log(`Added ${addedCards.length} cards`);
+    console.log(`Skipped ${skippedCards.length} cards`);
 
     mongoose.connection.close();
   } catch (error) {

@@ -33,7 +33,16 @@ export default function MarketPage() {
     
     return (
         <div>
-            <MarketWrapper id={card._id} name={card.name} price={card.price} setName={card.setName} image={card.image} artist={card.artist} cardId={cardId} setId={card.setId} />
+            <MarketWrapper 
+                id={card._id} 
+                name={card.name} 
+                price={card.prices} 
+                setName={card.setName} 
+                image={card.image} 
+                artist={card.artist} 
+                cardId={cardId} 
+                setId={card.setId} 
+            />
         </div>
     );
 }
