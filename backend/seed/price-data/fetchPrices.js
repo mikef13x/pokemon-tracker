@@ -1,8 +1,10 @@
-const axios = require('axios');
 require('dotenv').config();
+const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const csv = require('csvtojson');
+
+console.log('fetchPrices.js script started'); // Initial log statement
 
 // URL to fetch the CSV file
 const csvUrl = `https://www.pricecharting.com/price-guide/download-custom?t=${process.env.PRICE_CHARTING_KEY}&category=pokemon-cards`;
@@ -13,20 +15,25 @@ const jsonFilePath = path.join(__dirname, 'price-guide.json');
 const setIdsFilePath = path.join(__dirname, '../setIds.json');
 
 // Load setIds.json
+console.log('Loading setIds.json...');
 const setIds = JSON.parse(fs.readFileSync(setIdsFilePath, 'utf8'));
 
 // Fetch the CSV file and save it
+console.log('Fetching CSV file...');
 axios.get(csvUrl, { responseType: 'stream' })
   .then(response => {
+    console.log('CSV file fetched, saving to file...');
     const writer = fs.createWriteStream(csvFilePath);
     response.data.pipe(writer);
     writer.on('finish', () => {
       console.log('CSV file has been downloaded and saved.');
 
       // Convert CSV to JSON
+      console.log('Converting CSV to JSON...');
       csv()
         .fromFile(csvFilePath)
         .then((jsonObj) => {
+          console.log('CSV converted to JSON, processing data...');
           // Filter out entries containing "Pokemon Japanese" in the console-name field
           // and entries containing "[Reverse Holo]" in the name field
           const filteredJsonObj = jsonObj.filter(item => 
@@ -54,6 +61,7 @@ axios.get(csvUrl, { responseType: 'stream' })
           });
 
           // Write updated JSON to a new file
+          console.log('Writing JSON to file...');
           fs.writeFileSync(jsonFilePath, JSON.stringify(updatedJsonObj, null, 2), 'utf8');
           console.log('CSV file has been converted to JSON and written to price-guide.json');
         })
