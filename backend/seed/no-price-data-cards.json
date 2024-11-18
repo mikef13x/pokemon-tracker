@@ -1,0 +1,7731 @@
+[
+  {
+    "id": "gym1-97",
+    "name": "Blaine's Quiz #1",
+    "images": {
+      "small": "https://images.pokemontcg.io/gym1/97.png",
+      "large": "https://images.pokemontcg.io/gym1/97_hires.png"
+    },
+    "setId": "gym1",
+    "setName": "Gym Heroes",
+    "releaseDate": "2000/08/14",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": null,
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "price": 8.95
+  },
+  {
+    "id": "gym2-111",
+    "name": "Blaine's Quiz #2",
+    "images": {
+      "small": "https://images.pokemontcg.io/gym2/111.png",
+      "large": "https://images.pokemontcg.io/gym2/111_hires.png"
+    },
+    "setId": "gym2",
+    "setName": "Gym Challenge",
+    "releaseDate": "2000/10/16",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": null,
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "price": 3.77
+  },
+  {
+    "id": "gym2-112",
+    "name": "Blaine's Quiz #3",
+    "images": {
+      "small": "https://images.pokemontcg.io/gym2/112.png",
+      "large": "https://images.pokemontcg.io/gym2/112_hires.png"
+    },
+    "setId": "gym2",
+    "setName": "Gym Challenge",
+    "releaseDate": "2000/10/16",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": null,
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "price": 4.42
+  },
+  {
+    "id": "ecard2-50",
+    "name": "Golduck",
+    "images": {
+      "small": "https://images.pokemontcg.io/ecard2/50.png",
+      "large": "https://images.pokemontcg.io/ecard2/50_hires.png"
+    },
+    "setId": "ecard2",
+    "setName": "Aquapolis",
+    "releaseDate": "2003/01/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Sumiyoshi Kizuki",
+    "rarity": "Uncommon",
+    "price": 3.32
+  },
+  {
+    "id": "ecard2-103",
+    "name": "Porygon",
+    "images": {
+      "small": "https://images.pokemontcg.io/ecard2/103.png",
+      "large": "https://images.pokemontcg.io/ecard2/103_hires.png"
+    },
+    "setId": "ecard2",
+    "setName": "Aquapolis",
+    "releaseDate": "2003/01/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Masako Yamashita",
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "ex10-A",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/A.png",
+      "large": "https://images.pokemontcg.io/ex10/A_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 30.48
+  },
+  {
+    "id": "ex10-B",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/B.png",
+      "large": "https://images.pokemontcg.io/ex10/B_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 18.85
+  },
+  {
+    "id": "ex10-C",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/C.png",
+      "large": "https://images.pokemontcg.io/ex10/C_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 14.37
+  },
+  {
+    "id": "ex10-D",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/D.png",
+      "large": "https://images.pokemontcg.io/ex10/D_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 15.9
+  },
+  {
+    "id": "ex10-E",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/E.png",
+      "large": "https://images.pokemontcg.io/ex10/E_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 18.23
+  },
+  {
+    "id": "ex10-F",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/F.png",
+      "large": "https://images.pokemontcg.io/ex10/F_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 12.49
+  },
+  {
+    "id": "ex10-G",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/G.png",
+      "large": "https://images.pokemontcg.io/ex10/G_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 14.38
+  },
+  {
+    "id": "ex10-H",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/H.png",
+      "large": "https://images.pokemontcg.io/ex10/H_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshikawa",
+    "rarity": "Rare",
+    "price": 8.23
+  },
+  {
+    "id": "ex10-I",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/I.png",
+      "large": "https://images.pokemontcg.io/ex10/I_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 10.14
+  },
+  {
+    "id": "ex10-J",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/J.png",
+      "large": "https://images.pokemontcg.io/ex10/J_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 18.83
+  },
+  {
+    "id": "ex10-K",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/K.png",
+      "large": "https://images.pokemontcg.io/ex10/K_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 21.2
+  },
+  {
+    "id": "ex10-L",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/L.png",
+      "large": "https://images.pokemontcg.io/ex10/L_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 15.43
+  },
+  {
+    "id": "ex10-M",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/M.png",
+      "large": "https://images.pokemontcg.io/ex10/M_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 9.94
+  },
+  {
+    "id": "ex10-N",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/N.png",
+      "large": "https://images.pokemontcg.io/ex10/N_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 11.97
+  },
+  {
+    "id": "ex10-O",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/O.png",
+      "large": "https://images.pokemontcg.io/ex10/O_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 9.71
+  },
+  {
+    "id": "ex10-P",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/P.png",
+      "large": "https://images.pokemontcg.io/ex10/P_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 10.16
+  },
+  {
+    "id": "ex10-Q",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/Q.png",
+      "large": "https://images.pokemontcg.io/ex10/Q_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 8.06
+  },
+  {
+    "id": "ex10-R",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/R.png",
+      "large": "https://images.pokemontcg.io/ex10/R_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 18.5
+  },
+  {
+    "id": "ex10-S",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/S.png",
+      "large": "https://images.pokemontcg.io/ex10/S_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "rarity": "Rare",
+    "price": 14.04
+  },
+  {
+    "id": "ex10-T",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/T.png",
+      "large": "https://images.pokemontcg.io/ex10/T_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 10.51
+  },
+  {
+    "id": "ex10-U",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/U.png",
+      "large": "https://images.pokemontcg.io/ex10/U_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 14.35
+  },
+  {
+    "id": "ex10-V",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/V.png",
+      "large": "https://images.pokemontcg.io/ex10/V_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 10.07
+  },
+  {
+    "id": "ex10-W",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/W.png",
+      "large": "https://images.pokemontcg.io/ex10/W_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 16.5
+  },
+  {
+    "id": "ex10-X",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/X.png",
+      "large": "https://images.pokemontcg.io/ex10/X_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 15.32
+  },
+  {
+    "id": "ex10-Y",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/Y.png",
+      "large": "https://images.pokemontcg.io/ex10/Y_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 20.73
+  },
+  {
+    "id": "ex10-Z",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/Z.png",
+      "large": "https://images.pokemontcg.io/ex10/Z_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 13.5
+  },
+  {
+    "id": "ex10-!",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/!.png",
+      "large": "https://images.pokemontcg.io/ex10/!_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 29.56
+  },
+  {
+    "id": "ex10-?",
+    "name": "Unown",
+    "images": {
+      "small": "https://images.pokemontcg.io/ex10/question.png",
+      "large": "https://images.pokemontcg.io/ex10/question_hires.png"
+    },
+    "setId": "ex10",
+    "setName": "Unseen Forces",
+    "releaseDate": "2005/08/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "rarity": "Rare",
+    "price": 29.99
+  },
+  {
+    "id": "xyp-XY67a",
+    "name": "Jirachi",
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY67a.png",
+      "large": "https://images.pokemontcg.io/xyp/XY67a_hires.png"
+    },
+    "setId": "xyp",
+    "setName": "XY Black Star Promos",
+    "releaseDate": "2013/10/12",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "xyp-XY150a",
+    "name": "Yveltal-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY150a.png",
+      "large": "https://images.pokemontcg.io/xyp/XY150a_hires.png"
+    },
+    "setId": "xyp",
+    "setName": "XY Black Star Promos",
+    "releaseDate": "2013/10/12",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "Hasuno",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "xyp-XY177a",
+    "name": "Karen",
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY177a.png",
+      "large": "https://images.pokemontcg.io/xyp/XY177a_hires.png"
+    },
+    "setId": "xyp",
+    "setName": "XY Black Star Promos",
+    "releaseDate": "2013/10/12",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hitoshi Ariga",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "xyp-XY198a",
+    "name": "M Camerupt-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY198a.png",
+      "large": "https://images.pokemontcg.io/xyp/XY198a_hires.png"
+    },
+    "setId": "xyp",
+    "setName": "XY Black Star Promos",
+    "releaseDate": "2013/10/12",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "MEGA",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "xyp-XY200a",
+    "name": "M Sharpedo-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xyp/XY200a.png",
+      "large": "https://images.pokemontcg.io/xyp/XY200a_hires.png"
+    },
+    "setId": "xyp",
+    "setName": "XY Black Star Promos",
+    "releaseDate": "2013/10/12",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "MEGA",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "xy2-88a",
+    "name": "Blacksmith",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy2/88a.png",
+      "large": "https://images.pokemontcg.io/xy2/88a_hires.png"
+    },
+    "setId": "xy2",
+    "setName": "Flashfire",
+    "releaseDate": "2014/05/07",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy3-55a",
+    "name": "M Lucario-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy3/55a.png",
+      "large": "https://images.pokemontcg.io/xy3/55a_hires.png"
+    },
+    "setId": "xy3",
+    "setName": "Furious Fists",
+    "releaseDate": "2014/08/13",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "MEGA",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy4-24a",
+    "name": "M Manectric-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy4/24a.png",
+      "large": "https://images.pokemontcg.io/xy4/24a_hires.png"
+    },
+    "setId": "xy4",
+    "setName": "Phantom Forces",
+    "releaseDate": "2014/11/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "MEGA",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy4-65a",
+    "name": "Aegislash-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy4/65a.png",
+      "large": "https://images.pokemontcg.io/xy4/65a_hires.png"
+    },
+    "setId": "xy4",
+    "setName": "Phantom Forces",
+    "releaseDate": "2014/11/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy6-77a",
+    "name": "Shaymin-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy6/77a.png",
+      "large": "https://images.pokemontcg.io/xy6/77a_hires.png"
+    },
+    "setId": "xy6",
+    "setName": "Roaring Skies",
+    "releaseDate": "2015/05/06",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "TOKIYA",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy6-92a",
+    "name": "Trainers' Mail",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy6/92a.png",
+      "large": "https://images.pokemontcg.io/xy6/92a_hires.png"
+    },
+    "setId": "xy6",
+    "setName": "Roaring Skies",
+    "releaseDate": "2015/05/06",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Toyste Beach",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "xy7-75a",
+    "name": "Hex Maniac",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy7/75a.png",
+      "large": "https://images.pokemontcg.io/xy7/75a_hires.png"
+    },
+    "setId": "xy7",
+    "setName": "Ancient Origins",
+    "releaseDate": "2015/08/12",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "You Iribi",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy8-146a",
+    "name": "Professor's Letter",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy8/146a.png",
+      "large": "https://images.pokemontcg.io/xy8/146a_hires.png"
+    },
+    "setId": "xy8",
+    "setName": "BREAKthrough",
+    "releaseDate": "2015/11/04",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Yoshinobu Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "xy9-98a",
+    "name": "Delinquent",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy9/98a.png",
+      "large": "https://images.pokemontcg.io/xy9/98a_hires.png"
+    },
+    "setId": "xy9",
+    "setName": "BREAKpoint",
+    "releaseDate": "2016/02/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Megumi Mizutani",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "xy9-98b",
+    "name": "Delinquent",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy9/98b.png",
+      "large": "https://images.pokemontcg.io/xy9/98b_hires.png"
+    },
+    "setId": "xy9",
+    "setName": "BREAKpoint",
+    "releaseDate": "2016/02/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Sanosuke Sakuma",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy9-107a",
+    "name": "Professor Sycamore",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy9/107a.png",
+      "large": "https://images.pokemontcg.io/xy9/107a_hires.png"
+    },
+    "setId": "xy9",
+    "setName": "BREAKpoint",
+    "releaseDate": "2016/02/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "g1-28a",
+    "name": "Jolteon-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/g1/28a.png",
+      "large": "https://images.pokemontcg.io/g1/28a_hires.png"
+    },
+    "setId": "g1",
+    "setName": "Generations",
+    "releaseDate": "2016/02/22",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "g1-73a",
+    "name": "Team Flare Grunt",
+    "images": {
+      "small": "https://images.pokemontcg.io/g1/73a.png",
+      "large": "https://images.pokemontcg.io/g1/73a_hires.png"
+    },
+    "setId": "g1",
+    "setName": "Generations",
+    "releaseDate": "2016/02/22",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy10-43a",
+    "name": "Regirock-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/43a.png",
+      "large": "https://images.pokemontcg.io/xy10/43a_hires.png"
+    },
+    "setId": "xy10",
+    "setName": "Fates Collide",
+    "releaseDate": "2016/05/02",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "PLANETA",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy10-54a",
+    "name": "Zygarde-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/54a.png",
+      "large": "https://images.pokemontcg.io/xy10/54a_hires.png"
+    },
+    "setId": "xy10",
+    "setName": "Fates Collide",
+    "releaseDate": "2016/05/02",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy10-105a",
+    "name": "N",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/105a.png",
+      "large": "https://images.pokemontcg.io/xy10/105a_hires.png"
+    },
+    "setId": "xy10",
+    "setName": "Fates Collide",
+    "releaseDate": "2016/05/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Megumi Mizutani",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "xy10-111a",
+    "name": "Shauna",
+    "images": {
+      "small": "https://images.pokemontcg.io/xy10/111a.png",
+      "large": "https://images.pokemontcg.io/xy10/111a_hires.png"
+    },
+    "setId": "xy10",
+    "setName": "Fates Collide",
+    "releaseDate": "2016/05/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm1-101a",
+    "name": "Eevee",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/101a.png",
+      "large": "https://images.pokemontcg.io/sm1/101a_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Saya Tsuruta",
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-164",
+    "name": "Grass Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/164.png",
+      "large": "https://images.pokemontcg.io/sm1/164_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-165",
+    "name": "Fire Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/165.png",
+      "large": "https://images.pokemontcg.io/sm1/165_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-166",
+    "name": "Water Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/166.png",
+      "large": "https://images.pokemontcg.io/sm1/166_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-167",
+    "name": "Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/167.png",
+      "large": "https://images.pokemontcg.io/sm1/167_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-168",
+    "name": "Psychic Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/168.png",
+      "large": "https://images.pokemontcg.io/sm1/168_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-169",
+    "name": "Fighting Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/169.png",
+      "large": "https://images.pokemontcg.io/sm1/169_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-170",
+    "name": "Darkness Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/170.png",
+      "large": "https://images.pokemontcg.io/sm1/170_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-171",
+    "name": "Metal Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/171.png",
+      "large": "https://images.pokemontcg.io/sm1/171_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm1-172",
+    "name": "Fairy Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm1/172.png",
+      "large": "https://images.pokemontcg.io/sm1/172_hires.png"
+    },
+    "setId": "sm1",
+    "setName": "Sun & Moon",
+    "releaseDate": "2017/02/03",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "smp-SM30a",
+    "name": "Tapu Koko",
+    "images": {
+      "small": "https://images.pokemontcg.io/smp/SM30a.png",
+      "large": "https://images.pokemontcg.io/smp/SM30a_hires.png"
+    },
+    "setId": "smp",
+    "setName": "SM Black Star Promos",
+    "releaseDate": "2017/02/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kirisAki",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "smp-SM103a",
+    "name": "Lunala-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/smp/SM103a.png",
+      "large": "https://images.pokemontcg.io/smp/SM103a_hires.png"
+    },
+    "setId": "smp",
+    "setName": "SM Black Star Promos",
+    "releaseDate": "2017/02/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2",
+      "GX"
+    ],
+    "artist": "PLANETA Igarashi",
+    "rarity": "Promo",
+    "price": 4.24
+  },
+  {
+    "id": "smp-SM104a",
+    "name": "Solgaleo-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/smp/SM104a.png",
+      "large": "https://images.pokemontcg.io/smp/SM104a_hires.png"
+    },
+    "setId": "smp",
+    "setName": "SM Black Star Promos",
+    "releaseDate": "2017/02/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 2",
+      "GX"
+    ],
+    "artist": "PLANETA Igarashi",
+    "rarity": "Promo",
+    "price": 4.41
+  },
+  {
+    "id": "sm2-19a",
+    "name": "Alolan Sandshrew",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/19a.png",
+      "large": "https://images.pokemontcg.io/sm2/19a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm2-21a",
+    "name": "Alolan Vulpix",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/21a.png",
+      "large": "https://images.pokemontcg.io/sm2/21a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kirisAki",
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm2-51a",
+    "name": "Garbodor",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/51a.png",
+      "large": "https://images.pokemontcg.io/sm2/51a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "nagimiso",
+    "rarity": "Rare",
+    "price": null
+  },
+  {
+    "id": "sm2-60a",
+    "name": "Tapu Lele-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/60a.png",
+      "large": "https://images.pokemontcg.io/sm2/60a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm2-92a",
+    "name": "Sylveon-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/92a.png",
+      "large": "https://images.pokemontcg.io/sm2/92a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fairy"
+    ],
+    "subType": [
+      "Stage 1",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm2-121a",
+    "name": "Choice Band",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/121a.png",
+      "large": "https://images.pokemontcg.io/sm2/121a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Pokémon Tool"
+    ],
+    "artist": "Eske Yoshinob",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm2-124a",
+    "name": "Enhanced Hammer",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/124a.png",
+      "large": "https://images.pokemontcg.io/sm2/124a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Yoshinobu Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm2-125a",
+    "name": "Field Blower",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/125a.png",
+      "large": "https://images.pokemontcg.io/sm2/125a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Toyste Beach",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm2-128a",
+    "name": "Max Potion",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/128a.png",
+      "large": "https://images.pokemontcg.io/sm2/128a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Toyste Beach",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm2-130a",
+    "name": "Rescue Stretcher",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/130a.png",
+      "large": "https://images.pokemontcg.io/sm2/130a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Yoshinobu Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm2-157a",
+    "name": "Metagross-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm2/157a.png",
+      "large": "https://images.pokemontcg.io/sm2/157a_hires.png"
+    },
+    "setId": "sm2",
+    "setName": "Guardians Rising",
+    "releaseDate": "2017/05/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 2",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm3-18a",
+    "name": "Charmander",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/18a.png",
+      "large": "https://images.pokemontcg.io/sm3/18a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sm3-39a",
+    "name": "Tapu Fini-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/39a.png",
+      "large": "https://images.pokemontcg.io/sm3/39a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm3-88a",
+    "name": "Darkrai-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/88a.png",
+      "large": "https://images.pokemontcg.io/sm3/88a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "PLANETA",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm3-92a",
+    "name": "Kirlia",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/92a.png",
+      "large": "https://images.pokemontcg.io/sm3/92a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fairy"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Anesaki Dynamic",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm3-105a",
+    "name": "Porygon-Z",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/105a.png",
+      "large": "https://images.pokemontcg.io/sm3/105a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Shin Nagasawa",
+    "rarity": "Rare Holo",
+    "price": null
+  },
+  {
+    "id": "sm3-112a",
+    "name": "Acerola",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/112a.png",
+      "large": "https://images.pokemontcg.io/sm3/112a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm3-115a",
+    "name": "Guzma",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/115a.png",
+      "large": "https://images.pokemontcg.io/sm3/115a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm3-116a",
+    "name": "Kiawe",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm3/116a.png",
+      "large": "https://images.pokemontcg.io/sm3/116a_hires.png"
+    },
+    "setId": "sm3",
+    "setName": "Burning Shadows",
+    "releaseDate": "2017/08/05",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm35-10a",
+    "name": "Entei-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm35/10a.png",
+      "large": "https://images.pokemontcg.io/sm35/10a_hires.png"
+    },
+    "setId": "sm35",
+    "setName": "Shining Legends",
+    "releaseDate": "2017/10/06",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm35-68a",
+    "name": "Ultra Ball",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm35/68a.png",
+      "large": "https://images.pokemontcg.io/sm35/68a_hires.png"
+    },
+    "setId": "sm35",
+    "setName": "Shining Legends",
+    "releaseDate": "2017/10/06",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm35-77a",
+    "name": "Zoroark-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm35/77a.png",
+      "large": "https://images.pokemontcg.io/sm35/77a_hires.png"
+    },
+    "setId": "sm35",
+    "setName": "Shining Legends",
+    "releaseDate": "2017/10/06",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 1",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm4-63a",
+    "name": "Guzzlord-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm4/63a.png",
+      "large": "https://images.pokemontcg.io/sm4/63a_hires.png"
+    },
+    "setId": "sm4",
+    "setName": "Crimson Invasion",
+    "releaseDate": "2017/11/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "GX",
+      "Ultra Beast"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo GX",
+    "price": null
+  },
+  {
+    "id": "sm4-84a",
+    "name": "Regigigas",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm4/84a.png",
+      "large": "https://images.pokemontcg.io/sm4/84a_hires.png"
+    },
+    "setId": "sm4",
+    "setName": "Crimson Invasion",
+    "releaseDate": "2017/11/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hasuno",
+    "rarity": "Rare Holo",
+    "price": null
+  },
+  {
+    "id": "sm5-119a",
+    "name": "Cynthia",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm5/119a.png",
+      "large": "https://images.pokemontcg.io/sm5/119a_hires.png"
+    },
+    "setId": "sm5",
+    "setName": "Ultra Prism",
+    "releaseDate": "2018/02/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm5-122a",
+    "name": "Escape Board",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm5/122a.png",
+      "large": "https://images.pokemontcg.io/sm5/122a_hires.png"
+    },
+    "setId": "sm5",
+    "setName": "Ultra Prism",
+    "releaseDate": "2018/02/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Pokémon Tool"
+    ],
+    "artist": "Toyste Beach",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm5-125a",
+    "name": "Lillie",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm5/125a.png",
+      "large": "https://images.pokemontcg.io/sm5/125a_hires.png"
+    },
+    "setId": "sm5",
+    "setName": "Ultra Prism",
+    "releaseDate": "2018/02/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Mana Ibe",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm5-135a",
+    "name": "Volkner",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm5/135a.png",
+      "large": "https://images.pokemontcg.io/sm5/135a_hires.png"
+    },
+    "setId": "sm5",
+    "setName": "Ultra Prism",
+    "releaseDate": "2018/02/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm5-153a",
+    "name": "Lusamine",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm5/153a.png",
+      "large": "https://images.pokemontcg.io/sm5/153a_hires.png"
+    },
+    "setId": "sm5",
+    "setName": "Ultra Prism",
+    "releaseDate": "2018/02/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Mana Ibe",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm6-2a",
+    "name": "Alolan Exeggutor",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/2a.png",
+      "large": "https://images.pokemontcg.io/sm6/2a_hires.png"
+    },
+    "setId": "sm6",
+    "setName": "Forbidden Light",
+    "releaseDate": "2018/05/04",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "kawayoo",
+    "rarity": "Rare",
+    "price": null
+  },
+  {
+    "id": "sm6-102a",
+    "name": "Beast Ring",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/102a.png",
+      "large": "https://images.pokemontcg.io/sm6/102a_hires.png"
+    },
+    "setId": "sm6",
+    "setName": "Forbidden Light",
+    "releaseDate": "2018/05/04",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare",
+    "price": null
+  },
+  {
+    "id": "sm6-112a",
+    "name": "Metal Frying Pan",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/112a.png",
+      "large": "https://images.pokemontcg.io/sm6/112a_hires.png"
+    },
+    "setId": "sm6",
+    "setName": "Forbidden Light",
+    "releaseDate": "2018/05/04",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Pokémon Tool"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm6-113a",
+    "name": "Mysterious Treasure",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm6/113a.png",
+      "large": "https://images.pokemontcg.io/sm6/113a_hires.png"
+    },
+    "setId": "sm6",
+    "setName": "Forbidden Light",
+    "releaseDate": "2018/05/04",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Eske Yoshinob",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm7-10a",
+    "name": "Sceptile",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm7/10a.png",
+      "large": "https://images.pokemontcg.io/sm7/10a_hires.png"
+    },
+    "setId": "sm7",
+    "setName": "Celestial Storm",
+    "releaseDate": "2018/08/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Hitoshi Ariga",
+    "rarity": "Rare Holo",
+    "price": null
+  },
+  {
+    "id": "sm7-123a",
+    "name": "Acro Bike",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm7/123a.png",
+      "large": "https://images.pokemontcg.io/sm7/123a_hires.png"
+    },
+    "setId": "sm7",
+    "setName": "Celestial Storm",
+    "releaseDate": "2018/08/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Toyste Beach",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm7-148a",
+    "name": "Tate & Liza",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm7/148a.png",
+      "large": "https://images.pokemontcg.io/sm7/148a_hires.png"
+    },
+    "setId": "sm7",
+    "setName": "Celestial Storm",
+    "releaseDate": "2018/08/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "You Iribi",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm7-177a",
+    "name": "Rayquaza-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm7/177a.png",
+      "large": "https://images.pokemontcg.io/sm7/177a_hires.png"
+    },
+    "setId": "sm7",
+    "setName": "Celestial Storm",
+    "releaseDate": "2018/08/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm75-40a",
+    "name": "Altaria",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm75/40a.png",
+      "large": "https://images.pokemontcg.io/sm75/40a_hires.png"
+    },
+    "setId": "sm75",
+    "setName": "Dragon Majesty",
+    "releaseDate": "2018/09/07",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Shin Nagasawa",
+    "rarity": "Rare Holo",
+    "price": null
+  },
+  {
+    "id": "sm75-60a",
+    "name": "Fiery Flint",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm75/60a.png",
+      "large": "https://images.pokemontcg.io/sm75/60a_hires.png"
+    },
+    "setId": "sm75",
+    "setName": "Dragon Majesty",
+    "releaseDate": "2018/09/07",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Yoshinobu Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm8-172a",
+    "name": "Electropower",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm8/172a.png",
+      "large": "https://images.pokemontcg.io/sm8/172a_hires.png"
+    },
+    "setId": "sm8",
+    "setName": "Lost Thunder",
+    "releaseDate": "2018/11/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Ayaka Yoshida",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm8-187a",
+    "name": "Net Ball",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm8/187a.png",
+      "large": "https://images.pokemontcg.io/sm8/187a_hires.png"
+    },
+    "setId": "sm8",
+    "setName": "Lost Thunder",
+    "releaseDate": "2018/11/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm8-188a",
+    "name": "Professor Elm's Lecture",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm8/188a.png",
+      "large": "https://images.pokemontcg.io/sm8/188a_hires.png"
+    },
+    "setId": "sm8",
+    "setName": "Lost Thunder",
+    "releaseDate": "2018/11/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "nagimiso",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm8-189a",
+    "name": "Sightseer",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm8/189a.png",
+      "large": "https://images.pokemontcg.io/sm8/189a_hires.png"
+    },
+    "setId": "sm8",
+    "setName": "Lost Thunder",
+    "releaseDate": "2018/11/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm9-152a",
+    "name": "Pokémon Communication",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm9/152a.png",
+      "large": "https://images.pokemontcg.io/sm9/152a_hires.png"
+    },
+    "setId": "sm9",
+    "setName": "Team Up",
+    "releaseDate": "2019/02/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Studio Bora Inc.",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm9-152b",
+    "name": "Pokémon Communication",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm9/152b.png",
+      "large": "https://images.pokemontcg.io/sm9/152b_hires.png"
+    },
+    "setId": "sm9",
+    "setName": "Team Up",
+    "releaseDate": "2019/02/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "OOYAMA",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm10-195a",
+    "name": "Dedenne-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm10/195a.png",
+      "large": "https://images.pokemontcg.io/sm10/195a_hires.png"
+    },
+    "setId": "sm10",
+    "setName": "Unbroken Bonds",
+    "releaseDate": "2019/05/03",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "kanahei",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm10-182a",
+    "name": "Pokégear 3.0",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm10/182a.png",
+      "large": "https://images.pokemontcg.io/sm10/182a_hires.png"
+    },
+    "setId": "sm10",
+    "setName": "Unbroken Bonds",
+    "releaseDate": "2019/05/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Studio Bora Inc.",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm10-182b",
+    "name": "Pokégear 3.0",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm10/182b.png",
+      "large": "https://images.pokemontcg.io/sm10/182b_hires.png"
+    },
+    "setId": "sm10",
+    "setName": "Unbroken Bonds",
+    "releaseDate": "2019/05/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "OOYAMA",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm10-189a",
+    "name": "Welder",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm10/189a.png",
+      "large": "https://images.pokemontcg.io/sm10/189a_hires.png"
+    },
+    "setId": "sm10",
+    "setName": "Unbroken Bonds",
+    "releaseDate": "2019/05/03",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hitoshi Ariga",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm11-191a",
+    "name": "Cherish Ball",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/191a.png",
+      "large": "https://images.pokemontcg.io/sm11/191a_hires.png"
+    },
+    "setId": "sm11",
+    "setName": "Unified Minds",
+    "releaseDate": "2019/08/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Yoshinobu Saito",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm11-206a",
+    "name": "Reset Stamp",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/206a.png",
+      "large": "https://images.pokemontcg.io/sm11/206a_hires.png"
+    },
+    "setId": "sm11",
+    "setName": "Unified Minds",
+    "releaseDate": "2019/08/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "OOYAMA",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "sm11-79a",
+    "name": "Jirachi-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/79a.png",
+      "large": "https://images.pokemontcg.io/sm11/79a_hires.png"
+    },
+    "setId": "sm11",
+    "setName": "Unified Minds",
+    "releaseDate": "2019/08/02",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "sm12-143a",
+    "name": "Togepi & Cleffa & Igglybuff-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm12/143a.png",
+      "large": "https://images.pokemontcg.io/sm12/143a_hires.png"
+    },
+    "setId": "sm12",
+    "setName": "Cosmic Eclipse",
+    "releaseDate": "2019/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fairy"
+    ],
+    "subType": [
+      "Basic",
+      "TAG TEAM",
+      "GX"
+    ],
+    "artist": "0313",
+    "rarity": "Rare Ultra",
+    "price": null
+  },
+  {
+    "id": "swshp-SWSH112",
+    "name": "Cinderace",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH112.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH112_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2",
+      "Single Strike"
+    ],
+    "artist": "Anesaki Dynamic",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "swshp-SWSH062",
+    "name": "Pikachu VMAX",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH062.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH062_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "VMAX"
+    ],
+    "artist": "PLANETA Mochizuki",
+    "rarity": "Promo",
+    "price": 3.01
+  },
+  {
+    "id": "swshp-SWSH132",
+    "name": "Dragapult",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH132.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH132_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2",
+      "Prime"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 1.44
+  },
+  {
+    "id": "swshp-SWSH133",
+    "name": "Lance's Charizard V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH133.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH133_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic",
+      "V"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Promo",
+    "price": 1.74
+  },
+  {
+    "id": "swshp-SWSH134",
+    "name": "Dark Sylveon V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH134.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH134_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "V"
+    ],
+    "artist": "Ryuta Fuse",
+    "rarity": "Promo",
+    "price": 0.71
+  },
+  {
+    "id": "swshp-SWSH135",
+    "name": "Zacian LV.X",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH135.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH135_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Level-Up"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.61
+  },
+  {
+    "id": "swshp-SWSH136",
+    "name": "Mimikyu δ (Delta Species)",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH136.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH136_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hasuno",
+    "rarity": "Promo",
+    "price": 0.66
+  },
+  {
+    "id": "swshp-SWSH137",
+    "name": "Light Toxtricity",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH137.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH137_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Naoyo Kimura",
+    "rarity": "Promo",
+    "price": 0.53
+  },
+  {
+    "id": "swshp-SWSH138",
+    "name": "Hydreigon C",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH138.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH138_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "SP"
+    ],
+    "artist": "kawayoo",
+    "rarity": "Promo",
+    "price": 0.31
+  },
+  {
+    "id": "swshp-SWSH139",
+    "name": "Pikachu V-UNION",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH139.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH139_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "V-UNION"
+    ],
+    "rarity": "Promo",
+    "price": 1.21
+  },
+  {
+    "id": "swshp-SWSH141",
+    "name": "Pikachu V-UNION",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH141.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH141_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "V-UNION"
+    ],
+    "rarity": "Promo",
+    "price": 1.24
+  },
+  {
+    "id": "swshp-SWSH142",
+    "name": "Pikachu V-UNION",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH142.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH142_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "V-UNION"
+    ],
+    "rarity": "Promo",
+    "price": 1.3
+  },
+  {
+    "id": "swshp-SWSH143",
+    "name": "Pikachu V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH143.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH143_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "V"
+    ],
+    "artist": "HYOGONOSUKE",
+    "rarity": "Promo",
+    "price": 1.56
+  },
+  {
+    "id": "swshp-SWSH144",
+    "name": "Greninja Gold Star ★",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH144.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH144_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "Star"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Promo",
+    "price": 1.44
+  },
+  {
+    "id": "swshp-SWSH145",
+    "name": "Pikachu V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH145.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH145_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "V"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 21.18
+  },
+  {
+    "id": "swshp-SWSH146",
+    "name": "Poké Ball",
+    "images": {
+      "small": "https://images.pokemontcg.io/swshp/SWSH146.png",
+      "large": "https://images.pokemontcg.io/swshp/SWSH146_hires.png"
+    },
+    "setId": "swshp",
+    "setName": "SWSH Black Star Promos",
+    "releaseDate": "2019/11/15",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 6.99
+  },
+  {
+    "id": "swsh45-65",
+    "name": "Ball Guy",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh45/65.png",
+      "large": "https://images.pokemontcg.io/swsh45/65_hires.png"
+    },
+    "setId": "swsh45",
+    "setName": "Shining Fates",
+    "releaseDate": "2021/02/19",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Hitoshi Ariga",
+    "rarity": "Rare Ultra",
+    "price": 2.05
+  },
+  {
+    "id": "cel25c-4_A",
+    "name": "Charizard",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/4_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/4_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Classic Collection",
+    "price": 74.12
+  },
+  {
+    "id": "cel25c-2_A",
+    "name": "Blastoise",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/2_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/2_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Ken Sugimori",
+    "rarity": "Classic Collection",
+    "price": 6.17
+  },
+  {
+    "id": "cel25c-15_A1",
+    "name": "Venusaur",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/15_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/15_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Classic Collection",
+    "price": 4.92
+  },
+  {
+    "id": "cel25c-15_A2",
+    "name": "Here Comes Team Rocket!",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/15_B.png",
+      "large": "https://images.pokemontcg.io/cel25c/15_B_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": null,
+    "artist": "Ken Sugimori",
+    "rarity": "Classic Collection",
+    "price": 0.27
+  },
+  {
+    "id": "cel25c-15_A4",
+    "name": "Claydol",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/15_D.png",
+      "large": "https://images.pokemontcg.io/cel25c/15_D_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Midori Harada",
+    "rarity": "Classic Collection",
+    "price": 0.29
+  },
+  {
+    "id": "cel25c-15_A3",
+    "name": "Rocket's Zapdos",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/15_C.png",
+      "large": "https://images.pokemontcg.io/cel25c/15_C_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin-ichi Yoshida",
+    "rarity": "Classic Collection",
+    "price": 0.57
+  },
+  {
+    "id": "cel25c-73_A",
+    "name": "Imposter Professor Oak",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/73_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/73_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": null,
+    "artist": "Ken Sugimori",
+    "rarity": "Classic Collection",
+    "price": 0.2
+  },
+  {
+    "id": "cel25c-8_A",
+    "name": "Dark Gyarados",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/8_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/8_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Kagemaru Himeno",
+    "rarity": "Classic Collection",
+    "price": 0.96
+  },
+  {
+    "id": "cel25c-66_A",
+    "name": "Shining Magikarp",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/66_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/66_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ken Sugimori",
+    "rarity": "Classic Collection",
+    "price": 9.42
+  },
+  {
+    "id": "cel25c-24_A",
+    "name": "_____'s Pikachu",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/24_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/24_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kagemaru Himeno",
+    "rarity": "Classic Collection",
+    "price": 6.03
+  },
+  {
+    "id": "cel25c-20_A",
+    "name": "Cleffa",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/20_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/20_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Baby"
+    ],
+    "artist": "Kagemaru Himeno",
+    "rarity": "Classic Collection",
+    "price": 0.43
+  },
+  {
+    "id": "cel25c-86_A",
+    "name": "Rocket's Admin.",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/86_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/86_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Ken Sugimori",
+    "rarity": "Classic Collection",
+    "price": 0.26
+  },
+  {
+    "id": "cel25c-17_A",
+    "name": "Umbreon Gold Star ★",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/17_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/17_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "Star"
+    ],
+    "artist": "Masakazu Fukuda",
+    "rarity": "Classic Collection",
+    "price": 14.62
+  },
+  {
+    "id": "cel25c-88_A",
+    "name": "Mew ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/88_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/88_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "Ryo Ueda",
+    "rarity": "Classic Collection",
+    "price": 2.68
+  },
+  {
+    "id": "cel25c-93_A",
+    "name": "Gardevoir ex δ (Delta Species)",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/93_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/93_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "Masahiko Ishii",
+    "rarity": "Classic Collection",
+    "price": 2.62
+  },
+  {
+    "id": "cel25c-9_A",
+    "name": "Team Magma's Groudon",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/9_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/9_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting",
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kazuo Yazawa",
+    "rarity": "Classic Collection",
+    "price": 0.37
+  },
+  {
+    "id": "cel25c-109_A",
+    "name": "Luxray GL LV.X",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/109_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/109_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Level-Up",
+      "SP"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Classic Collection",
+    "price": 1.15
+  },
+  {
+    "id": "cel25c-145_A",
+    "name": "Garchomp C LV.X",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/145_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/145_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Level-Up",
+      "SP"
+    ],
+    "artist": "Shizurow",
+    "rarity": "Classic Collection",
+    "price": 1.51
+  },
+  {
+    "id": "cel25c-113_A",
+    "name": "Reshiram",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/113_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/113_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Classic Collection",
+    "price": 2.43
+  },
+  {
+    "id": "cel25c-114_A",
+    "name": "Zekrom",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/114_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/114_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Classic Collection",
+    "price": 2.71
+  },
+  {
+    "id": "cel25c-54_A",
+    "name": "Mewtwo-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/54_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/54_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "Shizurow",
+    "rarity": "Classic Collection",
+    "price": 3.82
+  },
+  {
+    "id": "cel25c-97_A",
+    "name": "Xerneas-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/97_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/97_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fairy"
+    ],
+    "subType": [
+      "Basic",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Classic Collection",
+    "price": 2.13
+  },
+  {
+    "id": "cel25c-60_A",
+    "name": "Tapu Lele-GX",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/60_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/60_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "GX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Classic Collection",
+    "price": 2.73
+  },
+  {
+    "id": "cel25c-107_A",
+    "name": "Donphan",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/107_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/107_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Stage 1",
+      "Prime"
+    ],
+    "artist": "Kent Kanetsuna",
+    "rarity": "Classic Collection",
+    "price": 0.47
+  },
+  {
+    "id": "cel25c-76_A",
+    "name": "M Rayquaza-EX",
+    "images": {
+      "small": "https://images.pokemontcg.io/cel25c/76_A.png",
+      "large": "https://images.pokemontcg.io/cel25c/76_A_hires.png"
+    },
+    "setId": "cel25c",
+    "setName": "Celebrations: Classic Collection",
+    "releaseDate": "2021/10/08",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "MEGA",
+      "EX"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Classic Collection",
+    "price": 8.9
+  },
+  {
+    "id": "swsh8-185",
+    "name": "Genesect V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh8/185.png",
+      "large": "https://images.pokemontcg.io/swsh8/185_hires.png"
+    },
+    "setId": "swsh8",
+    "setName": "Fusion Strike",
+    "releaseDate": "2021/11/12",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic",
+      "V",
+      "Fusion Strike"
+    ],
+    "artist": "PLANETA Tsuji",
+    "rarity": "Rare Holo V",
+    "price": 0.44
+  },
+  {
+    "id": "tk1a-1",
+    "name": "Bagon",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/1.png",
+      "large": "https://images.pokemontcg.io/tk1a/1_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk1a-2",
+    "name": "Combusken",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/2.png",
+      "large": "https://images.pokemontcg.io/tk1a/2_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Kouki Saitou",
+    "price": null
+  },
+  {
+    "id": "tk1a-3",
+    "name": "Delcatty",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/3.png",
+      "large": "https://images.pokemontcg.io/tk1a/3_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Midori Harada",
+    "price": null
+  },
+  {
+    "id": "tk1a-4",
+    "name": "Latias",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/4.png",
+      "large": "https://images.pokemontcg.io/tk1a/4_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nakaoka",
+    "price": null
+  },
+  {
+    "id": "tk1a-5",
+    "name": "Numel",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/5.png",
+      "large": "https://images.pokemontcg.io/tk1a/5_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Yuka Morii",
+    "price": null
+  },
+  {
+    "id": "tk1a-6",
+    "name": "Skitty",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/6.png",
+      "large": "https://images.pokemontcg.io/tk1a/6_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Atsuko Nishida",
+    "price": null
+  },
+  {
+    "id": "tk1a-7",
+    "name": "Torchic",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/7.png",
+      "large": "https://images.pokemontcg.io/tk1a/7_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hironobu Yoshida",
+    "price": null
+  },
+  {
+    "id": "tk1a-8",
+    "name": "Potion",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/8.png",
+      "large": "https://images.pokemontcg.io/tk1a/8_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Keiji Kinebuchi",
+    "price": null
+  },
+  {
+    "id": "tk1a-9",
+    "name": "Energy Search",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/9.png",
+      "large": "https://images.pokemontcg.io/tk1a/9_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Kai Ishikawa",
+    "price": null
+  },
+  {
+    "id": "tk1a-10",
+    "name": "Fire Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1a/10.png",
+      "large": "https://images.pokemontcg.io/tk1a/10_hires.png"
+    },
+    "setId": "tk1a",
+    "setName": "EX Trainer Kit Latias",
+    "releaseDate": "2004/06/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "tk1b-1",
+    "name": "Electrike",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/1.png",
+      "large": "https://images.pokemontcg.io/tk1b/1_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk1b-2",
+    "name": "Latios",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/2.png",
+      "large": "https://images.pokemontcg.io/tk1b/2_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kyoko Koizumi",
+    "price": null
+  },
+  {
+    "id": "tk1b-3",
+    "name": "Linoone",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/3.png",
+      "large": "https://images.pokemontcg.io/tk1b/3_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk1b-4",
+    "name": "Magnemite",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/4.png",
+      "large": "https://images.pokemontcg.io/tk1b/4_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Tomokazu Komiya",
+    "price": null
+  },
+  {
+    "id": "tk1b-5",
+    "name": "Magneton",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/5.png",
+      "large": "https://images.pokemontcg.io/tk1b/5_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Kyoko Umemoto",
+    "price": null
+  },
+  {
+    "id": "tk1b-6",
+    "name": "Pikachu",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/6.png",
+      "large": "https://images.pokemontcg.io/tk1b/6_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "price": null
+  },
+  {
+    "id": "tk1b-7",
+    "name": "Zigzagoon",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/7.png",
+      "large": "https://images.pokemontcg.io/tk1b/7_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Atsuko Nishida",
+    "price": null
+  },
+  {
+    "id": "tk1b-8",
+    "name": "Potion",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/8.png",
+      "large": "https://images.pokemontcg.io/tk1b/8_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Keiji Kinebuchi",
+    "price": null
+  },
+  {
+    "id": "tk1b-9",
+    "name": "Energy Search",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/9.png",
+      "large": "https://images.pokemontcg.io/tk1b/9_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Kai Ishikawa",
+    "price": null
+  },
+  {
+    "id": "tk1b-10",
+    "name": "Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk1b/10.png",
+      "large": "https://images.pokemontcg.io/tk1b/10_hires.png"
+    },
+    "setId": "tk1b",
+    "setName": "EX Trainer Kit Latios",
+    "releaseDate": "2004/06/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "tk2a-1",
+    "name": "Beldum",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/1.png",
+      "large": "https://images.pokemontcg.io/tk2a/1_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kouki Saitou",
+    "price": null
+  },
+  {
+    "id": "tk2a-2",
+    "name": "Electrike",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/2.png",
+      "large": "https://images.pokemontcg.io/tk2a/2_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hiroki Fuchino",
+    "price": null
+  },
+  {
+    "id": "tk2a-3",
+    "name": "Grumpig",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/3.png",
+      "large": "https://images.pokemontcg.io/tk2a/3_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Atsuko Nishida",
+    "price": null
+  },
+  {
+    "id": "tk2a-4",
+    "name": "Meowth",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/4.png",
+      "large": "https://images.pokemontcg.io/tk2a/4_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Masakazu Fukuda",
+    "price": null
+  },
+  {
+    "id": "tk2a-5",
+    "name": "Metang",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/5.png",
+      "large": "https://images.pokemontcg.io/tk2a/5_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Hisao Nakamura",
+    "price": null
+  },
+  {
+    "id": "tk2a-6",
+    "name": "Plusle",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/6.png",
+      "large": "https://images.pokemontcg.io/tk2a/6_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Katsura Tabata",
+    "price": null
+  },
+  {
+    "id": "tk2a-7",
+    "name": "Spoink",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/7.png",
+      "large": "https://images.pokemontcg.io/tk2a/7_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kagemaru Himeno",
+    "price": null
+  },
+  {
+    "id": "tk2a-8",
+    "name": "Energy Search",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/8.png",
+      "large": "https://images.pokemontcg.io/tk2a/8_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Kai Ishikawa",
+    "price": null
+  },
+  {
+    "id": "tk2a-9",
+    "name": "Potion",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/9.png",
+      "large": "https://images.pokemontcg.io/tk2a/9_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Keiji Kinebuchi",
+    "price": null
+  },
+  {
+    "id": "tk2a-10",
+    "name": "Professor Cozmo's Discovery",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/10.png",
+      "large": "https://images.pokemontcg.io/tk2a/10_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk2a-11",
+    "name": "Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/11.png",
+      "large": "https://images.pokemontcg.io/tk2a/11_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "tk2a-12",
+    "name": "Psychic Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2a/12.png",
+      "large": "https://images.pokemontcg.io/tk2a/12_hires.png"
+    },
+    "setId": "tk2a",
+    "setName": "EX Trainer Kit 2 Plusle",
+    "releaseDate": "2006/03/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "tk2b-1",
+    "name": "Arcanine",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/1.png",
+      "large": "https://images.pokemontcg.io/tk2b/1_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk2b-2",
+    "name": "Charmander",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/2.png",
+      "large": "https://images.pokemontcg.io/tk2b/2_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Midori Harada",
+    "price": null
+  },
+  {
+    "id": "tk2b-3",
+    "name": "Charmeleon",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/3.png",
+      "large": "https://images.pokemontcg.io/tk2b/3_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Kouki Saitou",
+    "rarity": "Uncommon",
+    "price": null
+  },
+  {
+    "id": "tk2b-4",
+    "name": "Growlithe",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/4.png",
+      "large": "https://images.pokemontcg.io/tk2b/4_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk2b-5",
+    "name": "Mareep",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/5.png",
+      "large": "https://images.pokemontcg.io/tk2b/5_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Naoyo Kimura",
+    "price": null
+  },
+  {
+    "id": "tk2b-6",
+    "name": "Minun",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/6.png",
+      "large": "https://images.pokemontcg.io/tk2b/6_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Katsura Tabata",
+    "price": null
+  },
+  {
+    "id": "tk2b-7",
+    "name": "Vulpix",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/7.png",
+      "large": "https://images.pokemontcg.io/tk2b/7_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Midori Harada",
+    "price": null
+  },
+  {
+    "id": "tk2b-8",
+    "name": "Celio's Network",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/8.png",
+      "large": "https://images.pokemontcg.io/tk2b/8_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Ken Sugimori",
+    "price": null
+  },
+  {
+    "id": "tk2b-9",
+    "name": "Energy Search",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/9.png",
+      "large": "https://images.pokemontcg.io/tk2b/9_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Kai Ishikawa",
+    "price": null
+  },
+  {
+    "id": "tk2b-10",
+    "name": "Potion",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/10.png",
+      "large": "https://images.pokemontcg.io/tk2b/10_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Item"
+    ],
+    "artist": "Keiji Kinebuchi",
+    "price": null
+  },
+  {
+    "id": "tk2b-11",
+    "name": "Fire Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/11.png",
+      "large": "https://images.pokemontcg.io/tk2b/11_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "tk2b-12",
+    "name": "Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/tk2b/12.png",
+      "large": "https://images.pokemontcg.io/tk2b/12_hires.png"
+    },
+    "setId": "tk2b",
+    "setName": "EX Trainer Kit 2 Minun",
+    "releaseDate": "2006/03/01",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "swsh10tg-TG11",
+    "name": "Bronzong",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh10tg/TG11.png",
+      "large": "https://images.pokemontcg.io/swsh10tg/TG11_hires.png"
+    },
+    "setId": "swsh10tg",
+    "setName": "Astral Radiance Trainer Gallery",
+    "releaseDate": "2022/05/27",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Hataya",
+    "rarity": "Trainer Gallery Rare Holo",
+    "price": 0.66
+  },
+  {
+    "id": "swsh12pt5-98",
+    "name": "Zamazenta V",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12pt5/98.png",
+      "large": "https://images.pokemontcg.io/swsh12pt5/98_hires.png"
+    },
+    "setId": "swsh12pt5",
+    "setName": "Crown Zenith",
+    "releaseDate": "2023/01/20",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic",
+      "V"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Rare Holo V",
+    "price": 0.47
+  },
+  {
+    "id": "svp-1",
+    "name": "Sprigatito",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/1.png",
+      "large": "https://images.pokemontcg.io/svp/1_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Yuu Nishida",
+    "rarity": "Promo",
+    "price": 5.2
+  },
+  {
+    "id": "svp-2",
+    "name": "Fuecoco",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/2.png",
+      "large": "https://images.pokemontcg.io/svp/2_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ryuta Fuse",
+    "rarity": "Promo",
+    "price": 3.31
+  },
+  {
+    "id": "svp-6",
+    "name": "Pawmot",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/6.png",
+      "large": "https://images.pokemontcg.io/svp/6_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "GIDORA",
+    "rarity": "Promo",
+    "price": 1.19
+  },
+  {
+    "id": "svp-10",
+    "name": "Espathra",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/10.png",
+      "large": "https://images.pokemontcg.io/svp/10_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Sanosuke Sakuma",
+    "rarity": "Promo",
+    "price": 0.19
+  },
+  {
+    "id": "svp-7",
+    "name": "Hawlucha",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/7.png",
+      "large": "https://images.pokemontcg.io/svp/7_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Yuya Oka",
+    "rarity": "Promo",
+    "price": 1.72
+  },
+  {
+    "id": "svp-13",
+    "name": "Miraidon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/13.png",
+      "large": "https://images.pokemontcg.io/svp/13_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Akira Komayama",
+    "rarity": "Promo",
+    "price": 1.56
+  },
+  {
+    "id": "svp-8",
+    "name": "Revavroom",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/8.png",
+      "large": "https://images.pokemontcg.io/svp/8_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "DOM",
+    "rarity": "Promo",
+    "price": 1.34
+  },
+  {
+    "id": "svp-9",
+    "name": "Spidops",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/9.png",
+      "large": "https://images.pokemontcg.io/svp/9_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Anesaki Dynamic",
+    "rarity": "Promo",
+    "price": 0.16
+  },
+  {
+    "id": "svp-11",
+    "name": "Arcanine",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/11.png",
+      "large": "https://images.pokemontcg.io/svp/11_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Ryuta Fuse",
+    "rarity": "Promo",
+    "price": 0.63
+  },
+  {
+    "id": "svp-3",
+    "name": "Quaxly",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/3.png",
+      "large": "https://images.pokemontcg.io/svp/3_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Narumi Sato",
+    "rarity": "Promo",
+    "price": 1.36
+  },
+  {
+    "id": "svp-5",
+    "name": "Quaquaval",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/5.png",
+      "large": "https://images.pokemontcg.io/svp/5_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "kodama",
+    "rarity": "Promo",
+    "price": 1.18
+  },
+  {
+    "id": "svp-4",
+    "name": "Mimikyu ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/4.png",
+      "large": "https://images.pokemontcg.io/svp/4_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "PLANETA Yamashita",
+    "rarity": "Promo",
+    "price": 0.43
+  },
+  {
+    "id": "svp-14",
+    "name": "Koraidon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/14.png",
+      "large": "https://images.pokemontcg.io/svp/14_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Mina Nakai",
+    "rarity": "Promo",
+    "price": 1.55
+  },
+  {
+    "id": "svp-12",
+    "name": "Dondozo",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/12.png",
+      "large": "https://images.pokemontcg.io/svp/12_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shin Nagasawa",
+    "rarity": "Promo",
+    "price": 0.22
+  },
+  {
+    "id": "svp-15",
+    "name": "Flaaffy",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/15.png",
+      "large": "https://images.pokemontcg.io/svp/15_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "0313",
+    "rarity": "Promo",
+    "price": 1.07
+  },
+  {
+    "id": "svp-17",
+    "name": "Lucario ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/17.png",
+      "large": "https://images.pokemontcg.io/svp/17_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 4.73
+  },
+  {
+    "id": "svp-16",
+    "name": "Ampharos ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/16.png",
+      "large": "https://images.pokemontcg.io/svp/16_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "PLANETA Tsuji",
+    "rarity": "Promo",
+    "price": 3.58
+  },
+  {
+    "id": "svp-18",
+    "name": "Cyclizar ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/18.png",
+      "large": "https://images.pokemontcg.io/svp/18_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.5
+  },
+  {
+    "id": "svp-22",
+    "name": "Pelipper",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/22.png",
+      "large": "https://images.pokemontcg.io/svp/22_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Nisota Niso",
+    "rarity": "Promo",
+    "price": 0.82
+  },
+  {
+    "id": "svp-19",
+    "name": "Baxcalibur",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/19.png",
+      "large": "https://images.pokemontcg.io/svp/19_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Oswaldo KATO",
+    "rarity": "Promo",
+    "price": 1.85
+  },
+  {
+    "id": "svp-20",
+    "name": "Tinkaton",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/20.png",
+      "large": "https://images.pokemontcg.io/svp/20_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Anesaki Dynamic",
+    "rarity": "Promo",
+    "price": 1.28
+  },
+  {
+    "id": "svp-21",
+    "name": "Murkrow",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/21.png",
+      "large": "https://images.pokemontcg.io/svp/21_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shiburingaru",
+    "rarity": "Promo",
+    "price": 1.36
+  },
+  {
+    "id": "svp-23",
+    "name": "Smoliv",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/23.png",
+      "large": "https://images.pokemontcg.io/svp/23_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Misa Tsutsui",
+    "rarity": "Promo",
+    "price": 0.2
+  },
+  {
+    "id": "svp-25",
+    "name": "Tinkatink",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/25.png",
+      "large": "https://images.pokemontcg.io/svp/25_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kouki Saitou",
+    "rarity": "Promo",
+    "price": 0.22
+  },
+  {
+    "id": "svp-27",
+    "name": "Pikachu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/27.png",
+      "large": "https://images.pokemontcg.io/svp/27_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Atsushi Furusawa",
+    "rarity": "Promo",
+    "price": 2.64
+  },
+  {
+    "id": "svp-29",
+    "name": "Koraidon ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/29.png",
+      "large": "https://images.pokemontcg.io/svp/29_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "aky CG Works",
+    "rarity": "Promo",
+    "price": 0.31
+  },
+  {
+    "id": "svp-24",
+    "name": "Growlithe",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/24.png",
+      "large": "https://images.pokemontcg.io/svp/24_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Uta",
+    "rarity": "Promo",
+    "price": 0.3
+  },
+  {
+    "id": "svp-26",
+    "name": "Varoom",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/26.png",
+      "large": "https://images.pokemontcg.io/svp/26_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Mina Nakai",
+    "rarity": "Promo",
+    "price": 0.35
+  },
+  {
+    "id": "svp-28",
+    "name": "Miraidon ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/28.png",
+      "large": "https://images.pokemontcg.io/svp/28_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.24
+  },
+  {
+    "id": "svp-30",
+    "name": "Chien-Pao ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/30.png",
+      "large": "https://images.pokemontcg.io/svp/30_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "aky CG Works",
+    "rarity": "Promo",
+    "price": 4.78
+  },
+  {
+    "id": "svp-31",
+    "name": "Tinkaton ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/31.png",
+      "large": "https://images.pokemontcg.io/svp/31_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 8.41
+  },
+  {
+    "id": "svp-32",
+    "name": "Annihilape ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/32.png",
+      "large": "https://images.pokemontcg.io/svp/32_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "PLANETA Hiiragi",
+    "rarity": "Promo",
+    "price": 0.52
+  },
+  {
+    "id": "svp-36",
+    "name": "Palafin",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/36.png",
+      "large": "https://images.pokemontcg.io/svp/36_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "nagimiso",
+    "rarity": "Promo",
+    "price": 1.3
+  },
+  {
+    "id": "svp-37",
+    "name": "Cleffa",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/37.png",
+      "large": "https://images.pokemontcg.io/svp/37_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Mina Nakai",
+    "rarity": "Promo",
+    "price": 3.42
+  },
+  {
+    "id": "svp-38",
+    "name": "Togekiss",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/38.png",
+      "large": "https://images.pokemontcg.io/svp/38_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "OKACHEKE",
+    "rarity": "Promo",
+    "price": 1.13
+  },
+  {
+    "id": "svp-39",
+    "name": "Mawile",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/39.png",
+      "large": "https://images.pokemontcg.io/svp/39_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Souichirou Gunjima",
+    "rarity": "Promo",
+    "price": 1.43
+  },
+  {
+    "id": "svp-40",
+    "name": "Pawmi",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/40.png",
+      "large": "https://images.pokemontcg.io/svp/40_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Ryuta Fuse",
+    "rarity": "Promo",
+    "price": 0.24
+  },
+  {
+    "id": "svp-41",
+    "name": "Paldean Wooper",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/41.png",
+      "large": "https://images.pokemontcg.io/svp/41_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kirisAki",
+    "rarity": "Promo",
+    "price": 0.22
+  },
+  {
+    "id": "svp-42",
+    "name": "Houndstone",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/42.png",
+      "large": "https://images.pokemontcg.io/svp/42_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Pani Kobayashi",
+    "rarity": "Promo",
+    "price": 0.31
+  },
+  {
+    "id": "svp-43",
+    "name": "Eevee",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/43.png",
+      "large": "https://images.pokemontcg.io/svp/43_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "saino misaki",
+    "rarity": "Promo",
+    "price": 1.02
+  },
+  {
+    "id": "svp-44",
+    "name": "Charmander",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/44.png",
+      "large": "https://images.pokemontcg.io/svp/44_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "MINAMINAMI Take",
+    "rarity": "Promo",
+    "price": 8.48
+  },
+  {
+    "id": "svp-45",
+    "name": "Paradise Resort",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/45.png",
+      "large": "https://images.pokemontcg.io/svp/45_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Stadium"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Promo",
+    "price": 614.99
+  },
+  {
+    "id": "svp-33",
+    "name": "Meowscarada ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/33.png",
+      "large": "https://images.pokemontcg.io/svp/33_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.8
+  },
+  {
+    "id": "svp-34",
+    "name": "Skeledirge ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/34.png",
+      "large": "https://images.pokemontcg.io/svp/34_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.91
+  },
+  {
+    "id": "svp-46",
+    "name": "Bulbasaur",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/46.png",
+      "large": "https://images.pokemontcg.io/svp/46_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "OKACHEKE",
+    "rarity": "Promo",
+    "price": 0.5
+  },
+  {
+    "id": "svp-47",
+    "name": "Charmander",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/47.png",
+      "large": "https://images.pokemontcg.io/svp/47_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "NC Empire",
+    "rarity": "Promo",
+    "price": 0.9
+  },
+  {
+    "id": "svp-52",
+    "name": "Mewtwo",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/52.png",
+      "large": "https://images.pokemontcg.io/svp/52_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Bun Toujo",
+    "rarity": "Promo",
+    "price": 3.18
+  },
+  {
+    "id": "svp-48",
+    "name": "Squirtle",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/48.png",
+      "large": "https://images.pokemontcg.io/svp/48_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Gemi",
+    "rarity": "Promo",
+    "price": 0.5
+  },
+  {
+    "id": "svp-53",
+    "name": "Mew ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/53.png",
+      "large": "https://images.pokemontcg.io/svp/53_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "Natsumi Yoshida",
+    "rarity": "Promo",
+    "price": 8.08
+  },
+  {
+    "id": "svp-54",
+    "name": "Greninja ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/54.png",
+      "large": "https://images.pokemontcg.io/svp/54_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 6.65
+  },
+  {
+    "id": "svp-101",
+    "name": "Pikachu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/101.png",
+      "large": "https://images.pokemontcg.io/svp/101_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Jiro Sasumo",
+    "rarity": "Promo",
+    "price": 8.08
+  },
+  {
+    "id": "svp-35",
+    "name": "Quaquaval ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/35.png",
+      "large": "https://images.pokemontcg.io/svp/35_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.52
+  },
+  {
+    "id": "svp-50",
+    "name": "Alakazam ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/50.png",
+      "large": "https://images.pokemontcg.io/svp/50_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Promo",
+    "price": 0.64
+  },
+  {
+    "id": "svp-55",
+    "name": "Kangaskhan ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/55.png",
+      "large": "https://images.pokemontcg.io/svp/55_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "N-DESIGN Inc.",
+    "rarity": "Promo",
+    "price": 4.09
+  },
+  {
+    "id": "svp-49",
+    "name": "Zapdos ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/49.png",
+      "large": "https://images.pokemontcg.io/svp/49_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 0.55
+  },
+  {
+    "id": "svp-51",
+    "name": "Snorlax",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/51.png",
+      "large": "https://images.pokemontcg.io/svp/51_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "GOSSAN",
+    "rarity": "Promo",
+    "price": 1.52
+  },
+  {
+    "id": "svp-57",
+    "name": "Chi-Yu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/57.png",
+      "large": "https://images.pokemontcg.io/svp/57_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Dsuke",
+    "rarity": "Promo",
+    "price": 0.93
+  },
+  {
+    "id": "svp-61",
+    "name": "Pineco",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/61.png",
+      "large": "https://images.pokemontcg.io/svp/61_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nobuhiro Imagawa",
+    "rarity": "Promo",
+    "price": 0.28
+  },
+  {
+    "id": "svp-59",
+    "name": "Xatu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/59.png",
+      "large": "https://images.pokemontcg.io/svp/59_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "GOSSAN",
+    "rarity": "Promo",
+    "price": 2.11
+  },
+  {
+    "id": "svp-62",
+    "name": "Sinistea",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/62.png",
+      "large": "https://images.pokemontcg.io/svp/62_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kurumitsu",
+    "rarity": "Promo",
+    "price": 0.37
+  },
+  {
+    "id": "svp-56",
+    "name": "Charizard ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/56.png",
+      "large": "https://images.pokemontcg.io/svp/56_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 4.67
+  },
+  {
+    "id": "svp-58",
+    "name": "Iron Bundle",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/58.png",
+      "large": "https://images.pokemontcg.io/svp/58_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic",
+      "Future"
+    ],
+    "artist": "Lee HyunJung",
+    "rarity": "Promo",
+    "price": 1.67
+  },
+  {
+    "id": "svp-60",
+    "name": "Aegislash",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/60.png",
+      "large": "https://images.pokemontcg.io/svp/60_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Takeshi Nakamura",
+    "rarity": "Promo",
+    "price": 0.94
+  },
+  {
+    "id": "svp-63",
+    "name": "Cetitan",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/63.png",
+      "large": "https://images.pokemontcg.io/svp/63_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "GOSSAN",
+    "rarity": "Promo",
+    "price": 0.27
+  },
+  {
+    "id": "svp-70",
+    "name": "Greavard",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/70.png",
+      "large": "https://images.pokemontcg.io/svp/70_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Nisota Niso",
+    "rarity": "Promo",
+    "price": 0.35
+  },
+  {
+    "id": "svp-65",
+    "name": "Scream Tail",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/65.png",
+      "large": "https://images.pokemontcg.io/svp/65_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "Ancient"
+    ],
+    "artist": "GIDORA",
+    "rarity": "Promo",
+    "price": 2.62
+  },
+  {
+    "id": "svp-75",
+    "name": "Mimikyu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/75.png",
+      "large": "https://images.pokemontcg.io/svp/75_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Promo",
+    "price": 0.78
+  },
+  {
+    "id": "svp-67",
+    "name": "Roaring Moon ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/67.png",
+      "large": "https://images.pokemontcg.io/svp/67_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 4.01
+  },
+  {
+    "id": "svp-64",
+    "name": "Arctibax",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/64.png",
+      "large": "https://images.pokemontcg.io/svp/64_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Teeziro",
+    "rarity": "Promo",
+    "price": 0.35
+  },
+  {
+    "id": "svp-68",
+    "name": "Iron Valiant ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/68.png",
+      "large": "https://images.pokemontcg.io/svp/68_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "artist": "aky CG Works",
+    "rarity": "Promo",
+    "price": 1.3
+  },
+  {
+    "id": "svp-66",
+    "name": "Iron Bundle",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/66.png",
+      "large": "https://images.pokemontcg.io/svp/66_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic",
+      "Future"
+    ],
+    "artist": "Teeziro",
+    "rarity": "Promo",
+    "price": 1.77
+  },
+  {
+    "id": "svp-69",
+    "name": "Fidough",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/69.png",
+      "large": "https://images.pokemontcg.io/svp/69_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "sowsow",
+    "rarity": "Promo",
+    "price": 0.32
+  },
+  {
+    "id": "svp-71",
+    "name": "Maschiff",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/71.png",
+      "large": "https://images.pokemontcg.io/svp/71_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Kagemaru Himeno",
+    "rarity": "Promo",
+    "price": 0.27
+  },
+  {
+    "id": "svp-85",
+    "name": "Pikachu with Grey Felt Hat",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/85.png",
+      "large": "https://images.pokemontcg.io/svp/85_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Naoyo Kimura",
+    "rarity": "Promo",
+    "price": 118.12
+  },
+  {
+    "id": "svp-102",
+    "name": "Oddish",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/102.png",
+      "large": "https://images.pokemontcg.io/svp/102_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Miranda Branley",
+    "rarity": "Promo",
+    "price": 1.66
+  },
+  {
+    "id": "svp-76",
+    "name": "Sprigatito",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/76.png",
+      "large": "https://images.pokemontcg.io/svp/76_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kurumitsu",
+    "rarity": "Promo",
+    "price": 1.54
+  },
+  {
+    "id": "svp-77",
+    "name": "Floragato",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/77.png",
+      "large": "https://images.pokemontcg.io/svp/77_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "GIDORA",
+    "rarity": "Promo",
+    "price": 0.81
+  },
+  {
+    "id": "svp-78",
+    "name": "Meowscarada ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/78.png",
+      "large": "https://images.pokemontcg.io/svp/78_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 1.68
+  },
+  {
+    "id": "svp-79",
+    "name": "Fuecoco",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/79.png",
+      "large": "https://images.pokemontcg.io/svp/79_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "OKACHEKE",
+    "rarity": "Promo",
+    "price": 0.91
+  },
+  {
+    "id": "svp-80",
+    "name": "Crocalor",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/80.png",
+      "large": "https://images.pokemontcg.io/svp/80_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Hideki Ishikawa",
+    "rarity": "Promo",
+    "price": 0.66
+  },
+  {
+    "id": "svp-81",
+    "name": "Skeledirge ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/81.png",
+      "large": "https://images.pokemontcg.io/svp/81_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 1.34
+  },
+  {
+    "id": "svp-82",
+    "name": "Quaxly",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/82.png",
+      "large": "https://images.pokemontcg.io/svp/82_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "GIDORA",
+    "rarity": "Promo",
+    "price": 0.55
+  },
+  {
+    "id": "svp-83",
+    "name": "Quaxwell",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/83.png",
+      "large": "https://images.pokemontcg.io/svp/83_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Atsushi Furusawa",
+    "rarity": "Promo",
+    "price": 0.51
+  },
+  {
+    "id": "svp-84",
+    "name": "Quaquaval ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/84.png",
+      "large": "https://images.pokemontcg.io/svp/84_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.97
+  },
+  {
+    "id": "svp-86",
+    "name": "Mabosstiff ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/86.png",
+      "large": "https://images.pokemontcg.io/svp/86_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "PLANETA Mochizuki",
+    "rarity": "Promo",
+    "price": 0.67
+  },
+  {
+    "id": "svp-87",
+    "name": "Miraidon ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/87.png",
+      "large": "https://images.pokemontcg.io/svp/87_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 0.87
+  },
+  {
+    "id": "svp-88",
+    "name": "Pikachu",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/88.png",
+      "large": "https://images.pokemontcg.io/svp/88_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "saino misaki",
+    "rarity": "Promo",
+    "price": 6.62
+  },
+  {
+    "id": "svp-89",
+    "name": "Feraligatr",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/89.png",
+      "large": "https://images.pokemontcg.io/svp/89_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Kurata So",
+    "rarity": "Promo",
+    "price": 1.52
+  },
+  {
+    "id": "svp-90",
+    "name": "Metang",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/90.png",
+      "large": "https://images.pokemontcg.io/svp/90_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Uta",
+    "rarity": "Promo",
+    "price": 1.48
+  },
+  {
+    "id": "svp-91",
+    "name": "Koraidon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/91.png",
+      "large": "https://images.pokemontcg.io/svp/91_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Basic",
+      "Ancient"
+    ],
+    "artist": "Anesaki Dynamic",
+    "rarity": "Promo",
+    "price": 1.38
+  },
+  {
+    "id": "svp-92",
+    "name": "Miraidon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/92.png",
+      "large": "https://images.pokemontcg.io/svp/92_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Basic",
+      "Future"
+    ],
+    "artist": "akagi",
+    "rarity": "Promo",
+    "price": 1.35
+  },
+  {
+    "id": "svp-96",
+    "name": "Cyclizar",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/96.png",
+      "large": "https://images.pokemontcg.io/svp/96_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hasuno",
+    "rarity": "Promo",
+    "price": 0.3
+  },
+  {
+    "id": "svp-95",
+    "name": "Cleffa",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/95.png",
+      "large": "https://images.pokemontcg.io/svp/95_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Tika Matsuno",
+    "rarity": "Promo",
+    "price": 0.33
+  },
+  {
+    "id": "svp-93",
+    "name": "Carvanha",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/93.png",
+      "large": "https://images.pokemontcg.io/svp/93_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Tonji Matsuno",
+    "rarity": "Promo",
+    "price": 0.26
+  },
+  {
+    "id": "svp-94",
+    "name": "Bellibolt",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/94.png",
+      "large": "https://images.pokemontcg.io/svp/94_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Mizue",
+    "rarity": "Promo",
+    "price": 0.31
+  },
+  {
+    "id": "svp-97",
+    "name": "Flutter Mane",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/97.png",
+      "large": "https://images.pokemontcg.io/svp/97_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "Ancient"
+    ],
+    "artist": "Takumi Wada",
+    "rarity": "Promo",
+    "price": 17.46
+  },
+  {
+    "id": "svp-98",
+    "name": "Iron Thorns",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/98.png",
+      "large": "https://images.pokemontcg.io/svp/98_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "Future"
+    ],
+    "artist": "Tonji Matsuno",
+    "rarity": "Promo",
+    "price": 13.6
+  },
+  {
+    "id": "svp-124",
+    "name": "Iono",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/124.png",
+      "large": "https://images.pokemontcg.io/svp/124_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Black Star Promos",
+    "releaseDate": "2023/01/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "yuu",
+    "rarity": "Promo",
+    "price": 12.1
+  },
+  {
+    "id": "svp-72",
+    "name": "Great Tusk ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/72.png",
+      "large": "https://images.pokemontcg.io/svp/72_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.49
+  },
+  {
+    "id": "svp-73",
+    "name": "Iron Treads ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/73.png",
+      "large": "https://images.pokemontcg.io/svp/73_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.41
+  },
+  {
+    "id": "svp-74",
+    "name": "Charizard ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/74.png",
+      "large": "https://images.pokemontcg.io/svp/74_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 2",
+      "Tera",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 5.16
+  },
+  {
+    "id": "svp-99",
+    "name": "Shroodle",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/99.png",
+      "large": "https://images.pokemontcg.io/svp/99_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Hitoshi Ariga",
+    "rarity": "Promo",
+    "price": 0.69
+  },
+  {
+    "id": "svp-100",
+    "name": "Grafaiai ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/100.png",
+      "large": "https://images.pokemontcg.io/svp/100_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "aky CG Works",
+    "rarity": "Promo",
+    "price": 0.57
+  },
+  {
+    "id": "svp-103",
+    "name": "Houndoom ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/103.png",
+      "large": "https://images.pokemontcg.io/svp/103_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "PLANETA Tsuji",
+    "rarity": "Promo",
+    "price": 7.41
+  },
+  {
+    "id": "svp-104",
+    "name": "Melmetal ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/104.png",
+      "large": "https://images.pokemontcg.io/svp/104_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "PLANETA Igarashi",
+    "rarity": "Promo",
+    "price": 5.93
+  },
+  {
+    "id": "svp-105",
+    "name": "Armarouge ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/105.png",
+      "large": "https://images.pokemontcg.io/svp/105_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-106",
+    "name": "Pikachu ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/106.png",
+      "large": "https://images.pokemontcg.io/svp/106_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-107",
+    "name": "Mareep",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/107.png",
+      "large": "https://images.pokemontcg.io/svp/107_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-108",
+    "name": "Flaaffy",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/108.png",
+      "large": "https://images.pokemontcg.io/svp/108_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-109",
+    "name": "Ampharos",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/109.png",
+      "large": "https://images.pokemontcg.io/svp/109_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-110",
+    "name": "Darkrai ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/110.png",
+      "large": "https://images.pokemontcg.io/svp/110_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-111",
+    "name": "Pawniard",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/111.png",
+      "large": "https://images.pokemontcg.io/svp/111_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-112",
+    "name": "Bisharp",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/112.png",
+      "large": "https://images.pokemontcg.io/svp/112_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-113",
+    "name": "Kingambit",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/113.png",
+      "large": "https://images.pokemontcg.io/svp/113_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-114",
+    "name": "Picnicker",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/114.png",
+      "large": "https://images.pokemontcg.io/svp/114_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Susumu Maeya",
+    "rarity": "Promo",
+    "price": 0.36
+  },
+  {
+    "id": "svp-115",
+    "name": "Thwackey",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/115.png",
+      "large": "https://images.pokemontcg.io/svp/115_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Uninori",
+    "rarity": "Promo",
+    "price": 0.87
+  },
+  {
+    "id": "svp-116",
+    "name": "Infernape",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/116.png",
+      "large": "https://images.pokemontcg.io/svp/116_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Kazumasa Yasukuni",
+    "rarity": "Promo",
+    "price": 0.98
+  },
+  {
+    "id": "svp-117",
+    "name": "Froslass",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/117.png",
+      "large": "https://images.pokemontcg.io/svp/117_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "mingo",
+    "rarity": "Promo",
+    "price": 1.17
+  },
+  {
+    "id": "svp-118",
+    "name": "Tatsugiri",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/118.png",
+      "large": "https://images.pokemontcg.io/svp/118_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Shimaris Yukichi",
+    "rarity": "Promo",
+    "price": 1.64
+  },
+  {
+    "id": "svp-119",
+    "name": "Toxel",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/119.png",
+      "large": "https://images.pokemontcg.io/svp/119_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Natsumi Yoshida",
+    "rarity": "Promo",
+    "price": 0.29
+  },
+  {
+    "id": "svp-120",
+    "name": "Pupitar",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/120.png",
+      "large": "https://images.pokemontcg.io/svp/120_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Shiburingaru",
+    "rarity": "Promo",
+    "price": 0.37
+  },
+  {
+    "id": "svp-121",
+    "name": "Revavroom",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/121.png",
+      "large": "https://images.pokemontcg.io/svp/121_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Nisota Niso",
+    "rarity": "Promo",
+    "price": 0.43
+  },
+  {
+    "id": "svp-122",
+    "name": "Snorlax",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/122.png",
+      "large": "https://images.pokemontcg.io/svp/122_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Po-Suzuki",
+    "rarity": "Promo",
+    "price": 1.26
+  },
+  {
+    "id": "svp-123",
+    "name": "Teal Mask Ogerpon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/123.png",
+      "large": "https://images.pokemontcg.io/svp/123_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "kodama",
+    "rarity": "Promo",
+    "price": 0.56
+  },
+  {
+    "id": "svp-125",
+    "name": "Armarouge ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/125.png",
+      "large": "https://images.pokemontcg.io/svp/125_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 0.67
+  },
+  {
+    "id": "svp-126",
+    "name": "Palafin ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/126.png",
+      "large": "https://images.pokemontcg.io/svp/126_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1",
+      "ex"
+    ],
+    "rarity": "Promo",
+    "price": 1.21
+  },
+  {
+    "id": "svp-127",
+    "name": "Walking Wake ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/127.png",
+      "large": "https://images.pokemontcg.io/svp/127_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "artist": "takuyoa",
+    "rarity": "Promo",
+    "price": 1.27
+  },
+  {
+    "id": "svp-128",
+    "name": "Iron Leaves ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/128.png",
+      "large": "https://images.pokemontcg.io/svp/128_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 1.09
+  },
+  {
+    "id": "svp-148",
+    "name": "Miraidon",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/148.png",
+      "large": "https://images.pokemontcg.io/svp/148_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-130",
+    "name": "Kingambit",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/130.png",
+      "large": "https://images.pokemontcg.io/svp/130_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "Oku",
+    "rarity": "Promo",
+    "price": 0.67
+  },
+  {
+    "id": "svp-131",
+    "name": "Kingdra ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/131.png",
+      "large": "https://images.pokemontcg.io/svp/131_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "akagi",
+    "rarity": "Promo",
+    "price": 7
+  },
+  {
+    "id": "svp-132",
+    "name": "Greninja ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/132.png",
+      "large": "https://images.pokemontcg.io/svp/132_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 2",
+      "ex"
+    ],
+    "artist": "SIE NANAHARA",
+    "rarity": "Promo",
+    "price": 11.7
+  },
+  {
+    "id": "svp-129",
+    "name": "Pecharunt",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/129.png",
+      "large": "https://images.pokemontcg.io/svp/129_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "nagimiso",
+    "rarity": "Promo",
+    "price": 0.58
+  },
+  {
+    "id": "svp-135",
+    "name": "Drifblim",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/135.png",
+      "large": "https://images.pokemontcg.io/svp/135_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Keisin",
+    "rarity": "Promo",
+    "price": 1.2
+  },
+  {
+    "id": "svp-134",
+    "name": "Crabominable",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/134.png",
+      "large": "https://images.pokemontcg.io/svp/134_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "KEIICHIRO ITO",
+    "rarity": "Promo",
+    "price": 1.89
+  },
+  {
+    "id": "svp-136",
+    "name": "Bouffalant",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/136.png",
+      "large": "https://images.pokemontcg.io/svp/136_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Tonji Matsuno",
+    "rarity": "Promo",
+    "price": 2.77
+  },
+  {
+    "id": "svp-133",
+    "name": "Ledian",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/133.png",
+      "large": "https://images.pokemontcg.io/svp/133_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Natsumi Yoshida",
+    "rarity": "Promo",
+    "price": 1.45
+  },
+  {
+    "id": "svp-137",
+    "name": "Horsea",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/137.png",
+      "large": "https://images.pokemontcg.io/svp/137_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "MAHOU",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-139",
+    "name": "Latias",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/139.png",
+      "large": "https://images.pokemontcg.io/svp/139_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "hncl",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-142",
+    "name": "Victini ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/142.png",
+      "large": "https://images.pokemontcg.io/svp/142_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "Saki Hayashiro",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-140",
+    "name": "Tinkaton",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/140.png",
+      "large": "https://images.pokemontcg.io/svp/140_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Stage 2"
+    ],
+    "artist": "DOM",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-138",
+    "name": "Porygon2",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/138.png",
+      "large": "https://images.pokemontcg.io/svp/138_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "GOSSAN",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-141",
+    "name": "Noctowl",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/141.png",
+      "large": "https://images.pokemontcg.io/svp/141_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Colorless"
+    ],
+    "subType": [
+      "Stage 1"
+    ],
+    "artist": "Tetsu Kayama",
+    "rarity": "Promo",
+    "price": 2.97
+  },
+  {
+    "id": "svp-143",
+    "name": "Miraidon ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/143.png",
+      "large": "https://images.pokemontcg.io/svp/143_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic",
+      "ex"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-144",
+    "name": "Gouging Fire ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/144.png",
+      "large": "https://images.pokemontcg.io/svp/144_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "artist": "PLANETA Mochizuki",
+    "rarity": "Promo",
+    "price": 3.96
+  },
+  {
+    "id": "svp-145",
+    "name": "Raging Bolt ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/145.png",
+      "large": "https://images.pokemontcg.io/svp/145_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Dragon"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Ancient"
+    ],
+    "artist": "PLANETA Mochizuki",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-146",
+    "name": "Iron Crown ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/146.png",
+      "large": "https://images.pokemontcg.io/svp/146_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": 3.67
+  },
+  {
+    "id": "svp-147",
+    "name": "Iron Boulder ex",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/147.png",
+      "large": "https://images.pokemontcg.io/svp/147_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic",
+      "ex",
+      "Future"
+    ],
+    "artist": "5ban Graphics",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "svp-149",
+    "name": "Pecharunt",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/149.png",
+      "large": "https://images.pokemontcg.io/svp/149_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Pokémon",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "artist": "Souichirou Gunjima",
+    "rarity": "Promo",
+    "price": 0.22
+  },
+  {
+    "id": "svp-150",
+    "name": "Paradise Resort",
+    "images": {
+      "small": "https://images.pokemontcg.io/svp/150.png",
+      "large": "https://images.pokemontcg.io/svp/150_hires.png"
+    },
+    "setId": "svp",
+    "setName": "Scarlet & Violet Promos",
+    "releaseDate": "2022/11/01",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Stadium"
+    ],
+    "artist": "Naoki Saito",
+    "rarity": "Promo",
+    "price": null
+  },
+  {
+    "id": "sve-3",
+    "name": "Basic Water Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/3.png",
+      "large": "https://images.pokemontcg.io/sve/3_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-1",
+    "name": "Basic Grass Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/1.png",
+      "large": "https://images.pokemontcg.io/sve/1_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-7",
+    "name": "Basic Darkness Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/7.png",
+      "large": "https://images.pokemontcg.io/sve/7_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-4",
+    "name": "Basic Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/4.png",
+      "large": "https://images.pokemontcg.io/sve/4_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-8",
+    "name": "Basic Metal Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/8.png",
+      "large": "https://images.pokemontcg.io/sve/8_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-2",
+    "name": "Basic Fire Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/2.png",
+      "large": "https://images.pokemontcg.io/sve/2_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-5",
+    "name": "Basic Psychic Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/5.png",
+      "large": "https://images.pokemontcg.io/sve/5_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-6",
+    "name": "Basic Fighting Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/6.png",
+      "large": "https://images.pokemontcg.io/sve/6_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": null,
+    "subType": [
+      "Basic"
+    ],
+    "rarity": "Common",
+    "price": null
+  },
+  {
+    "id": "sve-10",
+    "name": "Basic Fire Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/10.png",
+      "large": "https://images.pokemontcg.io/sve/10_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Fire"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-11",
+    "name": "Basic Water Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/11.png",
+      "large": "https://images.pokemontcg.io/sve/11_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Water"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-12",
+    "name": "Basic Lightning Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/12.png",
+      "large": "https://images.pokemontcg.io/sve/12_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Lightning"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-16",
+    "name": "Basic Metal Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/16.png",
+      "large": "https://images.pokemontcg.io/sve/16_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Metal"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-9",
+    "name": "Basic Grass Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/9.png",
+      "large": "https://images.pokemontcg.io/sve/9_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Grass"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-14",
+    "name": "Basic Fighting Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/14.png",
+      "large": "https://images.pokemontcg.io/sve/14_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Fighting"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-13",
+    "name": "Basic Psychic Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/13.png",
+      "large": "https://images.pokemontcg.io/sve/13_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Psychic"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  },
+  {
+    "id": "sve-15",
+    "name": "Basic Darkness Energy",
+    "images": {
+      "small": "https://images.pokemontcg.io/sve/15.png",
+      "large": "https://images.pokemontcg.io/sve/15_hires.png"
+    },
+    "setId": "sve",
+    "setName": "Scarlet & Violet Energies",
+    "releaseDate": "2023/03/31",
+    "cardType": "Energy",
+    "pokemonType": [
+      "Darkness"
+    ],
+    "subType": [
+      "Basic"
+    ],
+    "price": null
+  }
+]
