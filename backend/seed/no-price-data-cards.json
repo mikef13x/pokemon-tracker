@@ -21,57 +21,6 @@
     "price": 6.19
   },
   {
-    "id": "gym1-97",
-    "name": "Blaine's Quiz #1",
-    "images": {
-      "small": "https://images.pokemontcg.io/gym1/97.png",
-      "large": "https://images.pokemontcg.io/gym1/97_hires.png"
-    },
-    "setId": "gym1",
-    "setName": "Gym Heroes",
-    "releaseDate": "2000/08/14",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": null,
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "price": 8.95
-  },
-  {
-    "id": "gym2-111",
-    "name": "Blaine's Quiz #2",
-    "images": {
-      "small": "https://images.pokemontcg.io/gym2/111.png",
-      "large": "https://images.pokemontcg.io/gym2/111_hires.png"
-    },
-    "setId": "gym2",
-    "setName": "Gym Challenge",
-    "releaseDate": "2000/10/16",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": null,
-    "artist": "Ken Sugimori",
-    "rarity": "Uncommon",
-    "price": 3.77
-  },
-  {
-    "id": "gym2-112",
-    "name": "Blaine's Quiz #3",
-    "images": {
-      "small": "https://images.pokemontcg.io/gym2/112.png",
-      "large": "https://images.pokemontcg.io/gym2/112_hires.png"
-    },
-    "setId": "gym2",
-    "setName": "Gym Challenge",
-    "releaseDate": "2000/10/16",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": null,
-    "artist": "Ken Sugimori",
-    "rarity": "Uncommon",
-    "price": 4.42
-  },
-  {
     "id": "ecard2-50",
     "name": "Golduck",
     "images": {
@@ -702,437 +651,6 @@
     "price": 29.99
   },
   {
-    "id": "xyp-XY67a",
-    "name": "Jirachi",
-    "images": {
-      "small": "https://images.pokemontcg.io/xyp/XY67a.png",
-      "large": "https://images.pokemontcg.io/xyp/XY67a_hires.png"
-    },
-    "setId": "xyp",
-    "setName": "XY Black Star Promos",
-    "releaseDate": "2013/10/12",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Metal"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "Naoki Saito",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "xyp-XY150a",
-    "name": "Yveltal-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xyp/XY150a.png",
-      "large": "https://images.pokemontcg.io/xyp/XY150a_hires.png"
-    },
-    "setId": "xyp",
-    "setName": "XY Black Star Promos",
-    "releaseDate": "2013/10/12",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Darkness"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "Hasuno",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "xyp-XY177a",
-    "name": "Karen",
-    "images": {
-      "small": "https://images.pokemontcg.io/xyp/XY177a.png",
-      "large": "https://images.pokemontcg.io/xyp/XY177a_hires.png"
-    },
-    "setId": "xyp",
-    "setName": "XY Black Star Promos",
-    "releaseDate": "2013/10/12",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Hitoshi Ariga",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "xyp-XY198a",
-    "name": "M Camerupt-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xyp/XY198a.png",
-      "large": "https://images.pokemontcg.io/xyp/XY198a_hires.png"
-    },
-    "setId": "xyp",
-    "setName": "XY Black Star Promos",
-    "releaseDate": "2013/10/12",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fire"
-    ],
-    "subType": [
-      "MEGA",
-      "EX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "xyp-XY200a",
-    "name": "M Sharpedo-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xyp/XY200a.png",
-      "large": "https://images.pokemontcg.io/xyp/XY200a_hires.png"
-    },
-    "setId": "xyp",
-    "setName": "XY Black Star Promos",
-    "releaseDate": "2013/10/12",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Darkness"
-    ],
-    "subType": [
-      "MEGA",
-      "EX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "xy2-88a",
-    "name": "Blacksmith",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy2/88a.png",
-      "large": "https://images.pokemontcg.io/xy2/88a_hires.png"
-    },
-    "setId": "xy2",
-    "setName": "Flashfire",
-    "releaseDate": "2014/05/07",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Masakazu Fukuda",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy3-55a",
-    "name": "M Lucario-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy3/55a.png",
-      "large": "https://images.pokemontcg.io/xy3/55a_hires.png"
-    },
-    "setId": "xy3",
-    "setName": "Furious Fists",
-    "releaseDate": "2014/08/13",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fighting"
-    ],
-    "subType": [
-      "MEGA",
-      "EX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy4-24a",
-    "name": "M Manectric-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy4/24a.png",
-      "large": "https://images.pokemontcg.io/xy4/24a_hires.png"
-    },
-    "setId": "xy4",
-    "setName": "Phantom Forces",
-    "releaseDate": "2014/11/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Lightning"
-    ],
-    "subType": [
-      "MEGA",
-      "EX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy4-65a",
-    "name": "Aegislash-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy4/65a.png",
-      "large": "https://images.pokemontcg.io/xy4/65a_hires.png"
-    },
-    "setId": "xy4",
-    "setName": "Phantom Forces",
-    "releaseDate": "2014/11/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Metal"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "Ryo Ueda",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy6-77a",
-    "name": "Shaymin-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy6/77a.png",
-      "large": "https://images.pokemontcg.io/xy6/77a_hires.png"
-    },
-    "setId": "xy6",
-    "setName": "Roaring Skies",
-    "releaseDate": "2015/05/06",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Colorless"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "TOKIYA",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy6-92a",
-    "name": "Trainers' Mail",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy6/92a.png",
-      "large": "https://images.pokemontcg.io/xy6/92a_hires.png"
-    },
-    "setId": "xy6",
-    "setName": "Roaring Skies",
-    "releaseDate": "2015/05/06",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "Toyste Beach",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "xy7-75a",
-    "name": "Hex Maniac",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy7/75a.png",
-      "large": "https://images.pokemontcg.io/xy7/75a_hires.png"
-    },
-    "setId": "xy7",
-    "setName": "Ancient Origins",
-    "releaseDate": "2015/08/12",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "You Iribi",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy8-146a",
-    "name": "Professor's Letter",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy8/146a.png",
-      "large": "https://images.pokemontcg.io/xy8/146a_hires.png"
-    },
-    "setId": "xy8",
-    "setName": "BREAKthrough",
-    "releaseDate": "2015/11/04",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "Yoshinobu Saito",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "xy9-98a",
-    "name": "Delinquent",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy9/98a.png",
-      "large": "https://images.pokemontcg.io/xy9/98a_hires.png"
-    },
-    "setId": "xy9",
-    "setName": "BREAKpoint",
-    "releaseDate": "2016/02/03",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Megumi Mizutani",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "xy9-98b",
-    "name": "Delinquent",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy9/98b.png",
-      "large": "https://images.pokemontcg.io/xy9/98b_hires.png"
-    },
-    "setId": "xy9",
-    "setName": "BREAKpoint",
-    "releaseDate": "2016/02/03",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Sanosuke Sakuma",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy9-107a",
-    "name": "Professor Sycamore",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy9/107a.png",
-      "large": "https://images.pokemontcg.io/xy9/107a_hires.png"
-    },
-    "setId": "xy9",
-    "setName": "BREAKpoint",
-    "releaseDate": "2016/02/03",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Naoki Saito",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "g1-28a",
-    "name": "Jolteon-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/g1/28a.png",
-      "large": "https://images.pokemontcg.io/g1/28a_hires.png"
-    },
-    "setId": "g1",
-    "setName": "Generations",
-    "releaseDate": "2016/02/22",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Lightning"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "Ryo Ueda",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "g1-73a",
-    "name": "Team Flare Grunt",
-    "images": {
-      "small": "https://images.pokemontcg.io/g1/73a.png",
-      "large": "https://images.pokemontcg.io/g1/73a_hires.png"
-    },
-    "setId": "g1",
-    "setName": "Generations",
-    "releaseDate": "2016/02/22",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Naoki Saito",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy10-43a",
-    "name": "Regirock-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy10/43a.png",
-      "large": "https://images.pokemontcg.io/xy10/43a_hires.png"
-    },
-    "setId": "xy10",
-    "setName": "Fates Collide",
-    "releaseDate": "2016/05/02",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fighting"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "PLANETA",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy10-54a",
-    "name": "Zygarde-EX",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy10/54a.png",
-      "large": "https://images.pokemontcg.io/xy10/54a_hires.png"
-    },
-    "setId": "xy10",
-    "setName": "Fates Collide",
-    "releaseDate": "2016/05/02",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fighting"
-    ],
-    "subType": [
-      "Basic",
-      "EX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "xy10-105a",
-    "name": "N",
-    "images": {
-      "small": "https://images.pokemontcg.io/xy10/105a.png",
-      "large": "https://images.pokemontcg.io/xy10/105a_hires.png"
-    },
-    "setId": "xy10",
-    "setName": "Fates Collide",
-    "releaseDate": "2016/05/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Megumi Mizutani",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
     "id": "xy10-111a",
     "name": "Shauna",
     "images": {
@@ -1149,27 +667,6 @@
     ],
     "artist": "Ken Sugimori",
     "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "sm1-101a",
-    "name": "Eevee",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm1/101a.png",
-      "large": "https://images.pokemontcg.io/sm1/101a_hires.png"
-    },
-    "setId": "sm1",
-    "setName": "Sun & Moon",
-    "releaseDate": "2017/02/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Colorless"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "Saya Tsuruta",
-    "rarity": "Common",
     "price": null
   },
   {
@@ -1335,178 +832,6 @@
     "price": null
   },
   {
-    "id": "smp-SM30a",
-    "name": "Tapu Koko",
-    "images": {
-      "small": "https://images.pokemontcg.io/smp/SM30a.png",
-      "large": "https://images.pokemontcg.io/smp/SM30a_hires.png"
-    },
-    "setId": "smp",
-    "setName": "SM Black Star Promos",
-    "releaseDate": "2017/02/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Lightning"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "kirisAki",
-    "rarity": "Promo",
-    "price": null
-  },
-  {
-    "id": "smp-SM103a",
-    "name": "Lunala-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/smp/SM103a.png",
-      "large": "https://images.pokemontcg.io/smp/SM103a_hires.png"
-    },
-    "setId": "smp",
-    "setName": "SM Black Star Promos",
-    "releaseDate": "2017/02/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Psychic"
-    ],
-    "subType": [
-      "Stage 2",
-      "GX"
-    ],
-    "artist": "PLANETA Igarashi",
-    "rarity": "Promo",
-    "price": 4.24
-  },
-  {
-    "id": "smp-SM104a",
-    "name": "Solgaleo-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/smp/SM104a.png",
-      "large": "https://images.pokemontcg.io/smp/SM104a_hires.png"
-    },
-    "setId": "smp",
-    "setName": "SM Black Star Promos",
-    "releaseDate": "2017/02/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Metal"
-    ],
-    "subType": [
-      "Stage 2",
-      "GX"
-    ],
-    "artist": "PLANETA Igarashi",
-    "rarity": "Promo",
-    "price": 4.41
-  },
-  {
-    "id": "sm2-19a",
-    "name": "Alolan Sandshrew",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/19a.png",
-      "large": "https://images.pokemontcg.io/sm2/19a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Water"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "Hideki Ishikawa",
-    "rarity": "Common",
-    "price": null
-  },
-  {
-    "id": "sm2-21a",
-    "name": "Alolan Vulpix",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/21a.png",
-      "large": "https://images.pokemontcg.io/sm2/21a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Water"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "kirisAki",
-    "rarity": "Common",
-    "price": null
-  },
-  {
-    "id": "sm2-51a",
-    "name": "Garbodor",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/51a.png",
-      "large": "https://images.pokemontcg.io/sm2/51a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Psychic"
-    ],
-    "subType": [
-      "Stage 1"
-    ],
-    "artist": "nagimiso",
-    "rarity": "Rare",
-    "price": null
-  },
-  {
-    "id": "sm2-60a",
-    "name": "Tapu Lele-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/60a.png",
-      "large": "https://images.pokemontcg.io/sm2/60a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Psychic"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
-    "id": "sm2-92a",
-    "name": "Sylveon-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/92a.png",
-      "large": "https://images.pokemontcg.io/sm2/92a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fairy"
-    ],
-    "subType": [
-      "Stage 1",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
     "id": "sm2-121a",
     "name": "Choice Band",
     "images": {
@@ -1541,44 +866,6 @@
       "Item"
     ],
     "artist": "Yoshinobu Saito",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm2-125a",
-    "name": "Field Blower",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/125a.png",
-      "large": "https://images.pokemontcg.io/sm2/125a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "Toyste Beach",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm2-128a",
-    "name": "Max Potion",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm2/128a.png",
-      "large": "https://images.pokemontcg.io/sm2/128a_hires.png"
-    },
-    "setId": "sm2",
-    "setName": "Guardians Rising",
-    "releaseDate": "2017/05/05",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "Toyste Beach",
     "rarity": "Uncommon",
     "price": null
   },
@@ -1645,92 +932,6 @@
     "price": null
   },
   {
-    "id": "sm3-39a",
-    "name": "Tapu Fini-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm3/39a.png",
-      "large": "https://images.pokemontcg.io/sm3/39a_hires.png"
-    },
-    "setId": "sm3",
-    "setName": "Burning Shadows",
-    "releaseDate": "2017/08/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Water"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
-    "id": "sm3-88a",
-    "name": "Darkrai-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm3/88a.png",
-      "large": "https://images.pokemontcg.io/sm3/88a_hires.png"
-    },
-    "setId": "sm3",
-    "setName": "Burning Shadows",
-    "releaseDate": "2017/08/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Darkness"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "PLANETA",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
-    "id": "sm3-92a",
-    "name": "Kirlia",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm3/92a.png",
-      "large": "https://images.pokemontcg.io/sm3/92a_hires.png"
-    },
-    "setId": "sm3",
-    "setName": "Burning Shadows",
-    "releaseDate": "2017/08/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fairy"
-    ],
-    "subType": [
-      "Stage 1"
-    ],
-    "artist": "Anesaki Dynamic",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm3-105a",
-    "name": "Porygon-Z",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm3/105a.png",
-      "large": "https://images.pokemontcg.io/sm3/105a_hires.png"
-    },
-    "setId": "sm3",
-    "setName": "Burning Shadows",
-    "releaseDate": "2017/08/05",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Colorless"
-    ],
-    "subType": [
-      "Stage 2"
-    ],
-    "artist": "Shin Nagasawa",
-    "rarity": "Rare Holo",
-    "price": null
-  },
-  {
     "id": "sm3-112a",
     "name": "Acerola",
     "images": {
@@ -1788,28 +989,6 @@
     "price": null
   },
   {
-    "id": "sm35-10a",
-    "name": "Entei-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm35/10a.png",
-      "large": "https://images.pokemontcg.io/sm35/10a_hires.png"
-    },
-    "setId": "sm35",
-    "setName": "Shining Legends",
-    "releaseDate": "2017/10/06",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fire"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
     "id": "sm35-68a",
     "name": "Ultra Ball",
     "images": {
@@ -1851,50 +1030,6 @@
     "price": null
   },
   {
-    "id": "sm4-63a",
-    "name": "Guzzlord-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm4/63a.png",
-      "large": "https://images.pokemontcg.io/sm4/63a_hires.png"
-    },
-    "setId": "sm4",
-    "setName": "Crimson Invasion",
-    "releaseDate": "2017/11/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Darkness"
-    ],
-    "subType": [
-      "Basic",
-      "GX",
-      "Ultra Beast"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Holo GX",
-    "price": null
-  },
-  {
-    "id": "sm4-84a",
-    "name": "Regigigas",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm4/84a.png",
-      "large": "https://images.pokemontcg.io/sm4/84a_hires.png"
-    },
-    "setId": "sm4",
-    "setName": "Crimson Invasion",
-    "releaseDate": "2017/11/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Colorless"
-    ],
-    "subType": [
-      "Basic"
-    ],
-    "artist": "Hasuno",
-    "rarity": "Rare Holo",
-    "price": null
-  },
-  {
     "id": "sm5-119a",
     "name": "Cynthia",
     "images": {
@@ -1910,44 +1045,6 @@
       "Supporter"
     ],
     "artist": "Hideki Ishikawa",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm5-122a",
-    "name": "Escape Board",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm5/122a.png",
-      "large": "https://images.pokemontcg.io/sm5/122a_hires.png"
-    },
-    "setId": "sm5",
-    "setName": "Ultra Prism",
-    "releaseDate": "2018/02/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Pokémon Tool"
-    ],
-    "artist": "Toyste Beach",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm5-125a",
-    "name": "Lillie",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm5/125a.png",
-      "large": "https://images.pokemontcg.io/sm5/125a_hires.png"
-    },
-    "setId": "sm5",
-    "setName": "Ultra Prism",
-    "releaseDate": "2018/02/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Mana Ibe",
     "rarity": "Uncommon",
     "price": null
   },
@@ -1971,46 +1068,6 @@
     "price": null
   },
   {
-    "id": "sm5-153a",
-    "name": "Lusamine",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm5/153a.png",
-      "large": "https://images.pokemontcg.io/sm5/153a_hires.png"
-    },
-    "setId": "sm5",
-    "setName": "Ultra Prism",
-    "releaseDate": "2018/02/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Mana Ibe",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "sm6-2a",
-    "name": "Alolan Exeggutor",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm6/2a.png",
-      "large": "https://images.pokemontcg.io/sm6/2a_hires.png"
-    },
-    "setId": "sm6",
-    "setName": "Forbidden Light",
-    "releaseDate": "2018/05/04",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Grass"
-    ],
-    "subType": [
-      "Stage 1"
-    ],
-    "artist": "kawayoo",
-    "rarity": "Rare",
-    "price": null
-  },
-  {
     "id": "sm6-102a",
     "name": "Beast Ring",
     "images": {
@@ -2027,65 +1084,6 @@
     ],
     "artist": "5ban Graphics",
     "rarity": "Rare",
-    "price": null
-  },
-  {
-    "id": "sm6-112a",
-    "name": "Metal Frying Pan",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm6/112a.png",
-      "large": "https://images.pokemontcg.io/sm6/112a_hires.png"
-    },
-    "setId": "sm6",
-    "setName": "Forbidden Light",
-    "releaseDate": "2018/05/04",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Pokémon Tool"
-    ],
-    "artist": "Ryo Ueda",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm6-113a",
-    "name": "Mysterious Treasure",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm6/113a.png",
-      "large": "https://images.pokemontcg.io/sm6/113a_hires.png"
-    },
-    "setId": "sm6",
-    "setName": "Forbidden Light",
-    "releaseDate": "2018/05/04",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "Eske Yoshinob",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm7-10a",
-    "name": "Sceptile",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm7/10a.png",
-      "large": "https://images.pokemontcg.io/sm7/10a_hires.png"
-    },
-    "setId": "sm7",
-    "setName": "Celestial Storm",
-    "releaseDate": "2018/08/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Grass"
-    ],
-    "subType": [
-      "Stage 2"
-    ],
-    "artist": "Hitoshi Ariga",
-    "rarity": "Rare Holo",
     "price": null
   },
   {
@@ -2124,49 +1122,6 @@
     ],
     "artist": "You Iribi",
     "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm7-177a",
-    "name": "Rayquaza-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm7/177a.png",
-      "large": "https://images.pokemontcg.io/sm7/177a_hires.png"
-    },
-    "setId": "sm7",
-    "setName": "Celestial Storm",
-    "releaseDate": "2018/08/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Dragon"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "sm75-40a",
-    "name": "Altaria",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm75/40a.png",
-      "large": "https://images.pokemontcg.io/sm75/40a_hires.png"
-    },
-    "setId": "sm75",
-    "setName": "Dragon Majesty",
-    "releaseDate": "2018/09/07",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Dragon"
-    ],
-    "subType": [
-      "Stage 1"
-    ],
-    "artist": "Shin Nagasawa",
-    "rarity": "Rare Holo",
     "price": null
   },
   {
@@ -2246,25 +1201,6 @@
     "price": null
   },
   {
-    "id": "sm8-189a",
-    "name": "Sightseer",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm8/189a.png",
-      "large": "https://images.pokemontcg.io/sm8/189a_hires.png"
-    },
-    "setId": "sm8",
-    "setName": "Lost Thunder",
-    "releaseDate": "2018/11/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Supporter"
-    ],
-    "artist": "Naoki Saito",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
     "id": "sm9-152a",
     "name": "Pokémon Communication",
     "images": {
@@ -2284,47 +1220,6 @@
     "price": null
   },
   {
-    "id": "sm9-152b",
-    "name": "Pokémon Communication",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm9/152b.png",
-      "large": "https://images.pokemontcg.io/sm9/152b_hires.png"
-    },
-    "setId": "sm9",
-    "setName": "Team Up",
-    "releaseDate": "2019/02/01",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "OOYAMA",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm10-195a",
-    "name": "Dedenne-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm10/195a.png",
-      "large": "https://images.pokemontcg.io/sm10/195a_hires.png"
-    },
-    "setId": "sm10",
-    "setName": "Unbroken Bonds",
-    "releaseDate": "2019/05/03",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Lightning"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "kanahei",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
     "id": "sm10-182a",
     "name": "Pokégear 3.0",
     "images": {
@@ -2340,25 +1235,6 @@
       "Item"
     ],
     "artist": "Studio Bora Inc.",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm10-182b",
-    "name": "Pokégear 3.0",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm10/182b.png",
-      "large": "https://images.pokemontcg.io/sm10/182b_hires.png"
-    },
-    "setId": "sm10",
-    "setName": "Unbroken Bonds",
-    "releaseDate": "2019/05/03",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "OOYAMA",
     "rarity": "Uncommon",
     "price": null
   },
@@ -2382,6 +1258,25 @@
     "price": null
   },
   {
+    "id": "sm11-186",
+    "name": "Blaine's Quiz Show",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm11/186.png",
+      "large": "https://images.pokemontcg.io/sm11/186_hires.png"
+    },
+    "setId": "sm11",
+    "setName": "Unified Minds",
+    "releaseDate": "2019/08/02",
+    "cardType": "Trainer",
+    "pokemonType": null,
+    "subType": [
+      "Supporter"
+    ],
+    "artist": "Megumi Mizutani",
+    "rarity": "Uncommon",
+    "price": 0.19
+  },
+  {
     "id": "sm11-191a",
     "name": "Cherish Ball",
     "images": {
@@ -2398,70 +1293,6 @@
     ],
     "artist": "Yoshinobu Saito",
     "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm11-206a",
-    "name": "Reset Stamp",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm11/206a.png",
-      "large": "https://images.pokemontcg.io/sm11/206a_hires.png"
-    },
-    "setId": "sm11",
-    "setName": "Unified Minds",
-    "releaseDate": "2019/08/02",
-    "cardType": "Trainer",
-    "pokemonType": null,
-    "subType": [
-      "Item"
-    ],
-    "artist": "OOYAMA",
-    "rarity": "Uncommon",
-    "price": null
-  },
-  {
-    "id": "sm11-79a",
-    "name": "Jirachi-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm11/79a.png",
-      "large": "https://images.pokemontcg.io/sm11/79a_hires.png"
-    },
-    "setId": "sm11",
-    "setName": "Unified Minds",
-    "releaseDate": "2019/08/02",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Psychic"
-    ],
-    "subType": [
-      "Basic",
-      "GX"
-    ],
-    "artist": "5ban Graphics",
-    "rarity": "Rare Ultra",
-    "price": null
-  },
-  {
-    "id": "sm12-143a",
-    "name": "Togepi & Cleffa & Igglybuff-GX",
-    "images": {
-      "small": "https://images.pokemontcg.io/sm12/143a.png",
-      "large": "https://images.pokemontcg.io/sm12/143a_hires.png"
-    },
-    "setId": "sm12",
-    "setName": "Cosmic Eclipse",
-    "releaseDate": "2019/11/01",
-    "cardType": "Pokémon",
-    "pokemonType": [
-      "Fairy"
-    ],
-    "subType": [
-      "Basic",
-      "TAG TEAM",
-      "GX"
-    ],
-    "artist": "0313",
-    "rarity": "Rare Ultra",
     "price": null
   },
   {
