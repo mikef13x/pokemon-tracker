@@ -171,7 +171,6 @@ const needSuffix = [
   'Choice Band sm2-121',
   'Enhanced Hammer sm2-124',
   'Rescue Stretcher sm2-130',
-  'Metagross GX sm2-157',
   'Charmander sm3-18',
   'Acerola sm3-112',
   'Guzma sm3-115',
@@ -187,10 +186,33 @@ const needSuffix = [
   'Electropower sm8-172',
   'Net Ball sm8-187',
   "Professor Elm's Lecture sm8-188",
-  'Pokémon Communication sm9-152',
-  'Pokégear 3.0 sm10-182',
+  'Pokemon Communication sm9-152',
+  'Pokegear 3.0 sm10-182',
   'Welder sm10-189',
 ];
+
+const smEnergies = {
+  'Grass Energy': '164',
+  'Fire Energy': '165',
+  'Water Energy': '166',
+  'Lightning Energy': '167',
+  'Psychic Energy': '168',
+  'Fighting Energy': '169',
+  'Darkness Energy': '170',
+  'Metal Energy': '171',
+  'Fairy Energy': '172',
+};
+const basicSVEnergies = {
+  'Basic Water Energy': ['3', '11'],
+  'Basic Grass Energy': ['1', '9'],
+  'Basic Darkness Energy': ['7', '15'],
+  'Basic Lightning Energy': ['4', '12'],
+  'Basic Metal Energy': ['8', '16'],
+  'Basic Fire Energy': ['2', '10'],
+  'Basic Psychic Energy': ['5', '13'],
+  'Basic Fighting Energy': ['6', '14'],
+};
+
 // Load setIds.json
 console.log('Loading setIds.json...');
 const setIds = JSON.parse(fs.readFileSync(setIdsFilePath, 'utf8'));
@@ -227,7 +249,10 @@ axios
 
             // Separate product-name into name and setNumber
             let name, setNumber;
-            if (item['product-name'].startsWith("Blaine's Quiz")) {
+            if (
+              item['product-name'].startsWith("Blaine's Quiz") &&
+              item['product-name'] !== "Blaine's Quiz Show #186"
+            ) {
               const parts = item['product-name'].split(' #');
               name = parts.slice(0, 2).join(' #');
               setNumber = parts.slice(2).join(' #');
@@ -355,6 +380,19 @@ axios
             // Check if needSuffix contains the combination of setName and setNumber
             if (needSuffix.includes(`${item['name']} ${item['setId']}`)) {
               item['setId'] += 'a';
+            }
+
+            if (item['setId'] === 'sm1-' && smEnergies[item['name']]) {
+              item['setNumber'] = smEnergies[item['name']];
+              item['setId'] = `sm1-${item['setNumber']}`;
+            }
+
+             // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
+             if (
+              basicSVEnergies[item['name']] &&
+              basicSVEnergies[item['name']].includes(item['setNumber'])
+            ) {
+              item['setId'] = `sve-${item['setNumber']}`;
             }
 
             return item;
