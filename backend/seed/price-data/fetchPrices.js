@@ -14,7 +14,204 @@ const csvFilePath = path.join(__dirname, 'price-guide.csv');
 const jsonFilePath = path.join(__dirname, 'price-guide.json');
 const setIdsFilePath = path.join(__dirname, '../priceChartSetId.json');
 
-const svpCardList = ['Sprigatito [Holo] 1', 'Fuecoco 2', 'Pawmot 6', 'Espathra 10', 'Hawlucha 7', 'Miraidon 13', 'Revavroom 8', 'Spidops 9', 'Arcanine 11', 'Quaxly 3', 'Quaquaval 5', 'Mimikyu ex 4', 'Koraidon 14', 'Dondozo 12', 'Flaaffy 15', 'Lucario ex 17', 'Ampharos ex 16', 'Cyclizar ex 18', 'Pelipper 22', 'Baxcalibur 19', 'Tinkaton 20', 'Murkrow 21', 'Smoliv 23', 'Tinkatink 25', 'Pikachu 27', 'Koraidon ex 29', 'Growlithe 24', 'Varoom 26', 'Miraidon ex 28', 'Chien-Pao ex 30', 'Tinkaton ex 31', 'Annihilape ex 32', 'Palafin 36', 'Cleffa 37', 'Togekiss 38', 'Mawile 39', 'Pawmi 40', 'Paldean Wooper 41', 'Houndstone 42', 'Eevee 43', 'Charmander 44', 'Paradise Resort [Quarter Finalist] 45', 'Meowscarada ex 33', 'Skeledirge ex 34', 'Bulbasaur 46', 'Charmander 47', 'Mewtwo 52', 'Squirtle 48', 'Mew ex 53', 'Greninja ex 54', 'Pikachu 101', 'Quaquaval ex 35', 'Alakazam ex 50', 'Kangaskhan ex 55', 'Zapdos ex 49', 'Snorlax 51', 'Chi-Yu 57', 'Pineco 61', 'Xatu 59', 'Sinistea 62', 'Charizard ex 56', 'Iron Bundle 58', 'Aegislash 60', 'Cetitan 63', 'Greavard 70', 'Scream Tail 65', 'Mimikyu 75', 'Roaring Moon ex 67', 'Arctibax 64', 'Iron Valiant ex 68', 'Iron Bundle 66', 'Fidough 69', 'Maschiff 71', 'Pikachu with Grey Felt Hat 85', 'Oddish 102', 'Sprigatito 76', 'Floragato 77', 'Meowscarada ex 78', 'Fuecoco 79', 'Crocalor 80', 'Skeledirge ex 81', 'Quaxly 82', 'Quaxwell 83', 'Quaquaval ex 84', 'Mabosstiff ex 86', 'Miraidon EX [Jumbo]  ', 'Pikachu 88', 'Feraligatr 89', 'Metang 90', 'Koraidon 91', 'Miraidon 92', 'Cyclizar 96', 'Cleffa 95', 'Carvanha 93', 'Bellibolt 94', 'Flutter Mane 97', 'Iron Thorns 98', 'Iono 124', 'Great Tusk ex 72', 'Iron Treads ex 73', 'Charizard ex 74', 'Shroodle 99', 'Grafaiai Ex 100', 'Houndoom Ex 103', 'Melmetal Ex 104', 'Armarouge Ex 105', 'Pikachu Ex 106', 'Mareep 107', 'Flaaffy 108', 'Ampharos 109', 'Darkrai Ex 110', 'Pawniard 111', 'Bisharp 112', 'Kingambit 113', 'Picnicker 114', 'Thwackey 115', 'Infernape 116', 'Froslass 117', 'Tatsugiri 118', 'Toxel 119', 'Pupitar 120', 'Revavroom 121', 'Snorlax 122', 'Teal Mask Ogerpon 123', 'Armarouge Ex 125', 'Palafin Ex 126', 'Walking Wake Ex 127', 'Iron Leaves Ex 128', 'Miraidon 148', 'Kingambit 130', 'Kingdra Ex 131', 'Greninja Ex 132', 'Pecharunt 129', 'Drifblim 135', 'Crabominable 134', 'Bouffalant 136', 'Ledian 133', 'Horsea 137', 'Latias 139', 'Victini Ex 142', 'Tinkaton 140', 'Porygon2 138', 'Noctowl 141', 'Miraidon Ex 143', 'Gouging Fire Ex 144', 'Raging Bolt Ex 145', 'Iron Crown Ex 146', 'Iron Boulder Ex 147', 'Pecharunt 149', 'Paradise Resort 150'];
+const svpCardList = [
+  'Sprigatito [Holo] 1',
+  'Fuecoco 2',
+  'Pawmot 6',
+  'Espathra 10',
+  'Hawlucha 7',
+  'Miraidon 13',
+  'Revavroom 8',
+  'Spidops 9',
+  'Arcanine 11',
+  'Quaxly 3',
+  'Quaquaval 5',
+  'Mimikyu ex 4',
+  'Koraidon 14',
+  'Dondozo 12',
+  'Flaaffy 15',
+  'Lucario ex 17',
+  'Ampharos ex 16',
+  'Cyclizar ex 18',
+  'Pelipper 22',
+  'Baxcalibur 19',
+  'Tinkaton 20',
+  'Murkrow 21',
+  'Smoliv 23',
+  'Tinkatink 25',
+  'Pikachu [Paldea] 27',
+  'Koraidon ex 29',
+  'Growlithe 24',
+  'Varoom 26',
+  'Miraidon ex 28',
+  'Chien-Pao ex 30',
+  'Tinkaton ex 31',
+  'Annihilape ex 32',
+  'Palafin 36',
+  'Cleffa 37',
+  'Togekiss 38',
+  'Mawile 39',
+  'Pawmi 40',
+  'Paldean Wooper 41',
+  'Houndstone 42',
+  'Eevee 43',
+  'Charmander 44',
+  'Paradise Resort [Quarter Finalist] 45',
+  'Meowscarada ex 33',
+  'Skeledirge ex 34',
+  'Bulbasaur 46',
+  'Charmander 47',
+  'Mewtwo 52',
+  'Squirtle 48',
+  'Mew ex 53',
+  'Greninja ex 54',
+  'Pikachu 101',
+  'Quaquaval ex 35',
+  'Alakazam ex 50',
+  'Kangaskhan ex 55',
+  'Zapdos ex 49',
+  'Snorlax 51',
+  'Chi-Yu 57',
+  'Pineco 61',
+  'Xatu 59',
+  'Sinistea 62',
+  'Charizard ex 56',
+  'Iron Bundle 58',
+  'Aegislash 60',
+  'Cetitan 63',
+  'Greavard 70',
+  'Scream Tail 65',
+  'Mimikyu 75',
+  'Roaring Moon ex 67',
+  'Arctibax 64',
+  'Iron Valiant ex 68',
+  'Iron Bundle 66',
+  'Fidough 69',
+  'Maschiff 71',
+  'Pikachu with Grey Felt Hat 85',
+  'Oddish 102',
+  'Sprigatito 76',
+  'Floragato 77',
+  'Meowscarada ex 78',
+  'Fuecoco 79',
+  'Crocalor 80',
+  'Skeledirge ex 81',
+  'Quaxly 82',
+  'Quaxwell 83',
+  'Quaquaval ex 84',
+  'Mabosstiff ex 86',
+  'Miraidon EX [Jumbo]  ',
+  'Pikachu 88',
+  'Feraligatr 89',
+  'Metang 90',
+  'Koraidon 91',
+  'Miraidon 92',
+  'Cyclizar 96',
+  'Cleffa 95',
+  'Carvanha 93',
+  'Bellibolt 94',
+  'Flutter Mane 97',
+  'Iron Thorns 98',
+  'Iono 124',
+  'Great Tusk ex 72',
+  'Iron Treads ex 73',
+  'Charizard ex 74',
+  'Shroodle 99',
+  'Grafaiai Ex 100',
+  'Houndoom Ex 103',
+  'Melmetal Ex 104',
+  'Armarouge Ex 105',
+  'Pikachu Ex 106',
+  'Mareep 107',
+  'Flaaffy 108',
+  'Ampharos 109',
+  'Darkrai Ex 110',
+  'Pawniard 111',
+  'Bisharp 112',
+  'Kingambit 113',
+  'Picnicker 114',
+  'Thwackey 115',
+  'Infernape 116',
+  'Froslass 117',
+  'Tatsugiri 118',
+  'Toxel 119',
+  'Pupitar 120',
+  'Revavroom 121',
+  'Snorlax 122',
+  'Teal Mask Ogerpon 123',
+  'Armarouge Ex 125',
+  'Palafin Ex 126',
+  'Walking Wake Ex 127',
+  'Iron Leaves Ex 128',
+  'Miraidon 148',
+  'Kingambit 130',
+  'Kingdra Ex 131',
+  'Greninja Ex 132',
+  'Pecharunt 129',
+  'Drifblim 135',
+  'Crabominable 134',
+  'Bouffalant 136',
+  'Ledian 133',
+  'Horsea 137',
+  'Latias 139',
+  'Victini Ex 142',
+  'Tinkaton 140',
+  'Porygon2 138',
+  'Noctowl 141',
+  'Miraidon Ex 143',
+  'Gouging Fire Ex 144',
+  'Raging Bolt Ex 145',
+  'Iron Crown Ex 146',
+  'Iron Boulder Ex 147',
+  'Pecharunt 149',
+  'Paradise Resort 150',
+];
+
+const needSuffix = [
+  'Choice Band sm2-121',
+  'Enhanced Hammer sm2-124',
+  'Rescue Stretcher sm2-130',
+  'Charmander sm3-18',
+  'Acerola sm3-112',
+  'Guzma sm3-115',
+  'Kiawe sm3-116',
+  'Ultra Ball sm35-68',
+  'Zoroark-GX sm35-77',
+  'Cynthia sm5-119',
+  'Volkner sm5-135',
+  'Beast Ring sm6-102',
+  'Acro Bike sm7-123',
+  'Tate & Liza sm7-148',
+  'Fiery Flint sm75-60',
+  'Electropower sm8-172',
+  'Net Ball sm8-187',
+  "Professor Elm's Lecture sm8-188",
+  'Pokemon Communication sm9-152',
+  'Pokegear 3.0 sm10-182',
+  'Welder sm10-189',
+];
+
+const smEnergies = {
+  'Grass Energy': '164',
+  'Fire Energy': '165',
+  'Water Energy': '166',
+  'Lightning Energy': '167',
+  'Psychic Energy': '168',
+  'Fighting Energy': '169',
+  'Darkness Energy': '170',
+  'Metal Energy': '171',
+  'Fairy Energy': '172',
+};
+const basicSVEnergies = {
+  'Basic Water Energy': ['3', '11'],
+  'Basic Grass Energy': ['1', '9'],
+  'Basic Darkness Energy': ['7', '15'],
+  'Basic Lightning Energy': ['4', '12'],
+  'Basic Metal Energy': ['8', '16'],
+  'Basic Fire Energy': ['2', '10'],
+  'Basic Psychic Energy': ['5', '13'],
+  'Basic Fighting Energy': ['6', '14'],
+};
 
 // Load setIds.json
 console.log('Loading setIds.json...');
@@ -39,16 +236,23 @@ axios
           console.log('CSV converted to JSON, processing data...');
           // Filter out entries containing "Pokemon Japanese" in the console-name field
           // and entries containing "[Reverse Holo]" in the name field
-          const filteredJsonObj = jsonObj.filter((item) => !item['console-name'].includes('Pokemon Japanese'));
+          const filteredJsonObj = jsonObj.filter(
+            (item) => !item['console-name'].includes('Pokemon Japanese')
+          );
 
           // Remove the word "Pokemon" from the remaining console-name fields and change the key to setName
           const updatedJsonObj = filteredJsonObj.map((item) => {
-            item['setName'] = item['console-name'].replace('Pokemon', '').trim();
+            item['setName'] = item['console-name']
+              .replace('Pokemon', '')
+              .trim();
             delete item['console-name'];
 
             // Separate product-name into name and setNumber
             let name, setNumber;
-            if (item['product-name'].startsWith("Blaine's Quiz")) {
+            if (
+              item['product-name'].startsWith("Blaine's Quiz") &&
+              item['product-name'] !== "Blaine's Quiz Show #186"
+            ) {
               const parts = item['product-name'].split(' #');
               name = parts.slice(0, 2).join(' #');
               setNumber = parts.slice(2).join(' #');
@@ -56,7 +260,20 @@ axios
               [name, setNumber] = item['product-name'].split(' #');
             }
             item['name'] = name.trim();
-            if (setNumber) {
+
+            // Check if the name contains "Unown" and extract the letter in square brackets
+            const unownMatch = item['name'].match(
+              /Unown \[([A-Z]|Question Mark|Exclamation)\]/i
+            );
+            if (unownMatch) {
+              if (unownMatch[1].toLowerCase() === 'question mark') {
+                item['setNumber'] = '?';
+              } else if (unownMatch[1].toLowerCase() === 'exclamation') {
+                item['setNumber'] = '!';
+              } else {
+                item['setNumber'] = unownMatch[1].toUpperCase();
+              }
+            } else if (setNumber) {
               if (setNumber.endsWith('a')) {
                 item['setNumber'] = setNumber.slice(0, -1).toUpperCase() + 'a';
               } else if (setNumber.endsWith('b')) {
@@ -83,22 +300,48 @@ axios
               if (item['setNumber'].includes('HGSS')) {
                 setPrefix = 'hsp';
               }
-              if ((/^\d+$/.test(item['setNumber']) && item['release-date'] === '2003-10-01') || item['release-date'] === '2005-11-01' || item['release-date'] === '2006-09-01' || item['name'] === 'Pikachu [Holo]') {
+              if (
+                (/^\d+$/.test(item['setNumber']) &&
+                  item['release-date'] === '2003-10-01') ||
+                item['release-date'] === '2005-11-01' ||
+                item['release-date'] === '2006-09-01' ||
+                item['name'] === 'Pikachu [Holo]'
+              ) {
                 setPrefix = 'np';
               }
 
-              if ((/^\d+$/.test(item['setNumber']) && item['release-date'] === '1999-07-01') || ['121772', '88066', '87395', '87416', '87417', '88068', '88069', '85111', '87397', '83648'].includes(item['tcg-id'])) {
+              if (
+                (/^\d+$/.test(item['setNumber']) &&
+                  item['release-date'] === '1999-07-01') ||
+                [
+                  '121772',
+                  '88066',
+                  '87395',
+                  '87416',
+                  '87417',
+                  '88068',
+                  '88069',
+                  '85111',
+                  '87397',
+                  '83648',
+                ].includes(item['tcg-id'])
+              ) {
                 setPrefix = 'basep';
               }
 
-              if (/^\d+$/.test(item['setNumber']) && svpCardList.includes(`${item['name']} ${item['setNumber']}`)) {
+              if (
+                /^\d+$/.test(item['setNumber']) &&
+                svpCardList.includes(`${item['name']} ${item['setNumber']}`)
+              ) {
                 setPrefix = 'svp';
               }
 
               // Set setName to "Pokémon Futsal Collection" if name contains "on the Ball"
 
               // Compare setPrefix to setIds keys and set the value as the item setName
-              const setIdKey = Object.keys(setIds).find((key) => key === setPrefix);
+              const setIdKey = Object.keys(setIds).find(
+                (key) => key === setPrefix
+              );
               if (item['name'].includes('on the Ball')) {
                 item['setName'] = 'Pokémon Futsal Collection';
               } else if (setIdKey) {
@@ -107,7 +350,9 @@ axios
             }
 
             // Add setId if setName matches a value in setIds
-            const setIdKey = Object.keys(setIds).find((key) => setIds[key] === item['setName']);
+            const setIdKey = Object.keys(setIds).find(
+              (key) => setIds[key] === item['setName']
+            );
             if (setIdKey) {
               let prefix = '';
               if (item['setNumber'].startsWith('TG')) {
@@ -117,12 +362,37 @@ axios
               } else if (item['setNumber'].startsWith('SV')) {
                 prefix = 'sv';
               }
-              item['setId'] = `${setIdKey}${prefix ? prefix : ''}-${item['setNumber']}`;
+              item['setId'] = `${setIdKey}${prefix ? prefix : ''}-${
+                item['setNumber']
+              }`;
             }
 
             // Special handling for setNumber starting with "SV"
-            if (item['setNumber'].startsWith('SV') && item['setName'] === 'Hidden Fates') {
+            if (
+              item['setNumber'].startsWith('SV') &&
+              item['setName'] === 'Hidden Fates'
+            ) {
               item['setId'] = `sma-${item['setNumber']}`;
+            } else if (item['setNumber'].startsWith('SWSH')) {
+              item['setId'] = `swshp-${item['setNumber']}`;
+            }
+
+            // Check if needSuffix contains the combination of setName and setNumber
+            if (needSuffix.includes(`${item['name']} ${item['setId']}`)) {
+              item['setId'] += 'a';
+            }
+
+            if (item['setId'] === 'sm1-' && smEnergies[item['name']]) {
+              item['setNumber'] = smEnergies[item['name']];
+              item['setId'] = `sm1-${item['setNumber']}`;
+            }
+
+             // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
+             if (
+              basicSVEnergies[item['name']] &&
+              basicSVEnergies[item['name']].includes(item['setNumber'])
+            ) {
+              item['setId'] = `sve-${item['setNumber']}`;
             }
 
             return item;
@@ -130,8 +400,14 @@ axios
 
           // Write updated JSON to a new file
           console.log('Writing JSON to file...');
-          fs.writeFileSync(jsonFilePath, JSON.stringify(updatedJsonObj, null, 2), 'utf8');
-          console.log('CSV file has been converted to JSON and written to price-guide.json');
+          fs.writeFileSync(
+            jsonFilePath,
+            JSON.stringify(updatedJsonObj, null, 2),
+            'utf8'
+          );
+          console.log(
+            'CSV file has been converted to JSON and written to price-guide.json'
+          );
         })
         .catch((error) => {
           console.error('Error converting CSV to JSON:', error);
