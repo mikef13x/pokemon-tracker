@@ -202,6 +202,7 @@ const smEnergies = {
   'Metal Energy': '171',
   'Fairy Energy': '172',
 };
+
 const basicSVEnergies = {
   'Basic Water Energy': ['3', '11'],
   'Basic Grass Energy': ['1', '9'],
@@ -211,6 +212,79 @@ const basicSVEnergies = {
   'Basic Fire Energy': ['2', '10'],
   'Basic Psychic Energy': ['5', '13'],
   'Basic Fighting Energy': ['6', '14'],
+};
+
+const celebrationsClassic = {
+  Charizard: 'cel25c-4_A',
+  Blastoise: 'cel25c-2_A',
+  Venusaur: 'cel25c-15_A1',
+  'Here Comes Team Rocket': 'cel25c-15_A2',
+  'Claydol [Holo]': 'cel25c-15_A4',
+  "Rocket's Zapdos": 'cel25c-15_A3',
+  'Imposter Professor Oak': 'cel25c-73_A',
+  'Dark Gyarados': 'cel25c-8_A',
+  'Shining Magikarp': 'cel25c-66_A',
+  'Pikachu Birthday': 'cel25c-24_A',
+  Cleffa: 'cel25c-20_A',
+  "Rocket's Admin.": 'cel25c-86_A',
+  Umbreon: 'cel25c-17_A',
+  'Mew EX': 'cel25c-88_A',
+  'Gardevoir EX': 'cel25c-93_A',
+  "Team Magma's Groudon": 'cel25c-9_A',
+  'Luxray GL LV.X': 'cel25c-109_A',
+  'Garchomp C LV.X': 'cel25c-145_A',
+  Reshiram: 'cel25c-113_A',
+  Zekrom: 'cel25c-114_A',
+  'Mewtwo EX': 'cel25c-54_A',
+  'Xerneas EX': 'cel25c-97_A',
+  'Tapu Lele GX': 'cel25c-60_A',
+  Donphan: 'cel25c-107_A',
+  'M Rayquaza EX': 'cel25c-76_A',
+};
+
+const plusleMinunCards = {
+  Beldum: ['tk2a-1'],
+  Electrike: ['tk2a-2'],
+  Grumpig: ['tk2a-3'],
+  Meowth: ['tk2a-4'],
+  Metang: ['tk2a-5'],
+  Plusle: ['tk2a-6'],
+  Spoink: ['tk2a-7'],
+  'Energy Search': ['tk2a-8', 'tk2b-9'],
+  Potion: ['tk2a-9', 'tk2b-10'],
+  "Professor Cozmo's Discovery": ['tk2a-10'],
+  'Lightning Energy': ['tk2a-11', 'tk2b-12'],
+  'Psychic Energy': ['tk2a-12'],
+  Arcanine: ['tk2b-1'],
+  Charmander: ['tk2b-2'],
+  Charmeleon: ['tk2b-3'],
+  Growlithe: ['tk2b-4'],
+  Mareep: ['tk2b-5'],
+  Minun: ['tk2b-6'],
+  Vulpix: ['tk2b-7'],
+  "Celio's Network": ['tk2b-8'],
+  'Fire Energy': ['tk2b-11'],
+};
+
+const latiosLatiasCards = {
+  Bagon: ['tk1a-1'],
+  Combusken: ['tk1a-2'],
+  Delcatty: ['tk1a-3'],
+  Latias: ['tk1a-4'],
+  Numel: ['tk1a-5'],
+  Skitty: ['tk1a-6'],
+  Torchic: ['tk1a-7'],
+  Potion: ['tk1a-8','tk1b-8'],
+  'Energy Search': ['tk1a-9','tk1b-9'],
+  'Fire Energy': ['tk1a-10'],
+  Electrike: ['tk1b-1'],
+  Latios: ['tk1b-2'],
+  Linoone: ['tk1b-3'],
+  Magnemite: ['tk1b-4'],
+  Magneton: ['tk1b-5'],
+  Pikachu: ['tk1b-6'],
+  Zigzagoon: ['tk1b-7'],
+  'Lightning Energy': ['tk1b-10'],
 };
 
 // Load setIds.json
@@ -387,12 +461,54 @@ axios
               item['setId'] = `sm1-${item['setNumber']}`;
             }
 
-             // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
-             if (
+            // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
+            if (
               basicSVEnergies[item['name']] &&
               basicSVEnergies[item['name']].includes(item['setNumber'])
             ) {
               item['setId'] = `sve-${item['setNumber']}`;
+            }
+
+            // Check if setName is "Celebrations" and name matches a key in celebrationsClassic
+            if (
+              item['setName'] === 'Celebrations' &&
+              celebrationsClassic[item['name']]
+            ) {
+              const match = celebrationsClassic[item['name']].match(/-(\d+)_/);
+              if (match && match[1] === item['setNumber']) {
+                item['setName'] = 'Celebrations: Classic Collection';
+                item['setId'] = celebrationsClassic[item['name']];
+              }
+            }
+
+            // Check if setName is "Plusle & Minun" and name matches a key in plusleMinunCards
+            if (
+              item['setName'] === 'Plusle & Minun' &&
+              plusleMinunCards[item['name']]
+            ) {
+              const cardValues = plusleMinunCards[item['name']];
+              for (const value of cardValues) {
+                const match = value.match(/-(\d+)/);
+                if (match && match[1] === item['setNumber']) {
+                  item['setId'] = value;
+                  break;
+                }
+              }
+            }
+
+            // Check if setName is "EX Latias & Latios" and name matches a key in latiosLatiasCards
+            if (
+              item['setName'] === 'EX Latias & Latios' &&
+              latiosLatiasCards[item['name']]
+            ) {
+              const cardValues = latiosLatiasCards[item['name']];
+              for (const value of cardValues) {
+                const match = value.match(/-(\d+)/);
+                if (match && match[1] === item['setNumber']) {
+                  item['setId'] = value;
+                  break;
+                }
+              }
             }
 
             return item;
