@@ -31,11 +31,12 @@ input UpdateCollectionInput {
 }
 
 type Price {
-  psa7: Float
-  psa8: Float
-  psa9: Float
-  psa95: Float
+  grade7: Float
+  grade8: Float
+  grade9: Float
+  grade95: Float
   psa10: Float
+  bgs10: Float
   raw: Float
 }
 
