@@ -67,6 +67,7 @@ async function seedDatabase() {
             bgs95: parsePrice(priceData['box-only-price']),
             psa10: parsePrice(priceData['manual-only-price']),
             bgs10: parsePrice(priceData['bgs-10-price']),
+            cgc10: parsePrice(priceData['condition-17-price']),
             raw: parsePrice(priceData['loose-price']),
           } : {},
         });
