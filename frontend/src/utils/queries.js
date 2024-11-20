@@ -55,11 +55,12 @@ export const GET_COLLECTION = gql`
         rarity
         artist
         prices {
-          psa7
-          psa8
-          psa9
-          psa95
+          grade7
+          grade8
+          grade9
+          grade95
           psa10
+          bgs10
           raw
         }
       }
@@ -88,11 +89,12 @@ export const GET_USER_COLLECTIONS = gql`
         rarity
         artist
         prices {
-          psa7
-          psa8
-          psa9
-          psa95
+          grade7
+          grade8
+          grade9
+          grade95
           psa10
+          bgs10
           raw
         }
       }
@@ -121,11 +123,12 @@ export const GET_USER_MAIN_COLLECTION = gql`
         rarity
         artist
         prices {
-          psa7
-          psa8
-          psa9
-          psa95
+          grade7
+          grade8
+          grade9
+          grade95
           psa10
+          bgs10
           raw
         }
       }
@@ -149,11 +152,12 @@ export const GET_CARDS = gql`
       rarity
       artist
       prices {
-        psa7
-        psa8
-        psa9
-        psa95
+        grade7
+        grade8
+        grade9
+        grade95
         psa10
+        bgs10
         raw
       }
     }
@@ -176,11 +180,12 @@ export const GET_CARD = gql`
       rarity
       artist
       prices {
-        psa7
-        psa8
-        psa9
-        psa95
+        grade7
+        grade8
+        grade9
+        grade95
         psa10
+        bgs10
         raw
       }
     }
@@ -203,11 +208,12 @@ export const GET_CARDS_BY_NAME = gql`
       rarity
       artist
       prices {
-        psa7
-        psa8
-        psa9
-        psa95
+        grade7
+        grade8
+        grade9
+        grade95
         psa10
+        bgs10
         raw
       }
     }
@@ -230,11 +236,12 @@ export const GET_CARDS_BY_SET = gql`
       rarity
       artist
       prices {
-        psa7
-        psa8
-        psa9
-        psa95
+        grade7
+        grade8
+        grade9
+        grade95
         psa10
+        bgs10
         raw
       }
     }
