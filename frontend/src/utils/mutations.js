@@ -93,13 +93,14 @@ export const UPDATE_COLLECTION = gql`
         setId
         setName
         releaseDate
-        prices {
+         prices {
           grade7
           grade8
           grade9
           grade95
           psa10
           bgs10
+          cgc10
           raw
         }
       }
@@ -130,6 +131,7 @@ export const ADD_SET_TO_COLLECTION = gql`
           grade95
           psa10
           bgs10
+          cgc10
           raw
         }
       }

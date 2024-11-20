@@ -61,6 +61,7 @@ export const GET_COLLECTION = gql`
           grade95
           psa10
           bgs10
+          cgc10
           raw
         }
       }
@@ -95,6 +96,7 @@ export const GET_USER_COLLECTIONS = gql`
           grade95
           psa10
           bgs10
+          cgc10
           raw
         }
       }
@@ -129,6 +131,7 @@ export const GET_USER_MAIN_COLLECTION = gql`
           grade95
           psa10
           bgs10
+          cgc10
           raw
         }
       }
@@ -158,6 +161,7 @@ export const GET_CARDS = gql`
         grade95
         psa10
         bgs10
+        cgc10
         raw
       }
     }
@@ -186,6 +190,7 @@ export const GET_CARD = gql`
         grade95
         psa10
         bgs10
+        cgc10
         raw
       }
     }
@@ -214,6 +219,7 @@ export const GET_CARDS_BY_NAME = gql`
         grade95
         psa10
         bgs10
+        cgc10
         raw
       }
     }
@@ -242,6 +248,7 @@ export const GET_CARDS_BY_SET = gql`
         grade95
         psa10
         bgs10
+        cgc10
         raw
       }
     }
