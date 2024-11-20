@@ -1,11 +1,13 @@
 const { Schema, model } = require('mongoose');
 
 const priceSchema = new Schema({
-  psa7: { type: Number },
-  psa8: { type: Number },
-  psa9: { type: Number },
-  psa95: { type: Number },
+  grade7: { type: Number },
+  grade8: { type: Number },
+  grade9: { type: Number },
+  grade95: { type: Number },
   psa10: { type: Number },
+  bgs10: {type: Number },
+  cgc10: { type: Number },
   raw: { type: Number },
 })
 

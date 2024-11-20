@@ -47,7 +47,12 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_CARD = gql`
-  mutation addCard($name: String!, $image: String!, $cardId: String!, $setId: String!) {
+  mutation addCard(
+    $name: String!
+    $image: String!
+    $cardId: String!
+    $setId: String!
+  ) {
     addCard(name: $name, image: $image, cardId: $cardId, setId: $setId) {
       _id
       name
@@ -71,7 +76,10 @@ export const CREATE_COLLECTION = gql`
 `;
 
 export const UPDATE_COLLECTION = gql`
-  mutation updateCollection($collectionId: ID!, $updateData: UpdateCollectionInput!) {
+  mutation updateCollection(
+    $collectionId: ID!
+    $updateData: UpdateCollectionInput!
+  ) {
     updateCollection(collectionId: $collectionId, updateData: $updateData) {
       _id
       collectionName
@@ -85,12 +93,14 @@ export const UPDATE_COLLECTION = gql`
         setId
         setName
         releaseDate
-        prices {
-          psa7
-          psa8
-          psa9
-          psa95
+         prices {
+          grade7
+          grade8
+          grade9
+          grade95
           psa10
+          bgs10
+          cgc10
           raw
         }
       }
@@ -115,11 +125,13 @@ export const ADD_SET_TO_COLLECTION = gql`
         setName
         releaseDate
         prices {
-          psa7
-          psa8
-          psa9
-          psa95
+          grade7
+          grade8
+          grade9
+          grade95
           psa10
+          bgs10
+          cgc10
           raw
         }
       }
