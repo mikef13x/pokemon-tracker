@@ -7,6 +7,7 @@ const priceSchema = new Schema({
   grade95: { type: Number },
   psa10: { type: Number },
   bgs10: {type: Number },
+  cgc10: { type: Number },
   raw: { type: Number },
 })
 

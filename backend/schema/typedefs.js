@@ -37,6 +37,7 @@ type Price {
   grade95: Float
   psa10: Float
   bgs10: Float
+  cgc10: Float
   raw: Float
 }
 
