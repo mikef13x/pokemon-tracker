@@ -34,8 +34,9 @@ import { modalData, WOTCData, EXData, DPData, POPData, PlatinumData, HGSSData, B
 import { keyframes } from "@emotion/react";
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
 import { containerInfo, itemInfo } from '../../utils/framerMotion';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import { select } from 'framer-motion/client';
+import '../../app.css'
 
 
 export default function MainSearch() {
@@ -71,7 +72,7 @@ export default function MainSearch() {
   const [isSetModalSearch, setIsSetModalSearch] = useState(false);
   const [animateSearch, setAnimateSearch] = useState(false);
   const [animationKey, setAnimationKey] = useState(Date.now()); // Unique key for animation
-  
+
   const handleSetsChange = (newSets) => setSelectedSets(newSets);
   const handleCardTypesChange = (newCardTypes) => setSelectedCardTypes(newCardTypes);
   const handlePokemonTypeChange = (newPokemonType) => setSelectedPokemonType(newPokemonType);
@@ -147,14 +148,14 @@ export default function MainSearch() {
   useEffect(() => {
     if (location.state && location.state.artist) {
       setSelectedArtist([location.state.artist]);
-      getCardsByName({ variables: { name: searchValue, filters: {artist: location.state.artist } }});
+      getCardsByName({ variables: { name: searchValue, filters: { artist: location.state.artist } } });
     }
   }, [location.state, getCardsByName]);
 
   useEffect(() => {
     if (location.state && location.state.setId) {
       setSelectedSets([location.state.setId]);
-      getCardsByName({ variables: { name: searchValue, filters: {setId: location.state.setId } }});
+      getCardsByName({ variables: { name: searchValue, filters: { setId: location.state.setId } } });
     }
   }, [location.state, getCardsByName]);
 
@@ -199,8 +200,8 @@ export default function MainSearch() {
         filters.subType = selectedSubtype;
       }
       setSearchInitiated(true);
-      getCardsBySet({variables: {setId: setId, filters:filters}})
-     }, 400)
+      getCardsBySet({ variables: { setId: setId, filters: filters } })
+    }, 400)
   };
 
   const sortedData = fetchedSetData.slice().sort((a, b) => {
@@ -220,7 +221,7 @@ export default function MainSearch() {
     setSortOrder(event.target.value);
     setCurrentPage(1)
     setAnimationKey(Date.now());
-    
+
     if (wrapperRef.current) {
       wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
     }
@@ -261,7 +262,7 @@ export default function MainSearch() {
           filters.subType = selectedSubtype;
         }
         setSearchInitiated(true);
-        getCardsBySet({variables: {setId: currentSetModal, filters:filters}})
+        getCardsBySet({ variables: { setId: currentSetModal, filters: filters } })
       }, 400);
     } else {
       handleSearchButtonClick();
@@ -297,7 +298,7 @@ export default function MainSearch() {
       setFiltersCleared(false);
     }
   }, [filtersCleared]);
-  
+
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -353,7 +354,7 @@ export default function MainSearch() {
       getCardsByName({
         variables: {
           name: searchValue,
-          filters: filters       
+          filters: filters
         },
       }).finally(() => {
         // Any additional logic after the search is complete
@@ -363,9 +364,9 @@ export default function MainSearch() {
 
 
   const handleSearchChange = (event) => {
-    if (event.target.value){
+    if (event.target.value) {
       setSearchValue(event.target.value);
-    } else if (!event.target.value){
+    } else if (!event.target.value) {
       setSearchValue(' ')
     }
   };
@@ -381,7 +382,7 @@ export default function MainSearch() {
       if (wrapperRef.current) {
         wrapperRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the wrapper element to the top
       }
-      
+
       setTimeout(() => {
         setSearchInitiated(true);
         const filters = {};
@@ -407,7 +408,7 @@ export default function MainSearch() {
         getCardsByName({
           variables: {
             name: searchValue,
-            filters: filters       
+            filters: filters
           },
         }).finally(() => {
           // Any additional logic after the search is complete
@@ -430,16 +431,16 @@ export default function MainSearch() {
   }
 `;
 
-//   const slideUp = keyframes`
-//   from {
-//     transform: translateY(0vh);
-//   }
-//   to {
-//     transform: translateY(-31.7vh);
-//   }
-// `;
+  //   const slideUp = keyframes`
+  //   from {
+  //     transform: translateY(0vh);
+  //   }
+  //   to {
+  //     transform: translateY(-31.7vh);
+  //   }
+  // `;
 
-const slideUp = keyframes`
+  const slideUp = keyframes`
   from {
     transform: translateY(35vh);
   }
@@ -450,7 +451,7 @@ const slideUp = keyframes`
   const paginatedData = sortedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 
-  
+
 
   return (
     <>
@@ -499,7 +500,7 @@ const slideUp = keyframes`
             <Box
               sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
 
-<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+              <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
                 <TextField
                   variant="outlined"
                   placeholder="Search for a card..."
@@ -512,7 +513,7 @@ const slideUp = keyframes`
                 />
                 <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px', }}
                   onClick={handleSearchButtonClick}
-                  // disabled={searchValue.trim().length === 0}
+                // disabled={searchValue.trim().length === 0}
                 >
                   <span className="tiny5-regular">Go</span>
                 </Button>
@@ -551,87 +552,87 @@ const slideUp = keyframes`
         ) : (
 
           <>
-          <Box
-            sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
+            <Box
+              sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
 
-<Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
-              <TextField
-                variant="outlined"
-                placeholder="Search for a card..."
-                onChange={handleSearchChange}
-                onKeyDown={handleSearchKeyDown}
-                sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
-                inputProps={{
-                  className: 'poppins-regular', // Add the class to the input element
-                }}
-              />
-              <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px' }}
-                onClick={handleSearchButtonClick}
+              <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+                <TextField
+                  variant="outlined"
+                  placeholder="Search for a card..."
+                  onChange={handleSearchChange}
+                  onKeyDown={handleSearchKeyDown}
+                  sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
+                  inputProps={{
+                    className: 'poppins-regular', // Add the class to the input element
+                  }}
+                />
+                <Button sx={{ width: '60px', height: '60px', borderRadius: '50%', color: 'black', background: 'linear-gradient(to bottom, red 50%, white 50%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid black', marginLeft: '20px' }}
+                  onClick={handleSearchButtonClick}
                 // disabled={searchValue.trim().length === 0}
-              >
-                <span className="tiny5-regular">Go</span>
-              </Button>
-          
+                >
+                  <span className="tiny5-regular">Go</span>
+                </Button>
 
 
-            <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
-            <IconButton
-              //  disabled={true}
-                onClick={handleFilterOpen}
-                color="primary"
-                sx={{
-                  backgroundColor: 'rgba(255,255,255, 0)', color: 'white', marginLeft: '20px', width: '55px', height: '55px',
-                  backdropFilter: 'blur(5px)',
-                }}
-              >
-                <FilterListIcon sx={{ fontSize: 40, color:'rgb(0,0,0,1)' }}  />
-              </IconButton>
-              <IconButton
-                onClick={() => setIsGridView(true)}
-                sx={{ marginRight: '5px' }}   disabled={true}  >
-                 
-                <ViewModuleIcon
-                   sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
-                  color={isGridView ? 'primary' : 'inherit'}
-                />
-              </IconButton>
-              <IconButton onClick={() => setIsGridView(false)}  disabled={true}>
-                <ViewListIcon
-                  sx={{ fontSize: 40, color:'rgb(0,0,0,0)' }} 
-                  color={!isGridView ? 'primary' : 'inherit'}
-                  disabled={true}
-                />
-              </IconButton>
-            
+
+                <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '50px', marginBottom: '18px', }} >
+                  <IconButton
+                    //  disabled={true}
+                    onClick={handleFilterOpen}
+                    color="primary"
+                    sx={{
+                      backgroundColor: 'rgba(255,255,255, 0)', color: 'white', marginLeft: '20px', width: '55px', height: '55px',
+                      backdropFilter: 'blur(5px)',
+                    }}
+                  >
+                    <FilterListIcon sx={{ fontSize: 40, color: 'rgb(0,0,0,1)' }} />
+                  </IconButton>
+                  <IconButton
+                    onClick={() => setIsGridView(true)}
+                    sx={{ marginRight: '5px' }} disabled={true}  >
+
+                    <ViewModuleIcon
+                      sx={{ fontSize: 40, color: 'rgb(0,0,0,0)' }}
+                      color={isGridView ? 'primary' : 'inherit'}
+                    />
+                  </IconButton>
+                  <IconButton onClick={() => setIsGridView(false)} disabled={true}>
+                    <ViewListIcon
+                      sx={{ fontSize: 40, color: 'rgb(0,0,0,0)' }}
+                      color={!isGridView ? 'primary' : 'inherit'}
+                      disabled={true}
+                    />
+                  </IconButton>
+
+                </Box>
+              </Box>
             </Box>
-            </Box>
-          </Box>
-        </>
+          </>
         )}
 
 
 
 
-<Dialog
+        <Dialog
           open={showModal}
           onClose={handleModalClose}
           maxWidth="md"
           fullWidth
-          
-      
+
+
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', backgroundColor:'rgb(40,40,40)' }} >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', backgroundColor: 'rgb(40,40,40)' }} >
             {!isInitialState && (
               <Button onClick={handleBackButtonClick} color="primary">
                 Back
               </Button>
             )}
-            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', color:'white' }} >
+            <DialogTitle sx={{ textAlign: 'center', flex: 1, marginRight: isInitialState ? '0px' : '64px', color: 'white' }} >
               {title}
             </DialogTitle>
           </Box>
           <Divider sx={{ backgroundColor: 'white', height: '0px', width: '100%' }} />
-          <DialogContent sx={{backgroundColor:'rgb(40,40,40)', color: 'white'}}>
+          <DialogContent sx={{ backgroundColor: 'rgb(40,40,40)', color: 'white' }}>
             {loading && <CircularProgress />}
             {error && (
               <Typography color="error">Error: {error.message}</Typography>
@@ -640,7 +641,7 @@ const slideUp = keyframes`
             <Grid container spacing={2}>
               {currentModalData.map((item) => (
                 <Grid item xs={12} sm={6} md={3} key={item.id}>
-                  <Button sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none', color:'white' }}
+                  <Button sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px', width: '100%', height: '100px', textAlign: 'center', textTransform: 'none', color: 'white' }}
                     onClick={(event) => {
                       if (item.name === 'WOTC') {
                         handleButtonClick(WOTCData, 'WOTC Sets');
@@ -690,7 +691,7 @@ const slideUp = keyframes`
             </Grid>
           </DialogContent>
           <Divider sx={{ backgroundColor: 'white', height: '0px', width: '100%' }} />
-          <DialogActions sx={{ justifyContent: 'center', backgroundColor:'rgb(40,40,40)' }}>
+          <DialogActions sx={{ justifyContent: 'center', backgroundColor: 'rgb(40,40,40)' }}>
             <Button
               sx={{ textAlign: 'center' }}
               onClick={handleModalClose}
@@ -702,24 +703,24 @@ const slideUp = keyframes`
         </Dialog>
 
         <FilterModal
-        open={showFilter}
-        onClose={handleFilterClose}
-        selectedSets={selectedSets}
-        handleSetsChange={handleSetsChange}
-        handleFilterClose={handleFilterClose}
-        handleApplyClick={handleApplyClick}
-        selectedCardTypes={selectedCardTypes}
-        handleCardTypesChange={handleCardTypesChange}
-        handleClearFilters={handleClearFilters}
-        handleArtistChange={handleArtistChange}
-        handleSubtypeChange={handleSubtypeChange}
-        handleRarityChange={handleRarityChange}
-        handlePokemonTypeChange={handlePokemonTypeChange}
-        selectedPokemonType={selectedPokemonType}
-        selectedSubtype={selectedSubtype}
-        selectedRarity={selectedRarity}
-        selectedArtist={selectedArtist}
-      />
+          open={showFilter}
+          onClose={handleFilterClose}
+          selectedSets={selectedSets}
+          handleSetsChange={handleSetsChange}
+          handleFilterClose={handleFilterClose}
+          handleApplyClick={handleApplyClick}
+          selectedCardTypes={selectedCardTypes}
+          handleCardTypesChange={handleCardTypesChange}
+          handleClearFilters={handleClearFilters}
+          handleArtistChange={handleArtistChange}
+          handleSubtypeChange={handleSubtypeChange}
+          handleRarityChange={handleRarityChange}
+          handlePokemonTypeChange={handlePokemonTypeChange}
+          selectedPokemonType={selectedPokemonType}
+          selectedSubtype={selectedSubtype}
+          selectedRarity={selectedRarity}
+          selectedArtist={selectedArtist}
+        />
 
       </Paper>
       {searchInitiated ? (
@@ -728,8 +729,9 @@ const slideUp = keyframes`
             {`${sortedData.length} results`}
           </Typography>
           <Box
+            className='custom-scrollbar'
             ref={wrapperRef}
-            sx={{ marginTop: '0px', height: '70vh', width: '100vw', flexDirection: 'column', overflowY: 'auto', padding: '0px', }} >
+            sx={{ marginTop: '0px', height: '70vh', width: '99vw', flexDirection: 'column', overflowY: 'auto', overflowX: 'hidden', padding: '0px', }} >
             {sortedData.length === 0 ? (
               <Typography sx={{ textAlign: 'center', fontSize: '34px', padding: '20px', color: 'white', marginTop: '20px' }} >
                 {/* We could not find anything, please try again */}
@@ -737,13 +739,13 @@ const slideUp = keyframes`
             ) : (
               <>
                 {isGridView ? (
-                   <motion.div
-                  key={animationKey}
-                   variants={containerInfo}
-                   initial="hidden"
-                   animate="visible"
-                 >
-                  <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
+                  <motion.div
+                    key={animationKey}
+                    variants={containerInfo}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <SearchWrapper2 sortedData={paginatedData} handleCardClick={handleCardClick} />
                   </motion.div>
                 ) : (
                   <SearchWrapper sortedData={paginatedData} handleCardClick={handleCardClick} />

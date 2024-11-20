@@ -1,39 +1,66 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    background: fixed;
-    background-image: url('../src/assets/backgroundtest.jpeg');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: fixed;
+  background-image: url('../src/assets/backgroundtest.jpeg');
+  background-size: cover;
+  /* Ensures the image covers the entire background */
+  background-position: center;
+  /* Centers the background image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  overflow-x: 'hidden'
 }
 
 .tiny5-regular {
-    font-family: "Tiny5", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: .9;
   }
 
-  @keyframes fadeInOut {
-    0% {opacity: .9;}
-    50% {opacity: 0.4;}
-    100% {opacity: .9;}
+  50% {
+    opacity: 0.4;
   }
-  
-  .info-box {
-    transform: translateX(-100%);
-    transition: transform 0.5s ease-in-out;
+
+  100% {
+    opacity: .9;
+  }
+}
+
+.info-box {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
 }
 
 .info-box.visible {
-    transform: translateX(0);
+  transform: translateX(0);
+}
+
+.custom-scrollbar {
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+  overflow-x: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+  overflow-x: hidden;
 }
