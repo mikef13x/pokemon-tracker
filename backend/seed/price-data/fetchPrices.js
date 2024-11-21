@@ -511,8 +511,58 @@ axios
               }
             }
 
+            if (item['setId'] === 'ecard2-103a' && item['name'] === 'Porygon') {
+              item['setId'] = 'ecard2-103'
+            }
+  
+            if (item['setId'] === 'ecard2-50a' && item['name'] === 'Golduck') {
+              item['setId'] = 'ecard2-50'
+            }
+
+            if (item['setId'] === 'xy10-111' && item['name'] === 'Shauna') {
+              item['setId'] = 'xy10-111a'
+            }
+
+            // if (item['setId'] === 'sm2-157a' && item['name'] === 'Metagross GX') {
+            //   item['setId'] = 'sm2-157'
+            // }
+
+            // if (item['setName'] === 'Shining Legends' && item['setNumber'] === '77') {
+            //   item['setId'] = 'sm35-77a'
+            // }
+
+            if (item['setId'] === 'sm11-191' && item['name'] === 'Cherish Ball') {
+              item['setId'] = 'sm11-191a'
+            }
+
+            if (item['setId'] === 'swsh45-65 [HOLO]' && item['name'] === 'Ball Guy') {
+              item['setId'] = 'swsh45-65'
+            }
+
+            if (item['setId'] === 'swsh8-185 [HOLO]' && item['name'] === 'Genesect V') {
+              item['setId'] = 'swsh8-185'
+            }
+
+            if (item['setId'] === 'swsh10tg-TG11 [HOLO]' && item['name'] === 'Bronzong') {
+              item['setId'] = 'swsh10tg-TG11'
+            }
+
+            if (item['setId'] === 'swsh12pt5-98 [V HOLO]' && item['name'] === 'Zamazenta V') {
+              item['setId'] = 'swsh12pt5-98'
+            }
+
+            if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
+              item['setId'] = 'svp-30'
+            }
+
+            if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
+              item['setId'] = 'svp-30'
+            }
+
             return item;
           });
+
+       
 
           // Write updated JSON to a new file
           console.log('Writing JSON to file...');
