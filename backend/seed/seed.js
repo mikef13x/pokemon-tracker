@@ -35,12 +35,12 @@ async function seedDatabase() {
         // Find matching price data
         const priceData = priceGuideData.find(price => price.setId === card.id);
        
-        if (priceData) {
-          // console.log(`Found price data for card: ${card.name} (${card.id})`);
-        } else {
-          console.log(`No price data found for card: ${card.name} (${card.id})`);
-          noPriceDataCards.push(card);
-        }
+        // if (priceData) {
+        //   console.log(`Found price data for card: ${card.name} (${card.id})`);
+        // } else {
+        //   console.log(`No price data found for card: ${card.name} (${card.id})`);
+        //   noPriceDataCards.push(card);
+        // }
 
         const parsePrice = (price) => {
           if (!price || typeof price !== 'string') return null;
@@ -82,10 +82,10 @@ async function seedDatabase() {
     console.log(`Added ${addedCards.length} cards`);
     console.log(`Skipped ${skippedCards.length} cards`);
 
-    // Write no price data cards to a file
-    const noPriceDataFilePath = path.join(__dirname, 'no-price-data-cards.json');
-    fs.writeFileSync(noPriceDataFilePath, JSON.stringify(noPriceDataCards, null, 2));
-    console.log(`No price data cards saved to: ${noPriceDataFilePath}`);
+    // // Write no price data cards to a file
+    // const noPriceDataFilePath = path.join(__dirname, 'no-price-data-cards.json');
+    // fs.writeFileSync(noPriceDataFilePath, JSON.stringify(noPriceDataCards, null, 2));
+    // console.log(`No price data cards saved to: ${noPriceDataFilePath}`);
 
     mongoose.connection.close();
   } catch (error) {
