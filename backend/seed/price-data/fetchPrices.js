@@ -523,13 +523,13 @@ axios
               item['setId'] = 'xy10-111a'
             }
 
-            // if (item['setId'] === 'sm2-157a' && item['name'] === 'Metagross GX') {
-            //   item['setId'] = 'sm2-157'
-            // }
+            if (item['setId'] === 'sm2-157a' && item['name'] === 'Metagross GX') {
+              item['setId'] = 'sm2-157'
+            }
 
-            // if (item['setName'] === 'Shining Legends' && item['setNumber'] === '77') {
-            //   item['setId'] = 'sm35-77a'
-            // }
+            if (item['setId'] === 'sm35-77' && item['name'] === 'Zoroark GX') {
+              item['setId'] = 'sm35-77a'
+            }
 
             if (item['setId'] === 'sm11-191' && item['name'] === 'Cherish Ball') {
               item['setId'] = 'sm11-191a'
