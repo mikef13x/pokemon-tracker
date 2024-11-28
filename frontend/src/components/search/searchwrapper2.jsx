@@ -23,6 +23,7 @@ export default function SearchWrapper2({ sortedData, handleCardClick }) {
                     <motion.div key={`${item.id}-${item.price}-${item.name}`} variants={itemInfo}>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                             <SearchResultCard2
+                            id={item.id}
                                 name={item.name}
                                 setName={item.setName}
                                 price={formatPrice(item.prices.raw)}
