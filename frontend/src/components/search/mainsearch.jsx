@@ -553,7 +553,7 @@ export default function MainSearch() {
 
           <>
             <Box
-              sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
+              sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px'}}>
 
               <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
                 <TextField
