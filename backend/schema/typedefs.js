@@ -68,6 +68,20 @@ input CardFiltersInput {
   rarity: [String]
 }
 
+type PriceHistory {
+  id: ID!
+  cardId: String!
+  date: String!
+  grade7: Float
+  grade8: Float
+  grade9: Float
+  grade95: Float
+  psa10: Float
+  bgs10: Float
+  cgc10: Float
+  raw: Float
+}
+
 type Query {
   getUsers: [User]
   getUser(userId: ID!): User
@@ -79,6 +93,7 @@ type Query {
   getCard(cardId: String!): Card
   getCardsBySet(setId: String!, filters: CardFiltersInput): [Card]
   getCardsByName(name: String!, filters: CardFiltersInput): [Card]
+  getPriceHistory(cardId: String!, startDate: String, endDate: String): [PriceHistory!]!
 }
 
 type Mutation {

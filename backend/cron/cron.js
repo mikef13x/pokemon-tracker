@@ -4,20 +4,23 @@ const path = require('path');
 const fs = require('fs');
 const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
-const PriceHistory = require('../models/priceHistory'); 
+const PriceHistory = require('../models/priceHistory');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
 // Schedule a task to run every day at midnight
 cron.schedule('0 0 * * *', async () => {
   console.log('Running a task every day at midnight');
-  
+
   try {
     await mongoose.connect(dbUri);
 
     await fetchPrices();
 
     // Load price-guide.json
-    const priceGuidePath = path.join(__dirname, '../seed/price-data/price-guide.json');
+    const priceGuidePath = path.join(
+      __dirname,
+      '../seed/price-data/price-guide.json'
+    );
     const priceGuideData = JSON.parse(fs.readFileSync(priceGuidePath, 'utf-8'));
 
     const parsePrice = (price) => {
@@ -28,7 +31,9 @@ cron.schedule('0 0 * * *', async () => {
 
     const cards = await Card.find({});
     for (const card of cards) {
-      const priceData = priceGuideData.find(price => price.setId === card.cardId);
+      const priceData = priceGuideData.find(
+        (price) => price.setId === card.cardId
+      );
       if (priceData) {
         card.prices = {
           grade7: parsePrice(priceData['cib-price']),
@@ -41,6 +46,12 @@ cron.schedule('0 0 * * *', async () => {
           raw: parsePrice(priceData['loose-price']),
         };
         await card.save();
+
+        const priceHistoryEntry = new PriceHistory({
+            cardId: card.cardId,
+            ...card.prices,
+          });
+          await priceHistoryEntry.save();
       }
     }
 
