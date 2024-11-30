@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
+const PriceHistory = require('../models/priceHistory'); 
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
 // Schedule a task to run every day at midnight
