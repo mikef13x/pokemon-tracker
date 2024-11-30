@@ -57,6 +57,7 @@ type Card {
   rarity: String
   priceHistory: [PriceHistory]
   monthlyAverages: [MonthlyAverage]
+  weeklyAverages: [WeeklyAverage]
 }
 
 input CardFiltersInput {
@@ -71,8 +72,6 @@ input CardFiltersInput {
 }
 
 type PriceHistory {
-  id: ID!
-  cardId: String!
   date: String!
   grade7: Float
   grade8: Float
@@ -96,6 +95,18 @@ type MonthlyAverage {
   rawAvg: Float
 }
 
+type WeeklyAverage {
+  week: String!
+  grade7Avg: Float
+  grade8Avg: Float
+  grade9Avg: Float
+  grade95Avg: Float
+  psa10Avg: Float
+  bgs10Avg: Float
+  cgc10Avg: Float
+  rawAvg: Float
+}
+
 type Query {
   getUsers: [User]
   getUser(userId: ID!): User
@@ -107,7 +118,6 @@ type Query {
   getCard(cardId: String!): Card
   getCardsBySet(setId: String!, filters: CardFiltersInput): [Card]
   getCardsByName(name: String!, filters: CardFiltersInput): [Card]
-  getPriceHistory(cardId: String!, startDate: String, endDate: String): [PriceHistory!]!
 }
 
 type Mutation {
@@ -115,7 +125,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: [String], subType: [String], artist: String, prices: [PriceInput], rarity: String, priceHistory: [PriceInput], monthlyAverages: [MonthlyAverageInput]): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: [String], subType: [String], artist: String, prices: [PriceInput], rarity: String, priceHistory: [PriceInput], monthlyAverages: [MonthlyAverageInput], weeklyAverages: [WeeklyAverageInput]): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
@@ -133,6 +143,18 @@ input PriceInput {
 
 input MonthlyAverageInput {
   month: String!
+  grade7Avg: Float
+  grade8Avg: Float
+  grade9Avg: Float
+  grade95Avg: Float
+  psa10Avg: Float
+  bgs10Avg: Float
+  cgc10Avg: Float
+  rawAvg: Float
+}
+
+input WeeklyAverageInput {
+  week: String!
   grade7Avg: Float
   grade8Avg: Float
   grade9Avg: Float

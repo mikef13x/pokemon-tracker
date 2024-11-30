@@ -6,7 +6,67 @@ const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
-cron.schedule('*/5 * * * *', async () => {  // Run at midnight every day
+const calculateWeeklyAverages = (priceHistory) => {
+  const weeklyData = priceHistory.reduce((acc, entry) => {
+    const weekStart = new Date(entry.date);
+    weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of the week (Sunday)
+    const week = weekStart.toISOString().slice(0, 10); // Format "YYYY-MM-DD"
+
+    if (!acc[week]) acc[week] = { count: 0, totals: {} };
+
+    // Sum the values for each entry in the week, excluding null values
+    for (const key of Object.keys(entry)) {
+      if (key !== 'date' && entry[key] !== null) {
+        acc[week].totals[key] = (acc[week].totals[key] || 0) + entry[key];
+      }
+    }
+    acc[week].count += 1;
+    return acc;
+  }, {});
+
+  return Object.keys(weeklyData).map((week) => {
+    const data = weeklyData[week];
+    const averages = {};
+
+    // Calculate average for each key (e.g., grade7Avg)
+    for (const key of Object.keys(data.totals)) {
+      averages[key + 'Avg'] = data.totals[key] / data.count;
+    }
+
+    return { week, ...averages };
+  });
+};
+
+const calculateMonthlyAverages = (priceHistory) => {
+  const monthlyData = priceHistory.reduce((acc, entry) => {
+    const month = entry.date.toISOString().slice(0, 7); // Format "YYYY-MM"
+
+    if (!acc[month]) acc[month] = { count: 0, totals: {} };
+
+    // Sum the values for each entry in the month, excluding null values
+    for (const key of Object.keys(entry)) {
+      if (key !== 'date' && entry[key] !== null) {
+        acc[month].totals[key] = (acc[month].totals[key] || 0) + entry[key];
+      }
+    }
+    acc[month].count += 1;
+    return acc;
+  }, {});
+
+  return Object.keys(monthlyData).map((month) => {
+    const data = monthlyData[month];
+    const averages = {};
+
+    // Calculate average for each key (e.g., grade7Avg)
+    for (const key of Object.keys(data.totals)) {
+      averages[key + 'Avg'] = data.totals[key] / data.count;
+    }
+
+    return { month, ...averages };
+  });
+};
+
+cron.schedule('*/10 * * * *', async () => {
   console.log('Running scheduled task');
 
   try {
@@ -51,58 +111,25 @@ cron.schedule('*/5 * * * *', async () => {  // Run at midnight every day
         raw: parsePrice(priceData['loose-price']),
       };
 
-      card.prices = dailyPrices;
-      card.priceHistory.push({
+      const priceHistoryEntry = {
         date: new Date(),
         ...dailyPrices,
-      });
+      };
 
-      // Delete old daily price data (older than 14 days)
-      const twoWeeksAgo = new Date();
-      twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
-      card.priceHistory = card.priceHistory.filter(
-        (entry) => entry.date > twoWeeksAgo
-      );
+      card.priceHistory.push(priceHistoryEntry);
 
-      // Calculate and update monthly averages
-      const monthlyData = card.priceHistory.reduce((acc, entry) => {
-        const month = entry.date.toISOString().slice(0, 7);  // Format "YYYY-MM"
-        if (!acc[month]) acc[month] = { count: 0, totals: {} };
+      // Calculate weekly and monthly averages
+      card.weeklyAverages = calculateWeeklyAverages(card.priceHistory);
+      card.monthlyAverages = calculateMonthlyAverages(card.priceHistory);
 
-        for (const key of Object.keys(entry)) {
-          if (key !== 'date') {
-            acc[month].totals[key] = (acc[month].totals[key] || 0) + entry[key];
-          }
-        }
-        acc[month].count += 1;
-        return acc;
-      }, {});
-
-      const monthlyAverages = Object.keys(monthlyData).map((month) => {
-        const data = monthlyData[month];
-        const averages = {};
-
-        for (const key of Object.keys(data.totals)) {
-          averages[key + 'Avg'] = data.totals[key] / data.count;
-        }
-
-        return { month, ...averages };
-      });
-
-      card.monthlyAverages = monthlyAverages;
-
-      // Save the updated card document
+      // Save updated card document
       await card.save();
-
+      console.log(`Updated card: ${card.cardId}`);
     }
 
-    console.log('Card prices updated');
   } catch (error) {
-    console.error('Error processing cron job', error);
+    console.error('Error during scheduled task:', error);
   } finally {
-    mongoose.connection.close();
-    console.log('Database connection closed');
+    mongoose.disconnect();
   }
 });
-
-console.log('Cron job scheduled');

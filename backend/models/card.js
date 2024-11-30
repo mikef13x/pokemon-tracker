@@ -12,6 +12,42 @@ const priceSchema = new Schema({
   raw: { type: Number },
 });
 
+const priceHistorySchema = new Schema({
+  date: { type: Date, required: true },
+  grade7: { type: Number, default: null },
+  grade8: { type: Number, default: null },
+  grade9: { type: Number, default: null },
+  bgs95: { type: Number, default: null },
+  psa10: { type: Number, default: null },
+  bgs10: { type: Number, default: null },
+  cgc10: { type: Number, default: null },
+  raw: { type: Number, default: null },
+},)
+
+const monthlyAveragesSchema = new Schema({
+  month: { type: String, required: true },
+  grade7Avg: { type: Number, default: null },
+  grade8Avg: { type: Number, default: null },
+  grade9Avg: { type: Number, default: null },
+  bgs95Avg: { type: Number, default: null },
+  psa10Avg: { type: Number, default: null },
+  bgs10Avg: { type: Number, default: null },
+  cgc10Avg: { type: Number, default: null },
+  rawAvg: { type: Number, default: null },
+});
+
+const weeklyAveragesSchema = new Schema({
+  week: { type: String, required: true },
+  grade7Avg: { type: Number, default: null },
+  grade8Avg: { type: Number, default: null },
+  grade9Avg: { type: Number, default: null },
+  bgs95Avg: { type: Number, default: null },
+  psa10Avg: { type: Number, default: null },
+  bgs10Avg: { type: Number, default: null },
+  cgc10Avg: { type: Number, default: null },
+  rawAvg: { type: Number, default: null },
+});
+
 // Schema for Card model
 const cardSchema = new Schema({
   name: { type: String, required: true },
@@ -24,34 +60,11 @@ const cardSchema = new Schema({
   pokemonType: [{ type: String }],
   subType: [{ type: String }],
   artist: { type: String },
-  prices: priceSchema,  // Stores current prices
+  prices: priceSchema,
   rarity: { type: String },
-
-  // Stores daily prices
-  priceHistory: [{
-    date: { type: Date, required: true }, // Date of the daily price entry
-    grade7: { type: Number },
-    grade8: { type: Number },
-    grade9: { type: Number },
-    grade95: { type: Number },
-    psa10: { type: Number },
-    bgs10: { type: Number },
-    cgc10: { type: Number },
-    raw: { type: Number },
-  }],
-
-  // Stores monthly average prices
-  monthlyAverages: [{
-    month: { type: String, required: true },  // Format: "YYYY-MM"
-    grade7Avg: { type: Number },
-    grade8Avg: { type: Number },
-    grade9Avg: { type: Number },
-    grade95Avg: { type: Number },
-    psa10Avg: { type: Number },
-    bgs10Avg: { type: Number },
-    cgc10Avg: { type: Number },
-    rawAvg: { type: Number },
-  }],
+  priceHistory: [priceHistorySchema],
+  weeklyAverages: [weeklyAveragesSchema],
+  monthlyAverages: [monthlyAveragesSchema],
 });
 
 const Card = model('Card', cardSchema);
