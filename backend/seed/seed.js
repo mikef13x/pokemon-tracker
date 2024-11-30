@@ -3,10 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
+const fetchPrices = require('./price-data/fetchPrices');
+
 
 async function seedDatabase() {
   try {
     await mongoose.connect(dbUri);
+
+    await fetchPrices();
 
     await Card.collection.drop();
     console.log('Card collection dropped');
@@ -34,13 +38,6 @@ async function seedDatabase() {
 
         // Find matching price data
         const priceData = priceGuideData.find(price => price.setId === card.id);
-       
-        // if (priceData) {
-        //   console.log(`Found price data for card: ${card.name} (${card.id})`);
-        // } else {
-        //   console.log(`No price data found for card: ${card.name} (${card.id})`);
-        //   noPriceDataCards.push(card);
-        // }
 
         const parsePrice = (price) => {
           if (!price || typeof price !== 'string') return null;

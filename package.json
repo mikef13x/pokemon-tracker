@@ -20,6 +20,7 @@
         "cors": "^2.8.5",
         "csvtojson": "^2.0.10",
         "framer-motion": "^11.11.10",
+        "node-cron": "^3.0.3",
         "nodemon": "^3.1.4",
         "react-chartjs-2": "^5.2.0"
     }

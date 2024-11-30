@@ -292,297 +292,297 @@ console.log('Loading setIds.json...');
 const setIds = JSON.parse(fs.readFileSync(setIdsFilePath, 'utf8'));
 
 // Fetch the CSV file and save it
-console.log('Fetching CSV file...');
-axios
-  .get(csvUrl, { responseType: 'stream' })
-  .then((response) => {
+const fetchPrices = async () => {
+  console.log('Fetching CSV file...');
+  try {
+    const response = await axios.get(csvUrl, { responseType: 'stream' });
     console.log('CSV file fetched, saving to file...');
     const writer = fs.createWriteStream(csvFilePath);
     response.data.pipe(writer);
-    writer.on('finish', () => {
+    writer.on('finish', async () => {
       console.log('CSV file has been downloaded and saved.');
 
       // Convert CSV to JSON
       console.log('Converting CSV to JSON...');
-      csv()
-        .fromFile(csvFilePath)
-        .then((jsonObj) => {
-          console.log('CSV converted to JSON, processing data...');
-          // Filter out entries containing "Pokemon Japanese" in the console-name field
-          // and entries containing "[Reverse Holo]" in the name field
-          const filteredJsonObj = jsonObj.filter(
-            (item) => !item['console-name'].includes('Pokemon Japanese')
+      try {
+        const jsonObj = await csv().fromFile(csvFilePath);
+        console.log('CSV converted to JSON, processing data...');
+        // Filter out entries containing "Pokemon Japanese" in the console-name field
+        // and entries containing "[Reverse Holo]" in the name field
+        const filteredJsonObj = jsonObj.filter(
+          (item) => !item['console-name'].includes('Pokemon Japanese')
+        );
+
+        // Remove the word "Pokemon" from the remaining console-name fields and change the key to setName
+        const updatedJsonObj = filteredJsonObj.map((item) => {
+          item['setName'] = item['console-name']
+            .replace('Pokemon', '')
+            .trim();
+          delete item['console-name'];
+
+          // Separate product-name into name and setNumber
+          let name, setNumber;
+          if (
+            item['product-name'].startsWith("Blaine's Quiz") &&
+            item['product-name'] !== "Blaine's Quiz Show #186"
+          ) {
+            const parts = item['product-name'].split(' #');
+            name = parts.slice(0, 2).join(' #');
+            setNumber = parts.slice(2).join(' #');
+          } else {
+            [name, setNumber] = item['product-name'].split(' #');
+          }
+          item['name'] = name.trim();
+
+          // Check if the name contains "Unown" and extract the letter in square brackets
+          const unownMatch = item['name'].match(
+            /Unown \[([A-Z]|Question Mark|Exclamation)\]/i
           );
+          if (unownMatch) {
+            if (unownMatch[1].toLowerCase() === 'question mark') {
+              item['setNumber'] = '?';
+            } else if (unownMatch[1].toLowerCase() === 'exclamation') {
+              item['setNumber'] = '!';
+            } else {
+              item['setNumber'] = unownMatch[1].toUpperCase();
+            }
+          } else if (setNumber) {
+            if (setNumber.endsWith('a')) {
+              item['setNumber'] = setNumber.slice(0, -1).toUpperCase() + 'a';
+            } else if (setNumber.endsWith('b')) {
+              item['setNumber'] = setNumber.slice(0, -1).toUpperCase() + 'b';
+            } else {
+              item['setNumber'] = setNumber.trim().toUpperCase();
+            }
+          } else {
+            item['setNumber'] = '';
+          }
+          delete item['product-name'];
 
-          // Remove the word "Pokemon" from the remaining console-name fields and change the key to setName
-          const updatedJsonObj = filteredJsonObj.map((item) => {
-            item['setName'] = item['console-name']
-              .replace('Pokemon', '')
-              .trim();
-            delete item['console-name'];
+          // Remove leading zero from setNumber if it starts with a zero
+          item['setNumber'] = item['setNumber'].replace(/^0+/, '');
 
-            // Separate product-name into name and setNumber
-            let name, setNumber;
+          // Special handling for "Promo" setName
+          if (item['setName'] === 'Promo') {
+            const firstLettersMatch = item['setNumber'].match(/^[A-Z]+/);
+            let setPrefix;
+            if (firstLettersMatch) {
+              const firstLetters = firstLettersMatch[0].toLowerCase();
+              setPrefix = `${firstLetters}p`;
+            }
+            if (item['setNumber'].includes('HGSS')) {
+              setPrefix = 'hsp';
+            }
             if (
-              item['product-name'].startsWith("Blaine's Quiz") &&
-              item['product-name'] !== "Blaine's Quiz Show #186"
+              (/^\d+$/.test(item['setNumber']) &&
+                item['release-date'] === '2003-10-01') ||
+              item['release-date'] === '2005-11-01' ||
+              item['release-date'] === '2006-09-01' ||
+              item['name'] === 'Pikachu [Holo]'
             ) {
-              const parts = item['product-name'].split(' #');
-              name = parts.slice(0, 2).join(' #');
-              setNumber = parts.slice(2).join(' #');
-            } else {
-              [name, setNumber] = item['product-name'].split(' #');
-            }
-            item['name'] = name.trim();
-
-            // Check if the name contains "Unown" and extract the letter in square brackets
-            const unownMatch = item['name'].match(
-              /Unown \[([A-Z]|Question Mark|Exclamation)\]/i
-            );
-            if (unownMatch) {
-              if (unownMatch[1].toLowerCase() === 'question mark') {
-                item['setNumber'] = '?';
-              } else if (unownMatch[1].toLowerCase() === 'exclamation') {
-                item['setNumber'] = '!';
-              } else {
-                item['setNumber'] = unownMatch[1].toUpperCase();
-              }
-            } else if (setNumber) {
-              if (setNumber.endsWith('a')) {
-                item['setNumber'] = setNumber.slice(0, -1).toUpperCase() + 'a';
-              } else if (setNumber.endsWith('b')) {
-                item['setNumber'] = setNumber.slice(0, -1).toUpperCase() + 'b';
-              } else {
-                item['setNumber'] = setNumber.trim().toUpperCase();
-              }
-            } else {
-              item['setNumber'] = '';
-            }
-            delete item['product-name'];
-
-            // Remove leading zero from setNumber if it starts with a zero
-            item['setNumber'] = item['setNumber'].replace(/^0+/, '');
-
-            // Special handling for "Promo" setName
-            if (item['setName'] === 'Promo') {
-              const firstLettersMatch = item['setNumber'].match(/^[A-Z]+/);
-              let setPrefix;
-              if (firstLettersMatch) {
-                const firstLetters = firstLettersMatch[0].toLowerCase();
-                setPrefix = `${firstLetters}p`;
-              }
-              if (item['setNumber'].includes('HGSS')) {
-                setPrefix = 'hsp';
-              }
-              if (
-                (/^\d+$/.test(item['setNumber']) &&
-                  item['release-date'] === '2003-10-01') ||
-                item['release-date'] === '2005-11-01' ||
-                item['release-date'] === '2006-09-01' ||
-                item['name'] === 'Pikachu [Holo]'
-              ) {
-                setPrefix = 'np';
-              }
-
-              if (
-                (/^\d+$/.test(item['setNumber']) &&
-                  item['release-date'] === '1999-07-01') ||
-                [
-                  '121772',
-                  '88066',
-                  '87395',
-                  '87416',
-                  '87417',
-                  '88068',
-                  '88069',
-                  '85111',
-                  '87397',
-                  '83648',
-                ].includes(item['tcg-id'])
-              ) {
-                setPrefix = 'basep';
-              }
-
-              if (
-                /^\d+$/.test(item['setNumber']) &&
-                svpCardList.includes(`${item['name']} ${item['setNumber']}`)
-              ) {
-                setPrefix = 'svp';
-              }
-
-              // Set setName to "Pokémon Futsal Collection" if name contains "on the Ball"
-
-              // Compare setPrefix to setIds keys and set the value as the item setName
-              const setIdKey = Object.keys(setIds).find(
-                (key) => key === setPrefix
-              );
-              if (item['name'].includes('on the Ball')) {
-                item['setName'] = 'Pokémon Futsal Collection';
-              } else if (setIdKey) {
-                item['setName'] = setIds[setIdKey];
-              }
+              setPrefix = 'np';
             }
 
-            // Add setId if setName matches a value in setIds
+            if (
+              (/^\d+$/.test(item['setNumber']) &&
+                item['release-date'] === '1999-07-01') ||
+              [
+                '121772',
+                '88066',
+                '87395',
+                '87416',
+                '87417',
+                '88068',
+                '88069',
+                '85111',
+                '87397',
+                '83648',
+              ].includes(item['tcg-id'])
+            ) {
+              setPrefix = 'basep';
+            }
+
+            if (
+              /^\d+$/.test(item['setNumber']) &&
+              svpCardList.includes(`${item['name']} ${item['setNumber']}`)
+            ) {
+              setPrefix = 'svp';
+            }
+
+            // Set setName to "Pokémon Futsal Collection" if name contains "on the Ball"
+
+            // Compare setPrefix to setIds keys and set the value as the item setName
             const setIdKey = Object.keys(setIds).find(
-              (key) => setIds[key] === item['setName']
+              (key) => key === setPrefix
             );
-            if (setIdKey) {
-              let prefix = '';
-              if (item['setNumber'].startsWith('TG')) {
-                prefix = 'tg';
-              } else if (item['setNumber'].startsWith('GG')) {
-                prefix = 'gg';
-              } else if (item['setNumber'].startsWith('SV')) {
-                prefix = 'sv';
-              }
-              item['setId'] = `${setIdKey}${prefix ? prefix : ''}-${
-                item['setNumber']
-              }`;
+            if (item['name'].includes('on the Ball')) {
+              item['setName'] = 'Pokémon Futsal Collection';
+            } else if (setIdKey) {
+              item['setName'] = setIds[setIdKey];
             }
+          }
 
-            // Special handling for setNumber starting with "SV"
-            if (
-              item['setNumber'].startsWith('SV') &&
-              item['setName'] === 'Hidden Fates'
-            ) {
-              item['setId'] = `sma-${item['setNumber']}`;
-            } else if (item['setNumber'].startsWith('SWSH')) {
-              item['setId'] = `swshp-${item['setNumber']}`;
+          // Add setId if setName matches a value in setIds
+          const setIdKey = Object.keys(setIds).find(
+            (key) => setIds[key] === item['setName']
+          );
+          if (setIdKey) {
+            let prefix = '';
+            if (item['setNumber'].startsWith('TG')) {
+              prefix = 'tg';
+            } else if (item['setNumber'].startsWith('GG')) {
+              prefix = 'gg';
+            } else if (item['setNumber'].startsWith('SV')) {
+              prefix = 'sv';
             }
+            item['setId'] = `${setIdKey}${prefix ? prefix : ''}-${
+              item['setNumber']
+            }`;
+          }
 
-            // Check if needSuffix contains the combination of setName and setNumber
-            if (needSuffix.includes(`${item['name']} ${item['setId']}`)) {
-              item['setId'] += 'a';
+          // Special handling for setNumber starting with "SV"
+          if (
+            item['setNumber'].startsWith('SV') &&
+            item['setName'] === 'Hidden Fates'
+          ) {
+            item['setId'] = `sma-${item['setNumber']}`;
+          } else if (item['setNumber'].startsWith('SWSH')) {
+            item['setId'] = `swshp-${item['setNumber']}`;
+          }
+
+          // Check if needSuffix contains the combination of setName and setNumber
+          if (needSuffix.includes(`${item['name']} ${item['setId']}`)) {
+            item['setId'] += 'a';
+          }
+
+          if (item['setId'] === 'sm1-' && smEnergies[item['name']]) {
+            item['setNumber'] = smEnergies[item['name']];
+            item['setId'] = `sm1-${item['setNumber']}`;
+          }
+
+          // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
+          if (
+            basicSVEnergies[item['name']] &&
+            basicSVEnergies[item['name']].includes(item['setNumber'])
+          ) {
+            item['setId'] = `sve-${item['setNumber']}`;
+          }
+
+          // Check if setName is "Celebrations" and name matches a key in celebrationsClassic
+          if (
+            item['setName'] === 'Celebrations' &&
+            celebrationsClassic[item['name']]
+          ) {
+            const match = celebrationsClassic[item['name']].match(/-(\d+)_/);
+            if (match && match[1] === item['setNumber']) {
+              item['setName'] = 'Celebrations: Classic Collection';
+              item['setId'] = celebrationsClassic[item['name']];
             }
+          }
 
-            if (item['setId'] === 'sm1-' && smEnergies[item['name']]) {
-              item['setNumber'] = smEnergies[item['name']];
-              item['setId'] = `sm1-${item['setNumber']}`;
-            }
-
-            // Check if name matches a key in basicSVEnergies and setNumber matches any value in the array
-            if (
-              basicSVEnergies[item['name']] &&
-              basicSVEnergies[item['name']].includes(item['setNumber'])
-            ) {
-              item['setId'] = `sve-${item['setNumber']}`;
-            }
-
-            // Check if setName is "Celebrations" and name matches a key in celebrationsClassic
-            if (
-              item['setName'] === 'Celebrations' &&
-              celebrationsClassic[item['name']]
-            ) {
-              const match = celebrationsClassic[item['name']].match(/-(\d+)_/);
+          // Check if setName is "Plusle & Minun" and name matches a key in plusleMinunCards
+          if (
+            item['setName'] === 'Plusle & Minun' &&
+            plusleMinunCards[item['name']]
+          ) {
+            const cardValues = plusleMinunCards[item['name']];
+            for (const value of cardValues) {
+              const match = value.match(/-(\d+)/);
               if (match && match[1] === item['setNumber']) {
-                item['setName'] = 'Celebrations: Classic Collection';
-                item['setId'] = celebrationsClassic[item['name']];
+                item['setId'] = value;
+                break;
               }
             }
+          }
 
-            // Check if setName is "Plusle & Minun" and name matches a key in plusleMinunCards
-            if (
-              item['setName'] === 'Plusle & Minun' &&
-              plusleMinunCards[item['name']]
-            ) {
-              const cardValues = plusleMinunCards[item['name']];
-              for (const value of cardValues) {
-                const match = value.match(/-(\d+)/);
-                if (match && match[1] === item['setNumber']) {
-                  item['setId'] = value;
-                  break;
-                }
+          // Check if setName is "EX Latias & Latios" and name matches a key in latiosLatiasCards
+          if (
+            item['setName'] === 'EX Latias & Latios' &&
+            latiosLatiasCards[item['name']]
+          ) {
+            const cardValues = latiosLatiasCards[item['name']];
+            for (const value of cardValues) {
+              const match = value.match(/-(\d+)/);
+              if (match && match[1] === item['setNumber']) {
+                item['setId'] = value;
+                break;
               }
             }
+          }
 
-            // Check if setName is "EX Latias & Latios" and name matches a key in latiosLatiasCards
-            if (
-              item['setName'] === 'EX Latias & Latios' &&
-              latiosLatiasCards[item['name']]
-            ) {
-              const cardValues = latiosLatiasCards[item['name']];
-              for (const value of cardValues) {
-                const match = value.match(/-(\d+)/);
-                if (match && match[1] === item['setNumber']) {
-                  item['setId'] = value;
-                  break;
-                }
-              }
-            }
-
-            if (item['setId'] === 'ecard2-103a' && item['name'] === 'Porygon') {
-              item['setId'] = 'ecard2-103'
-            }
+          if (item['setId'] === 'ecard2-103a' && item['name'] === 'Porygon') {
+            item['setId'] = 'ecard2-103'
+          }
   
-            if (item['setId'] === 'ecard2-50a' && item['name'] === 'Golduck') {
-              item['setId'] = 'ecard2-50'
-            }
+          if (item['setId'] === 'ecard2-50a' && item['name'] === 'Golduck') {
+            item['setId'] = 'ecard2-50'
+          }
 
-            if (item['setId'] === 'xy10-111' && item['name'] === 'Shauna') {
-              item['setId'] = 'xy10-111a'
-            }
+          if (item['setId'] === 'xy10-111' && item['name'] === 'Shauna') {
+            item['setId'] = 'xy10-111a'
+          }
 
-            if (item['setId'] === 'sm2-157a' && item['name'] === 'Metagross GX') {
-              item['setId'] = 'sm2-157'
-            }
+          if (item['setId'] === 'sm2-157a' && item['name'] === 'Metagross GX') {
+            item['setId'] = 'sm2-157'
+          }
 
-            if (item['setId'] === 'sm35-77' && item['name'] === 'Zoroark GX') {
-              item['setId'] = 'sm35-77a'
-            }
+          if (item['setId'] === 'sm35-77' && item['name'] === 'Zoroark GX') {
+            item['setId'] = 'sm35-77a'
+          }
 
-            if (item['setId'] === 'sm11-191' && item['name'] === 'Cherish Ball') {
-              item['setId'] = 'sm11-191a'
-            }
+          if (item['setId'] === 'sm11-191' && item['name'] === 'Cherish Ball') {
+            item['setId'] = 'sm11-191a'
+          }
 
-            if (item['setId'] === 'swsh45-65 [HOLO]' && item['name'] === 'Ball Guy') {
-              item['setId'] = 'swsh45-65'
-            }
+          if (item['setId'] === 'swsh45-65 [HOLO]' && item['name'] === 'Ball Guy') {
+            item['setId'] = 'swsh45-65'
+          }
 
-            if (item['setId'] === 'swsh8-185 [HOLO]' && item['name'] === 'Genesect V') {
-              item['setId'] = 'swsh8-185'
-            }
+          if (item['setId'] === 'swsh8-185 [HOLO]' && item['name'] === 'Genesect V') {
+            item['setId'] = 'swsh8-185'
+          }
 
-            if (item['setId'] === 'swsh10tg-TG11 [HOLO]' && item['name'] === 'Bronzong') {
-              item['setId'] = 'swsh10tg-TG11'
-            }
+          if (item['setId'] === 'swsh10tg-TG11 [HOLO]' && item['name'] === 'Bronzong') {
+            item['setId'] = 'swsh10tg-TG11'
+          }
 
-            if (item['setId'] === 'swsh12pt5-98 [V HOLO]' && item['name'] === 'Zamazenta V') {
-              item['setId'] = 'swsh12pt5-98'
-            }
+          if (item['setId'] === 'swsh12pt5-98 [V HOLO]' && item['name'] === 'Zamazenta V') {
+            item['setId'] = 'swsh12pt5-98'
+          }
 
-            if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
-              item['setId'] = 'svp-30'
-            }
+          if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
+            item['setId'] = 'svp-30'
+          }
 
-            if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
-              item['setId'] = 'svp-30'
-            }
+          if (item['setNumber'] === 'SVP030' && item['name'] === 'Chien-Pao ex') {
+            item['setId'] = 'svp-30'
+          }
 
-            return item;
-          });
-
-       
-
-          // Write updated JSON to a new file
-          console.log('Writing JSON to file...');
-          fs.writeFileSync(
-            jsonFilePath,
-            JSON.stringify(updatedJsonObj, null, 2),
-            'utf8'
-          );
-          console.log(
-            'CSV file has been converted to JSON and written to price-guide.json'
-          );
-        })
-        .catch((error) => {
-          console.error('Error converting CSV to JSON:', error);
+          return item;
         });
+
+        // Write updated JSON to a new file
+        console.log('Writing JSON to file...');
+        fs.writeFileSync(
+          jsonFilePath,
+          JSON.stringify(updatedJsonObj, null, 2),
+          'utf8'
+        );
+        console.log(
+          'CSV file has been converted to JSON and written to price-guide.json'
+        );
+      } catch (error) {
+        console.error('Error converting CSV to JSON:', error);
+      }
     });
     writer.on('error', (error) => {
       console.error('Error writing CSV file:', error);
     });
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error('Error fetching CSV file:', error);
-  });
+  }
+};
+
+// fetchPrices(); 
+
+module.exports = fetchPrices;
