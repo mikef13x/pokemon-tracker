@@ -55,6 +55,8 @@ type Card {
   releaseDate: String
   prices: Price
   rarity: String
+  priceHistory: [PriceHistory]
+  monthlyAverages: [MonthlyAverage]
 }
 
 input CardFiltersInput {
@@ -82,6 +84,18 @@ type PriceHistory {
   raw: Float
 }
 
+type MonthlyAverage {
+  month: String!
+  grade7Avg: Float
+  grade8Avg: Float
+  grade9Avg: Float
+  grade95Avg: Float
+  psa10Avg: Float
+  bgs10Avg: Float
+  cgc10Avg: Float
+  rawAvg: Float
+}
+
 type Query {
   getUsers: [User]
   getUser(userId: ID!): User
@@ -101,7 +115,7 @@ type Mutation {
   login(username: String!, password: String!): Auth
   removeUser(userId: ID!): User
   updateUser(userId: ID!, updateData: UpdateUserInput!): User
-  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: [String], subType: [String], artist: String, prices: [PriceInput], rarity: String): Card
+  addCard(name: String!, image: String!, cardId: String!, setId: String!, setName: String, releaseDate: String, cardType: String, pokemonType: [String], subType: [String], artist: String, prices: [PriceInput], rarity: String, priceHistory: [PriceInput], monthlyAverages: [MonthlyAverageInput]): Card
   createCollection(userId: ID!, collectionName: String!): Collection
   updateCollection(collectionId: ID!, updateData: UpdateCollectionInput!): Collection
   deleteCollection(collectionId: ID!): Collection
@@ -115,6 +129,18 @@ input PriceInput {
   psa95: Float
   psa10: Float
   raw: Float
+}
+
+input MonthlyAverageInput {
+  month: String!
+  grade7Avg: Float
+  grade8Avg: Float
+  grade9Avg: Float
+  grade95Avg: Float
+  psa10Avg: Float
+  bgs10Avg: Float
+  cgc10Avg: Float
+  rawAvg: Float
 }
 `;
 

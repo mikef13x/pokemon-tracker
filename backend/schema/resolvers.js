@@ -227,6 +227,17 @@ const resolvers = {
         throw new Error('Failed to get cards by name');
       }
     },
+
+    async getPriceHistory(_, { cardId, startDate, endDate }) {
+      const query = { cardId };
+      if (startDate || endDate) {
+        query.date = {};
+        if (startDate) query.date.$gte = new Date(startDate);
+        if (endDate) query.date.$lte = new Date(endDate);
+      }
+
+      return PriceHistory.find(query).sort({ date: 1 }); 
+    },
   },
   Mutation: {
     createUser: async (_, { username, email, password }) => {
