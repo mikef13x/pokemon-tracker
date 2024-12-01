@@ -6,130 +6,117 @@ const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
-const calculateWeeklyAverages = (priceHistory) => {
-  const weeklyData = priceHistory.reduce((acc, entry) => {
-    const weekStart = new Date(entry.date);
-    weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of the week (Sunday)
-    const week = weekStart.toISOString().slice(0, 10); // Format "YYYY-MM-DD"
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-    if (!acc[week]) acc[week] = { count: 0, totals: {} };
-
-    // Sum the values for each entry in the week, excluding null values
-    for (const key of Object.keys(entry)) {
-      if (key !== 'date' && entry[key] !== null) {
-        acc[week].totals[key] = (acc[week].totals[key] || 0) + entry[key];
-      }
-    }
-    acc[week].count += 1;
-    return acc;
-  }, {});
-
-  return Object.keys(weeklyData).map((week) => {
-    const data = weeklyData[week];
-    const averages = {};
-
-    // Calculate average for each key (e.g., grade7Avg)
-    for (const key of Object.keys(data.totals)) {
-      averages[key + 'Avg'] = data.totals[key] / data.count;
-    }
-
-    return { week, ...averages };
-  });
-};
-
-const calculateMonthlyAverages = (priceHistory) => {
-  const monthlyData = priceHistory.reduce((acc, entry) => {
-    const month = entry.date.toISOString().slice(0, 7); // Format "YYYY-MM"
-
-    if (!acc[month]) acc[month] = { count: 0, totals: {} };
-
-    // Sum the values for each entry in the month, excluding null values
-    for (const key of Object.keys(entry)) {
-      if (key !== 'date' && entry[key] !== null) {
-        acc[month].totals[key] = (acc[month].totals[key] || 0) + entry[key];
-      }
-    }
-    acc[month].count += 1;
-    return acc;
-  }, {});
-
-  return Object.keys(monthlyData).map((month) => {
-    const data = monthlyData[month];
-    const averages = {};
-
-    // Calculate average for each key (e.g., grade7Avg)
-    for (const key of Object.keys(data.totals)) {
-      averages[key + 'Avg'] = data.totals[key] / data.count;
-    }
-
-    return { month, ...averages };
-  });
-};
-
-cron.schedule('*/10 * * * *', async () => {
-  console.log('Running scheduled task');
-
+cron.schedule('0 0 * * *', async () => {
   try {
-    await mongoose.connect(dbUri);
-
-    // Fetch the latest prices
+    // Fetch prices
     await fetchPrices();
 
-    const priceGuidePath = path.join(
-      __dirname,
-      '../seed/price-data/price-guide.json'
-    );
-    const priceGuideData = JSON.parse(fs.readFileSync(priceGuidePath, 'utf-8'));
+    // Read the fetched prices from the JSON file
+    const prices = JSON.parse(fs.readFileSync(path.join(__dirname, '../seed/price-data/price-guide.json'), 'utf8'));
 
-    const parsePrice = (price) => {
-      if (!price || typeof price !== 'string') return null;
-      const parsed = parseFloat(price.replace('$', '').replace(',', ''));
-      return isNaN(parsed) ? null : parsed;
-    };
+    for (const priceData of prices) {
+      const card = await Card.findOne({ cardId: priceData.cardId });
 
-    // Iterate over all cards
-    const cards = await Card.find({});
-    for (const card of cards) {
-      const priceData = priceGuideData.find(
-        (price) => price.setId === card.cardId
-      );
+      if (card) {
+        // Helper function to convert price strings to numbers
+        const convertPrice = (price) => parseFloat(price.replace(/[^0-9.-]+/g, ""));
 
-      if (!priceData) {
-        console.log(`No price data found for cardId: ${card.cardId}`);
-        continue;
+        // Update card prices
+        card.prices = {
+          grade7: convertPrice(priceData['cib-price']),
+          grade8: convertPrice(priceData['new-price']),
+          grade9: convertPrice(priceData['graded-price']),
+          bgs95: convertPrice(priceData['box-only-price']),
+          psa10: convertPrice(priceData['manual-only-price']),
+          bgs10: convertPrice(priceData['bgs-10-price']),
+          cgc10: convertPrice(priceData['condition-17-price']),
+          raw: convertPrice(priceData['loose-price']),
+        };
+
+        // Add to price history
+        card.priceHistory.push({
+          date: new Date(),
+          grade7: convertPrice(priceData['cib-price']),
+          grade8: convertPrice(priceData['new-price']),
+          grade9: convertPrice(priceData['graded-price']),
+          bgs95: convertPrice(priceData['box-only-price']),
+          psa10: convertPrice(priceData['manual-only-price']),
+          bgs10: convertPrice(priceData['bgs-10-price']),
+          cgc10: convertPrice(priceData['condition-17-price']),
+          raw: convertPrice(priceData['loose-price']),
+        });
+
+        console.log(`Updated price history for card: ${card.cardId}`);
+
+        // Calculate weekly averages
+        const oneWeekAgo = new Date();
+        oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+        const weeklyPrices = card.priceHistory.filter(entry => entry.date >= oneWeekAgo);
+
+        if (weeklyPrices.length > 0) {
+          const weeklyAverages = {
+            week: `${oneWeekAgo.toISOString().split('T')[0]} - ${new Date().toISOString().split('T')[0]}`,
+            grade7Avg: weeklyPrices.reduce((sum, entry) => sum + entry.grade7, 0) / weeklyPrices.length,
+            grade8Avg: weeklyPrices.reduce((sum, entry) => sum + entry.grade8, 0) / weeklyPrices.length,
+            grade9Avg: weeklyPrices.reduce((sum, entry) => sum + entry.grade9, 0) / weeklyPrices.length,
+            bgs95Avg: weeklyPrices.reduce((sum, entry) => sum + entry.bgs95, 0) / weeklyPrices.length,
+            psa10Avg: weeklyPrices.reduce((sum, entry) => sum + entry.psa10, 0) / weeklyPrices.length,
+            bgs10Avg: weeklyPrices.reduce((sum, entry) => sum + entry.bgs10, 0) / weeklyPrices.length,
+            cgc10Avg: weeklyPrices.reduce((sum, entry) => sum + entry.cgc10, 0) / weeklyPrices.length,
+            rawAvg: weeklyPrices.reduce((sum, entry) => sum + entry.raw, 0) / weeklyPrices.length,
+          };
+
+          card.weeklyAverages.push(weeklyAverages);
+          console.log(`Updated weekly averages for card: ${card.cardId}`);
+        }
+
+        // Calculate monthly averages
+        const oneMonthAgo = new Date();
+        oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+        const monthlyPrices = card.weeklyAverages.filter(entry => new Date(entry.week.split(' - ')[1]) >= oneMonthAgo);
+
+        if (monthlyPrices.length > 0) {
+          const monthlyAverages = {
+            month: `${oneMonthAgo.toISOString().split('T')[0]} - ${new Date().toISOString().split('T')[0]}`,
+            grade7Avg: monthlyPrices.reduce((sum, entry) => sum + entry.grade7Avg, 0) / monthlyPrices.length,
+            grade8Avg: monthlyPrices.reduce((sum, entry) => sum + entry.grade8Avg, 0) / monthlyPrices.length,
+            grade9Avg: monthlyPrices.reduce((sum, entry) => sum + entry.grade9Avg, 0) / monthlyPrices.length,
+            bgs95Avg: monthlyPrices.reduce((sum, entry) => sum + entry.bgs95Avg, 0) / monthlyPrices.length,
+            psa10Avg: monthlyPrices.reduce((sum, entry) => sum + entry.psa10Avg, 0) / monthlyPrices.length,
+            bgs10Avg: monthlyPrices.reduce((sum, entry) => sum + entry.bgs10Avg, 0) / monthlyPrices.length,
+            cgc10Avg: monthlyPrices.reduce((sum, entry) => sum + entry.cgc10Avg, 0) / monthlyPrices.length,
+            rawAvg: monthlyPrices.reduce((sum, entry) => sum + entry.rawAvg, 0) / monthlyPrices.length,
+          };
+
+          card.monthlyAverages.push(monthlyAverages);
+          console.log(`Updated monthly averages for card: ${card.cardId}`);
+        }
+
+        // Delete old price histories
+        const twoWeeksAgo = new Date();
+        twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+        card.priceHistory = card.priceHistory.filter(entry => entry.date >= twoWeeksAgo);
+
+        // Delete old weekly averages
+        const fiveWeeksAgo = new Date();
+        fiveWeeksAgo.setDate(fiveWeeksAgo.getDate() - 35);
+        card.weeklyAverages = card.weeklyAverages.filter(entry => new Date(entry.week.split(' - ')[1]) >= fiveWeeksAgo);
+
+        // Delete old monthly averages
+        const oneYearAgo = new Date();
+        oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+        card.monthlyAverages = card.monthlyAverages.filter(entry => new Date(entry.month.split(' - ')[1]) >= oneYearAgo);
+
+        // Save the updated card
+        await card.save();
+        console.log(`Card saved: ${card.cardId}`);
       }
-
-      // Parse and save daily prices
-      const dailyPrices = {
-        grade7: parsePrice(priceData['cib-price']),
-        grade8: parsePrice(priceData['new-price']),
-        grade9: parsePrice(priceData['graded-price']),
-        bgs95: parsePrice(priceData['box-only-price']),
-        psa10: parsePrice(priceData['manual-only-price']),
-        bgs10: parsePrice(priceData['bgs-10-price']),
-        cgc10: parsePrice(priceData['condition-17-price']),
-        raw: parsePrice(priceData['loose-price']),
-      };
-
-      const priceHistoryEntry = {
-        date: new Date(),
-        ...dailyPrices,
-      };
-
-      card.priceHistory.push(priceHistoryEntry);
-
-      // Calculate weekly and monthly averages
-      card.weeklyAverages = calculateWeeklyAverages(card.priceHistory);
-      card.monthlyAverages = calculateMonthlyAverages(card.priceHistory);
-
-      // Save updated card document
-      await card.save();
-      console.log(`Updated card: ${card.cardId}`);
     }
 
+    console.log('Prices updated successfully');
   } catch (error) {
-    console.error('Error during scheduled task:', error);
-  } finally {
-    mongoose.disconnect();
+    console.error('Error updating prices:', error);
   }
 });
