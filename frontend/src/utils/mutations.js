@@ -93,7 +93,7 @@ export const UPDATE_COLLECTION = gql`
         setId
         setName
         releaseDate
-         prices {
+        prices {
           grade7
           grade8
           grade9
@@ -102,6 +102,39 @@ export const UPDATE_COLLECTION = gql`
           bgs10
           cgc10
           raw
+        }
+        priceHistory {
+          date
+          grade7
+          grade8
+          grade9
+          grade95
+          psa10
+          bgs10
+          cgc10
+          raw
+        }
+        monthlyAverages {
+          month
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
+        weeklyAverages {
+          week
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
         }
       }
       isMain
@@ -133,6 +166,39 @@ export const ADD_SET_TO_COLLECTION = gql`
           bgs10
           cgc10
           raw
+        }
+        priceHistory {
+          date
+          grade7
+          grade8
+          grade9
+          grade95
+          psa10
+          bgs10
+          cgc10
+          raw
+        }
+        monthlyAverages {
+          month
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
+        weeklyAverages {
+          week
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
         }
       }
       isMain

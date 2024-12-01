@@ -64,6 +64,39 @@ export const GET_COLLECTION = gql`
           cgc10
           raw
         }
+        priceHistory {
+          date
+          grade7
+          grade8
+          grade9
+          grade95
+          psa10
+          bgs10
+          cgc10
+          raw
+        }
+        monthlyAverages {
+          month
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
+        weeklyAverages {
+          week
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
       }
     }
   }
@@ -98,6 +131,39 @@ export const GET_USER_COLLECTIONS = gql`
           bgs10
           cgc10
           raw
+        }
+        priceHistory {
+          date
+          grade7
+          grade8
+          grade9
+          grade95
+          psa10
+          bgs10
+          cgc10
+          raw
+        }
+        monthlyAverages {
+          month
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
+        weeklyAverages {
+          week
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
         }
       }
     }
@@ -134,6 +200,39 @@ export const GET_USER_MAIN_COLLECTION = gql`
           cgc10
           raw
         }
+        priceHistory {
+          date
+          grade7
+          grade8
+          grade9
+          grade95
+          psa10
+          bgs10
+          cgc10
+          raw
+        }
+        monthlyAverages {
+          month
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
+        weeklyAverages {
+          week
+          grade7Avg
+          grade8Avg
+          grade9Avg
+          grade95Avg
+          psa10Avg
+          bgs10Avg
+          cgc10Avg
+          rawAvg
+        }
       }
     }
   }
@@ -164,6 +263,39 @@ export const GET_CARDS = gql`
         cgc10
         raw
       }
+      priceHistory {
+        date
+        grade7
+        grade8
+        grade9
+        grade95
+        psa10
+        bgs10
+        cgc10
+        raw
+      }
+      monthlyAverages {
+        month
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
+      weeklyAverages {
+        week
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
     }
   }
 `;
@@ -192,6 +324,39 @@ export const GET_CARD = gql`
         bgs10
         cgc10
         raw
+      }
+      priceHistory {
+        date
+        grade7
+        grade8
+        grade9
+        grade95
+        psa10
+        bgs10
+        cgc10
+        raw
+      }
+      monthlyAverages {
+        month
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
+      weeklyAverages {
+        week
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
       }
     }
   }
@@ -222,6 +387,39 @@ export const GET_CARDS_BY_NAME = gql`
         cgc10
         raw
       }
+      priceHistory {
+        date
+        grade7
+        grade8
+        grade9
+        grade95
+        psa10
+        bgs10
+        cgc10
+        raw
+      }
+      monthlyAverages {
+        month
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
+      weeklyAverages {
+        week
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
     }
   }
 `;
@@ -250,6 +448,39 @@ export const GET_CARDS_BY_SET = gql`
         bgs10
         cgc10
         raw
+      }
+      priceHistory {
+        date
+        grade7
+        grade8
+        grade9
+        grade95
+        psa10
+        bgs10
+        cgc10
+        raw
+      }
+      monthlyAverages {
+        month
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
+      }
+      weeklyAverages {
+        week
+        grade7Avg
+        grade8Avg
+        grade9Avg
+        grade95Avg
+        psa10Avg
+        bgs10Avg
+        cgc10Avg
+        rawAvg
       }
     }
   }
