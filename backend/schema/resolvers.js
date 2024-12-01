@@ -227,6 +227,7 @@ const resolvers = {
         throw new Error('Failed to get cards by name');
       }
     },
+    
   },
   Mutation: {
     createUser: async (_, { username, email, password }) => {
