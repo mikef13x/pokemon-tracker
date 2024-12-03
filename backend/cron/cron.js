@@ -6,9 +6,11 @@ const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Failed to connect to MongoDB', err));
 
-cron.schedule('0 0 * * *', async () => {
+cron.schedule('*/2 * * * *', async () => {
   try {
     // Fetch prices
     await fetchPrices();
@@ -17,7 +19,7 @@ cron.schedule('0 0 * * *', async () => {
     const prices = JSON.parse(fs.readFileSync(path.join(__dirname, '../seed/price-data/price-guide.json'), 'utf8'));
 
     for (const priceData of prices) {
-      const card = await Card.findOne({ cardId: priceData.cardId });
+      const card = await Card.findOne({ cardId: priceData.setId });
 
       if (card) {
         // Helper function to convert price strings to numbers
@@ -112,6 +114,8 @@ cron.schedule('0 0 * * *', async () => {
         // Save the updated card
         await card.save();
         console.log(`Card saved: ${card.cardId}`);
+      } else {
+        console.log(`Card not found: ${priceData.cardId}`);
       }
     }
 
