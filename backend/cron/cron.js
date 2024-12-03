@@ -6,24 +6,35 @@ const fetchPrices = require('../seed/price-data/fetchPrices');
 const Card = require('../models/card');
 const dbUri = process.env.DB_URI || 'mongodb://127.0.0.1:27017/PokeTrack';
 
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose
+  .connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Failed to connect to MongoDB', err));
+  .catch((err) => console.error('Failed to connect to MongoDB', err));
 
-cron.schedule('*/2 * * * *', async () => {
+cron.schedule('0 0 * * *', async () => {
   try {
     // Fetch prices
     await fetchPrices();
 
-    // Read the fetched prices from the JSON file
-    const prices = JSON.parse(fs.readFileSync(path.join(__dirname, '../seed/price-data/price-guide.json'), 'utf8'));
+    // Load price-guide.json
+    const priceGuidePath = path.join(__dirname, '../seed/price-data/price-guide.json');
+    const priceGuideData = JSON.parse(fs.readFileSync(priceGuidePath, 'utf-8'));
 
-    for (const priceData of prices) {
-      const card = await Card.findOne({ cardId: priceData.setId });
+    // Fetch all cards from the database
+    const cards = await Card.find({});
 
-      if (card) {
-        // Helper function to convert price strings to numbers
-        const convertPrice = (price) => parseFloat(price.replace(/[^0-9.-]+/g, ""));
+    for (const card of cards) {
+      try {
+        // Find matching price data
+        const priceData = priceGuideData.find(price => price.setId === card.cardId);
+
+        if (!priceData) {
+          console.log(`No price data found for card: ${card.cardId}`);
+          continue;
+        }
+
+        // Helper function to convert price strings to numbers, with contingency for null values
+        const convertPrice = (price) => price ? parseFloat(price.replace(/[^0-9.-]+/g, '')) : 0;
 
         // Update card prices
         card.prices = {
@@ -71,7 +82,6 @@ cron.schedule('*/2 * * * *', async () => {
           };
 
           card.weeklyAverages.push(weeklyAverages);
-          console.log(`Updated weekly averages for card: ${card.cardId}`);
         }
 
         // Calculate monthly averages
@@ -93,7 +103,6 @@ cron.schedule('*/2 * * * *', async () => {
           };
 
           card.monthlyAverages.push(monthlyAverages);
-          console.log(`Updated monthly averages for card: ${card.cardId}`);
         }
 
         // Delete old price histories
@@ -114,8 +123,8 @@ cron.schedule('*/2 * * * *', async () => {
         // Save the updated card
         await card.save();
         console.log(`Card saved: ${card.cardId}`);
-      } else {
-        console.log(`Card not found: ${priceData.cardId}`);
+      } catch (error) {
+        console.error(`Error updating card ${card.cardId}:`, error);
       }
     }
 
