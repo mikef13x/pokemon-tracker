@@ -1054,6 +1054,27 @@ export const SVData = [
     "name": "Surging Sparks",
     "image": "https://images.pokemontcg.io/sv8/logo.png",
     "total": 252
+  },
+  {
+    "id": 12,
+    "setId": "sv8pt5",
+    "name": "Prismatic Evolutions",
+    "image": "https://images.pokemontcg.io/sv8pt5/logo.png",
+    "total": 131
+  },
+  {
+    "id": 13,
+    "setId": "sv9",
+    "name": "Journey Together",
+    "image": "https://images.pokemontcg.io/sv9/logo.png",
+    "total": 190
+  },
+  {
+    "id": 14,
+    "setId": "sv10",
+    "name": "Destined Rivals",
+    "image": "https://images.pokemontcg.io/sv10/logo.png",
+    "total": 244
   }
 ];
 
