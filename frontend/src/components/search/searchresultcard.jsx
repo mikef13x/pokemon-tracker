@@ -17,7 +17,7 @@ export default function SearchResultCard({ name, price, image, onClick, cardId, 
                 <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '100%', padding: '0 20px' }}>
                     
                     <Typography sx={{ fontSize: '28px' }}><span className='poppins-regular'>{name} #{cardId}</span></Typography>
-                    <Typography sx={{ fontSize: '14px' }}><span className='poppins-regular'>set: {setName}</span></Typography>
+                    <Typography sx={{ fontSize: '14px' }}><span className='poppins-regular'>{setName}</span></Typography>
                     <Typography sx={{ fontSize: '28px' }}><span className='poppins-regular'>Market Price: {price} </span></Typography>
                 </Box>
             </Box>
