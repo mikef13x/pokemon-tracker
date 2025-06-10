@@ -494,19 +494,51 @@ export default function MainSearch() {
         )}
 
 
-
+      
         {searchInitiated ? (
           <>
             <Box
               sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px' }}>
-
+                
               <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '240px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
                 <TextField
                   variant="outlined"
                   placeholder="Search for a card..."
                   onChange={handleSearchChange}
                   onKeyDown={handleSearchKeyDown}
-                  sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
+                  sx={{
+                    marginBottom: '20px',
+                    width: '40vw',
+                    backgroundColor: 'rgb(255,255,255,0.0)',
+                    borderRadius: '30px',
+                    backdropFilter: 'blur(20px)',
+                    '& .MuiOutlinedInput-root': {
+                      color: 'white',
+                      borderRadius: '30px', 
+                      paddingLeft: '15px',
+                      '& fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px', 
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px', 
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px',
+                        outline: 'none', 
+                        boxShadow: 'none', 
+                      },
+                    },
+                    '& .MuiInputBase-input': {
+                      paddingLeft: '24px', 
+                    },
+                    '& .MuiInputBase-input::placeholder': {
+                      color: 'white', 
+                      opacity: 1, 
+                    },
+                  }}
                   inputProps={{
                     className: 'poppins-regular', // Add the class to the input element
                   }}
@@ -550,18 +582,51 @@ export default function MainSearch() {
             </Box>
           </>
         ) : (
-
+            
           <>
+       
             <Box
               sx={{ display: 'flex', justifyContent: 'center', marginTop: '-20px'}}>
 
-              <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
+              <Box sx={{ display: 'flex',borderRadius:'20px' ,flexDirection: 'row', gap: '10px', marginLeft: '250px', animation: animateSearch ? `${slideUp} 0.5s ease-out forwards` : 'none', position: animateSearch ? 'relative' : 'absolute', top: animateSearch ? '0' : '50vh', transform: animateSearch ? 'translateY(0)' : 'translateY(-50%)' }}  >
                 <TextField
                   variant="outlined"
                   placeholder="Search for a card..."
                   onChange={handleSearchChange}
                   onKeyDown={handleSearchKeyDown}
-                  sx={{ marginBottom: '20px', width: '40vw', backgroundColor: 'white', }}
+                  sx={{
+                    marginBottom: '20px',
+                    width: '40vw',
+                    backgroundColor: 'rgb(255,255,255,0.0)',
+                    borderRadius: '30px',
+                    backdropFilter: 'blur(20px)',
+                    '& .MuiOutlinedInput-root': {
+                      color: 'white', 
+                      borderRadius: '30px', 
+                      paddingLeft: '15px', 
+                      '& fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px', 
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px', 
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'white', 
+                        borderRadius: '30px', 
+                        outline: 'none',
+                        boxShadow: 'none', 
+                      },
+                    },
+                    '& .MuiInputBase-input': {
+                      paddingLeft: '24px', 
+                    },
+                    '& .MuiInputBase-input::placeholder': {
+                      color: 'white', 
+                      opacity: 1, 
+                    },
+                  }}
                   inputProps={{
                     className: 'poppins-regular', // Add the class to the input element
                   }}
@@ -804,7 +869,7 @@ export default function MainSearch() {
       ) : (
         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', height: '70vh', width: '100%', marginTop: '-200px' }}>
           <Typography sx={{
-            fontSize: '50px',
+            fontSize: '36px',
             color: 'white',
             textShadow: '-2px 0 0 black, 0 2px 0 black, -2px 2px 0 black',
             textAlign: 'center',
